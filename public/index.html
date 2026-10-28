@@ -12,7 +12,6 @@
 <meta property="og:url" content="https://cypherpunksociety.org">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://cypherpunksociety.org">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
 	body {
 		line-height: 1.4;
@@ -48,12 +47,6 @@
 		padding: 1px 4px;
 		font-size: 14px;
 	}
-
-	/* minimal map */
-	#map { width: 100%; aspect-ratio: 16 / 9; min-height: 360px; border: 1px solid #ddd; background: #fff; margin: 16px 0; }
-	.leaflet-control-zoom { display: none; }
-	.leaflet-container { background: #fff; }
-	.leaflet-control-attribution { font-size: 10px; }
 </style>
 <title>the cypherpunk society</title>
 </head>
@@ -130,38 +123,7 @@
 		<li><strong>San Francisco, CA</strong> — Frontier Tower (995 Market St)</li>
 	</ul>
 
-	<div id="map"></div>
-
 	<p>Not in San Francisco? <a href="/start.html"><strong>Clone us and start your own chapter!</strong></a></p>
 </div>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
-	const map = L.map('map', {
-		worldCopyJump: true,
-		zoomControl: true,
-		scrollWheelZoom: true,
-	}).setView([37.7825, -122.4098], 15);
-
-	L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-		attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
-		subdomains: 'abcd'
-	}).addTo(map);
-
-	const marker = L.circleMarker([37.7825, -122.4098], {
-		radius: 8,
-		color: '#C41230',
-		weight: 2,
-		fill: true,
-		fillColor: '#C41230',
-		fillOpacity: 1
-	}).addTo(map);
-
-	marker.bindTooltip('Frontier Tower — 995 Market St, San Francisco', {
-		permanent: true,
-		direction: 'top',
-		offset: [0, -10]
-	});
-</script>
 </body>
 </html>

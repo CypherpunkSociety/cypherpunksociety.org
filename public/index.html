@@ -123,16 +123,11 @@
 	</table>
 
 	<h2>find us at frontier tower, san francisco</h2>
-	<p>The Cypherpunk Society flagship hub is hosted at <strong>Frontier Tower</strong> (995 Market St, San Francisco, CA 94103). We collaborate closely with Bay Area and global hackerspaces and digital rights organizations:</p>
+	<p>The Cypherpunk Society was started at <strong>Frontier Tower</strong> (995 Market St, San Francisco, CA 94103 — between 5th &amp; 6th St, two blocks from Powell St BART).</p>
+	<p>You don't need to be in San Francisco to contribute, and we encourage hackerspaces, universities, and vertical villages everywhere to spin up local chapters.</p>
 
 	<ul>
-		<li><strong>Frontier Tower (San Francisco, CA)</strong> — Flagship society hub, Tails flashing terminal &amp; weekly clinics</li>
-		<li><a href="https://noisebridge.net/">Noisebridge</a> (San Francisco, CA) &amp; <a href="https://archive.org/">Internet Archive</a> (San Francisco, CA)</li>
-		<li><a href="https://www.eff.org/">Electronic Frontier Foundation (EFF)</a> &amp; <a href="https://freedom.press/">Freedom of the Press Foundation</a> (San Francisco, CA)</li>
-		<li><a href="https://sudoroom.org/">Sudo Room</a> (Oakland, CA) &amp; <a href="https://hackerdojo.com/">Hacker Dojo</a> (Mountain View, CA)</li>
-		<li><a href="https://hai.stanford.edu/">Stanford Cognitive Security Task Force</a> (Stanford, CA)</li>
-		<li><a href="https://citizenlab.ca/">The Citizen Lab</a> (Toronto, ON) &amp; <a href="https://www.ccc.de/">Chaos Computer Club</a> (Berlin / Hamburg)</li>
-		<li><a href="https://www.laquadrature.net/">La Quadrature du Net (&pi;)</a>, <a href="https://nos-oignons.net/">Nos Oignons</a> &amp; La Paillasse alumni (Paris, France)</li>
+		<li><strong>San Francisco, CA</strong> — Frontier Tower (995 Market St)</li>
 	</ul>
 
 	<div id="map"></div>
@@ -144,61 +139,29 @@
 <script>
 	const map = L.map('map', {
 		worldCopyJump: true,
-		zoomControl: false,
-		doubleClickZoom: false,
-		boxZoom: false,
-		keyboard: false,
+		zoomControl: true,
 		scrollWheelZoom: true,
-		wheelDebounceTime: 0.1,
-		wheelPxPerZoomLevel: 40,
-		zoomAnimationThreshold: 5,
-		zoomAnimation: false,
-		zoomAnimationDuration: 0.01,
-	}).setView([37.7816, -122.4099], 3);
+	}).setView([37.7825, -122.4098], 15);
 
-	map.options.zoomAnimation = true;
-	map.options.zoomAnimationThreshold = 20;
-
-	L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+	L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 		attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
 		subdomains: 'abcd'
 	}).addTo(map);
 
-	function addNode(lat, lon, label, color) {
-		const c = color || '#000';
-		const m = L.circleMarker([lat, lon], {
-			radius: color ? 8 : 6,
-			color: c,
-			weight: 2,
-			fill: true,
-			fillColor: c,
-			fillOpacity: 1
-		}).addTo(map);
-		if (label) { m.bindTooltip(label, { direction: 'top', offset: [0, -6] }); }
-		return m;
-	}
+	const marker = L.circleMarker([37.7825, -122.4098], {
+		radius: 8,
+		color: '#C41230',
+		weight: 2,
+		fill: true,
+		fillColor: '#C41230',
+		fillOpacity: 1
+	}).addTo(map);
 
-	const nodes = [
-		{ name: 'Frontier Tower — Cypherpunk Society (San Francisco)', lat: 37.7825, lon: -122.4098, color: '#C41230' },
-		{ name: 'Noisebridge & EFF (San Francisco)', lat: 37.7624, lon: -122.4196 },
-		{ name: 'Internet Archive (San Francisco)', lat: 37.7823, lon: -122.4716 },
-		{ name: 'Sudo Room / Omni Commons (Oakland)', lat: 37.8358, lon: -122.2641 },
-		{ name: 'Hacker Dojo (Mountain View)', lat: 37.3999, lon: -122.0510 },
-		{ name: 'Stanford Cognitive Security Task Force (Stanford)', lat: 37.4275, lon: -122.1697 },
-		{ name: 'The Citizen Lab — UofT (Toronto)', lat: 43.6645, lon: -79.3996 },
-		{ name: 'La Quadrature du Net & La Paillasse Lineage (Paris)', lat: 48.8687, lon: 2.3522 },
-		{ name: 'Chaos Computer Club & Bellingcat Europe (Berlin/Amsterdam)', lat: 52.5200, lon: 13.4050 }
-	];
-
-	const markers = [];
-	nodes.forEach(n => {
-		markers.push(addNode(n.lat, n.lon, n.name, n.color));
+	marker.bindTooltip('Frontier Tower — 995 Market St, San Francisco', {
+		permanent: true,
+		direction: 'top',
+		offset: [0, -10]
 	});
-
-	if (markers.length > 0) {
-		const group = new L.featureGroup(markers);
-		map.fitBounds(group.getBounds(), { padding: [24, 24] });
-	}
 </script>
 </body>
 </html>

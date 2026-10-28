@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="cypherpunk society - open-source operational security, counter-surveillance, cognitive security, and freedom bandwidth at Frontier Tower, San Francisco.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="cypherpunk society, frontier tower, san francisco, eff surveillance self-defense, tails os, tor relay, citizen lab, bellingcat osint, cognitive security, ccc, la quadrature du net">
+<meta name="author" content="Cypherpunk Society">
+<meta property="og:title" content="cypherpunk society — frontier tower, san francisco">
+<meta property="og:description" content="operational security, counter-surveillance, cognitive resilience, and open-source freedom infrastructure">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cypherpunksociety.org">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://cypherpunksociety.org">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+	body {
+		line-height: 1.4;
+		font-size: 16px;
+		padding: 0 10px;
+		margin: 50px auto;
+		max-width: 650px;
+	}
+
+	#maincontent {
+		max-width: 42em;
+		margin: 15px auto;
+	}
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 16px 0;
+		font-size: 15px;
+	}
+	th, td {
+		border-bottom: 1px solid #ddd;
+		text-align: left;
+		padding: 6px 8px;
+		vertical-align: top;
+	}
+	th {
+		border-bottom: 2px solid #000;
+	}
+
+	code {
+		background: #f4f4f4;
+		padding: 1px 4px;
+		font-size: 14px;
+	}
+
+	/* minimal map */
+	#map { width: 100%; aspect-ratio: 16 / 9; min-height: 360px; border: 1px solid #ddd; background: #fff; margin: 16px 0; }
+	.leaflet-control-zoom { display: none; }
+	.leaflet-container { background: #fff; }
+	.leaflet-control-attribution { font-size: 10px; }
+</style>
+<title>the cypherpunk society</title>
+</head>
+
+<body>
+<div id="maincontent" style="margin-top:70px">
+	<h1>cypherpunk society</h1>
+
+	<p>Operational security, counter-surveillance, cognitive resilience, and open-source freedom infrastructure at Frontier Tower, San Francisco.</p>
+
+	<div style="text-align: center; margin: 28px 0;">
+		<p>Read the <a href="/docs.html">Docs &amp; Curriculum</a></p>
+		<p>Fork &amp; contribute on <a href="https://github.com/CypherpunkSociety">GitHub</a></p>
+		<p>Follow on <a href="https://bsky.app/profile/cypherpunksociety.org">Bluesky</a> &middot; <a href="https://x.com/CypherpunkSoc">X</a> &middot; <a href="https://infosec.exchange/@CypherpunkSociety">Mastodon</a></p>
+		<p>Join on <a href="/docs.html#channels">Discord, Signal, Telegram &amp; Jitsi</a></p>
+		<p>Contact <a href="mailto:contact@cypherpunksociety.org">contact@cypherpunksociety.org</a> (<a href="/pgp.txt">PGP</a>)</p>
+	</div>
+
+	<h2>what we do</h2>
+	<p>Privacy and cognitive autonomy require active defense and shared infrastructure. Born in the San Francisco Bay Area in 1992 out of <a href="/docs.html#lineage">The WELL, Community Memory, and toad.com</a>—and inspired by interdisciplinary spaces like Paris's <a href="/docs.html#lineage">La Paillasse and La Quadrature du Net (&pi;)</a>—the Cypherpunk Society equips builders, researchers, and investigative minds through hands-on practice:</p>
+	<ul>
+		<li><strong>Surveillance Self-Defense &amp; Freedom OS:</strong> Weekly hands-on clinics running <a href="https://ssd.eff.org/">EFF's Surveillance Self-Defense</a> curriculum, <a href="https://tails.net/">Tails OS</a> USB verification &amp; flashing, <a href="https://www.qubes-os.org/">Qubes OS</a>, and <a href="https://grapheneos.org/">GrapheneOS</a>.</li>
+		<li><strong>Threat Intelligence &amp; Cognitive Security:</strong> Dissecting commercial spyware reports from <a href="https://citizenlab.ca/">The Citizen Lab (UofT)</a> and collaborating with the <a href="https://hai.stanford.edu/">Stanford Cognitive Security Task Force</a> on AI persuasion, information integrity, and neurotech/BCI privacy.</li>
+		<li><strong>Open-Source Intelligence (OSINT):</strong> Tracking <a href="https://www.bellingcat.com/">Bellingcat</a> investigative toolkits and cross-border public-interest reporting from <a href="https://www.occrp.org/">OCCRP</a>.</li>
+		<li><strong>Hacker Pedagogy &amp; Open Web Spirit:</strong> Screening <a href="https://media.ccc.de/">Chaos Computer Club (CCC)</a> lectures and running participatory sessions in the spirit of <a href="https://www.mozillafoundation.org/en/festival/">MozFest</a>, <a href="https://www.aaronswartzday.org/">Aaron Swartz Day</a> (with <a href="https://securedrop.org/">SecureDrop</a> &amp; the <a href="https://archive.org/">Internet Archive</a>), the <a href="https://www.rsaconference.com/">RSA Conference</a> city-wide key-signing party, and the <a href="https://www.defconbiohackingvillage.org/">DEF CON Biohacking Village</a>.</li>
+		<li><strong>Public-Interest Bandwidth:</strong> Advocating for and operating <a href="https://www.torproject.org/">Tor</a> Snowflake proxies, obfs4 bridges, and non-profit relay partnerships (<a href="https://emeraldonion.org/">Emerald Onion</a> &amp; <a href="https://nos-oignons.net/">Nos Oignons</a>).</li>
+	</ul>
+
+	<h2>how to get involved</h2>
+	<p>Drop into a weekly session at Frontier Tower or join our decentralized channels from anywhere:</p>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Cadence</th>
+				<th>Session</th>
+				<th>Focus</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><strong>Tue 6:00 PM</strong></td>
+				<td>OpSec &amp; Tails Clinic</td>
+				<td>EFF Surveillance Self-Defense walkthrough &amp; bootable Tails OS flashing station (In-Person, Frontier Tower).</td>
+			</tr>
+			<tr>
+				<td><strong>Thu 12:30 PM</strong></td>
+				<td>OSINT &amp; Speaker Stage</td>
+				<td>Bellingcat toolkit briefings, OCCRP investigations, and guest speakers (Discord Stage + Jitsi + Tower Lounge).</td>
+			</tr>
+			<tr>
+				<td><strong>Biweekly Wed 7:00 PM</strong></td>
+				<td>Citizen Lab &amp; Cognitive Security</td>
+				<td>Alternating deep dives into Citizen Lab spyware reports and Stanford CSTF cognitive &amp; neuro-security research.</td>
+			</tr>
+			<tr>
+				<td><strong>Biweekly Fri 8:00 PM</strong></td>
+				<td>CCC Media Night &amp; Salon</td>
+				<td>Screenings from <code>media.ccc.de</code> and resident lightning talks.</td>
+			</tr>
+			<tr>
+				<td><strong>1st Sat 1:00 PM</strong></td>
+				<td>Bandwidth Hackathon &amp; Key Signing</td>
+				<td>Tor Snowflake/bridge deployments, PGP key signing, and OSINT CTFs.</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<h2>find us at frontier tower, san francisco</h2>
+	<p>The Cypherpunk Society flagship hub is hosted at <strong>Frontier Tower</strong> (995 Market St, San Francisco, CA 94103). We collaborate closely with Bay Area and global hackerspaces and digital rights organizations:</p>
+
+	<ul>
+		<li><strong>Frontier Tower (San Francisco, CA)</strong> — Flagship society hub, Tails flashing terminal &amp; weekly clinics</li>
+		<li><a href="https://noisebridge.net/">Noisebridge</a> (San Francisco, CA) &amp; <a href="https://archive.org/">Internet Archive</a> (San Francisco, CA)</li>
+		<li><a href="https://www.eff.org/">Electronic Frontier Foundation (EFF)</a> &amp; <a href="https://freedom.press/">Freedom of the Press Foundation</a> (San Francisco, CA)</li>
+		<li><a href="https://sudoroom.org/">Sudo Room</a> (Oakland, CA) &amp; <a href="https://hackerdojo.com/">Hacker Dojo</a> (Mountain View, CA)</li>
+		<li><a href="https://hai.stanford.edu/">Stanford Cognitive Security Task Force</a> (Stanford, CA)</li>
+		<li><a href="https://citizenlab.ca/">The Citizen Lab</a> (Toronto, ON) &amp; <a href="https://www.ccc.de/">Chaos Computer Club</a> (Berlin / Hamburg)</li>
+		<li><a href="https://www.laquadrature.net/">La Quadrature du Net (&pi;)</a>, <a href="https://nos-oignons.net/">Nos Oignons</a> &amp; La Paillasse alumni (Paris, France)</li>
+	</ul>
+
+	<div id="map"></div>
+
+	<p>Not in San Francisco? <a href="/start.html"><strong>Clone us and start your own chapter!</strong></a></p>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+	const map = L.map('map', {
+		worldCopyJump: true,
+		zoomControl: false,
+		doubleClickZoom: false,
+		boxZoom: false,
+		keyboard: false,
+		scrollWheelZoom: true,
+		wheelDebounceTime: 0.1,
+		wheelPxPerZoomLevel: 40,
+		zoomAnimationThreshold: 5,
+		zoomAnimation: false,
+		zoomAnimationDuration: 0.01,
+	}).setView([37.7816, -122.4099], 3);
+
+	map.options.zoomAnimation = true;
+	map.options.zoomAnimationThreshold = 20;
+
+	L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+		attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+		subdomains: 'abcd'
+	}).addTo(map);
+
+	function addNode(lat, lon, label, color) {
+		const c = color || '#000';
+		const m = L.circleMarker([lat, lon], {
+			radius: color ? 8 : 6,
+			color: c,
+			weight: 2,
+			fill: true,
+			fillColor: c,
+			fillOpacity: 1
+		}).addTo(map);
+		if (label) { m.bindTooltip(label, { direction: 'top', offset: [0, -6] }); }
+		return m;
+	}
+
+	const nodes = [
+		{ name: 'Frontier Tower — Cypherpunk Society (San Francisco)', lat: 37.7825, lon: -122.4098, color: '#C41230' },
+		{ name: 'Noisebridge & EFF (San Francisco)', lat: 37.7624, lon: -122.4196 },
+		{ name: 'Internet Archive (San Francisco)', lat: 37.7823, lon: -122.4716 },
+		{ name: 'Sudo Room / Omni Commons (Oakland)', lat: 37.8358, lon: -122.2641 },
+		{ name: 'Hacker Dojo (Mountain View)', lat: 37.3999, lon: -122.0510 },
+		{ name: 'Stanford Cognitive Security Task Force (Stanford)', lat: 37.4275, lon: -122.1697 },
+		{ name: 'The Citizen Lab — UofT (Toronto)', lat: 43.6645, lon: -79.3996 },
+		{ name: 'La Quadrature du Net & La Paillasse Lineage (Paris)', lat: 48.8687, lon: 2.3522 },
+		{ name: 'Chaos Computer Club & Bellingcat Europe (Berlin/Amsterdam)', lat: 52.5200, lon: 13.4050 }
+	];
+
+	const markers = [];
+	nodes.forEach(n => {
+		markers.push(addNode(n.lat, n.lon, n.name, n.color));
+	});
+
+	if (markers.length > 0) {
+		const group = new L.featureGroup(markers);
+		map.fitBounds(group.getBounds(), { padding: [24, 24] });
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+Contact: mailto:contact@cypherpunksociety.org
+Encryption: https://cypherpunksociety.org/pgp.txt
+Canonical: https://cypherpunksociety.org/.well-known/security.txt
+Expires: 2027-10-27T00:00:00.000Z

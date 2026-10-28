@@ -1,6 +1,6 @@
 # cypherpunk society (`cypherpunksociety.org`)
 
-Operational security, counter-surveillance, cognitive resilience, and open-source freedom infrastructure at **Frontier Tower, San Francisco** (995 Market St, San Francisco, CA 94103).
+Open-source digital self-defense, privacy tools, and freedom bandwidth — started at **Frontier Tower, San Francisco** (995 Market St, San Francisco, CA 94103).
 
 - **Live Website:** [https://cypherpunksociety.org](https://cypherpunksociety.org)
 - **Docs & Curriculum:** [https://cypherpunksociety.org/docs.html](https://cypherpunksociety.org/docs.html)

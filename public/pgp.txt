@@ -1,3 +1,3 @@
 # Cypherpunk Society @ Frontier Tower — Public Key Directory
 # Contact: contact@cypherpunksociety.org
-# Verify in person at weekly Tuesday OpSec & Tails Clinics (Frontier Tower, 995 Market St, San Francisco)
+# Verify in person at monthly OpSec & Tails Clinics (Frontier Tower, 995 Market St, San Francisco)

@@ -9,7 +9,7 @@ Open-source digital self-defense, privacy tools, and freedom bandwidth — start
 
 ## What We Do
 
-- **Surveillance Self-Defense & Freedom OS:** Weekly hands-on clinics walking through [EFF's Surveillance Self-Defense](https://ssd.eff.org/), [Tails OS](https://tails.net/) USB verification & flashing, [Qubes OS](https://www.qubes-os.org/), and [GrapheneOS](https://grapheneos.org/).
+- **Surveillance Self-Defense & Freedom OS:** Monthly hands-on clinics walking through [EFF's Surveillance Self-Defense](https://ssd.eff.org/), [Tails OS](https://tails.net/) USB verification & flashing, [Qubes OS](https://www.qubes-os.org/), and [GrapheneOS](https://grapheneos.org/).
 - **Threat Intelligence & Cognitive Security:** Dissecting commercial spyware disclosures from [The Citizen Lab (UofT)](https://citizenlab.ca/) and collaborating with the [Stanford Cognitive Security Task Force](https://hai.stanford.edu/) on AI persuasion, information integrity, and neurotech/BCI privacy.
 - **Open-Source Intelligence (OSINT):** Tracking [Bellingcat](https://www.bellingcat.com/) investigative toolkits and cross-border public-interest reporting from [OCCRP](https://www.occrp.org/).
 - **Hacker Pedagogy & Open Web Spirit:** Screening [Chaos Computer Club (CCC)](https://media.ccc.de/) lectures and running participatory sessions in the spirit of [MozFest](https://www.mozillafoundation.org/en/festival/), [Aaron Swartz Day](https://www.aaronswartzday.org/) (with [SecureDrop](https://securedrop.org/) & the [Internet Archive](https://archive.org/)), the [RSA Conference](https://www.rsaconference.com/) city-wide key-signing party, and the [DEF CON Biohacking Village](https://www.defconbiohackingvillage.org/).

@@ -3,6 +3,7 @@
 Open-source digital self-defense, privacy tools, and freedom bandwidth — started at **Frontier Tower, San Francisco** (995 Market St, San Francisco, CA 94103).
 
 - **Live Website:** [https://cypherpunksociety.org](https://cypherpunksociety.org)
+- **Awesome Cypherpunk Resource List:** [https://github.com/CypherpunkSociety/awesome-cypherpunk](https://github.com/CypherpunkSociety/awesome-cypherpunk)
 - **Docs & Curriculum:** [https://cypherpunksociety.org/docs.html](https://cypherpunksociety.org/docs.html)
 - **How to Clone Us:** [https://cypherpunksociety.org/start.html](https://cypherpunksociety.org/start.html)
 - **Contact:** `contact@cypherpunksociety.org`

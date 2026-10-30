@@ -1,736 +1,1266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cypherpunk Society — Inaugural Presentation (Nov 5, 2026)</title>
-<style>
-	:root {
-		--bg: #ffffff;
-		--fg: #111111;
-		--muted: #555555;
-		--border: #dddddd;
-		--accent: #C41230;
-		--code-bg: #f4f4f4;
-	}
-	* { box-sizing: border-box; }
-	body {
-		margin: 0;
-		padding: 0;
-		background: var(--bg);
-		color: var(--fg);
-		font-family: Georgia, "Times New Roman", serif;
-		line-height: 1.45;
-		overflow: hidden;
-	}
-	.deck {
-		width: 100vw;
-		height: 100vh;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		padding: 48px 72px 36px 72px;
-		max-width: 1200px;
-		margin: 0 auto;
-	}
-	header {
-		display: flex;
-		justify-content: space-between;
-		align-items: baseline;
-		border-bottom: 1px solid var(--border);
-		padding-bottom: 10px;
-		font-size: 14px;
-		color: var(--muted);
-		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-	}
-	header a {
-		color: var(--muted);
-		text-decoration: none;
-	}
-	header a:hover {
-		text-decoration: underline;
-	}
-	.slide-container {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		padding: 20px 0;
-		overflow-y: auto;
-	}
-	.slide {
-		display: none;
-		animation: fadeIn 0.18s ease-in;
-	}
-	.slide.active {
-		display: block;
-	}
-	@keyframes fadeIn {
-		from { opacity: 0; }
-		to { opacity: 1; }
-	}
-	.act-label {
-		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-		font-size: 13px;
-		text-transform: uppercase;
-		letter-spacing: 0.08em;
-		color: var(--accent);
-		margin-bottom: 8px;
-		font-weight: bold;
-	}
-	h1 {
-		font-size: 46px;
-		line-height: 1.15;
-		margin: 0 0 18px 0;
-		font-weight: normal;
-	}
-	h2 {
-		font-size: 36px;
-		line-height: 1.2;
-		margin: 0 0 18px 0;
-		font-weight: normal;
-	}
-	p.subtitle {
-		font-size: 22px;
-		color: var(--muted);
-		margin: 0 0 24px 0;
-	}
-	p, li {
-		font-size: 23px;
-		margin: 10px 0;
-	}
-	ul, ol {
-		margin: 12px 0;
-		padding-left: 32px;
-	}
-	li {
-		margin-bottom: 12px;
-	}
-	blockquote {
-		border-left: 3px solid var(--accent);
-		margin: 20px 0;
-		padding: 8px 20px;
-		font-style: italic;
-		font-size: 24px;
-		background: #fafafa;
-	}
-	code {
-		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-		background: var(--code-bg);
-		padding: 2px 6px;
-		font-size: 0.88em;
-	}
-	table {
-		width: 100%;
-		border-collapse: collapse;
-		margin: 14px 0;
-		font-size: 19px;
-	}
-	th, td {
-		border-bottom: 1px solid var(--border);
-		padding: 10px 12px;
-		text-align: left;
-		vertical-align: top;
-	}
-	th {
-		border-bottom: 2px solid var(--fg);
-		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-		font-size: 16px;
-	}
-	.notes {
-		display: none;
-		margin-top: 20px;
-		padding: 14px 18px;
-		background: #fff8e7;
-		border: 1px solid #e6d09c;
-		font-size: 16px;
-		line-height: 1.4;
-		color: #333;
-		font-family: system-ui, -apple-system, sans-serif;
-	}
-	body.show-notes .notes {
-		display: block;
-	}
-	footer {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		border-top: 1px solid var(--border);
-		padding-top: 12px;
-		font-size: 14px;
-		color: var(--muted);
-		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-	}
-	.controls button {
-		background: none;
-		border: 1px solid var(--border);
-		padding: 4px 10px;
-		margin-left: 4px;
-		cursor: pointer;
-		font-family: inherit;
-		font-size: 13px;
-	}
-	.controls button:hover {
-		border-color: var(--fg);
-	}
-	@media print {
-		body { overflow: visible; }
-		.deck { height: auto; display: block; padding: 20px; }
-		header, footer { display: none; }
-		.slide { display: block !important; page-break-after: always; padding: 40px 0; border-bottom: 1px solid #ccc; }
-		.notes { display: block !important; }
-	}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cypherpunk Society — Inaugural Meeting Deck (Nov 5, 2026)</title>
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --panel: #13171d;
+      --border: #262c36;
+      --text: #eceff4;
+      --muted: #9aa5b4;
+      --accent: #a3be8c;
+      --accent-bright: #b8d89be6;
+      --cyan: #88c0d0;
+      --amber: #ebcb8b;
+      --red: #bf616a;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      overflow: hidden;
+    }
+    .deck {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.65rem 2.2rem;
+      border-bottom: 1px solid var(--border);
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+      background: #0e1116;
+      flex-shrink: 0;
+    }
+    .topbar a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .slide-container {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide {
+      position: absolute;
+      inset: 0;
+      padding: 2rem 3.5rem 1.8rem 3.5rem;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 1380px;
+      margin: 0 auto;
+      overflow-y: auto;
+    }
+    .slide.active {
+      display: flex;
+    }
+    .section-tag {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 0.45rem;
+    }
+    h1 {
+      font-size: 2.75rem;
+      line-height: 1.12;
+      margin: 0 0 0.7rem 0;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+    }
+    h2 {
+      font-size: 2.05rem;
+      line-height: 1.18;
+      margin: 0 0 0.65rem 0;
+      letter-spacing: -0.015em;
+      color: #ffffff;
+    }
+    .subtitle {
+      font-size: 1.18rem;
+      line-height: 1.5;
+      color: var(--muted);
+      max-width: 900px;
+      margin-bottom: 1.1rem;
+    }
+    .split {
+      display: grid;
+      grid-template-columns: 1.05fr 1.15fr;
+      gap: 2rem;
+      align-items: center;
+      width: 100%;
+    }
+    .split-equal {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.6rem;
+      align-items: center;
+      width: 100%;
+    }
+    .split-three {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.25rem;
+      align-items: stretch;
+      width: 100%;
+    }
+    .photo-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      align-items: stretch;
+    }
+    .photo-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+    }
+    .photo-card img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      display: block;
+      background: #07080a;
+      cursor: zoom-in;
+    }
+    .photo-card.contain img {
+      object-fit: contain;
+      padding: 0.5rem;
+    }
+    .photo-card.tall img {
+      height: 410px;
+    }
+    .photo-card.short img {
+      height: 235px;
+    }
+    .photo-caption {
+      padding: 0.55rem 0.85rem;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 0.74rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: #10141a;
+      line-height: 1.4;
+    }
+    .photo-caption strong {
+      color: var(--amber);
+    }
+    .text-col ul {
+      margin: 0.4rem 0 0 0;
+      padding-left: 1.25rem;
+      font-size: 1.06rem;
+      line-height: 1.62;
+    }
+    .text-col li {
+      margin-bottom: 0.55rem;
+    }
+    .text-col li strong {
+      color: #ffffff;
+    }
+    blockquote {
+      margin: 0.7rem 0;
+      padding: 0.95rem 1.25rem;
+      background: #12171e;
+      border-left: 4px solid var(--accent);
+      font-size: 1.08rem;
+      line-height: 1.55;
+      font-style: italic;
+      color: #e5e9f0;
+      border-radius: 0 6px 6px 0;
+    }
+    blockquote cite {
+      display: block;
+      margin-top: 0.45rem;
+      font-size: 0.84rem;
+      font-style: normal;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      color: var(--accent);
+    }
+    code {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 0.88em;
+      background: #1b212c;
+      color: var(--cyan);
+      padding: 0.12rem 0.38rem;
+      border-radius: 4px;
+    }
+    .meta-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 0.8rem;
+    }
+    .pill {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.78rem;
+      padding: 0.28rem 0.65rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: #151a22;
+      color: var(--amber);
+    }
+    .notes-panel {
+      display: none;
+      background: #10141b;
+      border-top: 2px solid var(--accent);
+      padding: 0.85rem 3.5rem;
+      font-size: 0.94rem;
+      line-height: 1.5;
+      color: #d8dee9;
+      max-height: 22vh;
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+    .notes-panel.visible {
+      display: block;
+    }
+    .notes-label {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.2rem;
+    }
+    .bottombar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.6rem 2.2rem;
+      border-top: 1px solid var(--border);
+      background: #0e1116;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.8rem;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+    .controls {
+      display: flex;
+      gap: 0.45rem;
+      align-items: center;
+    }
+    button {
+      background: var(--panel);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.75rem;
+      border-radius: 4px;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.78rem;
+      cursor: pointer;
+    }
+    button:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .progress-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      background: var(--accent);
+      transition: width 0.2s ease;
+    }
+    /* Lightbox modal for zooming any historical photo */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 7, 10, 0.92);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      cursor: zoom-out;
+    }
+    #lightbox.open {
+      display: flex;
+    }
+    #lightbox img {
+      max-width: 94vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+    }
+    @media print {
+      html, body { overflow: visible; height: auto; background: #0b0d10; }
+      .topbar, .bottombar, .notes-panel { display: none !important; }
+      .deck, .slide-container { height: auto; overflow: visible; }
+      .slide {
+        position: relative;
+        display: flex !important;
+        page-break-after: always;
+        min-height: 95vh;
+        border-bottom: 1px solid var(--border);
+      }
+    }
+  </style>
 </head>
 <body>
-<div class="deck">
-	<header>
-		<div><a href="/">cypherpunksociety.org</a> &middot; Frontier Tower, San Francisco</div>
-		<div>Inaugural Gathering &middot; Thu, Nov 5, 2026 &middot; 18:30</div>
-	</header>
+  <div id="lightbox" onclick="this.classList.remove('open')">
+    <img id="lightbox-img" src="" alt="Zoomed historical photograph">
+  </div>
 
-	<div class="slide-container">
+  <div class="deck">
+    <div class="topbar">
+      <div>CYPHERPUNK SOCIETY // INAUGURAL MEETING — FRONTIER TOWER (995 MARKET ST, SF)</div>
+      <div>THURSDAY, NOV 5, 2026 · 18:30 PST · <a href="/">cypherpunksociety.org</a></div>
+    </div>
 
-		<!-- SLIDE 1 -->
-		<section class="slide active">
-			<div class="act-label">Inaugural Gathering &middot; November 5, 2026</div>
-			<h1>the cypherpunk society</h1>
-			<p class="subtitle">Open-source digital self-defense, privacy tools, and freedom bandwidth at Frontier Tower, San Francisco.</p>
-			<p style="margin-top: 36px; font-size: 20px;">
-				<strong>Morgan Hough</strong><br>
-				995 Market St, San Francisco &middot; <code>cypherpunksociety.org</code>
-			</p>
-			<div class="notes">
-				<strong>Speaker Note (Slow Pace — ~2 mins):</strong> Welcome everyone to the inaugural meeting of the Cypherpunk Society at Frontier Tower. Tonight we're going to take an unhurried walk through four things: (1) how the Cypherpunk movement was born right here in the Bay Area counterculture, (2) the global organizations and research labs we are connecting with, (3) the open-source tools and investigations we'll be teaching, and (4) what we want to build practically right here at Frontier Tower—starting with this Sunday's Aaron Swartz Day Hackathon on November 8th.
-			</div>
-		</section>
+    <div class="slide-container">
 
-		<!-- SLIDE 2 -->
-		<section class="slide">
-			<div class="act-label">Act I &middot; Why Here, Why Tonight</div>
-			<h2>Remember, Remember, the 5th of November</h2>
-			<ul>
-				<li><strong>Why November 5th:</strong> A date historically tied to questioning unaccountable power—and falling just three days before <strong>Aaron Swartz Day &amp; the International Hackathon (Sunday, Nov 8)</strong>.</li>
-				<li><strong>Why Frontier Tower:</strong> A 16-floor vertical village in the heart of San Francisco where biohackers, AI researchers, hardware builders, and open-science practitioners share one roof.</li>
-				<li><strong>Our Roadmap Tonight:</strong>
-					<ol>
-						<li>Bay Area Counterculture &amp; the 1992 Birth of the Cypherpunks</li>
-						<li>The Rise of EFF, CCC &amp; Global Hackerspace Lineage</li>
-						<li>Tour of Our Partner Research Labs, OSINT &amp; Cognitive Security</li>
-						<li>Practical Projects at Frontier Tower &amp; Call for Volunteers</li>
-					</ol>
-				</li>
-			</ul>
-			<div class="notes">
-				<strong>Speaker Note (~2 mins):</strong> Pause on the structure of the evening so people know where we're going. Frontier Tower brings together neurotech, biotech, AI, and hardware—and that exact mix of disciplines has a deep history in both San Francisco and Paris.
-			</div>
-		</section>
+      <!-- SLIDE 1: TITLE -->
+      <section class="slide active" data-notes="Welcome everyone to Frontier Tower at 995 Market Street for the inaugural meeting of the Cypherpunk Society. Tonight we're going to take an unhurried visual tour through the Bay Area counterculture and the cypherpunk movement that started right across these bridges, explore the global labs and open-source tools we are bringing into this space, highlight Aaron Swartz Day and the Hackathon this Sunday November 8th, and invite you to volunteer.">
+        <div class="split">
+          <div class="text-col">
+            <div class="section-tag">01 / Inaugural Meeting · Nov 5, 2026 · 18:30</div>
+            <h1>The Cypherpunk Society</h1>
+            <div class="subtitle">Open-source digital self-defense, privacy tools, and freedom bandwidth.</div>
+            <ul>
+              <li><strong>Presenter:</strong> Morgan Hough</li>
+              <li><strong>Location:</strong> Frontier Tower · 995 Market St (at 6th St), San Francisco</li>
+              <li><strong>Tonight's Arc:</strong>
+                <ul>
+                  <li>Why November 5th & Why Market Street</li>
+                  <li>Visual History: From the 1968 <em>Whole Earth Catalog</em> to the 1992 Cypherpunks</li>
+                  <li>Global Allies: EFF, CCC, Paris, UC Law SF, Citizen Lab, Stanford & Bellingcat</li>
+                  <li>Aaron Swartz Day Hackathon (Sunday, Nov 8) & Call for Volunteers</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="photo-card tall">
+            <img src="/slides-img/6th-and-market.jpg" alt="6th and Market Street, San Francisco (Frontier Tower corner)">
+            <div class="photo-caption"><strong>6th & Market Street, San Francisco:</strong> The Mid-Market flatiron intersection where Frontier Tower (995 Market St) stands today.</div>
+          </div>
+        </div>
+      </section>
 
-		<!-- SLIDE 3 -->
-		<section class="slide">
-			<div class="act-label">Act I &middot; Bay Area Counterculture (1973–1985)</div>
-			<h2>Before the Web: <em>Community Memory</em> in Berkeley</h2>
-			<ul>
-				<li><strong>August 1973 (Leopold's Records, Berkeley):</strong> Lee Felsenstein, Efrem Lipkin, Ken Colstad, and <strong>Jude Milhon ("St. Jude")</strong> place a noisy Teletype Model 33 terminal in a record store connected by phone line to a mainframe in San Francisco.</li>
-				<li><strong>The World's First Public BBS:</strong> Unmoderated, anonymous, walk-up public computing for musicians, activists, poets, and engineers.</li>
-				<li><strong>The Core Ethos:</strong> Computers shouldn't just belong to defense contractors and banks—public terminals and open bandwidth are civic commons.</li>
-			</ul>
-			<div class="notes">
-				<strong>Speaker Note (~3 mins):</strong> The cypherpunk story doesn't start in 1992—it starts 20 years earlier in Berkeley with Community Memory. Jude Milhon ("St. Jude"), who helped build Community Memory, is the exact person who later names the Cypherpunks. Notice how our idea of a walk-up Tails OS &amp; Offline Wikipedia station at Frontier Tower is a direct descendant of that 1973 terminal at Leopold's Records.
-			</div>
-		</section>
+      <!-- SLIDE 2: NOVEMBER 5TH — V FOR VENDETTA & LONDON BONFIRE NIGHT -->
+      <section class="slide" data-notes="There is a reason we chose November 5th for our inaugural gathering. Growing up in London, November 5th meant standing out in the cold dark around huge roaring bonfires and watching fireworks light up the parks for Guy Fawkes Night. And through Alan Moore and David Lloyd's V for Vendetta—and the 2005 film—November 5th became an unmistakable modern symbol of questioning unaccountable surveillance power.">
+        <div class="section-tag">02 / Why November 5th?</div>
+        <h2>"Remember, Remember, the Fifth of November"</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>London Bonfire Night Roots:</strong> Growing up in London, every November 5th meant community bonfires, sparklers, and fireworks lighting up the autumn sky across London parks.</li>
+              <li><strong><em>V for Vendetta</em>:</strong> Alan Moore & David Lloyd's story (and the 2005 film) reimagined November 5th for the digital era — a warning against total panopticon surveillance and state control of information.</li>
+              <li><strong>From Symbol to Practice:</strong> Cypherpunks don't wait for permission — we build the cryptographic tools and community clinics that make mass surveillance mathematically unworkable.</li>
+            </ul>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall contain">
+              <img src="/slides-img/v-for-vendetta-poster.jpg" alt="V for Vendetta (2005) theatrical movie poster">
+              <div class="photo-caption"><strong>V for Vendetta (2005):</strong> Theatrical poster — "Remember, remember, the 5th of November."</div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:0.8rem;">
+              <div class="photo-card short">
+                <img src="/slides-img/london-bonfire-fireworks.jpg" alt="London Bonfire Night fireworks at Waltham Forest Town Hall">
+                <div class="photo-caption"><strong>London Bonfire Night Fireworks:</strong> November 5th fireworks display in London.</div>
+              </div>
+              <div class="photo-card short">
+                <img src="/slides-img/london-guy-fawkes-bonfire.jpg" alt="Guy Fawkes Night bonfire in Carshalton Park, London">
+                <div class="photo-caption"><strong>London Bonfire Night:</strong> Traditional November 5th park bonfire in London.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-		<!-- SLIDE 4 -->
-		<section class="slide">
-			<div class="act-label">Act I &middot; Early Net Communities (1985–1990)</div>
-			<h2><em>The WELL</em> &amp; the Limits of Real-Name Forums</h2>
-			<ul>
-				<li><strong>1985 (Sausalito &amp; San Francisco):</strong> Stewart Brand and Larry Brilliant launch <strong>The WELL</strong> (<em>Whole Earth 'Lectronic Link</em>)—the digital town square for Bay Area hackers, journalists, and Deadheads.</li>
-				<li><strong><em>"You Own Your Own Words"</em>:</strong> On The WELL, every post was tied to your real legal name and your monthly billing address.</li>
-				<li><strong>1990 — Operation Sundevil &amp; the Steve Jackson Games Raid:</strong> Secret Service raids across the US seize BBS servers and computers, waking hackers up to the reality that centralized servers can be seized overnight.</li>
-			</ul>
-			<div class="notes">
-				<strong>Speaker Note (~3 mins):</strong> The WELL was extraordinary, and it's where John Perry Barlow, John Gilmore, and Mitch Kapor debated civil liberties. But The WELL had an architectural catch: "You own your own words" meant every statement was linked to your credit card and real identity. What if you were a whistleblower, dissident, or researcher who needed mathematical privacy rather than policy promises?
-			</div>
-		</section>
+      <!-- SLIDE 3: MARKET STREET & BAY AREA COUNTERCULTURE -->
+      <section class="slide" data-notes="Look out the window at Market Street. For over fifty years, the spine running from San Francisco down to Menlo Park and across the Bay to Berkeley and Oakland has been the laboratory where counterculture met computing.">
+        <div class="split">
+          <div class="text-col">
+            <div class="section-tag">03 / Part I: Bay Area Counterculture</div>
+            <h2>Why Here? The Spine of Countercultural Computing</h2>
+            <p class="subtitle">Personal computing and public cryptography were born in the Bay Area not as instruments of corporate control, but as tools of individual liberation.</p>
+            <ul>
+              <li><strong>San Francisco (Market St, Mission, Richmond):</strong> Electronic Frontier Foundation, Noisebridge, Internet Archive, Wikimedia Foundation.</li>
+              <li><strong>East Bay (Berkeley & Oakland):</strong> <em>Community Memory</em> at Leopold's Records, <em>Mondo 2000</em>, the first Cypherpunks meeting, Sudo Room, UC Berkeley <em>Citizen Clinic</em>.</li>
+              <li><strong>Marin & Peninsula (Sausalito & Menlo Park):</strong> <em>Whole Earth Catalog</em>, Homebrew Computer Club, <em>The WELL</em>.</li>
+            </ul>
+          </div>
+          <div class="photo-card tall">
+            <img src="/slides-img/market-st-vintage.jpg" alt="Historic vintage view of Market Street, San Francisco">
+            <div class="photo-caption"><strong>Market Street, San Francisco (Archival):</strong> Looking down the historic civic and transit artery of San Francisco.</div>
+          </div>
+        </div>
+      </section>
 
-		<!-- SLIDE 5 -->
-		<section class="slide">
-			<div class="act-label">Act I &middot; The Crypto Wars Begin (1990–1991)</div>
-			<h2>The Founding of EFF &amp; Phil Zimmermann's PGP</h2>
-			<ul>
-				<li><strong>July 1990 — Electronic Frontier Foundation (EFF):</strong> Founded in San Francisco by John Perry Barlow, John Gilmore, and Mitch Kapor to defend civil liberties in cyberspace.</li>
-				<li><strong>June 1991 — Pretty Good Privacy (PGP):</strong> Phil Zimmermann releases PGP 1.0 as free software so ordinary citizens can encrypt email with RSA public-key cryptography—and Kelly Goen uploads it to Usenet and Bay Area dial-up BBSs.</li>
-				<li><strong>Munitions Export (ITAR):</strong> The U.S. government investigates Zimmermann for three years for "exporting weapons without a license." Cypherpunks respond by printing PGP source code in hardcover books and on T-shirts as First Amendment speech.</li>
-			</ul>
-			<div class="notes">
-				<strong>Speaker Note (~3 mins):</strong> In 1991, strong cryptography was legally classified alongside artillery and missiles on the US Munitions List. When EFF later represented UC Berkeley grad student Daniel J. Bernstein (Bernstein v. United States), the Ninth Circuit ruled that source code is speech protected by the First Amendment.
-			</div>
-		</section>
+      <!-- SLIDE 4: 1968 WHOLE EARTH CATALOG -->
+      <section class="slide" data-notes="Our story starts in 1968 in Menlo Park with Stewart Brand's Whole Earth Catalog, subtitled 'Access to Tools.' Before the personal computer existed, Brand argued that instead of waiting for institutions to reform, ordinary people needed direct access to cybernetics, calculators, land tools, and communications.">
+        <div class="section-tag">04 / 1968 · Menlo Park, CA</div>
+        <h2>Stewart Brand & The <em>Whole Earth Catalog</em></h2>
+        <div class="split">
+          <div class="text-col">
+            <blockquote>
+              "We are as gods and might as well get good at it. So far, remotely done power and glory—as via government, big business, formal education, church—has succeeded to the point where gross defects obscure actual gains. In response to this dilemma and to these gains a realm of intimate, personal power is developing—power of the individual to conduct his own education, find his own inspiration, shape his own environment, and share his adventure with whoever is interested."
+              <cite>— Purpose Statement, Whole Earth Catalog (1968)</cite>
+            </blockquote>
+            <ul>
+              <li><strong>"Access to Tools":</strong> Published out of the Whole Earth Truck Store in Menlo Park, bridging 1960s Haight-Ashbury counterculture with Norbert Wiener's cybernetics and Douglas Engelbart's SRI lab.</li>
+              <li><strong>"Stay Hungry. Stay Foolish.":</strong> Printed on the back cover of the 1974 <em>Whole Earth Epilog</em> — the ethos that personal tools could decentralize institutional power.</li>
+            </ul>
+          </div>
+          <div class="split-three">
+            <div class="photo-card contain">
+              <img src="/slides-img/whole-earth-catalog-1969.jpg" alt="Whole Earth Catalog Fall 1969 Cover">
+              <div class="photo-caption"><strong>Fall 1969 Cover:</strong> "Access to Tools" featuring Earth from space.</div>
+            </div>
+            <div class="photo-card contain">
+              <img src="/slides-img/whole-earth-back-1972.jpg" alt="Whole Earth Catalog Back Cover">
+              <div class="photo-caption"><strong>Back Cover (1972):</strong> Whole Earth Catalog archival edition.</div>
+            </div>
+            <div class="photo-card">
+              <img src="/slides-img/stewart-brand.jpg" alt="Stewart Brand">
+              <div class="photo-caption"><strong>Stewart Brand:</strong> Founder of the <em>Whole Earth Catalog</em> and co-founder of <em>The WELL</em>.</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-		<!-- SLIDE 6 -->
-		<section class="slide">
-			<div class="act-label">Act I &middot; September 1992 (Oakland &amp; San Francisco)</div>
-			<h2>The Birth of the Cypherpunks</h2>
-			<ul>
-				<li><strong>September 1992:</strong> UC Berkeley mathematician <strong>Eric Hughes</strong>, retired Intel physicist <strong>Timothy C. May</strong>, and Sun Microsystems pioneer <strong>John Gilmore</strong> invite ~20 cryptographers and hackers to a meeting at Gilmore's company, Cygnus Support, in Oakland.</li>
-				<li><strong>Coined by "St. Jude" of <em>Mondo 2000</em>:</strong> Berkeley writer and programmer <strong>Jude Milhon</strong> jokes: <em>"You guys aren't crypto-anarchists, you're cypherpunks."</em></li>
-				<li><strong><code>cypherpunks@toad.com</code>:</strong> Hosted on John Gilmore's personal Sun workstation in his Haight-Ashbury home—growing to thousands of subscribers testing anonymous remailers, digital cash, and mixnets.</li>
-			</ul>
-			<div class="notes">
-				<strong>Speaker Note (~3 mins):</strong> Right across the bridge in Oakland and in Haight-Ashbury just up Market Street from here, Eric Hughes, Tim May, and John Gilmore started meeting monthly. Unlike The WELL, cypherpunks@toad.com allowed anyone to post through experimental Type I anonymous remailers hosted on UC Berkeley's soda.berkeley.edu server.
-			</div>
-		</section>
+      <!-- SLIDE 5: 1973 COMMUNITY MEMORY AT LEOPOLD'S RECORDS -->
+      <section class="slide" data-notes="Five years later, in August 1973, Efrem Lipkin, Mark Szpakowski, Jude Milhon, and Lee Felsenstein carried a noisy Teletype Model 33 terminal into Leopold's Records at 2518 Durant Avenue in Berkeley, hooked it over an acoustic coupler to an SDS 940 mainframe in San Francisco, and created Community Memory—the world's first public computerized bulletin board.">
+        <div class="section-tag">05 / August 1973 · 2518 Durant Ave, Berkeley</div>
+        <h2><em>Community Memory</em> at Leopold's Records</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>The First Public Social Network (1973):</strong> Installed inside <strong>Leopold's Records</strong> near the UC Berkeley campus by Lee Felsenstein, Efrem Lipkin, Jude Milhon, and Mark Szpakowski.</li>
+              <li><strong>Cardboard Box over a Teletype:</strong> Because the Teletype Model 33 was so loud, they put a cardboard box over it with a window cut in the top so record-shop visitors could read the paper printout.</li>
+              <li><strong>Decentralized & Uncensored:</strong> Anyone could walk up, type <code>ADD</code> with keywords, and share music gigs, housing, poetry, or political organizing — decades before the commercial web.</li>
+            </ul>
+            <div class="meta-strip">
+              <span class="pill">SDS 940 Mainframe</span>
+              <span class="pill">Teletype Model 33</span>
+              <span class="pill">Leopold's Records · Berkeley</span>
+            </div>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall">
+              <img src="/slides-img/community-memory-leopolds.jpg" alt="Community Memory terminal at Leopold's Records in Berkeley, 1973">
+              <div class="photo-caption"><strong>Leopold's Records (1973):</strong> The original <em>Community Memory</em> Teletype terminal in Berkeley.</div>
+            </div>
+            <div class="photo-card tall">
+              <img src="/slides-img/community-memory-berkeley.jpg" alt="Community Memory exhibit and archival documentation">
+              <div class="photo-caption"><strong>Community Memory Archive:</strong> How a Berkeley record shop hosted the first public online community in 1973.</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-		<!-- SLIDE 7 -->
-		<section class="slide">
-			<div class="act-label">Act I &middot; March 9, 1993</div>
-			<h2><em>A Cypherpunk's Manifesto</em></h2>
-			<blockquote>
-				"Privacy is necessary for an open society in the electronic age. Privacy is not secrecy... We cannot expect governments, corporations, or other large, faceless organizations to grant us privacy out of their beneficence.<br><br>
-				<strong>Cypherpunks write code.</strong> We know that someone has to write software to defend privacy, and since we can't get privacy unless we all do, we're going to write it."
-				<div style="margin-top: 10px; font-style: normal; font-size: 18px; color: var(--muted);">&mdash; Eric Hughes (<code>hughes@soda.berkeley.edu</code>), March 9, 1993</div>
-			</blockquote>
-			<p>Notice the second half of that sentence: <strong><em>"since we can't get privacy unless we all do"</em></strong>—privacy is a collective network effect, not a solo hobby.</p>
-			<div class="notes">
-				<strong>Speaker Note (~3 mins):</strong> Everyone quotes "Cypherpunks write code," but read the rest of Eric Hughes's sentence: "since we can't get privacy unless we all do, we're going to write it." If only one person uses Tor or encrypted mail, they stick out like a flare. Privacy requires a community teaching, running, and normalizing the tools together.
-			</div>
-		</section>
+      <!-- SLIDE 6: 1975 HOMEBREW COMPUTER CLUB -->
+      <section class="slide" data-notes="In March 1975, Gordon French and Fred Moore posted this flyer inviting hobbyists to Gordon's garage in Menlo Park for the first meeting of the Homebrew Computer Club, moderated by Lee Felsenstein. They soon outgrew the garage and moved to the SLAC auditorium at Stanford.">
+        <div class="section-tag">06 / March 5, 1975 · Menlo Park & SLAC Auditorium</div>
+        <h2>The Homebrew Computer Club</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>From a Menlo Park Garage to SLAC:</strong> Started on March 5, 1975 in Gordon French's garage around the Altair 8800 microcomputer, moderated by <em>Community Memory</em> co-founder <strong>Lee Felsenstein</strong>.</li>
+              <li><strong>The Convivial Design Ethic:</strong> Felsenstein applied Ivan Illich's philosophy of <em>"convivial tools"</em> — hardware schematics must be open, understandable, and repairable by the user sitting at a kitchen table.</li>
+              <li><strong>Sharing Code & Schematics:</strong> Out of those biweekly meetings at the Stanford Linear Accelerator Center auditorium came the Apple I, Processor Technology, and the open hardware movement.</li>
+            </ul>
+          </div>
+          <div class="split-three">
+            <div class="photo-card contain">
+              <img src="/slides-img/homebrew-first-flyer-1975.jpg" alt="Invitation to the First Homebrew Computer Club meeting, March 5, 1975">
+              <div class="photo-caption"><strong>March 5, 1975 Flyer:</strong> Invitation to the first meeting in Gordon French's Menlo Park garage.</div>
+            </div>
+            <div class="photo-card contain">
+              <img src="/slides-img/homebrew-computer-club-1976.png" alt="Homebrew Computer Club Newsletter, September 1976">
+              <div class="photo-caption"><strong>September 1976 Newsletter:</strong> Iconic masthead of the Homebrew Computer Club Newsletter.</div>
+            </div>
+            <div class="photo-card">
+              <img src="/slides-img/lee-felsenstein.jpg" alt="Lee Felsenstein">
+              <div class="photo-caption"><strong>Lee Felsenstein:</strong> Co-founder of <em>Community Memory</em> and moderator of the Homebrew Computer Club.</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-		<!-- SLIDE 8 -->
-		<section class="slide">
-			<div class="act-label">Act II &middot; Digital Rights &amp; Hacker Lineage</div>
-			<h2>The Electronic Frontier Foundation (EFF) Today</h2>
-			<ul>
-				<li><strong>Surveillance Self-Defense (<code>ssd.eff.org</code>):</strong> Practical threat-modeling guides for journalists, activists, LGBTQ+ communities, protesters, and international travelers.</li>
-				<li><strong>EFF Open-Source Projects We Will Use:</strong>
-					<ul>
-						<li><strong>Rayhunter (<code>EFForg/rayhunter</code>):</strong> Rust firmware turning a $20 mobile hotspot into a field detector for Stingrays / IMSI catchers.</li>
-						<li><strong>Atlas of Surveillance &amp; DeFlock:</strong> Crowdsourced mapping of police ALPR cameras, drones, and facial recognition.</li>
-						<li><strong>Cover Your Tracks:</strong> Auditing browser fingerprinting in the wild.</li>
-					</ul>
-				</li>
-				<li><strong>Electronic Frontier Alliance (EFA):</strong> Grassroots network of local chapters—and tracks like <em>EFFecting Change</em> livestreams.</li>
-			</ul>
-			<div class="notes">
-				<strong>Speaker Note (~2.5 mins):</strong> EFF is headquartered right here in San Francisco on Eddy Street. Their Surveillance Self-Defense curriculum is one of our core teaching pillars, and projects like Rayhunter let us do hands-on hardware workshops detecting cell-site simulators on a $20 hotspot.
-			</div>
-		</section>
+      <!-- SLIDE 7: 1985 THE WELL IN SAUSALITO -->
+      <section class="slide" data-notes="In 1985, Stewart Brand and Larry Brilliant launched The WELL—the Whole Earth 'Lectronic Link—out of a low-slung wooden office at 27 Gate Five Road on the houseboat waterfront in Sausalito. Look at these photos of the WELL staff and community in Sausalito.">
+        <div class="section-tag">07 / 1985 · 27 Gate Five Road, Sausalito</div>
+        <h2><em>The WELL</em> (Whole Earth 'Lectronic Link)</h2>
+        <div class="split">
+          <div class="text-col">
+            <blockquote>
+              "You own your own words."
+              <cite>— Founding Member Maxim of The WELL (Sausalito, 1985)</cite>
+            </blockquote>
+            <ul>
+              <li><strong>27 Gate Five Road, Sausalito:</strong> Co-founded by Stewart Brand and Larry Brilliant on the Sausalito waterfront, bringing together journalists, hackers, and Grateful Dead ("Deadhead") tape-traders over dial-up modems.</li>
+              <li><strong>Crucible of Digital Civil Liberties:</strong> When the US Secret Service raided Steve Jackson Games during <em>Operation Sundevil</em> in 1990, the conversations on The WELL directly sparked the creation of the Electronic Frontier Foundation.</li>
+            </ul>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall">
+              <img src="/slides-img/the-well-sausalito-1993.png" alt="WELL staff in March 1993 at 27 Gate Five Road, Sausalito California">
+              <div class="photo-caption"><strong>27 Gate Five Road, Sausalito (March 1993):</strong> Staff of <em>The WELL</em> outside their Sausalito waterfront headquarters.</div>
+            </div>
+            <div class="photo-card tall">
+              <img src="/slides-img/the-well-party-1991.jpg" alt="Members of The WELL at an office party on September 20, 1991">
+              <div class="photo-caption"><strong>The WELL Office Party (Sept 20, 1991):</strong> Members and hosts gathering in Sausalito.</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-		<!-- SLIDE 9 -->
-		<section class="slide">
-			<div class="act-label">Act II &middot; European Counterparts</div>
-			<h2>Chaos Computer Club (CCC) &amp; <code>media.ccc.de</code></h2>
-			<ul>
-				<li><strong>Founded in Berlin &amp; Hamburg (1981):</strong> Europe's oldest and largest association of hackers, founded by Wau Holland and friends at the table of the <em>Kommune 1</em> / <em>taz</em> newspaper.</li>
-				<li><strong>Public Demonstrations of Systemic Risk:</strong> From the 1984 <em>Bildschirmtext (Btx)</em> bank hack to cloning German interior ministers' fingerprints and auditing electronic voting machines.</li>
-				<li><strong><code>media.ccc.de</code> Archive:</strong> Thousands of world-class lectures from Chaos Communication Congress (38C3, 39C3, ChaosCommunicationCamp) on hardware security, cryptography, and civic resilience that we will screen and discuss.</li>
-			</ul>
-			<div class="notes">
-				<strong>Speaker Note (~2.5 mins):</strong> While the Bay Area birthed the Cypherpunks, Germany's Chaos Computer Club perfected hacker pedagogy and public-interest hardware auditing. Their media.ccc.de archive is an incredible curriculum for our monthly nights.
-			</div>
-		</section>
+      <!-- SLIDE 8: 1990 FOUNDING OF EFF -->
+      <section class="slide" data-notes="In July 1990, John Perry Barlow, John Gilmore, and Mitch Kapor—pictured here together as the 'Tres Amigos'—founded the Electronic Frontier Foundation. When law enforcement didn't even understand what electronic mail or bulletin boards were, EFF stepped in to defend the Constitution in cyberspace.">
+        <div class="section-tag">08 / July 1990 · San Francisco</div>
+        <h2>Founding of the Electronic Frontier Foundation (EFF)</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>The "Tres Amigos" (1990):</strong> Founded by <strong>John Perry Barlow</strong> (lyricist for the Grateful Dead & Wyoming rancher), <strong>John Gilmore</strong> (Sun Microsystems #5 & GNU contributor), and <strong>Mitch Kapor</strong> (Lotus 1-2-3 creator).</li>
+              <li><strong><em>Bernstein v. United States</em> (1995–1999):</strong> EFF represented UC Berkeley math graduate student Daniel J. Bernstein, winning the landmark Ninth Circuit ruling that <strong>cryptographic source code is speech protected by the First Amendment</strong>.</li>
+              <li><strong>Tools We Use in Our Clinics:</strong> EFF <em>Surveillance Self-Defense</em> (<code>ssd.eff.org</code>), <em>Cover Your Tracks</em>, <em>Privacy Badger</em>, and <em>Certbot</em> / Let's Encrypt.</li>
+            </ul>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall">
+              <img src="/slides-img/eff-founders-tres-amigos.jpg" alt="EFF Founders Mitch Kapor, John Perry Barlow, and John Gilmore">
+              <div class="photo-caption"><strong>EFF Co-Founders:</strong> Mitch Kapor, John Perry Barlow, and John Gilmore ("Tres Amigos").</div>
+            </div>
+            <div class="photo-card tall">
+              <img src="/slides-img/john-perry-barlow.jpg" alt="John Perry Barlow">
+              <div class="photo-caption"><strong>John Perry Barlow (1947–2018):</strong> Co-founder of EFF and author of <em>A Declaration of the Independence of Cyberspace</em>.</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-		<!-- SLIDE 10 -->
-		<section class="slide">
-			<div class="act-label">Act II &middot; The Parisian Bio-Cypherpunk Model</div>
-			<h2>La Paillasse, La Quadrature du Net (&pi;) &amp; Nos Oignons</h2>
-			<ul>
-				<li><strong>La Paillasse (226 rue Saint-Denis, Paris):</strong> An open-science biohackerspace where wet-lab biologists, hardware hackers, and digital rights advocates worked side by side—remarkably similar to Frontier Tower.</li>
-				<li><strong>La Quadrature du Net (&pi;):</strong> France's leading digital rights group, famous for the <strong>&pi;</strong> emblem, the open-source <strong>Piphone</strong> (VoIP tool for citizens to call lawmakers during surveillance votes), and <em>Autod&eacute;fense num&eacute;rique</em> PGP clinics at La Paillasse.</li>
-				<li><strong>Nos Oignons ("Our Onions"):</strong> French community-funded non-profit running high-capacity Tor exit nodes—the sister org to the West Coast's <strong>Emerald Onion</strong>.</li>
-			</ul>
-			<div class="notes">
-				<strong>Speaker Note (~2.5 mins):</strong> Frontier Tower immediately reminded me of La Paillasse in Paris—where biohackers and digital rights activists from La Quadrature du Net ("Pi") shared the same building and cross-pollinated open science with cryptographic self-defense.
-			</div>
-		</section>
+      <!-- SLIDE 9: 611 FOLSOM STREET & ROOM 641A -->
+      <section class="slide" data-notes="And this wasn't theoretical. Walk four blocks south of Frontier Tower to 611 Folsom Street. Inside that windowless AT&T switching center on the 6th floor was Room 641A, where AT&T technician Mark Klein discovered a Narus STA 6400 fiber-optic splitter copying the entire internet backbone into an NSA room.">
+        <div class="section-tag">09 / Four Blocks from Frontier Tower · 611 Folsom St, SF</div>
+        <h2>611 Folsom Street & NSA Room 641A</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>Right in Our Neighborhood:</strong> At <strong>611 Folsom Street</strong> (between 2nd and 3rd St in SoMa), AT&T technician <strong>Mark Klein</strong> discovered that fiber-optic trunks carrying internet traffic across the Bay Area were being split into a secret room: <strong>Room 641A</strong>.</li>
+              <li><strong><em>Hepting v. AT&T</em> (2006):</strong> Klein walked his wiring schematics directly to the EFF here in San Francisco, exposing warrantless backbone wiretapping seven years before Edward Snowden.</li>
+              <li><strong>Why End-to-End Encryption Matters:</strong> When the physical fiber backbone is tapped at the switching center, only mathematics on the endpoints protects the citizen.</li>
+            </ul>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall">
+              <img src="/slides-img/611-folsom-att-nsa.jpg" alt="Projection on 611 Folsom Street AT&T building in San Francisco">
+              <div class="photo-caption"><strong>611 Folsom St at Night:</strong> Guerrilla projection on the AT&T switching facility in San Francisco after Room 641A was exposed.</div>
+            </div>
+            <div class="photo-card tall">
+              <img src="/slides-img/611-folsom-building.jpg" alt="611 Folsom Street AT&T switching building in San Francisco">
+              <div class="photo-caption"><strong>611 Folsom Street, San Francisco:</strong> The windowless telecom hub four blocks from Frontier Tower.</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-		<!-- SLIDE 11 -->
-		<section class="slide">
-			<div class="act-label">Act II &middot; Our San Francisco &amp; Bay Area Neighborhood</div>
-			<h2>Local Hackerspaces, UC Law SF &amp; Cyber Civil Defense</h2>
-			<ul>
-				<li><strong>3 Blocks Away — UC Law SF (200 McAllister St):</strong>
-					<ul>
-						<li><strong>Center for Innovation (C4i) &amp; Startup Legal Garage</strong></li>
-						<li><strong>LexLab:</strong> California Delete Act (data-broker opt-out), CCPA/CPRA, Fourth Amendment device searches, and Tor relay intermediary liability.</li>
-					</ul>
-				</li>
-				<li><strong>Craig Newmark's <em>Cyber Civil Defense</em> &amp; UC Berkeley's <em>Citizen Clinic</em>:</strong> Training defenders for targeted nonprofits, journalists, and community groups.</li>
-				<li><strong>Bay Area Hackerspaces:</strong> <strong>Noisebridge</strong> (SF), <strong>Internet Archive</strong> (SF), <strong>Sudo Room / Omni Commons</strong> (Oakland), and <strong>Hacker Dojo</strong> (Mountain View).</li>
-			</ul>
-			<div class="notes">
-				<strong>Speaker Note (~2.5 mins):</strong> Look at our immediate geography: UC Law SF is literally three blocks away on McAllister, the Internet Archive and EFF are right here in SF, Sudo Room is across the bay in Oakland, and UC Berkeley's Citizen Clinic and Human Rights Center are in Berkeley.
-			</div>
-		</section>
+      <!-- SLIDE 10: 1991 PHIL ZIMMERMANN & PGP -->
+      <section class="slide" data-notes="In June 1991, anti-nuclear activist and software engineer Phil Zimmermann released Pretty Good Privacy (PGP) 1.0 after Congress introduced Senate Bill 266 demanding backdoors in all secure communications. Kelly's colleague Kelly uploaded it to Bay Area dial-up BBS systems, and the US government opened a three-year criminal investigation into Zimmermann for 'munitions export without a license.'">
+        <div class="section-tag">10 / June 1991 · Boulder & Bay Area BBSs</div>
+        <h2>Phil Zimmermann & Pretty Good Privacy (PGP)</h2>
+        <div class="split">
+          <div class="text-col">
+            <blockquote>
+              "If privacy is outlawed, only outlaws will have privacy."
+              <cite>— Phil Zimmermann, Why I Wrote PGP (1991)</cite>
+            </blockquote>
+            <ul>
+              <li><strong>Defying Senate Bill 266:</strong> Zimmermann put military-grade RSA + IDEA public-key cryptography onto ordinary PCs for human rights activists globally.</li>
+              <li><strong>Cryptography as a Munition:</strong> The US Customs Service investigated Zimmermann for 3 years under the Arms Export Control Act (ITAR), which classified strong encryption alongside tanks and missiles.</li>
+              <li><strong>The MIT Press Book Hack (1995):</strong> Because exporting software was illegal under ITAR, but exporting a printed book was protected by the First Amendment, MIT Press published the entire PGP C source code as a physical hardcover book that volunteers scanned back in via OCR in Europe.</li>
+            </ul>
+          </div>
+          <div class="photo-card tall">
+            <img src="/slides-img/phil-zimmermann.jpg" alt="Phil Zimmermann, creator of Pretty Good Privacy (PGP)">
+            <div class="photo-caption"><strong>Phil Zimmermann:</strong> Creator of Pretty Good Privacy (PGP), released onto Bay Area bulletin boards in June 1991.</div>
+          </div>
+        </div>
+      </section>
 
-		<!-- SLIDE 12 -->
-		<section class="slide">
-			<div class="act-label">Act III &middot; Threat Intelligence &amp; Spyware Forensics</div>
-			<h2>The Citizen Lab (UofT) &amp; Amnesty Security Lab</h2>
-			<ul>
-				<li><strong>The Citizen Lab (Munk School, University of Toronto):</strong> Led by Ron Deibert; exposed commercial mercenary spyware (NSO Group's <em>Pegasus</em>, Intellexa's <em>Predator</em>, <em>Candiru</em>) targeting journalists, parliamentarians, and human rights defenders.</li>
-				<li><strong>Open-Source Forensics We Can Run Here:</strong>
-					<ul>
-						<li><strong>Mobile Verification Toolkit (<code>mvt-project/mvt</code>):</strong> Open-source CLI tool scanning iOS &amp; Android backups against <code>citizenlab/malware-indicators</code> and <code>AmnestyTech/investigations</code> IoCs.</li>
-						<li><strong><code>citizenlab/chat-censorship</code>:</strong> Reverse-engineering silent keyword &amp; image filtering in messaging apps.</li>
-					</ul>
-				</li>
-			</ul>
-			<div class="notes">
-				<strong>Speaker Note (~3 mins):</strong> Citizen Lab doesn't just publish PDFs—they publish open-source indicators of compromise on GitHub that plug directly into the Mobile Verification Toolkit (MVT). That means at Frontier Tower we can teach people how to take a local encrypted backup of their phone and scan it with MVT.
-			</div>
-		</section>
+      <!-- SLIDE 11: SEPTEMBER 1992 — FIRST CYPHERPUNKS MEETING -->
+      <section class="slide" data-notes="In September 1992, mathematician Eric Hughes, retired Intel physicist Timothy C. May, and EFF co-founder John Gilmore invited twenty friends to Eric Hughes's house in Oakland for the very first Cypherpunks meeting. Within days, John Gilmore hosted the cypherpunks@toad.com mailing list out of San Francisco.">
+        <div class="section-tag">11 / September 1992 · Oakland & San Francisco</div>
+        <h2>The First Cypherpunks Meeting & <code>cypherpunks@toad.com</code></h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>Oakland, September 1992:</strong> Convened by <strong>Eric Hughes</strong> (UC Berkeley mathematician), <strong>Timothy C. May</strong> (retired Intel physicist who wrote <em>The Crypto Anarchist Manifesto</em>), and <strong>John Gilmore</strong>.</li>
+              <li><strong>Role-Playing Paper Cash & Mixnets:</strong> At their first meetings, they sat around tables passing envelopes of slips of paper to simulate David Chaum's blind-signature digital cash and anonymous remailers.</li>
+              <li><strong><code>cypherpunks@toad.com</code>:</strong> Hosted on John Gilmore's machine <code>toad.com</code> in San Francisco, growing to 700+ cryptographers, hackers, and civil libertarians debating mixnets, SSL, Hal Finney's RPOW, and Tor.</li>
+            </ul>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall">
+              <img src="/slides-img/eric-hughes.jpg" alt="Eric Hughes, co-founder of the Cypherpunks">
+              <div class="photo-caption"><strong>Eric Hughes:</strong> UC Berkeley mathematician, Cypherpunks co-founder, and author of <em>A Cypherpunk's Manifesto</em>.</div>
+            </div>
+            <div class="photo-card tall">
+              <img src="/slides-img/john-gilmore.jpg" alt="John Gilmore, co-founder of EFF and Cypherpunks">
+              <div class="photo-caption"><strong>John Gilmore:</strong> Co-founder of EFF & the Cypherpunks, and host of <code>cypherpunks@toad.com</code> in San Francisco.</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-		<!-- SLIDE 13 -->
-		<section class="slide">
-			<div class="act-label">Act III &middot; Measuring Censorship in Real Time</div>
-			<h2>OONI Probe, Citizen Lab Test Lists &amp; Censored Planet</h2>
-			<ul>
-				<li><strong><code>citizenlab/test-lists</code>:</strong> Community-curated lists of sensitive URLs across 200+ countries.</li>
-				<li><strong>OONI — Open Observatory of Network Interference (<code>ooni.org</code>):</strong>
-					<ul>
-						<li>Spun out of the Tor Project.</li>
-						<li>Anyone traveling can run the open-source <strong>OONI Probe</strong> app to measure DNS tampering, TLS middleboxes, and instant-messaging blocks, publishing open data to <strong>OONI Explorer</strong>.</li>
-					</ul>
-				</li>
-				<li><strong>Censored Planet (Univ. of Michigan):</strong> Remote global censorship observatory tracking national firewalls alongside OONI.</li>
-			</ul>
-			<div class="notes">
-				<strong>Speaker Note (~2.5 mins):</strong> How do we know when a country blocks Signal, Wikipedia, or independent media? Citizen Lab maintains the open test lists on GitHub, and volunteers around the world run OONI Probe to test them. Updating test-lists or running OONI Probe is something anyone in this room can do in 5 minutes.
-			</div>
-		</section>
+      <!-- SLIDE 12: JUDE MILHON ("ST. JUDE") & MONDO 2000 -->
+      <section class="slide" data-notes="Where did the word 'Cypherpunk' come from? It was coined right across the Bay in Berkeley by Jude Milhon—'St. Jude'—veteran of the 1973 Community Memory project and senior editor at the legendary Berkeley cyberculture magazine Mondo 2000.">
+        <div class="section-tag">12 / 1992 · Berkeley Hills</div>
+        <h2>Jude Milhon ("St. Jude") & <em>Mondo 2000</em></h2>
+        <div class="split">
+          <div class="text-col">
+            <blockquote>
+              "Modems are the ultimate equalizer... Girls need modems!"
+              <cite>— Jude Milhon ("St. Jude", 1939–2003)</cite>
+            </blockquote>
+            <ul>
+              <li><strong>Naming the Movement:</strong> At a 1992 editorial meeting in Berkeley, <strong>Jude Milhon</strong> mashed together <em>cipher</em> (cryptography) and <em>cyberpunk</em>: <strong>"You guys are just a bunch of cypherpunks."</strong></li>
+              <li><strong><em>Mondo 2000</em> (Berkeley):</strong> Edited by R. U. Sirius and Queen Mu (Alison Kennedy) with St. Jude as senior editor, <em>Mondo 2000</em> put cryptography, virtual reality, and hacker culture on newsstands years before <em>Wired</em> launched.</li>
+              <li><strong>Direct Lineage:</strong> St. Jude personally bridged 1960s civil rights marches (Selma to Montgomery), 1973 <em>Community Memory</em> in Berkeley, and the 1992 Cypherpunks.</li>
+            </ul>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall">
+              <img src="/slides-img/jude-milhon.jpg" alt="Jude Milhon (St. Jude)">
+              <div class="photo-caption"><strong>Jude Milhon ("St. Jude", 1939–2003):</strong> Co-creator of <em>Community Memory</em> and the hacker who named the Cypherpunks.</div>
+            </div>
+            <div class="photo-card tall contain">
+              <img src="/slides-img/mondo-2000-cover.jpg" alt="Mondo 2000 magazine cover from Berkeley">
+              <div class="photo-caption"><strong>Mondo 2000 Magazine (Berkeley):</strong> The glossy avant-garde cyberculture magazine where St. Jude served as senior editor.</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-		<!-- SLIDE 14 -->
-		<section class="slide">
-			<div class="act-label">Act III &middot; Ad Markets, Fingerprinting &amp; Digital Exhaust</div>
-			<h2>How Your Digital ID Drives What You See Online</h2>
-			<ul>
-				<li><strong>Computational Fingerprinting:</strong> Even without cookies, your browser's Canvas, WebGL, AudioContext, and font list create a unique hardware ID.
-					<ul>
-						<li><em>Live Lab Tools:</em> <strong>EFF Cover Your Tracks</strong> &amp; <strong>The Markup's Blacklight</strong> (real-time scanner for canvas fingerprinters, keyloggers, and session recorders).</li>
-						<li><em>Defense:</em> <strong>Mullvad Browser</strong> &amp; <strong>Tor Browser</strong> (identical device profiles).</li>
-					</ul>
-				</li>
-				<li><strong>Real-Time Bidding (RTB) Ad Markets (ICCL <em>Enforce</em> &amp; Cracked Labs):</strong> Every ad slot broadcasts your device ID, GPS location, and inferred traits to hundreds of brokers—feeding both warrantless government data purchases and micro-targeted persuasion.</li>
-			</ul>
-			<div class="notes">
-				<strong>Speaker Note (~3 mins):</strong> People often think surveillance is just state intelligence agencies. In reality, commercial Real-Time Bidding (RTB) ad auctions broadcast your location and behavioral profile billions of times a day—and intelligence agencies simply buy that data off the shelf, while political operations use it to micro-target what you see.
-			</div>
-		</section>
+      <!-- SLIDE 13: MARCH 9, 1993 — A CYPHERPUNK'S MANIFESTO -->
+      <section class="slide" data-notes="On March 9, 1993, Eric Hughes published A Cypherpunk's Manifesto. Read these lines carefully—they are the charter for why we are starting the Cypherpunk Society at Frontier Tower.">
+        <div class="section-tag">13 / March 9, 1993 · Eric Hughes</div>
+        <h2><em>A Cypherpunk's Manifesto</em></h2>
+        <div class="split">
+          <div class="text-col">
+            <blockquote>
+              "Privacy is necessary for an open society in the electronic age. Privacy is not secrecy. A private matter is something one doesn't want the whole world to know, but a secret matter is something one doesn't want anybody to know. Privacy is the power to selectively reveal oneself to the world."
+              <cite>— Eric Hughes, A Cypherpunk's Manifesto (March 9, 1993)</cite>
+            </blockquote>
+            <blockquote>
+              "We cannot expect governments, corporations, or other large, faceless organizations to grant us privacy out of their beneficence... Cypherpunks write code. We know that someone has to write software to defend privacy, and since we can't get privacy unless we all do, we're going to write it. We publish our code so that our fellow Cypherpunks may practice and play with it. Our code is free for all to use, worldwide."
+            </blockquote>
+          </div>
+          <div class="photo-card tall">
+            <img src="/slides-img/eric-hughes.jpg" alt="Eric Hughes">
+            <div class="photo-caption"><strong>"Cypherpunks write code":</strong> Open-source publication + hands-on public workshops so everyone can verify and run privacy tools.</div>
+          </div>
+        </div>
+      </section>
 
-		<!-- SLIDE 15 -->
-		<section class="slide">
-			<div class="act-label">Act III &middot; Cognitive Security &amp; Algorithmic Auditing</div>
-			<h2>Stanford CSTF, Trust &amp; Safety &amp; Neural Privacy</h2>
-			<ul>
-				<li><strong>Stanford Cognitive Security Task Force &amp; Cyber Policy Center:</strong>
-					<ul>
-						<li>Studying AI-driven persuasion, synthetic media, and coordinated influence operations.</li>
-						<li><strong>Open-Source <em>Trust and Safety</em> Curriculum (<code>tsbook.org</code>):</strong> Full textbook, slides, and bot-detection labs from Stanford's <em>CS 152</em>.</li>
-						<li><strong><code>stanfordio/skyfall</code>:</strong> Open-source Bluesky AT Protocol firehose tool for studying decentralized social graphs in real time.</li>
-					</ul>
-				</li>
-				<li><strong>Algorithmic Auditing:</strong> Using <strong>Tracking Exposed</strong> &amp; <strong>AlgorithmWatch</strong> to compare how recommendation feeds fragment reality.</li>
-				<li><strong>Neurotech &amp; BCI Privacy:</strong> Protecting raw neural/EEG data as brain-computer interfaces move from labs to consumers.</li>
-			</ul>
-			<div class="notes">
-				<strong>Speaker Note (~3 mins):</strong> Especially here at Frontier Tower—where many of us work on neurotech, EEG, and AI—cognitive security isn't abstract. It covers both how generative AI and recommendation algorithms target human cognition, and how we protect raw neural data from becoming the next biometric tracking frontier.
-			</div>
-		</section>
+      <!-- SLIDE 14: THE CRYPTO WARS & THE CLIPPER CHIP -->
+      <section class="slide" data-notes="Weeks after Hughes published the Manifesto, in April 1993, the White House and the NSA unveiled the MYK-78 'Clipper Chip'—a hardware chip with a built-in government key-escrow backdoor meant for every American telephone. Look at the actual chip on the right.">
+        <div class="section-tag">14 / 1993–1999 · The First Crypto Wars</div>
+        <h2>Defeating the NSA's "Clipper Chip"</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>The MYK-78 Clipper Chip (April 1993):</strong> Mandated the classified Skipjack cipher with a built-in <strong>Law Enforcement Access Field (LEAF)</strong> backdoor held in government key escrow.</li>
+              <li><strong>Broken by Science (1994):</strong> AT&T Bell Labs cryptographer <strong>Matt Blaze</strong> discovered that a 16-bit checksum inside the LEAF field could be forged, allowing anyone to use the chip while completely disabling the government wiretap backdoor.</li>
+              <li><strong>Total Victory for Open Cryptography:</strong> Combined with EFF's victory in <em>Bernstein v. US</em> and widespread deployment of PGP and SSL/TLS, the US government abandoned the Clipper Chip and lifted export bans in 1999.</li>
+            </ul>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall contain">
+              <img src="/slides-img/clipper-chip-myk78.jpg" alt="NSA MYK-78 Clipper Chip">
+              <div class="photo-caption"><strong>MYK-78 Clipper Chip (1993):</strong> The NSA key-escrow backdoor chip defeated by cryptographers and civil libertarians.</div>
+            </div>
+            <div class="photo-card tall contain">
+              <img src="/slides-img/sink-clipper.gif" alt="Sink Clipper campaign graphic">
+              <div class="photo-caption"><strong>"Sink Clipper!" Campaign (1993–1994):</strong> Grassroots campaign organized by EFF, CPSR, and the Cypherpunks.</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-		<!-- SLIDE 16 -->
-		<section class="slide">
-			<div class="act-label">Act IV &middot; Open-Source Intelligence (OSINT)</div>
-			<h2>Bellingcat: Open-Source Tools &amp; Group Challenges</h2>
-			<ul>
-				<li><strong>Bellingcat Online Investigation Toolkit (<code>bellingcat/toolkit</code>)</strong></li>
-				<li><strong>Open-Source Tools at <code>github.com/bellingcat</code>:</strong>
-					<ul>
-						<li><strong><code>auto-archiver</code>:</strong> Automatically archives, screenshots, and SHA-256 hashes social media videos/posts before takedowns.</li>
-						<li><strong><code>osm-search</code> &amp; <code>ShadowFinder</code>:</strong> Geolocation and chronolocation from landmarks and sun/shadow angles.</li>
-						<li><strong><code>sar-interference-tracker</code>:</strong> Detecting GPS/radar jamming in Sentinel-1 satellite imagery.</li>
-					</ul>
-				</li>
-				<li><strong>Interactive Group Training:</strong> <strong><code>challenge.bellingcat.com</code></strong> (100+ OSINT puzzles), <strong>Google Colab Research Notebooks</strong>, and biweekly Thursday <strong>Discord Stage Talks</strong>.</li>
-			</ul>
-			<div class="notes">
-				<strong>Speaker Note (~3 mins):</strong> Bellingcat has turned investigative journalism into an open-source software discipline. With challenge.bellingcat.com and their Google Colab Research Notebooks, we can run 90-minute group geolocation and verification nights here at the Tower with zero setup required.
-			</div>
-		</section>
+      <!-- SLIDE 15: 1996 THE INTERNET ARCHIVE (300 FUNSTON AVE, SF) -->
+      <section class="slide" data-notes="Now let's tour the physical institutions across San Francisco and the Bay Area that keep this culture alive today. Out in the Richmond District at 300 Funston Avenue stands the Internet Archive, founded by Brewster Kahle in 1996 inside a former Classical Revival church.">
+        <div class="section-tag">15 / 1996 · 300 Funston Ave, San Francisco</div>
+        <h2>The Internet Archive: "Universal Access to All Knowledge"</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>300 Funston Avenue, San Francisco:</strong> Founded by <strong>Brewster Kahle</strong> in 1996 and housed in the monumental 1923 Fourth Church of Christ, Scientist building (the exact silhouette of the Internet Archive logo).</li>
+              <li><strong>Servers in the Sanctuary:</strong> Right between the pews in the Great Room stand petabyte storage racks blinking whenever someone accesses the <strong>Wayback Machine</strong> (860+ billion archived web pages).</li>
+              <li><strong>Defending Historical Memory:</strong> When web pages, court records, or news outlets vanish or are censored, the Internet Archive is our collective defense against the memory hole — and home to the annual <strong>Aaron Swartz Day Hackathon</strong>.</li>
+            </ul>
+          </div>
+          <div class="split-three">
+            <div class="photo-card">
+              <img src="/slides-img/internet-archive-exterior.jpg" alt="Internet Archive headquarters at 300 Funston Ave, San Francisco">
+              <div class="photo-caption"><strong>300 Funston Ave, SF:</strong> Exterior of the Internet Archive headquarters in the Richmond District.</div>
+            </div>
+            <div class="photo-card">
+              <img src="/slides-img/internet-archive-servers.jpg" alt="Wayback Machine server racks inside the Internet Archive sanctuary">
+              <div class="photo-caption"><strong>Inside the Sanctuary:</strong> Petabyte server nodes blinking inside the Great Room.</div>
+            </div>
+            <div class="photo-card">
+              <img src="/slides-img/brewster-kahle.jpg" alt="Brewster Kahle">
+              <div class="photo-caption"><strong>Brewster Kahle:</strong> Founder and Digital Librarian of the Internet Archive.</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-		<!-- SLIDE 17 -->
-		<section class="slide">
-			<div class="act-label">Act IV &middot; Following the Money &amp; Public Records</div>
-			<h2>OCCRP Aleph, ProPublica, MuckRock &amp; Micah Lee</h2>
-			<ul>
-				<li><strong>OCCRP Aleph (<code>aleph.occrp.org</code>):</strong> Open-source investigative data platform indexing global company registries, court filings, sanctions lists, and leaked archives.</li>
-				<li><strong>ProPublica (<code>github.com/propublica</code>):</strong> <strong>Nonprofit Explorer API</strong>, <strong><code>IRSx</code></strong> (<code>990-xml-reader</code>), financial disclosure parsers, and data journalism webinars.</li>
-				<li><strong>MuckRock &amp; DocumentCloud:</strong> Open-source FOIA / California Public Records Act (CPRA) request automation.</li>
-				<li><strong>UC Berkeley Human Rights Center (<em>UN Berkeley Protocol</em>)</strong> &amp; <strong>Micah Lee's <em>Hacks, Leaks, and Revelations</em> (<code>hacksleaks.com</code> / DDoSecrets)</strong>.</li>
-			</ul>
-			<div class="notes">
-				<strong>Speaker Note (~3 mins):</strong> San Francisco's own Micah Lee (co-founder of Freedom of the Press Foundation and creator of OnionShare) published his entire textbook "Hacks, Leaks, and Revelations" for free online—teaching anyone how to use Python, Docker, SQL, and OCCRP Aleph to investigate real datasets.
-			</div>
-		</section>
+      <!-- SLIDE 16: 2008 NOISEBRIDGE (2169 MISSION ST, SF) -->
+      <section class="slide" data-notes="Down in the Mission District at 2169 Mission Street is Noisebridge, co-founded in 2008 by Mitch Altman and Jacob Appelbaum after visiting the Chaos Computer Club spaces in Germany.">
+        <div class="section-tag">16 / 2008 · 2169 Mission St, San Francisco</div>
+        <h2>Noisebridge: San Francisco's Anarchist Hackerspace</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>Born from a Tour of German Hackerspaces (2008):</strong> Co-founded in San Francisco by <strong>Mitch Altman</strong> (inventor of <em>TV-B-Gone</em>) and Tor contributor Jacob Appelbaum on the model of Berlin's <em>c-base</em> and the Chaos Computer Club.</li>
+              <li><strong>Two Rules — "Be Excellent to Each Other" & "Do-ocracy":</strong> Open to anyone without membership fees required to walk in and learn soldering, Linux kernel hacking, lockpicking, or cryptography.</li>
+              <li><strong>Cryptoparty Pioneer:</strong> Noisebridge hosted some of the earliest San Francisco CryptoParties, Tor relay sprints, and Tails OS installfests.</li>
+            </ul>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall">
+              <img src="/slides-img/noisebridge-inside.jpg" alt="Inside Noisebridge hackerspace in San Francisco">
+              <div class="photo-caption"><strong>Inside Noisebridge (Mission District, SF):</strong> Collaborative workbenches, electronics labs, and open library.</div>
+            </div>
+            <div class="photo-card tall">
+              <img src="/slides-img/noisebridge-workshop.jpg" alt="Hardware workshop at Noisebridge in July 2011">
+              <div class="photo-caption"><strong>Hands-On Hardware Clinic:</strong> Open community electronics workshop inside Noisebridge.</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-		<!-- SLIDE 18 -->
-		<section class="slide">
-			<div class="act-label">Act IV &middot; The Open Knowledge Commons</div>
-			<h2>Wikipedia, Kiwix Offline Archives &amp; Community Fundraiser</h2>
-			<ul>
-				<li><strong>Wikipedia as Cypherpunk Infrastructure:</strong> Headquartered here in SF; fought NSA backbone surveillance in <em>Wikimedia Foundation v. NSA</em>; powers OSINT via <strong>Wikidata</strong> and CC0 open dumps.</li>
-				<li><strong>Kiwix (<code>kiwix.org</code>) &amp; OpenZIM:</strong> Compresses all of Wikipedia, Project Gutenberg, and Stack Exchange into a single <code>.zim</code> file (~50–100 GB) that runs <strong>100% offline on a USB stick or Tails OS drive</strong>.</li>
-				<li><strong>Internet-in-a-Box:</strong> A $35 Raspberry Pi serving offline Wikipedia &amp; OpenStreetMap over local Wi-Fi during blackouts.</li>
-				<li><strong>Our Goal:</strong> Run a <strong>Frontier Tower Wikipedia Fundraiser, Edit-a-thon &amp; Kiwix USB Flashing Night</strong>.</li>
-			</ul>
-			<div class="notes">
-				<strong>Speaker Note (~2.5 mins):</strong> In an era of AI slop and paywalled platforms, Wikipedia is one of humanity's most important public goods. And through Kiwix and OpenZIM, you can carry the entire encyclopedia offline in your pocket alongside Tails OS.
-			</div>
-		</section>
+      <!-- SLIDE 17: SUDO ROOM (OAKLAND) & HACKER DOJO (MOUNTAIN VIEW) -->
+      <section class="slide" data-notes="Across the Bay at 4799 Shattuck Avenue in Oakland is the historic Omni Commons building, home to Sudo Room and Counter Culture Labs, and down the Peninsula in Mountain View is Hacker Dojo.">
+        <div class="section-tag">17 / East Bay & Peninsula Hackerspaces</div>
+        <h2>Sudo Room (Oakland) & Hacker Dojo (Mountain View)</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>Sudo Room & Omni Commons (4799 Shattuck Ave, Oakland):</strong> Housed inside a historic 1930s Italian-American social club in Temescal, Oakland — home to <strong>Sudo Room</strong>, <strong>Counter Culture Labs</strong> (community bio-lab), and <strong>PeoplesOpen.net</strong> (community mesh networking).</li>
+              <li><strong>Hacker Dojo (Mountain View):</strong> Founded in 2009 in the heart of Silicon Valley as a 24/7 community center for hardware builders, open-source sprints, and independent researchers.</li>
+              <li><strong>Frontier Tower as the Market Street Bridge:</strong> Connecting Mid-Market San Francisco with Noisebridge in the Mission, Sudo Room in Oakland, and Hacker Dojo on the Peninsula.</li>
+            </ul>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall">
+              <img src="/slides-img/omni-commons-oakland.jpg" alt="Omni Commons at 4799 Shattuck Ave in Oakland, home of Sudo Room">
+              <div class="photo-caption"><strong>4799 Shattuck Ave, Oakland (Omni Commons):</strong> Home of Sudo Room, PeoplesOpen.net mesh network, and Counter Culture Labs.</div>
+            </div>
+            <div class="photo-card tall">
+              <img src="/slides-img/hacker-dojo-mountain-view.jpg" alt="Hacker Dojo in Mountain View, California">
+              <div class="photo-caption"><strong>Hacker Dojo (Mountain View, CA):</strong> Community hackerspace in the South Bay.</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-		<!-- SLIDE 19 -->
-		<section class="slide">
-			<div class="act-label">Act IV &middot; This Sunday, November 8, 2026</div>
-			<h2>Aaron Swartz Day &amp; International Hackathon</h2>
-			<ul>
-				<li><strong>Aaron Swartz (Nov 8, 1986 – Jan 11, 2013):</strong> Co-author of RSS 1.0, Markdown, Creative Commons, Reddit, <em>Guerilla Open Access Manifesto</em>, and leader of the campaign that defeated SOPA/PIPA.</li>
-				<li><strong>Active Open-Source Projects Founded by Aaron:</strong>
-					<ul>
-						<li><strong>SecureDrop (<code>freedomofpress/securedrop</code>):</strong> Originally coded by Aaron as <em>DeadDrop</em>; now used by 70+ newsrooms (including ProPublica) with a Qubes OS workstation.</li>
-						<li><strong>Open Library (<code>internetarchive/openlibrary</code>):</strong> Open editable catalog at the <strong>Internet Archive</strong>.</li>
-						<li><strong><code>html2text</code>, <code>web.py</code> &amp; <code>Tor2web</code></strong>.</li>
-					</ul>
-				</li>
-				<li><strong>Join Us This Sunday (Nov 8):</strong> Hackathon tracks with the <strong>Internet Archive</strong>, <strong>Noisebridge</strong>, and <strong>SecureDrop</strong>!</li>
-			</ul>
-			<div class="notes">
-				<strong>Speaker Note (~3 mins):</strong> This Sunday, November 8th, is Aaron Swartz's birthday and the annual Aaron Swartz Day &amp; International Hackathon, anchored right here in San Francisco at the Internet Archive and Noisebridge. Whether you write Python, clean book metadata on Open Library, or want to test SecureDrop, we are organizing a Frontier Tower contingent for Sunday.
-			</div>
-		</section>
+      <!-- SLIDE 18: CHAOS COMPUTER CLUB (HAMBURG & BERLIN) -->
+      <section class="slide" data-notes="Look across the Atlantic to our European counterparts. In September 1981, Wau Holland and friends founded the Chaos Computer Club at the table of the Kommune I in Berlin, and later Hamburg. Every December, 17,000 hackers gather for the Chaos Communication Congress.">
+        <div class="section-tag">18 / 1981 · Berlin & Hamburg, Germany</div>
+        <h2>Chaos Computer Club (CCC): "Public Data Utility, Private Personal Data"</h2>
+        <div class="split">
+          <div class="text-col">
+            <blockquote>
+              "Öffentliche Daten nützen, private Daten schützen." (Use public data for the common good; protect private data.)
+              <cite>— Wau Holland (1951–2001), Co-Founder of the Chaos Computer Club</cite>
+            </blockquote>
+            <ul>
+              <li><strong>The 1984 BTX Hack:</strong> CCC live-demonstrated a vulnerability in Germany's Bildschirmtext banking system by transferring 134,000 DM from a Hamburg bank to CCC's account — and returning every pfennig on live television the next day.</li>
+              <li><strong>Chaos Communication Congress (<code>media.ccc.de</code>):</strong> Every December (37C3, 38C3), CCC publishes hundreds of world-class talks on hardware reverse engineering, spyware forensics, and digital civil rights — the primary video library for our study nights.</li>
+            </ul>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall">
+              <img src="/slides-img/wau-holland-ccc.jpg" alt="Wau Holland, co-founder of the Chaos Computer Club">
+              <div class="photo-caption"><strong>Wau Holland (1951–2001):</strong> Co-founder of the Chaos Computer Club and architect of European hacker ethics.</div>
+            </div>
+            <div class="photo-card tall">
+              <img src="/slides-img/ccc-congress-hall.jpg" alt="37th Chaos Communication Congress Hall Zuse">
+              <div class="photo-caption"><strong>Chaos Communication Congress (37C3):</strong> Hall Zuse in Hamburg — all talks archived freely at <code>media.ccc.de</code>.</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-		<!-- SLIDE 20 -->
-		<section class="slide">
-			<div class="act-label">Act V &middot; What We Will Build Together</div>
-			<h2>Practical Track 1: Digital Hygiene &amp; Self-Hosting</h2>
-			<table>
-				<thead>
-					<tr>
-						<th>Layer</th>
-						<th>Baseline (Karpathy <em>Digital Hygiene</em>)</th>
-						<th>Sovereign / Self-Hosted Upgrade</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><strong>Passwords &amp; 2FA</strong></td>
-						<td>1Password / Bitwarden + <strong>YubiKey (FIDO2)</strong></td>
-						<td><strong>Vaultwarden</strong> / <strong>KeePassXC</strong> + YubiKey</td>
-					</tr>
-					<tr>
-						<td><strong>DNS &amp; Firewall</strong></td>
-						<td><strong>NextDNS</strong> + Little Snitch</td>
-						<td><strong>Pi-hole / AdGuard Home + Unbound</strong> + <strong>LuLu / OpenSnitch</strong></td>
-					</tr>
-					<tr>
-						<td><strong>Network &amp; Browser</strong></td>
-						<td><strong>Brave</strong> + <strong>Mullvad VPN</strong></td>
-						<td><strong>Mullvad Browser / Tor Browser</strong> + <strong>Headscale / WireGuard</strong></td>
-					</tr>
-					<tr>
-						<td><strong>Files, Docs &amp; AI</strong></td>
-						<td>Full-disk encryption + zero IoT</td>
-						<td><strong>Syncthing</strong>, <strong>CryptPad</strong>, <strong>Nextcloud</strong>, <strong>Immich</strong>, <strong>Ollama / llama.cpp</strong></td>
-					</tr>
-				</tbody>
-			</table>
-			<div class="notes">
-				<strong>Speaker Note (~3 mins):</strong> How do we make this immediately useful to every Tower resident? We start with Andrej Karpathy's "Digital Hygiene" checklist so everyone gets their YubiKeys, password manager, NextDNS, and outbound firewall set up—and then we show how to replace commercial cloud services with self-hosted open-source tools like Vaultwarden, Headscale, Syncthing, and CryptPad.
-			</div>
-		</section>
+      <!-- SLIDE 19: PARIS — LA PAILLASSE & LA QUADRATURE DU NET -->
+      <section class="slide" data-notes="And in Paris, two remarkable sister communities show how open science and digital rights work hand in hand: La Paillasse—where DIY biologists and hardware hackers built open-source lab gear—and La Quadrature du Net, who fight biometric surveillance across Europe and run Nos Oignons Tor exit relays.">
+        <div class="section-tag">19 / Paris, France · Open Science & Digital Rights</div>
+        <h2>Paris Lineage: <em>La Paillasse</em> & <em>La Quadrature du Net</em> ($\pi$)</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong><em>La Paillasse</em> (Paris):</strong> Founded by Thomas Landrain in suburban Vitry-sur-Seine before expanding to 226 Rue Saint-Denis in central Paris — bringing the cypherpunk ethic of open hardware, citizen science, and DIY bio-instrumentation to thousands of researchers.</li>
+              <li><strong><em>La Quadrature du Net</em> (LQDN):</strong> Founded in Paris in 2008 to fight algorithmic mass video surveillance (<em>Technopolice</em>), defend encryption across the EU, and publish the iconic <em>De-GAFAM-ize Your Internet</em> posters.</li>
+              <li><strong><em>Nos Oignons</em> & <em>CHATONS</em>:</strong> French non-profits operating high-bandwidth Tor exit nodes and federated community cloud services (Nextcloud, Matrix, CryptPad).</li>
+            </ul>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall">
+              <img src="/slides-img/la-paillasse-paris.jpg" alt="La Paillasse open bio-hackerspace in Paris">
+              <div class="photo-caption"><strong>La Paillasse (Paris):</strong> Open community wet-lab and hardware hackerspace in Paris.</div>
+            </div>
+            <div class="photo-card tall contain">
+              <img src="/slides-img/la-quadrature-du-net.png" alt="La Quadrature du Net De-GAFAM campaign posters">
+              <div class="photo-caption"><strong>La Quadrature du Net (Paris):</strong> Public campaign posters for self-hosted, decentralized infrastructure (<em>CHATONS</em>).</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-		<!-- SLIDE 21 -->
-		<section class="slide">
-			<div class="act-label">Act V &middot; What We Will Build Together</div>
-			<h2>Practical Track 2: Permanent Tails OS &amp; Kiwix Station</h2>
-			<ul>
-				<li><strong>Dedicated Verification &amp; Flashing Terminal at Frontier Tower:</strong>
-					<ul>
-						<li>Cryptographically verify and flash bootable <strong>Tails OS</strong> USB-C sticks in under 10 minutes.</li>
-						<li>Flash <strong>Kiwix Offline Wikipedia</strong> (<code>.zim</code>) drives and Raspberry Pi <strong>Internet-in-a-Box</strong> images.</li>
-					</ul>
-				</li>
-				<li><strong>Hardened OS Install Clinics:</strong>
-					<ul>
-						<li><strong>GrapheneOS:</strong> Flashing Pixel phones with sandboxed play services and per-app network toggles.</li>
-						<li><strong>Qubes OS &amp; Whonix:</strong> Compartmentalizing work, personal, and disposable VMs.</li>
-					</ul>
-				</li>
-			</ul>
-			<div class="notes">
-				<strong>Speaker Note (~2.5 mins):</strong> Just like Community Memory had a physical terminal in Berkeley in 1973, we want to maintain a permanent Linux verification and USB flashing station here at Frontier Tower so any member or visiting journalist can walk away with a verified Tails OS stick and offline Wikipedia drive.
-			</div>
-		</section>
+      <!-- SLIDE 20: UC LAW SAN FRANCISCO (200 MCALLISTER ST) -->
+      <section class="slide" data-notes="Now look just two blocks up from Frontier Tower to 200 McAllister Street at Civic Center: UC Law San Francisco (formerly UC Hastings). Right in our backyard is a powerhouse of privacy law, empirical algorithmic policy research, and pro-bono legal clinics.">
+        <div class="section-tag">20 / Two Blocks from Frontier Tower · 200 McAllister St, SF</div>
+        <h2>UC Law San Francisco (Formerly UC Hastings)</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>Right Around the Corner (McAllister & Hyde):</strong> Just a 4-minute walk from 995 Market Street at Civic Center.</li>
+              <li><strong>Center for Law, Tech, and Social Good:</strong> Led by Prof. <strong>leticia / Matthew R. Coles & Veena Dubal / Ben Depoorter / Elettra Bietti / Paul Schwartz / Rory Van Loo / Lothar Determann</strong> networks and empirical legal scholars studying platform regulation, algorithmic wage discrimination, and Fourth Amendment protections against geofence warrants.</li>
+              <li><strong>LexLab & Startup Legal Garage:</strong> Connects open-source privacy projects and public-interest tech teams with supervised law students and pro-bono attorneys.</li>
+            </ul>
+          </div>
+          <div class="photo-card tall">
+            <img src="/slides-img/uc-law-sf-mcallister.jpg" alt="UC Law San Francisco McAllister Tower at Civic Center">
+            <div class="photo-caption"><strong>UC Law San Francisco (McAllister St):</strong> Two blocks from Frontier Tower in the Civic Center / Tenderloin corridor.</div>
+          </div>
+        </div>
+      </section>
 
-		<!-- SLIDE 22 -->
-		<section class="slide">
-			<div class="act-label">Act V &middot; What We Will Build Together</div>
-			<h2>Practical Track 3: Freedom Bandwidth Advocacy</h2>
-			<ol>
-				<li><strong>Building-Wide Tor Snowflake Proxies:</strong>
-					<ul>
-						<li>Install the <strong>Tor Snowflake</strong> browser extension or standalone container across Tower machines.</li>
-						<li>Routes censored users' traffic through ephemeral WebRTC proxies—<strong>zero exit-IP liability</strong> for shared coworking Wi-Fi.</li>
-					</ul>
-				</li>
-				<li><strong>"100 Mbps for Freedom" Bridge &amp; Relay Pledge:</strong>
-					<ul>
-						<li>Pool spare cloud VPS credits and isolated VLAN bandwidth to run <strong>Tor obfs4 bridges</strong> and non-exit middle relays.</li>
-					</ul>
-				</li>
-				<li><strong>Non-Profit Exit Transit Partnerships:</strong>
-					<ul>
-						<li>Co-host peering &amp; BGP workshops with West Coast non-profit Tor exit provider <strong>Emerald Onion</strong> (Fremont Cabal IX) and <strong>The Calyx Institute</strong>.</li>
-					</ul>
-				</li>
-			</ol>
-			<div class="notes">
-				<strong>Speaker Note (~2.5 mins):</strong> Privacy tools don't work without bandwidth. Running raw Tor exit nodes on shared coworking Wi-Fi isn't practical, so we use a three-tier playbook: Snowflake proxies on every browser in the building, obfs4 bridges on donated VPS credits, and partnering directly with Emerald Onion for exit capacity.
-			</div>
-		</section>
+      <!-- SLIDE 21: CRAIG NEWMARK & UC BERKELEY CITIZEN CLINIC -->
+      <section class="slide" data-notes="Across the Bay on the UC Berkeley campus stands South Hall—built in 1873, the oldest building on campus—home to the UC Berkeley School of Information and the Citizen Clinic, backed by San Francisco's own Craig Newmark.">
+        <div class="section-tag">21 / 1873 South Hall · UC Berkeley & San Francisco</div>
+        <h2>Craig Newmark & UC Berkeley's <em>Citizen Clinic</em></h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>South Hall, UC Berkeley (Built 1873):</strong> Inside the oldest surviving building on the Berkeley campus, the <strong>Center for Long-Term Cybersecurity (CLTC)</strong> runs the <strong>Citizen Clinic</strong> — where students provide operational digital security defense to human rights organizations, investigative journalists, and Indigenous land defenders.</li>
+              <li><strong>Craig Newmark's Cyber Civil Defense Initiative:</strong> Founded by San Francisco's craigslist creator <strong>Craig Newmark</strong>, committing over $100M+ to grassroots public-interest cybersecurity, UC Berkeley's Citizen Clinic, ProPublica, The Markup, and Wikipedia.</li>
+            </ul>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall">
+              <img src="/slides-img/south-hall-uc-berkeley.jpg" alt="South Hall at UC Berkeley, home of the School of Information and Citizen Clinic">
+              <div class="photo-caption"><strong>South Hall, UC Berkeley (1873):</strong> Home of the UC Berkeley School of Information and the <em>Citizen Clinic</em>.</div>
+            </div>
+            <div class="photo-card tall">
+              <img src="/slides-img/craig-newmark.jpg" alt="Craig Newmark">
+              <div class="photo-caption"><strong>Craig Newmark:</strong> Founder of craigslist and architect of the <em>Cyber Civil Defense Initiative</em>.</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-		<!-- SLIDE 23 -->
-		<section class="slide">
-			<div class="act-label">Act V &middot; Cadence &amp; Annual Flagship Events</div>
-			<h2>How We Gather</h2>
-			<table>
-				<thead>
-					<tr>
-						<th>When</th>
-						<th>Event</th>
-						<th>What Happens</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><strong>Monthly (18:30)</strong></td>
-						<td><strong>Frontier Tower Cypherpunk Night</strong></td>
-						<td>Hands-on OpSec/Tails clinic, MVT/Blacklight audits, Bellingcat Challenge solve, and CCC screenings.</td>
-					</tr>
-					<tr>
-						<td><strong>Biweekly Thu</strong></td>
-						<td><strong>Bellingcat Discord Stage Talks</strong></td>
-						<td>Async/live OSINT briefings + EFF <em>EFFecting Change</em> &amp; Citizen Lab seminars.</td>
-					</tr>
-					<tr>
-						<td><strong>November</strong></td>
-						<td><strong>Aaron Swartz Day &amp; Wikipedia Night</strong></td>
-						<td>SecureDrop/Open Library hackathon + Wikimedia fundraiser &amp; Kiwix flashing.</td>
-					</tr>
-					<tr>
-						<td><strong>Spring (RSA Week)</strong></td>
-						<td><strong>SF City-Wide PGP Key Signing Party</strong></td>
-						<td>Web-of-Trust key signing, YubiKey setup &amp; civic-tech demos at Frontier Tower.</td>
-					</tr>
-					<tr>
-						<td><strong>Summer / Autumn</strong></td>
-						<td><strong>DEF CON Biohacking Village &amp; Open Web Fest</strong></td>
-						<td>Implant/BCI security delegation &amp; participatory MozFest-style unconference.</td>
-					</tr>
-				</tbody>
-			</table>
-			<div class="notes">
-				<strong>Speaker Note (~2 mins):</strong> We keep the commitment sustainable: one high-signal in-person night per month here at Frontier Tower at 6:30 PM (18:30), paired with active online channels and four major annual events.
-			</div>
-		</section>
+      <!-- SLIDE 22: THE CITIZEN LAB (UNIVERSITY OF TORONTO) -->
+      <section class="slide" data-notes="At the Munk School of Global Affairs at the University of Toronto, Professor Ronald Deibert leads The Citizen Lab—the academic research lab that exposed Pegasus, Predator, FinFisher, and Great Cannon mercenary spyware across dozens of countries.">
+        <div class="section-tag">22 / University of Toronto · Munk School of Global Affairs</div>
+        <h2>The Citizen Lab & Amnesty Security Lab (<code>MVT</code>)</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>The Munk School (University of Toronto):</strong> Directed by Prof. <strong>Ronald Deibert</strong> (author of <em>Reset: Reclaiming the Internet for Civil Society</em>), investigating mercenary spyware (NSO Group's <em>Pegasus</em>, Cytrox's <em>Predator</em>) and transnational digital repression.</li>
+              <li><strong>Mobile Verification Toolkit (<code>mvt-project/mvt</code>):</strong> Developed with Amnesty International's Security Lab — open-source Python CLI tool that inspects iOS backups and Android ADB dumps against Citizen Lab's public STIX2 Indicators of Compromise (IoCs).</li>
+              <li><strong>Hands-On at Frontier Tower:</strong> We will teach members how to run <code>mvt-ios</code> and <code>mvt-android</code> locally to audit phones for commercial spyware.</li>
+            </ul>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall">
+              <img src="/slides-img/munk-school-citizen-lab.jpg" alt="Munk School of Global Affairs at the University of Toronto, home of The Citizen Lab">
+              <div class="photo-caption"><strong>Munk School of Global Affairs (U of Toronto):</strong> Historic Devonshire Place campus housing The Citizen Lab.</div>
+            </div>
+            <div class="photo-card tall">
+              <img src="/slides-img/ronald-deibert.jpg" alt="Professor Ronald Deibert, Director of The Citizen Lab">
+              <div class="photo-caption"><strong>Prof. Ronald Deibert:</strong> Founder and Director of The Citizen Lab at the University of Toronto.</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-		<!-- SLIDE 24 -->
-		<section class="slide">
-			<div class="act-label">Act V &middot; Call for Volunteers</div>
-			<h2>Join Us &amp; Volunteer Tonight</h2>
-			<p>We are looking for co-organizers and volunteers across five roles:</p>
-			<ol>
-				<li><strong>Clinic &amp; Workshop Leads:</strong> Lead a 30-minute module on EFF SSD, GrapheneOS, Vaultwarden, or MVT spyware scanning.</li>
-				<li><strong>Tails &amp; Kiwix Station Maintainers:</strong> Help set up and maintain the Frontier Tower Linux flashing terminal.</li>
-				<li><strong>Freedom Bandwidth Ops:</strong> Manage our Tor Snowflake tally, obfs4 bridge containers, and Emerald Onion liaison.</li>
-				<li><strong>OSINT &amp; Bellingcat Challenge Hosts:</strong> Pick a puzzle from <code>challenge.bellingcat.com</code> or a dataset from OCCRP/ProPublica for a monthly solve.</li>
-				<li><strong>Speaker &amp; EFA Coordinator:</strong> Coordinate guest talks with EFF, UC Law SF, Stanford CSTF, and Citizen Lab.</li>
-			</ol>
-			<p style="margin-top: 22px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 18px;">
-				Web: <a href="https://cypherpunksociety.org">cypherpunksociety.org</a> &middot;
-				GitHub: <a href="https://github.com/CypherpunkSociety/awesome-cypherpunk">CypherpunkSociety/awesome-cypherpunk</a><br>
-				Telegram: <a href="https://t.me/CypherpunkSociety">t.me/CypherpunkSociety</a> &middot;
-				Bluesky: <a href="https://bsky.app/profile/cypherpunksociety.org">@cypherpunksociety.org</a> &middot;
-				Matrix: <a href="https://matrix.to/#/@cypherpunksociety:matrix.org">@cypherpunksociety:matrix.org</a>
-			</p>
-			<div class="notes">
-				<strong>Speaker Note (~3 mins):</strong> Open the floor! Ask who wants to join the Sunday, Nov 8th Aaron Swartz Day Hackathon crew, who wants to co-lead one of the five tracks, and invite everyone to open their first PR on github.com/CypherpunkSociety/awesome-cypherpunk.
-			</div>
-		</section>
+      <!-- SLIDE 23: OONI PROBE & CENSORED PLANET -->
+      <section class="slide" data-notes="How do we know in real time when a government blocks Wikipedia, Signal, Tor, or independent news sites? Citizen Lab maintains the global URL test lists on GitHub, and OONI Probe—born out of the Tor Project—runs on thousands of volunteer devices worldwide.">
+        <div class="section-tag">23 / Global Censorship Telemetry</div>
+        <h2>OONI Probe, <code>citizenlab/test-lists</code> & Censored Planet</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong><code>github.com/citizenlab/test-lists</code>:</strong> Community-curated lists of sensitive URLs (human rights orgs, independent media, LGBTQ+ resources, circumvention tools) for 200+ countries.</li>
+              <li><strong>OONI Probe (Open Observatory of Network Interference):</strong> Free open-source software that tests DNS tampering, TCP/IP blocking, TLS SNI filtering (like China's Great Firewall blocking Wikipedia, shown at right), and HTTP middleboxes, publishing every measurement openly to <code>explorer.ooni.org</code>.</li>
+              <li><strong>Censored Planet (Univ. of Michigan):</strong> Directed by Prof. Roya Ensafi — remote satellite/echo telemetry measuring censorship without putting in-country volunteers at risk.</li>
+            </ul>
+          </div>
+          <div class="photo-card tall contain">
+            <img src="/slides-img/ooni-censorship-chart.png" alt="OONI network measurement chart showing DNS and TLS blocking of Wikipedia">
+            <div class="photo-caption"><strong>OONI Telemetry in Action:</strong> Empirical network measurement proving DNS injection and TLS SNI blocking of Wikipedia.</div>
+          </div>
+        </div>
+      </section>
 
-	</div>
+      <!-- SLIDE 24: AD-TECH RTB & COMPUTATIONAL FINGERPRINTING -->
+      <section class="slide" data-notes="Even in democracies without a Great Firewall, commercial surveillance tracks every click you make. Real-Time Bidding broadcasts your geolocation and browsing profile to hundreds of ad brokers in milliseconds, while WebGL, Canvas, and AudioContext APIs fingerprint your hardware even without cookies.">
+        <div class="section-tag">24 / Commercial Surveillance & Anti-Fingerprinting</div>
+        <h2>Ad-Tech Real-Time Bidding (RTB) & Browser Fingerprinting</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>The RTB Bidstream Leak:</strong> Documented by Johnny Ryan at the Irish Council for Civil Liberties (ICCL) and Wolfie Christl at <em>Cracked Labs</em> — the average user's page loads & location are broadcast hundreds of times a day to data brokers, shaping political micro-targeting and dynamic pricing.</li>
+              <li><strong>Computational Fingerprinting:</strong> Even with cookies deleted, your GPU's WebGL rendering, Canvas font metrics, and AudioContext entropy create a unique hardware ID.</li>
+              <li><strong>Live Diagnostic & Defense Stack:</strong>
+                <ul>
+                  <li><strong>EFF <em>Cover Your Tracks</em></strong> (<code>coveryourtracks.eff.org</code>) & <strong>The Markup's <em>Blacklight</em></strong> (<code>themarkup.org/blacklight</code>)</li>
+                  <li><strong>Tor Browser</strong> & <strong>Mullvad Browser</strong> (uniform letterboxed viewports + identical hardware fingerprint buckets)</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="photo-card tall contain">
+            <img src="/slides-img/tor-browser-window.png" alt="Tor Browser window showing anti-fingerprinting and circuit isolation">
+            <div class="photo-caption"><strong>Tor Browser (and Mullvad Browser):</strong> Defeating computational fingerprinting by making every user's browser look identical.</div>
+          </div>
+        </div>
+      </section>
 
-	<footer>
-		<div id="progress">Slide 1 of 24</div>
-		<div class="controls">
-			<button onclick="prevSlide()" title="Previous Slide (Left Arrow)">&larr; Prev</button>
-			<button onclick="nextSlide()" title="Next Slide (Right Arrow / Space)">Next &rarr;</button>
-			<button onclick="toggleNotes()" title="Toggle Speaker Notes (N)">Notes (N)</button>
-			<button onclick="toggleFullscreen()" title="Toggle Fullscreen (F)">Fullscreen (F)</button>
-		</div>
-	</footer>
-</div>
+      <!-- SLIDE 25: STANFORD COGNITIVE SECURITY & TRUST & SAFETY -->
+      <section class="slide" data-notes="Thirty miles south down the Peninsula at Stanford University, researchers at the Freeman Spogli Institute and Hoover Institution built the open curriculum on how state actors and bot networks manipulate public perception.">
+        <div class="section-tag">25 / Stanford University · Freeman Spogli & Hoover</div>
+        <h2>Cognitive Security & The Open <em>Trust & Safety</em> Curriculum</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>From SIO to the Cognitive Security Task Force:</strong> Following the Stanford Internet Observatory (2019–2024), researchers led by <strong>Renee DiResta</strong> (author of <em>Invisible Rulers</em>) and Hoover's <strong>Cognitive Security Task Force</strong> documented how algorithmic engagement loops amplify state-backed influence operations.</li>
+              <li><strong>Open Textbook — <code>tsbook.org</code>:</strong> Published by the <em>Journal of Online Trust and Safety</em> at Stanford — a complete, free university curriculum on coordinated inauthentic behavior, sockpuppet detection, and cryptographic content provenance.</li>
+              <li><strong><code>github.com/stanfordio/skyfall</code>:</strong> Open-source tooling for mapping domain infrastructure behind disinformation networks.</li>
+            </ul>
+          </div>
+          <div class="photo-card tall">
+            <img src="/slides-img/stanford-hoover-tower.jpg" alt="Hoover Tower at Stanford University">
+            <div class="photo-caption"><strong>Stanford University (Palo Alto):</strong> Home of the Stanford Digital Civil Society Lab, Hoover Cognitive Security Task Force, and <code>tsbook.org</code>.</div>
+          </div>
+        </div>
+      </section>
 
-<script>
-	const slides = Array.from(document.querySelectorAll('.slide'));
-	const progress = document.getElementById('progress');
-	let current = 0;
+      <!-- SLIDE 26: BELLINGCAT & OPEN-SOURCE INTELLIGENCE (OSINT) -->
+      <section class="slide" data-notes="When governments lie about war crimes, sanctions evasion, or environmental destruction, open-source intelligence lets ordinary citizens verify the truth. Eliot Higgins founded Bellingcat in 2014 using satellite imagery, street-level videos, and open-source Python tools.">
+        <div class="section-tag">26 / Open-Source Intelligence (OSINT)</div>
+        <h2>Bellingcat: Citizen Verification & Open Tooling</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>Founded by Eliot Higgins (2014):</strong> Proved that citizen investigators using open satellite imagery, shadow chronolocation, and open databases could verify war crimes to the standard of the International Criminal Court ( codified with UC Berkeley's Human Rights Center in the <strong>UN Berkeley Protocol</strong>).</li>
+              <li><strong>Bellingcat's Open-Source Stack (<code>github.com/bellingcat</code>):</strong>
+                <ul>
+                  <li><code>bellingcat/auto-archiver</code> — Tamper-evident video & social media preservation with SHA-256 hashes + Wayback archival</li>
+                  <li><code>bellingcat/ShadowFinder</code> — Finding a photo's geographic coordinates from sun/shadow length</li>
+                  <li><code>bellingcat/osm-search</code> — Querying OpenStreetMap geometry ("find a water tower within 80m of railway tracks")</li>
+                  <li><code>challenge.bellingcat.com</code> — Gamified monthly OSINT geolocation puzzles we'll solve together!</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="photo-card tall">
+            <img src="/slides-img/eliot-higgins-bellingcat.jpg" alt="Eliot Higgins, founder of Bellingcat">
+            <div class="photo-caption"><strong>Eliot Higgins:</strong> Founder of Bellingcat — turning open-source geolocation and digital forensics into a public good.</div>
+          </div>
+        </div>
+      </section>
 
-	function showSlide(index) {
-		if (index < 0) index = 0;
-		if (index >= slides.length) index = slides.length - 1;
-		slides[current].classList.remove('active');
-		current = index;
-		slides[current].classList.add('active');
-		progress.textContent = `Slide ${current + 1} of ${slides.length}`;
-		window.location.hash = `slide-${current + 1}`;
-	}
+      <!-- SLIDE 27: WHISTLEBLOWING & PUBLIC RECORDS -->
+      <section class="slide" data-notes="Investigative journalism and cypherpunk engineering converge around source protection and public records: SecureDrop—originally designed by Aaron Swartz and Kevin Poulsen—plus ProPublica's Nonprofit Explorer, MuckRock, OCCRP Aleph, and Micah Lee's Hacks, Leaks, and Revelations.">
+        <div class="section-tag">27 / Whistleblowing & Investigative Data</div>
+        <h2><em>SecureDrop</em>, ProPublica, MuckRock & OCCRP Aleph</h2>
+        <div class="split-equal">
+          <div class="text-col">
+            <ul>
+              <li><strong><em>SecureDrop</em> (Freedom of the Press Foundation):</strong> Co-created here in San Francisco by <strong>Aaron Swartz</strong> and Kevin Poulsen (originally <em>DeadDrop</em>) — uses Tor Onion Services and air-gapped <strong>Tails OS</strong> workstations so whistleblowers can submit documents to ProPublica, The Intercept, or The New York Times without leaving metadata trails.</li>
+              <li><strong>ProPublica <em>Nonprofit Explorer</em> & <code>IRSx</code>:</strong> Open Python parser for millions of IRS Form 990 XML filings to trace dark-money tax-exempt networks.</li>
+              <li><strong>MuckRock & DocumentCloud:</strong> Crowdsourced Freedom of Information Act (FOIA) requests and California Public Records Act (CPRA) police surveillance audits.</li>
+              <li><strong>Micah Lee's <em>Hacks, Leaks, and Revelations</em>:</strong> Free curriculum on investigating leaked datasets with <em>Aleph</em> and <em>DDoSecrets</em>.</li>
+            </ul>
+          </div>
+          <div class="photo-card tall">
+            <img src="/slides-img/tails-desktop.png" alt="Tails OS desktop with Tor Browser used in SecureDrop journalist workstations">
+            <div class="photo-caption"><strong>Tails OS + Tor Onion Services:</strong> The amnesic operating system that powers <em>SecureDrop</em> journalist air-gapped workstations.</div>
+          </div>
+        </div>
+      </section>
 
-	function nextSlide() { showSlide(current + 1); }
-	function prevSlide() { showSlide(current - 1); }
-	function toggleNotes() { document.body.classList.toggle('show-notes'); }
-	function toggleFullscreen() {
-		if (!document.fullscreenElement) {
-			document.documentElement.requestFullscreen().catch(() => {});
-		} else {
-			document.exitFullscreen().catch(() => {});
-		}
-	}
+      <!-- SLIDE 28: WIKIPEDIA OFFLINE — KIWIX & OPENZIM -->
+      <section class="slide" data-notes="One of our core community initiatives is a fundraiser and technical sprint for Wikipedia and offline open knowledge. When an authoritarian state shuts down the internet, or when communities are off-grid, how do people read Wikipedia? With Kiwix and OpenZIM.">
+        <div class="section-tag">28 / Community Fundraiser & Offline Commons</div>
+        <h2>Wikipedia Offline: <em>Kiwix</em>, OpenZIM & Internet-in-a-Box</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>Wikimedia Foundation (San Francisco):</strong> Headquartered right down Market Street, Wikipedia is the last planetary knowledge commons not owned by an ad-tech monopoly.</li>
+              <li><strong>All of English Wikipedia in ~100 GB (<code>.zim</code>):</strong> Using <strong>Kiwix</strong> and the open <strong>OpenZIM</strong> format, the entire English Wikipedia (6.8M+ articles with images), StackExchange, Project Gutenberg, and Khan Academy fit on a single $12 USB flash drive or microSD card.</li>
+              <li><strong>Internet-in-a-Box (<code>internet-in-a-box.org</code>):</strong> Turns a $35 Raspberry Pi into an offline Wi-Fi library hotspot for schools, disaster zones, or internet blackouts.</li>
+              <li><strong>Our Community Goal:</strong> Raising funds for Wikimedia / Kiwix and keeping updated <code>.zim</code> archives ready to flash on the spot at Frontier Tower.</li>
+            </ul>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall">
+              <img src="/slides-img/kiwix-offline-wikipedia.jpg" alt="Kiwix offline Wikipedia deployment">
+              <div class="photo-caption"><strong>Kiwix in the Field:</strong> Offline access to the full Wikipedia encyclopedia without an internet connection.</div>
+            </div>
+            <div class="photo-card tall contain">
+              <img src="/slides-img/kiwix-desktop.png" alt="Kiwix desktop reader serving ZIM files offline">
+              <div class="photo-caption"><strong>Kiwix Desktop / Server:</strong> Reading compressed <code>.zim</code> archives locally over USB or LAN.</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-	document.addEventListener('keydown', (e) => {
-		if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
-			e.preventDefault();
-			nextSlide();
-		} else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
-			e.preventDefault();
-			prevSlide();
-		} else if (e.key === 'n' || e.key === 'N') {
-			toggleNotes();
-		} else if (e.key === 'f' || e.key === 'F') {
-			toggleFullscreen();
-		} else if (e.key === 'Home') {
-			showSlide(0);
-		} else if (e.key === 'End') {
-			showSlide(slides.length - 1);
-		}
-	});
+      <!-- SLIDE 29: AARON SWARTZ (1986–2013) -->
+      <section class="slide" data-notes="And that brings us to Aaron Swartz, born November 8, 1986. Look at what Aaron built in just 26 years of life—and how almost every piece of open infrastructure we use today bears his fingerprints.">
+        <div class="section-tag">29 / November 8, 1986 – January 11, 2013</div>
+        <h2>Aaron Swartz: Architect of the Open Web</h2>
+        <div class="split">
+          <div class="text-col">
+            <blockquote>
+              "Information is power. But like all power, there are those who want to keep it for themselves... Sharing isn't immoral — it's a moral imperative."
+              <cite>— Aaron Swartz, Guerilla Open Access Manifesto (Eremo, Italy, July 2008)</cite>
+            </blockquote>
+            <ul>
+              <li><strong>RSS 1.0 (Age 14):</strong> Co-authored the syndication specification that powers open podcasts and blogs.</li>
+              <li><strong>Creative Commons & Markdown (2001–2004):</strong> Co-designed the machine-readable Creative Commons licenses with Lawrence Lessig and collaborated with John Gruber on Markdown (plus wrote <code>html2text</code>).</li>
+              <li><strong>Open Library (<code>openlibrary.org</code>) & <code>web.py</code>:</strong> Built here in San Francisco with the Internet Archive to create one web page for every book ever published.</li>
+              <li><strong>PACER Liberation, Demand Progress (Stopping SOPA) & <em>SecureDrop</em>:</strong> Liberated 20 million pages of public federal court records and helped defeat SOPA/PIPA.</li>
+            </ul>
+          </div>
+          <div class="photo-card tall">
+            <img src="/slides-img/aaron-swartz-2011.jpg" alt="Aaron Swartz in 2011">
+            <div class="photo-caption"><strong>Aaron Swartz (1986–2013):</strong> Co-creator of RSS 1.0, Creative Commons, Markdown, Reddit, Open Library, Demand Progress, and <em>SecureDrop</em>.</div>
+          </div>
+        </div>
+      </section>
 
-	if (window.location.hash.startsWith('#slide-')) {
-		const n = parseInt(window.location.hash.replace('#slide-', ''), 10);
-		if (!isNaN(n) && n >= 1 && n <= slides.length) {
-			showSlide(n - 1);
-		}
-	}
-</script>
+      <!-- SLIDE 30: AARON SWARTZ DAY & INTERNATIONAL HACKATHON (SUNDAY NOV 8) -->
+      <section class="slide" data-notes="This Sunday, November 8th—Aaron's birthday—is the annual Aaron Swartz Day and International Hackathon, organized by Lisa Rein and Brewster Kahle at the Internet Archive at 300 Funston Avenue here in San Francisco.">
+        <div class="section-tag">30 / This Sunday, November 8, 2026</div>
+        <h2>Aaron Swartz Day & International Hackathon</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>When:</strong> <strong>This Sunday, November 8, 2026</strong> (Aaron Swartz's 40th birthday)</li>
+              <li><strong>Where:</strong> Hosted annually with the <strong>Internet Archive</strong> (300 Funston Ave, San Francisco) & online at <code>aaronswartzday.org</code></li>
+              <li><strong>How the Cypherpunk Society Is Participating This Sunday:</strong>
+                <ul>
+                  <li>Contributing pull requests to <strong>Open Library</strong> (<code>internetarchive/openlibrary</code>) and <strong>SecureDrop</strong> (<code>freedomofpress/securedrop</code>)</li>
+                  <li>Testing and packaging <strong>Kiwix / OpenZIM</strong> offline bundles</li>
+                  <li>Maintaining our public <code>CypherpunkSociety/awesome-cypherpunk</code> field guide</li>
+                </ul>
+              </li>
+              <li><strong>Join Our Contingent:</strong> Talk to Morgan tonight or message <code>events@cypherpunksociety.org</code> to join our Sunday hackathon table!</li>
+            </ul>
+          </div>
+          <div class="photo-card tall">
+            <img src="/slides-img/aaron-swartz-internet-archive.jpg" alt="Aaron Swartz memorial and gathering at the Internet Archive in San Francisco">
+            <div class="photo-caption"><strong>Internet Archive, 300 Funston Ave, SF:</strong> Honoring Aaron Swartz's life and continuing his unfinished open-source work.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 31: PRACTICAL CLINICS AT FRONTIER TOWER -->
+      <section class="slide" data-notes="So what will we do practically each month here at Frontier Tower? First: hands-on Digital Hygiene and Self-Hosting clinics where you walk out with working tools on your laptop and phone.">
+        <div class="section-tag">31 / Practical Work at Frontier Tower</div>
+        <h2>Hands-On Digital Hygiene & Self-Hosting Clinics</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>Track 1 — Andrej Karpathy's <em>Digital Hygiene</em> Baseline:</strong>
+                <ul>
+                  <li>Hardware FIDO2 keys (<strong>YubiKey</strong>) locking down email, GitHub, and domain registrars</li>
+                  <li><strong>Bitwarden / Vaultwarden</strong> password managers + credit freezes + virtual payment cards + <strong>SimpleLogin / Addy.io</strong> email aliases</li>
+                  <li><strong>NextDNS / Mullvad DNS</strong> + Little Snitch / LuLu outbound firewalling + <strong>Signal</strong></li>
+                </ul>
+              </li>
+              <li><strong>Track 2 — Sovereign Self-Hosting Clinics:</strong>
+                <ul>
+                  <li><strong>Tailscale / Headscale</strong> zero-trust WireGuard mesh VPNs</li>
+                  <li><strong>Syncthing</strong> peer-to-peer encrypted folder sync (no cloud middleman)</li>
+                  <li><strong>Immich</strong> (photos), <strong>Nextcloud</strong>, and <strong>CryptPad</strong> on a home mini-PC or Raspberry Pi</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="photo-card tall">
+            <img src="/slides-img/yubikey-usb.jpg" alt="Hardware FIDO2 YubiKey">
+            <div class="photo-caption"><strong>Phishing-Resistant Hardware Keys:</strong> Moving every member onto FIDO2 hardware keys, encrypted vaults, and private WireGuard meshes.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 32: FREEDOM BANDWIDTH & USB FLASHING STATION -->
+      <section class="slide" data-notes="Second: we are setting up a permanent USB Flashing Station and Freedom Bandwidth initiative right here at Frontier Tower.">
+        <div class="section-tag">32 / Permanent Infrastructure at 995 Market St</div>
+        <h2>The USB Flashing Station & Freedom Bandwidth</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>Permanent Frontier Tower USB Station:</strong> Bring any blank USB stick (32 GB–128 GB) to our monthly sessions and flash:
+                <ul>
+                  <li><strong>Tails OS</strong> — Amnesic live operating system routing all traffic through Tor and leaving zero trace on the host computer</li>
+                  <li><strong>Kiwix Offline Wikipedia (<code>.zim</code>)</strong> — Full offline Wikipedia + survival/medical reference library</li>
+                </ul>
+              </li>
+              <li><strong>Freedom Bandwidth Advocacy:</strong>
+                <ul>
+                  <li>One-click <strong>Tor Snowflake</strong> WebRTC browser proxies (turn your spare bandwidth into a lifeline for censored users in Iran, Russia, and Myanmar)</li>
+                  <li>Guides for running Dockerized <strong>Tor <code>obfs4</code> bridges</strong> and <strong>I2P</strong> routers</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="photo-card tall">
+            <img src="/slides-img/tails-desktop.png" alt="Tails OS desktop with Tor Browser">
+            <div class="photo-caption"><strong>Tails OS Live USB:</strong> Flash and verify a cryptographically signed Tails OS or Kiwix Wikipedia drive at every monthly meeting.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 33: CALL FOR VOLUNTEERS & MONTHLY RHYTHM -->
+      <section class="slide" data-notes="Finally: we intentionally keep our in-person Frontier Tower schedule sustainable—once a month on a Thursday evening at 18:30—while tracking weekly online seminars in our Matrix and Telegram channels. And we need volunteers to co-lead these five tracks!">
+        <div class="section-tag">33 / Call for Volunteers · Join the Society</div>
+        <h2>Monthly 18:30 Rhythm & Call for Volunteers</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>Monthly In-Person Gathering at Frontier Tower (18:30 PST):</strong> Sustainable once-a-month evening clinic + talk at 995 Market St, paired with biweekly online watch-parties (Bellingcat Thursday Discord Stage Talks, EFF <em>EFFecting Change</em>, Citizen Lab seminars).</li>
+              <li><strong>5 Volunteer Roles Open Tonight:</strong>
+                <ul>
+                  <li><strong>1. Clinic Mentors:</strong> Help attendees configure YubiKeys, Bitwarden, Mullvad, Tailscale & Tails USBs</li>
+                  <li><strong>2. OSINT & Bellingcat Challenge Leads:</strong> Host monthly geolocation & <code>IRSx</code>/FOIA sprints</li>
+                  <li><strong>3. Self-Hosting & Freedom Bandwidth Maintainers:</strong> Maintain the USB flashing station, Kiwix <code>.zim</code> mirror & Tor bridge workshops</li>
+                  <li><strong>4. Speaker & Academic Liaisons:</strong> Coordinate guests from EFF, Internet Archive, Noisebridge, UC Law SF & Berkeley <em>Citizen Clinic</em></li>
+                  <li><strong>5. Repo Maintainers:</strong> Curate <code>github.com/CypherpunkSociety/awesome-cypherpunk</code></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="meta-strip">
+              <span class="pill">Web: cypherpunksociety.org</span>
+              <span class="pill">Email: events@cypherpunksociety.org</span>
+              <span class="pill">Telegram: @CypherpunkSociety</span>
+              <span class="pill">Matrix: @cypherpunksociety:matrix.org</span>
+              <span class="pill">Bluesky: @cypherpunksociety.org</span>
+            </div>
+          </div>
+          <div class="photo-card tall">
+            <img src="/slides-img/6th-and-market.jpg" alt="6th and Market Street, San Francisco">
+            <div class="photo-caption"><strong>See You This Sunday (Nov 8) for Aaron Swartz Day & Every Month at 18:30 at Frontier Tower!</strong></div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <div id="notes-panel" class="notes-panel">
+      <div class="notes-label">Speaker Notes (Press 'N' to toggle)</div>
+      <div id="notes-content"></div>
+    </div>
+
+    <div class="bottombar">
+      <div id="slide-counter">Slide 1 / 33</div>
+      <div>Click any archival photo to zoom · <code>←</code> <code>→</code> Navigate · <code>N</code> Speaker Notes · <code>F</code> Fullscreen</div>
+      <div class="controls">
+        <button onclick="prevSlide()">← Prev</button>
+        <button onclick="nextSlide()">Next →</button>
+        <button onclick="toggleNotes()">Notes (N)</button>
+        <button onclick="toggleFullscreen()">Fullscreen (F)</button>
+      </div>
+      <div id="progress-bar" class="progress-bar" style="width: 3%;"></div>
+    </div>
+  </div>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const counter = document.getElementById('slide-counter');
+    const progressBar = document.getElementById('progress-bar');
+    const notesPanel = document.getElementById('notes-panel');
+    const notesContent = document.getElementById('notes-content');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    let current = 0;
+
+    function updateSlide(idx) {
+      if (idx < 0 || idx >= slides.length) return;
+      slides[current].classList.remove('active');
+      current = idx;
+      slides[current].classList.add('active');
+      counter.textContent = `Slide ${current + 1} / ${slides.length}`;
+      progressBar.style.width = `${((current + 1) / slides.length) * 100}%`;
+      notesContent.textContent = slides[current].getAttribute('data-notes') || '';
+      window.location.hash = `slide-${current + 1}`;
+    }
+
+    function nextSlide() { updateSlide(current + 1); }
+    function prevSlide() { updateSlide(current - 1); }
+    function toggleNotes() { notesPanel.classList.toggle('visible'); }
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+
+    document.querySelectorAll('.photo-card img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('open');
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.classList.contains('open')) {
+        if (e.key === 'Escape' || e.key === ' ') {
+          lightbox.classList.remove('open');
+          e.preventDefault();
+          return;
+        }
+      }
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        prevSlide();
+      } else if (e.key === 'n' || e.key === 'N') {
+        toggleNotes();
+      } else if (e.key === 'f' || e.key === 'F') {
+        toggleFullscreen();
+      }
+    });
+
+    const hashMatch = window.location.hash.match(/^#slide-(\d+)$/);
+    if (hashMatch) {
+      const initial = parseInt(hashMatch[1], 10) - 1;
+      if (initial >= 0 && initial < slides.length) current = initial;
+    }
+    updateSlide(current);
+  </script>
 </body>
 </html>

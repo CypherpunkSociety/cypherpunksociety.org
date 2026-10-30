@@ -66,6 +66,7 @@
       max-width: 1380px;
       margin: 0 auto;
       overflow-y: auto;
+      background: var(--bg);
     }
     .slide.active {
       display: flex;
@@ -1240,13 +1241,14 @@
 
     function updateSlide(idx) {
       if (idx < 0 || idx >= slides.length) return;
-      slides[current].classList.remove('active');
+      slides.forEach((s, i) => s.classList.toggle('active', i === idx));
       current = idx;
-      slides[current].classList.add('active');
       counter.textContent = `Slide ${current + 1} / ${slides.length}`;
       progressBar.style.width = `${((current + 1) / slides.length) * 100}%`;
       notesContent.textContent = slides[current].getAttribute('data-notes') || '';
-      window.location.hash = `slide-${current + 1}`;
+      if (window.location.hash !== `#slide-${current + 1}`) {
+        history.replaceState(null, '', `#slide-${current + 1}`);
+      }
     }
 
     function nextSlide() { updateSlide(current + 1); }
@@ -1288,12 +1290,19 @@
       }
     });
 
-    const hashMatch = window.location.hash.match(/^#slide-(\d+)$/);
-    if (hashMatch) {
-      const initial = parseInt(hashMatch[1], 10) - 1;
-      if (initial >= 0 && initial < slides.length) current = initial;
+    function syncFromHash() {
+      const hashMatch = window.location.hash.match(/^#slide-(\d+)$/);
+      if (hashMatch) {
+        const idx = parseInt(hashMatch[1], 10) - 1;
+        if (idx >= 0 && idx < slides.length) {
+          updateSlide(idx);
+          return;
+        }
+      }
+      updateSlide(current);
     }
-    updateSlide(current);
+    window.addEventListener('hashchange', syncFromHash);
+    syncFromHash();
   </script>
 </body>
 </html>

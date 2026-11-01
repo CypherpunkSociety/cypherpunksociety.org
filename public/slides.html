@@ -1142,16 +1142,16 @@
         </div>
       </section>
 
-      <!-- ACADEMIC 3: THE CITIZEN LAB (UNIVERSITY OF TORONTO) -->
-      <section class="slide" data-notes="Third in our academic group: at the Munk School of Global Affairs at the University of Toronto, Professor Ronald Deibert leads The Citizen Lab—the academic research lab that exposed Pegasus, Predator, FinFisher, and Great Cannon mercenary spyware across dozens of countries.">
+      <!-- ACADEMIC 3A: THE CITIZEN LAB (UNIVERSITY OF TORONTO) -->
+      <section class="slide" data-notes="Third in our academic group: at the Munk School of Global Affairs at the University of Toronto, Professor Ronald Deibert leads The Citizen Lab—the interdisciplinary academic research lab that exposed Pegasus, Predator, FinFisher, QuaDream, and Great Cannon mercenary spyware across dozens of countries.">
         <div class="section-tag">31 / Academic Partner · University of Toronto</div>
-        <h2>The Citizen Lab & Amnesty Security Lab (<code>MVT</code>)</h2>
+        <h2>The Citizen Lab: Mercenary Spyware &amp; Transnational Repression</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>The Munk School (University of Toronto):</strong> Directed by Prof. <strong>Ronald Deibert</strong> (author of <em>Reset: Reclaiming the Internet for Civil Society</em>), investigating mercenary spyware (NSO Group's <em>Pegasus</em>, Cytrox's <em>Predator</em>) and transnational digital repression.</li>
-              <li><strong>Mobile Verification Toolkit (<code>mvt-project/mvt</code>):</strong> Developed with Amnesty International's Security Lab — open-source Python CLI tool that inspects iOS backups and Android ADB dumps against Citizen Lab's public STIX2 Indicators of Compromise (IoCs).</li>
-              <li><strong>Hands-On at Frontier Tower:</strong> Teaching members how to run <code>mvt-ios</code> and <code>mvt-android</code> locally to audit phones for commercial spyware.</li>
+              <li><strong>The Munk School (University of Toronto):</strong> Founded and directed by Prof. <strong>Ronald Deibert</strong> (author of <em>Black Code</em> and <em>Reset: Reclaiming the Internet for Civil Society</em>), combining network telemetry, reverse engineering, and human rights law.</li>
+              <li><strong>Exposing Zero-Click Mercenary Spyware:</strong> Uncovered NSO Group's <strong><em>Pegasus</em></strong> (including the <em>FORCEDENTRY</em> and <em>BLASTPASS</em> zero-click iMessage exploits), Cytrox's <strong><em>Predator</em></strong>, QuaDream's <strong><em>Reign</em></strong>, and China's <strong><em>Great Cannon</em></strong> against journalists, dissidents, and human rights defenders globally.</li>
+              <li><strong>Evidence That Moves Courts &amp; Operating Systems:</strong> Citizen Lab's forensic reports directly triggered US Commerce Department entity-list sanctions on spyware vendors and emergency Apple/Google security patches.</li>
             </ul>
           </div>
           <div class="photo-grid-2">
@@ -1167,9 +1167,39 @@
         </div>
       </section>
 
+      <!-- ACADEMIC 3B: CITIZEN LAB SAFETY CHECK, LOCKDOWN MODE & MVT -->
+      <section class="slide" data-notes="How do we translate The Citizen Lab's research into a concrete 'Safety Check' that any member can run at Frontier Tower? It works in three stages: first, Citizen Lab's Security Planner (securityplanner.org) and iOS/Android built-in Safety Check to revoke stalkerware and unauthorized device/location access; second, Apple Lockdown Mode and Android 2G baseband disabling—validated directly with Citizen Lab researchers to stop zero-click exploits; and third, local forensic verification using Amnesty and Citizen Lab's Mobile Verification Toolkit (MVT).">
+        <div class="section-tag">32 / Citizen Lab Safety Check &amp; Forensic Audit Pipeline</div>
+        <h2>Citizen Lab <em>Security Planner</em>, OS Safety Check &amp; <code>MVT</code></h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>Stage 1 — Citizen Lab's <em>Security Planner</em> (<code>securityplanner.org</code>) &amp; OS <em>Safety Check</em>:</strong>
+                <ul>
+                  <li><strong><code>securityplanner.org</code>:</strong> Interactive, peer-reviewed safety check originally built at U of Toronto's Citizen Lab (now stewarded with Consumer Reports) that generates a tailored action plan in 3 minutes.</li>
+                  <li><strong>iOS <em>Safety Check</em></strong> (<code>Settings → Privacy &amp; Security → Safety Check</code>): 1-tap <em>Emergency Reset</em> immediately revokes intimate-partner/stalkerware <em>Find My</em> location sharing, resets app permissions, and audits signed-in iCloud devices.</li>
+                </ul>
+              </li>
+              <li><strong>Stage 2 — Zero-Click Hardening (<em>Lockdown Mode</em> &amp; 2G Baseband Defense):</strong> Validated with Citizen Lab against <em>Pegasus</em> — <strong>Apple <em>Lockdown Mode</em></strong> blocks zero-click iMessage BlastDoor attachment parsers, disables Safari WebKit JIT compilation, and blocks locked USB data connections; Android disables insecure <strong>2G baseband</strong> (Stingray defense).</li>
+              <li><strong>Stage 3 — Forensic Scan with <code>MVT</code> (<em>Mobile Verification Toolkit</em>):</strong> Co-developed by Amnesty Security Lab &amp; Citizen Lab (<code>mvt-ios</code> / <code>mvt-android</code>) to scan local encrypted iOS backups (<code>Shutdown.log</code>, <code>DataUsage.sqlite</code>, <code>InteractionC.db</code>) against public STIX2 Indicators of Compromise (<code>IoCs</code>).</li>
+            </ul>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall contain">
+              <img src="/slides-img/citizenlab-safety-check.png" alt="Citizen Lab Safety Check and Spyware Audit Pipeline diagram">
+              <div class="photo-caption"><strong>3-Stage Safety Check Pipeline:</strong> From <code>securityplanner.org</code> &amp; iOS Safety Check to <em>Lockdown Mode</em> and <code>mvt-ios</code> forensics.</div>
+            </div>
+            <div class="photo-card tall contain">
+              <img src="/slides-img/security-planner.png" alt="Security Planner interactive digital safety checkup tool">
+              <div class="photo-caption"><strong>Security Planner (<code>securityplanner.org</code>):</strong> Interactive safety checkup originated at The Citizen Lab.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- ACADEMIC 4: CENSORED PLANET (UNIV. OF MICHIGAN) & OONI PROBE -->
       <section class="slide" data-notes="Fourth in our academic group: how do we measure in real time when a government blocks Wikipedia, Signal, Tor, or independent news sites? Citizen Lab maintains the global URL test lists on GitHub, Professor Roya Ensafi's Censored Planet lab at the University of Michigan runs remote censorship telemetry, and OONI Probe runs on thousands of volunteer devices worldwide.">
-        <div class="section-tag">32 / Academic & Open Telemetry · Univ. of Michigan & OONI</div>
+        <div class="section-tag">33 / Academic & Open Telemetry · Univ. of Michigan & OONI</div>
         <h2>Censored Planet, <code>citizenlab/test-lists</code> & OONI Probe</h2>
         <div class="split">
           <div class="text-col">
@@ -1188,7 +1218,7 @@
 
       <!-- ACADEMIC 5: STANFORD COGNITIVE SECURITY & TRUST & SAFETY -->
       <section class="slide" data-notes="Fifth in our academic group: thirty miles south down the Peninsula at Stanford University, researchers at the Freeman Spogli Institute and Hoover Institution built the open curriculum on how state actors and bot networks manipulate public perception.">
-        <div class="section-tag">33 / Academic Partner · Stanford University</div>
+        <div class="section-tag">34 / Academic Partner · Stanford University</div>
         <h2>Stanford University: Cognitive Security & Open <em>Trust & Safety</em></h2>
         <div class="split">
           <div class="text-col">
@@ -1205,9 +1235,40 @@
         </div>
       </section>
 
+      <!-- EFF SURVEILLANCE SELF-DEFENSE (SSD.EFF.ORG) & ATLAS OF SURVEILLANCE -->
+      <section class="slide" data-notes="Now let's bridge that academic research directly into our hands-on curriculum at Frontier Tower, starting with the Electronic Frontier Foundation's Surveillance Self-Defense (ssd.eff.org) and Atlas of Surveillance. Before you install a single tool, EFF SSD teaches you how to build a real Threat Model by answering five specific questions—so you don't burn out on paranoia or leave the wrong door unlocked.">
+        <div class="section-tag">35 / Practical Threat Modeling · EFF San Francisco</div>
+        <h2>EFF <em>Surveillance Self-Defense</em> (<code>ssd.eff.org</code>) &amp; <em>Atlas of Surveillance</em></h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>The 5-Question Threat Model (<code>ssd.eff.org</code>):</strong>
+                <ul>
+                  <li><strong>1. What do I want to protect?</strong> (Source identities, medical/reproductive data, location trails, research)</li>
+                  <li><strong>2. Who do I want to protect it from?</strong> (Ad-tech RTB brokers, doxxers, police ALPR/geofence warrants, border agents, or nation-states)</li>
+                  <li><strong>3–5. Likelihood, Consequences &amp; Friction:</strong> Matching sustainable daily defaults (YubiKey + Signal + Mullvad) vs. high-risk compartmentalization (Tails OS).</li>
+                </ul>
+              </li>
+              <li><strong>EFF SSD Role-Based Playlists:</strong> Field guides for <strong>Attending a Protest</strong> (disabling FaceID/TouchID biometrics so police cannot compel unlock without a Fifth Amendment passcode; Signal disappearing messages; EXIF scrubbing), <strong>Crossing the U.S. Border</strong> (powering off FileVault/LUKS devices, signing out of cloud tokens), <strong>Journalists</strong>, <strong>LGBTQ+ Youth</strong>, and <strong>Academic Researchers</strong>.</li>
+              <li><strong>EFF <em>Atlas of Surveillance</em> (<code>atlasofsurveillance.org</code>):</strong> Crowdsourced public database mapping 11,000+ police deployments of <strong>Flock Safety ALPR cameras</strong>, Stingrays, Ring partnerships, and facial recognition across California and the US.</li>
+            </ul>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall contain">
+              <img src="/slides-img/eff-ssd-threat-model.png" alt="EFF Surveillance Self-Defense 5-Question Threat Modeling diagram">
+              <div class="photo-caption"><strong>EFF SSD Threat Modeling (<code>ssd.eff.org</code>):</strong> The 5 core questions and role-based security playlists used in our clinics.</div>
+            </div>
+            <div class="photo-card tall contain">
+              <img src="/slides-img/eff-atlas-of-surveillance.png" alt="EFF Atlas of Surveillance project logo">
+              <div class="photo-caption"><strong>EFF <em>Atlas of Surveillance</em>:</strong> Mapping local police ALPRs, drones, Stingrays, and real-time crime centers.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- AD-TECH RTB & COMPUTATIONAL FINGERPRINTING -->
       <section class="slide" data-notes="And that academic research on algorithmic manipulation leads directly to how commercial ad-tech works on your devices every day. Real-Time Bidding broadcasts your geolocation and browsing profile to hundreds of ad brokers in milliseconds, while WebGL, Canvas, and AudioContext APIs fingerprint your hardware even without cookies.">
-        <div class="section-tag">34 / Commercial Surveillance & Anti-Fingerprinting</div>
+        <div class="section-tag">36 / Commercial Surveillance & Anti-Fingerprinting</div>
         <h2>Ad-Tech Real-Time Bidding (RTB) & Browser Fingerprinting</h2>
         <div class="split">
           <div class="text-col">
@@ -1231,7 +1292,7 @@
 
       <!-- SLIDE 26: BELLINGCAT & OPEN-SOURCE INTELLIGENCE (OSINT) -->
       <section class="slide" data-notes="When governments lie about war crimes, sanctions evasion, or environmental destruction, open-source intelligence lets ordinary citizens verify the truth. Eliot Higgins founded Bellingcat in 2014 using satellite imagery, street-level videos, and open-source Python tools.">
-        <div class="section-tag">35 / Open-Source Intelligence (OSINT)</div>
+        <div class="section-tag">37 / Open-Source Intelligence (OSINT)</div>
         <h2>Bellingcat: Citizen Verification & Open Tooling</h2>
         <div class="split">
           <div class="text-col">
@@ -1256,7 +1317,7 @@
 
       <!-- SLIDE 27: WHISTLEBLOWING & PUBLIC RECORDS -->
       <section class="slide" data-notes="Investigative journalism and cypherpunk engineering converge around source protection and public records: SecureDrop—originally designed by Aaron Swartz and Kevin Poulsen—plus ProPublica's Nonprofit Explorer, MuckRock, OCCRP Aleph, and Micah Lee's Hacks, Leaks, and Revelations.">
-        <div class="section-tag">36 / Whistleblowing & Investigative Data</div>
+        <div class="section-tag">38 / Whistleblowing & Investigative Data</div>
         <h2><em>SecureDrop</em>, ProPublica, MuckRock & OCCRP Aleph</h2>
         <div class="split-equal">
           <div class="text-col">
@@ -1276,7 +1337,7 @@
 
       <!-- SLIDE 28: WIKIPEDIA OFFLINE — KIWIX & OPENZIM -->
       <section class="slide" data-notes="One of our core community initiatives is a fundraiser and technical sprint for Wikipedia and offline open knowledge. When an authoritarian state shuts down the internet, or when communities are off-grid, how do people read Wikipedia? With Kiwix and OpenZIM.">
-        <div class="section-tag">37 / Community Fundraiser & Offline Commons</div>
+        <div class="section-tag">39 / Community Fundraiser & Offline Commons</div>
         <h2>Wikipedia Offline: <em>Kiwix</em>, OpenZIM & Internet-in-a-Box</h2>
         <div class="split">
           <div class="text-col">
@@ -1302,7 +1363,7 @@
 
       <!-- SLIDE 29: AARON SWARTZ (1986–2013) -->
       <section class="slide" data-notes="And that brings us to Aaron Swartz, born November 8, 1986. Look at what Aaron built in just 26 years of life—and how almost every piece of open infrastructure we use today bears his fingerprints.">
-        <div class="section-tag">38 / November 8, 1986 – January 11, 2013</div>
+        <div class="section-tag">40 / November 8, 1986 – January 11, 2013</div>
         <h2>Aaron Swartz: Architect of the Open Web</h2>
         <div class="split">
           <div class="text-col">
@@ -1324,23 +1385,17 @@
         </div>
       </section>
 
-      <!-- SLIDE 30: AARON SWARTZ DAY & INTERNATIONAL HACKATHON (SUNDAY NOV 8) -->
-      <section class="slide" data-notes="This Sunday, November 8th—Aaron's birthday—is the annual Aaron Swartz Day and International Hackathon, organized by Lisa Rein and Brewster Kahle at the Internet Archive at 300 Funston Avenue here in San Francisco.">
-        <div class="section-tag">39 / This Sunday, November 8, 2026</div>
-        <h2>Aaron Swartz Day & International Hackathon</h2>
+      <!-- SLIDE 30A: AARON SWARTZ DAY & INTERNATIONAL HACKATHON (SUNDAY NOV 8) -->
+      <section class="slide" data-notes="This Sunday, November 8th—Aaron's 40th birthday—is the annual Aaron Swartz Day and International Hackathon, organized by Lisa Rein and Brewster Kahle at the Internet Archive at 300 Funston Avenue here in San Francisco.">
+        <div class="section-tag">41 / This Sunday, November 8, 2026 · 300 Funston Ave &amp; Frontier Tower</div>
+        <h2>Aaron Swartz Day &amp; International Hackathon</h2>
         <div class="split">
           <div class="text-col">
             <ul>
               <li><strong>When:</strong> <strong>This Sunday, November 8, 2026</strong> (Aaron Swartz's 40th birthday)</li>
-              <li><strong>Where:</strong> Hosted annually with the <strong>Internet Archive</strong> (300 Funston Ave, San Francisco) & online at <code>aaronswartzday.org</code></li>
-              <li><strong>How the Cypherpunk Society Is Participating This Sunday:</strong>
-                <ul>
-                  <li>Contributing pull requests to <strong>Open Library</strong> (<code>internetarchive/openlibrary</code>) and <strong>SecureDrop</strong> (<code>freedomofpress/securedrop</code>)</li>
-                  <li>Testing and packaging <strong>Kiwix / OpenZIM</strong> offline bundles</li>
-                  <li>Maintaining our public <code>CypherpunkSociety/awesome-cypherpunk</code> field guide</li>
-                </ul>
-              </li>
-              <li><strong>Join Our Contingent:</strong> Talk to Morgan tonight or message <code>events@cypherpunksociety.org</code> to join our Sunday hackathon table!</li>
+              <li><strong>Where:</strong> Hosted annually with the <strong>Internet Archive</strong> (300 Funston Ave, San Francisco) &amp; online at <code>aaronswartzday.org</code></li>
+              <li><strong>Why Aaron Swartz Day Matters in San Francisco:</strong> Brings together investigative journalists, EFF technologists, Internet Archive engineers, and SecureDrop maintainers to ship open-source public-interest code and liberate public records.</li>
+              <li><strong>Join Our Contingent:</strong> Talk to Morgan tonight or message <code>events@cypherpunksociety.org</code> / <code>@CypherpunkSociety</code> on Telegram to join our Sunday hackathon table!</li>
             </ul>
           </div>
           <div class="photo-card tall">
@@ -1350,9 +1405,47 @@
         </div>
       </section>
 
+      <!-- SLIDE 30B: CONCRETE HACKATHON PROJECTS FOR THIS SUNDAY (NOV 8) -->
+      <section class="slide" data-notes="So what specifically can we build and ship together this Sunday, November 8th for the Aaron Swartz Day Hackathon? We have prepared three concrete, hands-on sprint tracks where both coders and non-coders can make a real impact in a single afternoon.">
+        <div class="section-tag">42 / Aaron Swartz Day Hackathon · What We Are Building This Sunday</div>
+        <h2>3 Concrete Hackathon Sprints for Sunday, November 8</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>Sprint 1 — <em>SF Bay Area Surveillance Map &amp; AB 481 / CPRA Audit</em>:</strong>
+                <ul>
+                  <li>In Aaron's spirit of liberating public records: scraping &amp; geocoding California <strong>AB 481</strong> (police military/surveillance equipment reports) and SF Administrative Code <strong>Chapter 19B</strong> filings.</li>
+                  <li>Mapping SFPD's <strong>400+ Flock Safety ALPR cameras</strong> via OpenStreetMap Overpass (<code>DeFlock</code> / <code>osm-search</code>), filing <strong>MuckRock CPRA</strong> requests, and submitting verified rows upstream to <strong>EFF's <em>Atlas of Surveillance</em></strong>.</li>
+                </ul>
+              </li>
+              <li><strong>Sprint 2 — <em>Offline <code>cypherpunk-check</code> USB Safety-Check &amp; <code>MVT</code> Triage Kiosk</em>:</strong>
+                <ul>
+                  <li>Building our self-contained, air-gapped clinic script &amp; local browser guide combining <strong>EFF SSD Threat Modeling</strong> + <strong>Citizen Lab <em>Security Planner</em></strong> + one-command <strong><code>mvt-ios</code> / <code>mvt-android</code></strong> backup scans against offline STIX2 IoC feeds — running 100% locally off our Frontier Tower USB station.</li>
+                </ul>
+              </li>
+              <li><strong>Sprint 3 — <em><code>Open Library</code>, <code>SecureDrop</code> &amp; Offline Kiwix <code>.zim</code> Field Pack</em>:</strong>
+                <ul>
+                  <li>Contributing PRs to Aaron's <strong>Open Library</strong> (<code>internetarchive/openlibrary</code>) &amp; <strong>SecureDrop</strong>, and packaging an offline <strong>Kiwix <code>.zim</code> "Cypherpunk Field Pack"</strong> (bundling <code>ssd.eff.org</code>, the <em>UN Berkeley Protocol</em>, Stanford's <code>tsbook.org</code>, and Micah Lee's guide).</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall contain">
+              <img src="/slides-img/aaron-swartz-hackathon-tracks.png" alt="Aaron Swartz Day Hackathon 3 Project Tracks diagram">
+              <div class="photo-caption"><strong>3 Sunday Hackathon Sprints:</strong> Public records &amp; ALPR mapping, offline <code>MVT</code> safety-check kiosk, and OpenZIM/Open Library PRs.</div>
+            </div>
+            <div class="photo-card tall">
+              <img src="/slides-img/flock-safety-alpr.jpg" alt="Solar-powered Flock Safety automated license plate reader camera">
+              <div class="photo-caption"><strong>Flock Safety ALPR Camera:</strong> Mapping SF &amp; Bay Area automated license plate readers for EFF's <em>Atlas of Surveillance</em> &amp; OpenStreetMap.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- SLIDE 31: PRACTICAL CLINICS AT FRONTIER TOWER -->
       <section class="slide" data-notes="So what will we do practically each month here at Frontier Tower? First: hands-on Digital Hygiene and Self-Hosting clinics where you walk out with working tools on your laptop and phone.">
-        <div class="section-tag">40 / Practical Work at Frontier Tower</div>
+        <div class="section-tag">43 / Practical Work at Frontier Tower</div>
         <h2>Hands-On Digital Hygiene & Self-Hosting Clinics</h2>
         <div class="split">
           <div class="text-col">
@@ -1382,7 +1475,7 @@
 
       <!-- SLIDE 32: FREEDOM BANDWIDTH & USB FLASHING STATION -->
       <section class="slide" data-notes="Second: we are setting up a permanent USB Flashing Station and Freedom Bandwidth initiative right here at Frontier Tower.">
-        <div class="section-tag">41 / Permanent Infrastructure at 995 Market St</div>
+        <div class="section-tag">44 / Permanent Infrastructure at 995 Market St</div>
         <h2>The USB Flashing Station & Freedom Bandwidth</h2>
         <div class="split">
           <div class="text-col">
@@ -1410,7 +1503,7 @@
 
       <!-- SLIDE 33: CALL FOR VOLUNTEERS & MONTHLY RHYTHM -->
       <section class="slide" data-notes="Finally: we intentionally keep our in-person Frontier Tower schedule sustainable—once a month on a Thursday evening at 18:30—while tracking weekly online seminars in our Matrix and Telegram channels. And we need volunteers to co-lead these five tracks!">
-        <div class="section-tag">42 / Call for Volunteers · Join the Society</div>
+        <div class="section-tag">45 / Call for Volunteers · Join the Society</div>
         <h2>Monthly 18:30 Rhythm & Call for Volunteers</h2>
         <div class="split">
           <div class="text-col">
@@ -1455,7 +1548,7 @@
     </div>
 
     <div class="bottombar">
-      <div id="slide-counter">Slide 1 / 41</div>
+      <div id="slide-counter">Slide 1 / 45</div>
       <div>Click any archival photo to zoom · <code>←</code> <code>→</code> Navigate · <code>N</code> Speaker Notes · <code>F</code> Fullscreen</div>
       <div class="controls">
         <button onclick="prevSlide()">← Prev</button>

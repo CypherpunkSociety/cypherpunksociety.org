@@ -1391,9 +1391,61 @@
         </div>
       </section>
 
+      <!-- SLIDE: SEPT 2026 GAMERS NEXUS LG TV INVESTIGATION & ACR -->
+      <section class="slide" data-notes="Here is why the home-network clinics matter. On Sunday, September 6, 2026, Gamers Nexus, working with Level1Techs and independent security researchers, published a packet-capture investigation of retail LG OLED televisions. The sets scanned the local network for phones, smartwatches and printers that had never been paired with the TV, logged nearby Wi-Fi networks and location, ran automatic content recognition across HDMI inputs, and sent on the order of four gigabytes a month back to LG Ad Solutions. LG's response three days later is the useful part: it denied recording audio in standby, but confirmed that its TVs scan the local network and called that standard across the industry. A 2024 academic study from UC Davis, UCL and Carlos III Madrid had already shown both Samsung and LG sets capturing screen-derived fingerprints. The FTC fined Vizio 2.2 million dollars for exactly this in 2017, and nothing changed. The television is an advertising business that happens to have a screen. Every tier of our ladder exposes or stops this: a Pi-hole shows you the ACR domains, an IoT VLAN on OpenWrt stops the network scanning, and the simplest fix is a dumb display with an Apple TV in front of it.">
+        <div class="section-tag">41 / September 6, 2026 · The Gamers Nexus LG Investigation &amp; Automatic Content Recognition</div>
+        <h2>Your TV Is Scanning Your Network: ACR &amp; the Consumer-Electronics Panopticon</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>What the Packet Captures Showed (Gamers Nexus × Level1Techs, Sept 6, 2026):</strong> Retail LG OLEDs <strong>scanning the local network</strong> for phones, watches and printers never paired with the TV, logging nearby Wi-Fi networks, running <strong>Automatic Content Recognition (ACR)</strong> across HDMI inputs, and sending ~<strong>4 GB a month</strong> to LG Ad Solutions.</li>
+              <li><strong>LG's Reply (Sept 9):</strong> Denied standby audio recording; <strong>confirmed the network scanning</strong> and called it "standard across modern smart TVs." That is a denial of uniqueness, not of the behavior. A 2024 ACM IMC study (UC Davis, UCL, UC3M) had already found Samsung and LG sets capturing screen-derived fingerprints; the FTC fined Vizio <strong>$2.2M</strong> for covert ACR in 2017.</li>
+              <li><strong>Why Nothing Protects You:</strong> No US federal privacy law; ACR is "opt-in" via a setup-screen checkbox (LG "Live Plus"); hardcoded DNS and DNS-over-HTTPS bypass your resolver; DMCA §1201 makes modifying the firmware a crime.</li>
+              <li><strong>The Ladder Each Clinic Builds:</strong> <strong>Pi-hole</strong> shows the telemetry domains in your query log → <strong>OpenWrt IoT VLAN</strong> with no route to the LAN defeats the scanning → <strong>Firewalla / OPNsense</strong> per-device rules → or a dumb display behind an <strong>Apple TV</strong>.</li>
+            </ul>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall">
+              <img src="/slides-img/lg-oled-ces.jpg" alt="LG 4K OLED televisions on display at CES">
+              <div class="photo-caption"><strong>LG OLED line at CES:</strong> Every major smart-TV brand runs ACR; the investigation found LG's implementation collects more. (Photo: Maurizio Pesce, CC BY 2.0)</div>
+            </div>
+            <div class="photo-card tall">
+              <img src="/slides-img/lg-webos-tv.jpg" alt="LG webOS smart TV showing a web page">
+              <div class="photo-caption"><strong>LG webOS:</strong> The TV is a Linux computer with a browser, a microphone, and a network scanner. (Photo: НАндреев, CC BY-SA 4.0)</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE: CORY DOCTOROW, ENSHITTIFICATION & ADVERSARIAL INTEROPERABILITY -->
+      <section class="slide" data-notes="The person who has given all of this a name is Cory Doctorow: science-fiction novelist, EFF special advisor, co-owner of Boing Boing, and author of the daily Pluralistic newsletter. In November 2022 he coined enshittification for the three-stage decay of platforms: first they are good to users, then they abuse users to serve business customers, then they abuse business customers to extract everything for themselves. The American Dialect Society made it word of the year for 2023, and the book, Enshittification: Why Everything Suddenly Got Worse and What to Do About It, came out from Farrar, Straus and Giroux in October 2025. His DEF CON 31 talk in August 2023 laid out the plan to halt it. His diagnosis matters for this room because it is legal, not technical: the reason you cannot block your TV's spyware is section 1201 of the DMCA, which makes circumventing a digital lock a felony, so adversarial interoperability, the thing that built the PC and the web, is illegal for the TV in your living room. And he is ours: Little Brother, his 2008 novel, is set in San Francisco, with a teenager named Marcus fighting DHS surveillance after an attack on the Bay Bridge. Every cypherpunk meeting should hand a copy to a teenager.">
+        <div class="section-tag">42 / 2008–2025 · Cory Doctorow: <em>Little Brother</em>, Enshittification &amp; Adversarial Interoperability</div>
+        <h2>Cory Doctorow: Naming the Thing &amp; the Legal Reason You Can't Fix It</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>Who:</strong> Novelist, <strong>EFF Special Advisor</strong>, co-owner of <em>Boing Boing</em>, author of the daily <strong><code>pluralistic.net</code></strong>. <em>Little Brother</em> (2008) is set right here: a San Francisco teenager fights DHS surveillance after an attack on the Bay Bridge. Required reading for every member under 20.</li>
+              <li><strong>Enshittification (coined Nov 2022):</strong> Platforms are good to users → abuse users to serve business customers → abuse business customers to extract everything. American Dialect Society <strong>Word of the Year 2023</strong>; the book <em>Enshittification: Why Everything Suddenly Got Worse and What to Do About It</em> (Farrar, Straus &amp; Giroux, Oct 2025). The plan to halt it: <strong>DEF CON 31</strong> (Aug 2023).</li>
+              <li><strong>The Legal Diagnosis:</strong> <strong>DMCA §1201</strong> makes circumventing a digital lock a felony, so <strong>adversarial interoperability</strong> (the ad blocker, the third-party firmware that built the PC and the web) is illegal for your TV, car and printer. <em>Chokepoint Capitalism</em> (2022) and <em>The Internet Con</em> (2023) argue for repeal and right-to-repair.</li>
+              <li><strong>Why He Belongs in This Deck:</strong> The LG investigation is the business model he predicted. The Society's clinics are adversarial interoperability practiced at home.</li>
+            </ul>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall">
+              <img src="/slides-img/cory-doctorow.jpg" alt="Cory Doctorow at his desk in his office">
+              <div class="photo-caption"><strong>Cory Doctorow in his office:</strong> EFF Special Advisor and author of <em>Little Brother</em> and <em>Enshittification</em>. (Photo: Jonathan Worth, CC BY 2.0)</div>
+            </div>
+            <div class="photo-card tall contain">
+              <img src="/slides-img/enshittification-logo.png" alt="The Enshittification poop emoji logo">
+              <div class="photo-caption"><strong>The Enshittification mark:</strong> Devin Washburn's emoji for the FSG edition (Oct 2025). (CC BY 4.0)</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- SLIDE 26: BELLINGCAT & OPEN-SOURCE INTELLIGENCE (OSINT) -->
       <section class="slide" data-notes="When governments lie about war crimes, sanctions evasion, or environmental destruction, open-source intelligence lets ordinary citizens verify the truth. Eliot Higgins founded Bellingcat in 2014 using satellite imagery, street-level videos, and open-source Python tools.">
-        <div class="section-tag">41 / Open-Source Intelligence (OSINT)</div>
+        <div class="section-tag">43 / Open-Source Intelligence (OSINT)</div>
         <h2>Bellingcat: Citizen Verification & Open Tooling</h2>
         <div class="split">
           <div class="text-col">
@@ -1418,7 +1470,7 @@
 
       <!-- SLIDE 27: WHISTLEBLOWING & PUBLIC RECORDS -->
       <section class="slide" data-notes="Investigative journalism and cypherpunk engineering converge around source protection and public records: SecureDrop—originally designed by Aaron Swartz and Kevin Poulsen—plus ProPublica's Nonprofit Explorer, MuckRock, OCCRP Aleph, and Micah Lee's Hacks, Leaks, and Revelations.">
-        <div class="section-tag">42 / Whistleblowing & Investigative Data</div>
+        <div class="section-tag">44 / Whistleblowing & Investigative Data</div>
         <h2><em>SecureDrop</em>, ProPublica, MuckRock & OCCRP Aleph</h2>
         <div class="split-equal">
           <div class="text-col">
@@ -1438,7 +1490,7 @@
 
       <!-- SLIDE 28: WIKIPEDIA OFFLINE — KIWIX & OPENZIM -->
       <section class="slide" data-notes="One of our core community initiatives is a fundraiser and technical sprint for Wikipedia and offline open knowledge. When an authoritarian state shuts down the internet, or when communities are off-grid, how do people read Wikipedia? With Kiwix and OpenZIM.">
-        <div class="section-tag">43 / Community Fundraiser & Offline Commons</div>
+        <div class="section-tag">45 / Community Fundraiser & Offline Commons</div>
         <h2>Wikipedia Offline: <em>Kiwix</em>, OpenZIM & Internet-in-a-Box</h2>
         <div class="split">
           <div class="text-col">
@@ -1464,7 +1516,7 @@
 
       <!-- SLIDE 29: AARON SWARTZ (1986–2013) -->
       <section class="slide" data-notes="And that brings us to Aaron Swartz, born November 8, 1986. Look at what Aaron built in just 26 years of life—and how almost every piece of open infrastructure we use today bears his fingerprints.">
-        <div class="section-tag">44 / November 8, 1986 – January 11, 2013</div>
+        <div class="section-tag">46 / November 8, 1986 – January 11, 2013</div>
         <h2>Aaron Swartz: Architect of the Open Web</h2>
         <div class="split">
           <div class="text-col">
@@ -1488,7 +1540,7 @@
 
       <!-- SLIDE 30A: AARON SWARTZ DAY & INTERNATIONAL HACKATHON (SUNDAY NOV 8) -->
       <section class="slide" data-notes="This Sunday, November 8th—Aaron's 40th birthday—is the annual Aaron Swartz Day and International Hackathon, organized by Lisa Rein and Brewster Kahle at the Internet Archive at 300 Funston Avenue here in San Francisco.">
-        <div class="section-tag">45 / This Sunday, November 8, 2026 · 300 Funston Ave &amp; Frontier Tower</div>
+        <div class="section-tag">47 / This Sunday, November 8, 2026 · 300 Funston Ave &amp; Frontier Tower</div>
         <h2>Aaron Swartz Day &amp; International Hackathon</h2>
         <div class="split">
           <div class="text-col">
@@ -1508,7 +1560,7 @@
 
       <!-- SLIDE 30B: CONCRETE HACKATHON PROJECTS FOR THIS SUNDAY (NOV 8) -->
       <section class="slide" data-notes="So what specifically can we build and ship together this Sunday, November 8th for the Aaron Swartz Day Hackathon? We have prepared three concrete, hands-on sprint tracks where both coders and non-coders can make a real impact in a single afternoon.">
-        <div class="section-tag">46 / Aaron Swartz Day Hackathon · What We Are Building This Sunday</div>
+        <div class="section-tag">48 / Aaron Swartz Day Hackathon · What We Are Building This Sunday</div>
         <h2>3 Concrete Hackathon Sprints for Sunday, November 8</h2>
         <div class="split">
           <div class="text-col">
@@ -1546,7 +1598,7 @@
 
       <!-- SLIDE 31: PRACTICAL CLINICS AT FRONTIER TOWER -->
       <section class="slide" data-notes="So what will we do practically each month here at Frontier Tower? First: hands-on Digital Hygiene and Self-Hosting clinics where you walk out with working tools on your laptop and phone.">
-        <div class="section-tag">47 / Practical Work at Frontier Tower</div>
+        <div class="section-tag">49 / Practical Work at Frontier Tower</div>
         <h2>Hands-On Digital Hygiene & Self-Hosting Clinics</h2>
         <div class="split">
           <div class="text-col">
@@ -1576,7 +1628,7 @@
 
       <!-- SLIDE 32: FREEDOM BANDWIDTH & USB FLASHING STATION -->
       <section class="slide" data-notes="Second: we are setting up a permanent USB Flashing Station and Freedom Bandwidth initiative right here at Frontier Tower.">
-        <div class="section-tag">48 / Permanent Infrastructure at 995 Market St</div>
+        <div class="section-tag">50 / Permanent Infrastructure at 995 Market St</div>
         <h2>The USB Flashing Station & Freedom Bandwidth</h2>
         <div class="split">
           <div class="text-col">
@@ -1604,7 +1656,7 @@
 
       <!-- SLIDE 33: CALL FOR VOLUNTEERS & MONTHLY RHYTHM -->
       <section class="slide" data-notes="Finally: we intentionally keep our in-person Frontier Tower schedule sustainable—once a month on a Thursday evening at 18:30—while tracking weekly online seminars in our Matrix and Telegram channels. And we need volunteers to co-lead these five tracks!">
-        <div class="section-tag">49 / Call for Volunteers · Join the Society</div>
+        <div class="section-tag">51 / Call for Volunteers · Join the Society</div>
         <h2>Monthly 18:30 Rhythm & Call for Volunteers</h2>
         <div class="split">
           <div class="text-col">
@@ -1649,7 +1701,7 @@
     </div>
 
     <div class="bottombar">
-      <div id="slide-counter">Slide 1 / 49</div>
+      <div id="slide-counter">Slide 1 / 51</div>
       <div>Click any archival photo to zoom · <code>←</code> <code>→</code> Navigate · <code>N</code> Speaker Notes · <code>F</code> Fullscreen</div>
       <div class="controls">
         <button onclick="prevSlide()">← Prev</button>

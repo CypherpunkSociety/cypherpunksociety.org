@@ -1707,9 +1707,140 @@
         </div>
       </section>
 
+      <!-- SLIDE 53: PLAYBOOK 1 — HARDEN YOUR LAPTOP & PHONE -->
+      <section class="slide" data-notes="This is the first of five playbook slides, the what-you-can-do-tonight part. Three attackers, three controls: a lost laptop is beaten by full-disk encryption; an evil maid by verified boot and firmware; remote compromise by patching, sandboxing and Lockdown Mode. On macOS 27: FileVault, Lockdown Mode, Advanced Data Protection with a recovery key, SIP on, Little Snitch or LuLu, and Santa if you want allow-listing. Linux: Privacy Guides currently recommends Fedora, openSUSE, Arch, Qubes 4.3.2, Tails 7.16, secureblue. Windows 11 24H2 escrows your BitLocker key to your Microsoft account, so back it up yourself. Firmware: Microsoft's 2011 Secure Boot certs expired in June and October 2026; check for the 2023 replacements. YubiKeys below firmware 5.7 are cloneable by a lab (EUCLEAK, Sept 2024). Phones: Before First Unlock is the principle. Power off before a border or a protest. The Oct 2025 Cellebrite leak listed every locked Pixel 9 on GrapheneOS as inaccessible. iOS 27 Lockdown Mode, Stolen Device Protection with the delay always on, and the iPhone 17's Memory Integrity Enforcement. Carrier SIM locks are free since the FCC's July 2024 rule. Signal, with a username and your number hidden.">
+        <div class="section-tag">53 / The Playbook · 1. Your Laptop & Phone</div>
+        <h2>Harden Your Laptop & Phone</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>Three attackers, three controls:</strong> lost device → full-disk encryption (<strong>FileVault / LUKS / BitLocker</strong> with your own key backup); evil maid → verified boot &amp; firmware (<strong>Heads, Dasharo</strong>; check the 2023 Secure Boot certs); remote compromise → patching, sandboxing, <strong>Lockdown Mode</strong>.</li>
+              <li><strong>macOS 27:</strong> FileVault · Lockdown Mode (no known successful attack, Apple, Mar 2026) · Advanced Data Protection · SIP on · <strong>Little Snitch / LuLu</strong> outbound · <strong>Santa</strong> allow-listing. <strong>Linux:</strong> Qubes OS 4.3.2, Tails 7.16, Fedora/secureblue (Privacy Guides). <strong>Windows:</strong> buy Pro, back up the BitLocker key.</li>
+              <li><strong>Before First Unlock:</strong> power off before a border, protest or arrest; passcode, not biometrics (<em>US v. Payne</em>, 9th Cir. 2024). Oct 2025 Cellebrite leak: every locked Pixel 9 on <strong>GrapheneOS</strong> inaccessible.</li>
+              <li><strong>iPhone 17 + iOS 27:</strong> Memory Integrity Enforcement, Lockdown Mode, Stolen Device Protection (delay: always), 72-hour inactivity reboot. <strong>Pixel 8+ on GrapheneOS:</strong> auto-reboot, duress PIN, USB charging-only, LTE-only.</li>
+              <li><strong>Tonight:</strong> carrier SIM lock (AT&amp;T, Verizon, T-Mobile; free since July 2024) · Signal username, number hidden · two hardware keys on email (YubiKey firmware ≥ 5.7).</li>
+            </ul>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall contain">
+              <img src="/slides-img/qubes-os-4-1.jpg" alt="Qubes OS desktop with colour-coded isolated qubes">
+              <div class="photo-caption"><strong>Qubes OS:</strong> security by compartmentalisation; 4.3.2 is current (Oct 2026). Screenshot: Qubes OS Project, GPL.</div>
+            </div>
+            <div class="photo-card tall">
+              <img src="/slides-img/pixel-9-hands-on.jpg" alt="Google Pixel 9 and Pixel 9 Pro">
+              <div class="photo-caption"><strong>Pixel + GrapheneOS:</strong> the only Android Privacy Guides recommends; Pixel 6–10 supported. Photo: ShoAndTech, CC BY 3.0.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 54: PLAYBOOK 2 — HARDEN YOUR ROUTER & NETWORK -->
+      <section class="slide" data-notes="Your router first, because everyone owns one and most are abandoned by their vendor. OpenWrt 25.12 is current; opkg is gone, apk replaced it, and attended sysupgrade is on by default. 25.12.6 from October fixed five unauthenticated uhttpd bugs. The ten-minute checklist is on the slide with the real option names; people photograph this. The OpenWrt One is the clinic unit at about 90 dollars; the OpenWrt Two has still not shipped. Put the Xfinity gateway in bridge mode. The FCC put every foreign-made router on its Covered List in March 2026; TP-Link is not approved and firmware updates for already-sold routers are only guaranteed through March 2027. Then the wire: DNS over HTTPS plus Encrypted Client Hello, which became RFC 9849 in March; a VPN moves trust, it does not anonymise; Mullvad still passes every test but the Tor Project paused co-branding in October over the donation controversy, so say that honestly. Section 702 expired on June 12 2026 but collection continues under March FISC certifications. Flock cameras are the local fight: Oakland stalled its contract in September, SF has a class action over 1.6 million federal queries. Rayhunter on a 20 dollar hotspot shows you when a cell-site simulator is working the crowd.">
+        <div class="section-tag">54 / The Playbook · 2. Your Router & the Wire</div>
+        <h2>Harden Your Router &amp; Your Network</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>OpenWrt 25.12 (25.12.6, Oct 2026):</strong> <code>opkg</code> → <code>apk</code>; attended sysupgrade on by default. The 10-minute checklist: root password · admin bound to LAN · <code>sae</code>/<code>sae-mixed</code> + <code>ieee80211w 2</code> · guest SSID <code>isolate 1</code> + IoT VLAN · DoH/DoT + DNS hijack of port 53 · <code>adblock-lean</code> · WireGuard · no UPnP/WPS.</li>
+              <li><strong>Hardware:</strong> OpenWrt One (~$89, Banana Pi; $10 to Conservancy) is the clinic unit; OpenWrt Two still unshipped. Turris Omnia NG (schematics published), BPI-R4, OPNsense 26.7 on a Protectli. ISP gateway → <strong>bridge mode</strong>. FCC Covered List (Mar 23 2026): TP-Link unapproved, updates guaranteed only to Mar 1 2027.</li>
+              <li><strong>The wire:</strong> DoH/DoT + <strong>ECH</strong> (RFC 9849, Mar 2026; Cloudflare ≈ all of it). Resolver: Quad9 or your own Unbound (Mullvad DNS closed Nov 2 2026). VPN = moved trust, not anonymity: Mullvad, Proton, IVPN; Tor Browser 16 + a home <strong>bridge</strong>, never an exit.</li>
+              <li><strong>Cellular &amp; cameras:</strong> 2G off; EFF <strong>Rayhunter</strong> v0.13 on a $20 Orbic hotspot. Section 702 <strong>expired June 12 2026</strong> (collection continues to Mar 2027). <strong>Flock</strong>: Oakland stalled $2.25M (Sept 2026); SF class action over 1.6M federal queries; 273 cities cancelled. Map them on <strong>DeFlock</strong>.</li>
+            </ul>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall contain">
+              <img src="/slides-img/openwrt-one-front.jpg" alt="OpenWrt One router in its case, front view">
+              <div class="photo-caption"><strong>OpenWrt One:</strong> MT7981B, 2.5 GbE PoE-in, NOR recovery flash; launched Dec 2024 at $89.99. Photo: Banana Pi, CC BY-SA 4.0.</div>
+            </div>
+            <div class="photo-card tall contain">
+              <img src="/slides-img/stingray-eff.png" alt="EFF diagram of a StingRay cell-site simulator intercepting phones">
+              <div class="photo-caption"><strong>Cell-site simulators:</strong> EFF's StingRay diagram; Rayhunter detects the 4G/2G downgrade. Image: EFF, CC BY 3.0.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 55: PLAYBOOK 3 — DEVICES & YOUR PROFILE -->
+      <section class="slide" data-notes="The devices in the house, and the profile of you on the internet. The TV menu paths are on the slide because people will do it in the room. Cars: the FTC finalised its GM order in January 2026, twenty years, no selling driving data to credit bureaus; run your VIN through the Vehicle Privacy Report. Amazon removed the do-not-send-recordings option on March 28 2025, so every Echo streams to the cloud; the auditable alternative is Home Assistant's 69 dollar Voice Preview Edition. Ring cancelled its Flock integration five days after the Super Bowl ad backlash. Meta pulled Name Tag facial recognition code from the glasses app in June only after it was found. Mozilla shut Privacy Not Included in August. Then the profile: two hardware keys on the accounts that reset the others; alias every email; dox yourself with the NYT Open exercise before someone else does; California's DROP has had enforcement since August and half a million sign-ups. Clearview's settlement was vacated in July and ICE signed a 9.2 million dollar contract with them. X shows every account's inferred country since November 2025. The Discord ID breach, 70,000 government ID photos, is the argument against ID-upload age checks. Turn on Global Privacy Control; California fined Tractor Supply 1.35 million for ignoring it.">
+        <div class="section-tag">55 / The Playbook · 3. Your Devices & Your Profile</div>
+        <h2>Cripple Device Monitoring &amp; Protect Your Profile</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>TV, in the room:</strong> Samsung <em>Viewing Information Services</em> · LG <em>Live Plus</em> · Vizio <em>Viewing Data</em> · Roku <em>Smart TV Experience</em> · Sony/Google TV <em>Samba</em> — all off. Then the IoT VLAN with WAN blocked.</li>
+              <li><strong>Cars &amp; speakers:</strong> FTC's GM order final Jan 14 2026; run your VIN through <strong>vehicleprivacyreport.com</strong>. Echo streams all audio since Mar 28 2025 → <strong>Home Assistant Voice PE</strong> ($69, local). Ring: Familiar Faces shipped, Flock deal cancelled Feb 13 2026 → <strong>Frigate</strong> + RTSP cameras. Meta glasses: Name Tag code pulled June 2026.</li>
+              <li><strong>Accounts:</strong> two hardware keys or passkeys on email, Apple/Google, the vault, the carrier; <strong>alias every email</strong> (SimpleLogin, addy.io, Hide My Email). <strong>Dox yourself</strong> (NYT Open + EFF Digital Footprint), then file: DROP (500K Californians, enforcement since Aug 2026), PimEyes opt-out with a redacted ID.</li>
+              <li><strong>The face &amp; the platforms:</strong> Clearview settlement vacated (7th Cir., July 2026), ICE contract $9.2M; X shows every account's country since Nov 2025; Discord's vendor breach exposed ~70,000 ID photos — the case against ID-upload age checks. <strong>GPC on</strong>: Tractor Supply fined $1.35M; AB 566 mandates it in browsers from 2027.</li>
+            </ul>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall">
+              <img src="/slides-img/ring-doorbell-stone.jpg" alt="Ring video doorbell mounted on a stone wall">
+              <div class="photo-caption"><strong>Ring:</strong> Axon partnership, facial recognition, and a Flock integration cancelled after the Super Bowl ad. Photo: Robert Nelson, CC BY 2.0.</div>
+            </div>
+            <div class="photo-card tall">
+              <img src="/slides-img/ray-ban-meta-gen1.jpg" alt="Ray-Ban Meta smart glasses with charging case">
+              <div class="photo-caption"><strong>Ray-Ban Meta:</strong> the Harvard I-XRAY demo identified strangers from a face search; Meta removed Name Tag code June 9 2026. Photo: CCadio, CC BY 4.0.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 56: PLAYBOOK 4 — THE BORDER & HELPING OTHERS -->
+      <section class="slide" data-notes="Two outward-facing topics. The border: CBP searched 52,080 devices in the first three quarters of fiscal 2026, a third more than the year before, and refuses to break out citizens. The new directive since January lets a basic search happen with no suspicion at all; the Second Circuit agreed in September. A citizen cannot be denied entry for refusing a passcode but the device can be held; a visa holder can be turned around for an empty phone. US v Tunick: an activist who typed a GrapheneOS duress password during secondary inspection was charged with destroying evidence. Wipe before you fly, never during. The checklist: travel phone, cloud apps logged out and deleted, biometrics off, Lockdown Mode, power off before the line, take the 6051D receipt, email borders at eff dot org. The Asian Law Caucus hotline is the number to save. Then helping others: 313 shutdowns in 2025, Iran dark from January 8 and again from February 28. Snowflake tonight; a bridge this month; the Open Technology Fund survived Kari Lake's termination and got its 43.5 million in July, but the FY2027 budget folds it into State. Nobody runs a Tor relay association in the Bay Area since NoiseTor went dark in 2022. That is ours to found.">
+        <div class="section-tag">56 / The Playbook · 4. At the Border & Behind the Shutdowns</div>
+        <h2>Your Risk Abroad &amp; Helping People Behind Shutdowns</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>CBP, FY2026 to June:</strong> 52,080 device searches (+32%), 4,564 forensic; a basic search needs <em>no suspicion</em> (Directive 3340-049B; <em>Alisigwe</em>, 2nd Cir. Sept 2026). Citizens can refuse a passcode (device held); visa/ESTA holders can be refused for an empty phone. <em>US v. Tunick</em>: a duress PIN typed <em>during</em> the search → prosecution. Wipe before, never during.</li>
+              <li><strong>Travel-device checklist:</strong> travel phone · cloud apps logged out <em>and deleted</em> · long passcode, biometrics off · Lockdown Mode · <strong>power off before the line</strong> · never lie · take Form 6051D, email <strong>borders@eff.org</strong>. UK, Canada and Hong Kong (transit included) compel passwords. <strong>Asian Law Caucus: (415) 896-1701.</strong></li>
+              <li><strong>Behind the shutdowns:</strong> 313 shutdowns in 52 countries in 2025 (#KeepItOn); Iran dark Jan 8 and again from Feb 28 2026. Tonight: <strong>Snowflake</strong>. This month: an obfs4/WebTunnel <strong>bridge</strong> on a $5 VPS; <strong>OONI Probe</strong> on a Pi. Never an exit from home; never an “IT army” (CFAA).</li>
+              <li><strong>Money &amp; people:</strong> OTF won its $43.5M in court (July 2026), FY2027 at risk → donate to Tor, OONI, Psiphon, Signal. At-risk contacts → <strong>help@accessnow.org</strong> (24/7). No Bay Area Tor relay association since NoiseTor went dark in 2022: <strong>found one.</strong></li>
+            </ul>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall">
+              <img src="/slides-img/cbp-airport-inspection.jpg" alt="US Customs and Border Protection officer inspecting a traveler at an airport">
+              <div class="photo-caption"><strong>CBP secondary inspection:</strong> 55,318 device searches in FY2025; a record pace in FY2026. Photo: James Tourtellotte, CBP, public domain.</div>
+            </div>
+            <div class="photo-card tall contain">
+              <img src="/slides-img/tor-snowflake-logo.png" alt="Tor Snowflake logo">
+              <div class="photo-caption"><strong>Snowflake:</strong> Tor's most-used path out of Iran; a browser extension or one Docker line turns your bandwidth into a lifeline.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 57: PLAYBOOK 5 — THE LINKS -->
+      <section class="slide" data-notes="The three lists the Society will keep on the website and re-verify every quarter: the tools a member actually installs, the organisations and helplines that exist for us, and the sources that keep educating us. Two notes: CryptoParty looks dormant, and Mozilla's Privacy Not Included and Consumer Reports' Permission Slip both changed hands or closed in 2026, so lists rot and someone has to own this one. Gatherings: 40C3 in Hamburg December 27 to 30, voucher presale closes November 10; BSidesSF April 3 to 4 2027; Oakland Privacy meets November 11.">
+        <div class="section-tag">57 / The Playbook · 5. The Links We Keep</div>
+        <h2>The Links: Tools We Use · Resources for Us · What Educates Us</h2>
+        <div class="split">
+          <div class="text-col">
+            <ul>
+              <li><strong>Tools we use:</strong> Tor Browser 16 · Signal · Mullvad / Proton · Bitwarden / KeePassXC · GrapheneOS · OpenWrt · Pi-hole / AdGuard Home · Home Assistant · Tails / Qubes · Snowflake · OONI Probe · MVT · Rayhunter · uBlock Origin (Firefox) · ExifTool · Syncthing · Kiwix · SimpleX · DeFlock.</li>
+              <li><strong>Resources for us:</strong> EFF (SSD, Security Education Companion, Atlas of Surveillance, <strong>borders@eff.org</strong>) · Access Now helpline · Front Line Defenders · Freedom of the Press Foundation · Citizen Lab · Amnesty Security Lab · Privacy Guides · CR Security Planner · Digital First Aid Kit · PEN America · <strong>Oakland Privacy · ACLU NorCal · Asian Law Caucus</strong> · Noisebridge · Sudo Room · Internet Archive.</li>
+              <li><strong>What educates us:</strong> EFF SSD · Privacy Guides basics · The New Oil / Techlore / Surveillance Report · Bazzell, <em>Extreme Privacy</em> 5e · <em>A Cypherpunk's Manifesto</em> · <em>Little Brother</em> &amp; Pluralistic · Crypto-Gram · Freedom on the Net 2026 · Bellingcat toolkit · 404 Media · The Markup at CalMatters · awesome-privacy.</li>
+              <li><strong>Dates:</strong> Oakland Privacy Nov 11 · DMCA §1201 comments due Dec 7 · <strong>40C3 Hamburg Dec 27–30</strong> (vouchers close Nov 10) · BSidesSF Apr 3–4 2027. Full tables with URLs: cypherpunksociety.org.</li>
+            </ul>
+          </div>
+          <div class="photo-grid-2">
+            <div class="photo-card tall contain">
+              <img src="/slides-img/eff-ssd-logo.png" alt="EFF Surveillance Self-Defense logo">
+              <div class="photo-caption"><strong>Surveillance Self-Defense:</strong> the canonical guides; every link on this slide starts there.</div>
+            </div>
+            <div class="photo-card tall contain">
+              <img src="/slides-img/security-planner.png" alt="Consumer Reports Security Planner">
+              <div class="photo-caption"><strong>Security Planner:</strong> Citizen Lab's planner, now at Consumer Reports; the five-minute version of this deck.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- SLIDE 33: CALL FOR VOLUNTEERS & MONTHLY RHYTHM -->
       <section class="slide" data-notes="Finally: we intentionally keep our in-person Frontier Tower schedule sustainable—once a month on a Thursday evening at 18:30—while tracking weekly online seminars in our Matrix and Telegram channels. And we need volunteers to co-lead these five tracks!">
-        <div class="section-tag">53 / Call for Volunteers · Join the Society</div>
+        <div class="section-tag">58 / Call for Volunteers · Join the Society</div>
         <h2>Monthly 18:30 Rhythm & Call for Volunteers</h2>
         <div class="split">
           <div class="text-col">
@@ -1754,7 +1885,7 @@
     </div>
 
     <div class="bottombar">
-      <div id="slide-counter">Slide 1 / 53</div>
+      <div id="slide-counter">Slide 1 / 58</div>
       <div>Click any archival photo to zoom · <code>←</code> <code>→</code> Navigate · <code>N</code> Speaker Notes · <code>F</code> Fullscreen</div>
       <div class="controls">
         <button onclick="prevSlide()">← Prev</button>

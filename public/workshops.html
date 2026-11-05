@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Cypherpunk Society workshop materials — hands-on checklists, tools and reading for the monthly clinics at Frontier Tower: laptop, phone, router, network, consumer devices, online profile, travel, and helping people under repressive governments.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Cypherpunk Society">
+<meta property="og:title" content="workshop materials — cypherpunk society">
+<meta property="og:description" content="checklists, tools and reading for the monthly clinics at frontier tower, san francisco">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<style>
+	body {
+		line-height: 1.4;
+		font-size: 16px;
+		padding: 0 10px;
+		margin: 50px auto;
+		max-width: 650px;
+	}
+
+	#maincontent {
+		max-width: 42em;
+		margin: 15px auto;
+	}
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 16px 0;
+		font-size: 15px;
+	}
+	th, td {
+		border-bottom: 1px solid #ddd;
+		text-align: left;
+		padding: 6px 8px;
+		vertical-align: top;
+	}
+	th {
+		border-bottom: 2px solid #000;
+	}
+
+	code {
+		background: #f4f4f4;
+		padding: 1px 4px;
+		font-size: 14px;
+	}
+</style>
+
+<title>workshop materials — cypherpunk society</title>
+</head>
+
+<body>
+<div id="maincontent" style="margin-top:70px">
+	<h1>cypherpunk society workshop materials</h1>
+
+	<p><a href="/">&larr; back</a> &middot; <a href="/docs.html">docs</a> &middot; <a href="/slides.html">slides</a> &middot; <a href="/start.html">clone us</a></p>
+
+	<p>These are the hands-on materials for the monthly clinics at Frontier Tower (995 Market St, San Francisco, 18:30). Each workshop is one evening: hardware or an account on the table, one scary step done together, a checklist people photograph. For every topic you get a checklist to do tonight, the tools we use, the reading, and a way to get involved. Tool versions and dates are as of Nov 4 2026; we re-verify the links quarterly.</p>
+
+	<ul>
+		<li><a href="#laptop">1. Harden your laptop</a></li>
+		<li><a href="#phone">2. Harden your phone</a></li>
+		<li><a href="#router">3. Harden your Wi-Fi router</a></li>
+		<li><a href="#network">4. Harden against network surveillance</a></li>
+		<li><a href="#devices">5. Cripple consumer-device monitoring</a></li>
+		<li><a href="#profile">6. Protect your online profile and social media</a></li>
+		<li><a href="#travel">7. Your risk when travelling abroad</a></li>
+		<li><a href="#helping">8. Helping people under repressive governments</a></li>
+		<li><a href="#links">9. Links</a></li>
+		<li><a href="#calendar">10. Clinic calendar</a></li>
+		<li><a href="#checking">Facts we are still checking</a></li>
+	</ul>
+
+	<h2 id="laptop">1. Harden your laptop</h2>
+	<p>Three attackers, three controls. A lost or stolen laptop is beaten by full-disk encryption and a strong login secret. An evil maid (brief physical access, device returned) is beaten only by verified or measured boot and firmware write-protection, which most checklists skip. Remote compromise (phishing, a malicious document, a browser exploit) is beaten by patching, sandboxing, an outbound firewall and Lockdown Mode. Decide which of the three you are actually defending against before you touch a setting.</p>
+
+	<h3>Do tonight</h3>
+	<ol>
+		<li>Start from EFF's <a href="https://ssd.eff.org/module/your-security-plan">Your Security Plan</a> and pick your attacker.</li>
+		<li><strong>macOS 27 Golden Gate</strong> (released Sept 14 2026; 27.2 on Oct 26; Apple-silicon only), in order: FileVault on.</li>
+		<li>Lockdown Mode on if you are a plausible target. It blocks most Messages attachments, web JIT, FaceTime from strangers, wired accessories while locked, 2G/3G and config profiles; iOS/macOS 27 added per-contact exclusions. Apple <a href="https://www.iclarified.com/100363/apple-says-lockdown-mode-hasnt-been-hit-by-spyware-attacks">told TechCrunch</a> in March 2026 it knows of no successful attack on a device running it.</li>
+		<li><a href="https://support.apple.com/en-us/108756">Advanced Data Protection</a> for iCloud, with the recovery key written down. Mail, Contacts and Calendar stay unencrypted even then. UK users lost ADP in Feb 2025 under a Technical Capability Notice and the Tribunal appeal is still running.</li>
+		<li>Gatekeeper on "App Store and identified developers"; SIP left on (<code>csrutil status</code>); Full Security in Startup Security Utility. There is no firmware password on Apple silicon: Apple's <a href="https://support.apple.com/guide/security/welcome/web">Platform Security Guide</a> (Aug 2026 edition) says FileVault plus Activation Lock replaces it.</li>
+		<li>Add an outbound firewall: <a href="https://obdev.at/products/littlesnitch/index.html">Little Snitch</a> ($59, version 7 in beta) or the free <a href="https://objective-see.org/products/lulu.html">LuLu</a> 4.5.7. For allow-listing what may execute, <a href="https://github.com/northpolesec/santa">Santa</a> (now North Pole Security, Apache-2.0, v2026.9 validated on macOS 27) is the tool Google built for its own fleet.</li>
+		<li>Audit the new Full Disk Access grants that macOS 27 prompts for when AI agents ask.</li>
+		<li><strong>Linux.</strong> <a href="https://www.privacyguides.org/en/desktop/">Privacy Guides</a> (July 2026) recommends Fedora, openSUSE Tumbleweed or Arch for a traditional desktop, Fedora Atomic or NixOS for an immutable one, Whonix or Tails for anonymity, and Qubes OS, secureblue or Kicksecure for security. Turn on LUKS at install time, not later; prefer Wayland; keep SELinux or AppArmor; use Flatpak as the sandbox and skip Firejail (setuid root, large attack surface). Verified boot is "still largely unavailable" on mainstream distros; the step up is enrolling your own Secure Boot keys with <a href="https://github.com/Foxboron/sbctl">sbctl</a> and sealing LUKS to the TPM. <a href="https://www.qubes-os.org/news/">Qubes OS 4.3.2</a> (Oct 2 2026) is current; its certified-hardware list is thirteen models, newest the Star Labs StarFighter and StarBook Horizon (Oct 21 2026), with NovaCustom and NitroPad in the middle and no Framework model on it. <a href="https://tails.net/news/">Tails 7.16</a> (Oct 30 2026) now ships every two weeks in step with Tor Browser 16.</li>
+		<li><strong>Windows 11.</strong> Buy Pro, because Home lacks full BitLocker, Hyper-V and Sandbox. Since 24H2 Device Encryption is on by default on clean installs, with the recovery key escrowed to your Microsoft account; back the key up yourself (<code>manage-bde -protectors -get C:</code>) and on Pro add a TPM+PIN pre-boot authenticator, because the April 2026 cumulative update threw some PCs into recovery. Recall is opt-in and removable on Copilot+ PCs; Signal Desktop blocks it anyway. Turn on Core Isolation. Windows 10 ended support Oct 14 2025.</li>
+		<li><strong>Firmware.</strong> Microsoft's 2011 Secure Boot certificates expired in June and October 2026; a PC without the 2023 replacements in its DB and KEK still boots but no longer gets boot-manager or revocation updates (<a href="https://support.microsoft.com/help/5062710">KB5062710</a>). <a href="https://www.kb.cert.org/vuls/id/455367">PKfail</a> (July 2024) found AMI test keys shipped as production Platform Keys across roughly 800 product lines, and <a href="https://kb.cert.org/vuls/id/811862">LogoFAIL</a> put a bootkit in the boot-logo parser, so "Secure Boot on" is only as good as the OEM's key hygiene. The open alternatives are <a href="https://osresearch.net/">Heads</a> (coreboot plus a TPM-measured boot with a Nitrokey or Librem Key; tamper-evident, not tamper-proof) and 3mdeb's <a href="https://docs.dasharo.com/variants/overview/">Dasharo</a> on NovaCustom, MSI, Protectli and, since v0.9.0 in Aug 2026, AMD AM5. Framework has upstream coreboot work (26.09 added the Framework 12) but no shipping open firmware yet.</li>
+		<li><strong>Browser, passwords, keys.</strong> Mullvad Browser, Firefox with the Privacy Guides settings, or Brave when you need Chromium; Tor Browser 16 for anonymity only. uBlock Origin is dead on Chrome since Chrome 138 (July 2025) removed the last override; Firefox and Brave keep it. Test yourself on <a href="https://coveryourtracks.eff.org/">Cover Your Tracks</a>. Bitwarden (switch the KDF to Argon2id) or KeePassXC. YubiKey 5 NFC is $58 and ships firmware 5.8, which matters because <a href="https://ninjalab.io/EUCLEAK/">EUCLEAK</a> (Sept 2024) made every key below 5.7 cloneable by a lab with physical possession and there is no field upgrade. Passkeys are mainstream now (FIDO counts <a href="https://fidoalliance.org/fido-alliance-reports-accelerating-global-passkey-adoption-on-world-passkey-day-2026/">5 billion</a> and 36% of logins at large sites in Oct 2026): keep them in the password manager for convenience and on a hardware key for the accounts that matter.</li>
+	</ol>
+
+	<h3>Tools</h3>
+	<ul>
+		<li><a href="https://obdev.at/products/littlesnitch/index.html">Little Snitch</a> and <a href="https://objective-see.org/products/lulu.html">LuLu</a>, macOS outbound firewalls</li>
+		<li><a href="https://github.com/northpolesec/santa">Santa</a>, execution allow-listing for macOS</li>
+		<li><a href="https://github.com/Foxboron/sbctl">sbctl</a>, enrol your own Secure Boot keys on Linux</li>
+		<li><a href="https://www.qubes-os.org">Qubes OS</a> 4.3.2 and <a href="https://tails.net">Tails</a> 7.16</li>
+		<li><a href="https://osresearch.net/">Heads</a> and <a href="https://docs.dasharo.com/variants/overview/">Dasharo</a>, open firmware</li>
+		<li><a href="https://www.torproject.org/download/">Tor Browser 16</a>, for anonymity only</li>
+		<li><a href="https://ublockorigin.com">uBlock Origin</a> and <a href="https://privacybadger.org">Privacy Badger</a>, on Firefox or Brave</li>
+		<li><a href="https://bitwarden.com">Bitwarden</a> or <a href="https://keepassxc.org">KeePassXC</a></li>
+		<li><a href="https://coveryourtracks.eff.org/">Cover Your Tracks</a>, fingerprint test</li>
+	</ul>
+
+	<h3>Read</h3>
+	<ul>
+		<li>EFF, <a href="https://ssd.eff.org/module/your-security-plan">Your Security Plan</a></li>
+		<li>Apple, <a href="https://support.apple.com/guide/security/welcome/web">Platform Security Guide</a> (Aug 2026) and <a href="https://support.apple.com/en-us/108756">Advanced Data Protection</a></li>
+		<li>Privacy Guides, <a href="https://www.privacyguides.org/en/desktop/">desktop recommendations</a>, <a href="https://www.privacyguides.org/en/os/linux-overview/">Linux overview</a> and the <a href="https://www.privacyguides.org/en/os/windows/">Windows knowledge-base entry</a></li>
+		<li>Microsoft, <a href="https://support.microsoft.com/help/5062710">KB5062710</a> on the Secure Boot certificate expiry</li>
+		<li>CERT, <a href="https://www.kb.cert.org/vuls/id/455367">PKfail</a> and <a href="https://kb.cert.org/vuls/id/811862">LogoFAIL</a></li>
+		<li>NinjaLab, <a href="https://ninjalab.io/EUCLEAK/">EUCLEAK</a></li>
+		<li>FIDO Alliance, <a href="https://fidoalliance.org/fido-alliance-reports-accelerating-global-passkey-adoption-on-world-passkey-day-2026/">passkey adoption report</a> (2026)</li>
+	</ul>
+
+	<h3>Get involved</h3>
+	<p>EFF's <a href="https://www.securityeducationcompanion.org/">Security Education Companion</a> has the lesson plans for a laptop clinic ready to run. The <a href="https://www.eff.org/electronic-frontier-alliance/allies">Electronic Frontier Alliance</a> lists the Bay Area groups to co-host with (Noisebridge, Oakland Privacy, Gray Area, Aspiration, Berkeley's OCF, Restore the Fourth Bay Area). <a href="https://sudoroom.org/">Sudo Room</a> in Oakland ran a coreboot and Intel ME talk in July 2026 and is the natural partner for a firmware night. The <a href="https://cltc.berkeley.edu/citizen-clinic">UC Berkeley Cybersecurity Clinic</a> takes nonprofits, not individuals, so refer organisations there. Code to contribute to: Santa, sbctl, Heads, Dasharo, Qubes and secureblue all tag first issues. CryptoParty SF's site was unreachable, so its status is unknown.</p>
+
+	<h2 id="phone">2. Harden your phone</h2>
+	<p>The one principle that beats forensics: after a reboot the file-system keys are not in memory (Before First Unlock); after the first unlock they are, and nearly every Cellebrite or GrayKey extraction of a consumer phone is an After First Unlock extraction. The Oct 30 2025 <a href="https://www.404media.co/someone-snuck-into-a-cellebrite-microsoft-teams-call-and-leaked-phone-unlocking-details/">leak</a> of a Cellebrite briefing slide listed every locked Pixel 9 on GrapheneOS as inaccessible and stock Pixels as partly extractable even BFU.</p>
+
+	<h3>Do tonight</h3>
+	<ol>
+		<li>Power the phone off before a border, a protest or an arrest; set GrapheneOS auto-reboot short; rely on iOS's 72-hour <a href="https://techcrunch.com/2024/11/14/new-apple-security-feature-reboots-iphones-after-3-days-researchers-confirm">Inactivity Reboot</a> (iOS 18.1) otherwise. Use a passcode, not biometrics: the Ninth Circuit in <a href="https://law.justia.com/cases/federal/appellate-courts/ca9/22-50262/22-50262-2024-04-17.html"><em>US v. Payne</em></a> (April 2024) held a compelled thumbprint non-testimonial while the D.C. Circuit went the other way in 2025, so biometrics are a legal lottery.</li>
+		<li><strong>iPhone (iOS 27, Sept 14 2026).</strong> Lockdown Mode on if you could be a target; <a href="https://support.apple.com/en-us/120340">Stolen Device Protection</a> with "Require Security Delay: Always"; Advanced Data Protection with a recovery key; <a href="https://support.apple.com/en-us/102648">Safety Check</a> run once to see what you share with whom. The iPhone 17 and Air introduced <a href="https://security.apple.com/blog/memory-integrity-enforcement/">Memory Integrity Enforcement</a> (always-on tagged memory across the kernel and 70+ system processes), the single biggest reason a targeted person should carry a 17-or-newer.</li>
+		<li>Apple's <a href="https://support.apple.com/en-us/102174">threat notifications</a> have now gone to users in 150+ countries; the Aug 13 2026 wave hit 110 countries and the late-October wave 99, including Bundestag members per <a href="https://techcrunch.com/2026/11/02/germany-says-lawmakers-iphones-may-have-been-hacked-with-spyware/">Germany's BSI</a>. If you get one, Apple's own advice is Lockdown Mode plus the Access Now helpline. <a href="https://iverify.io/blog/iverify-basic-is-now-on-android">iVerify Basic</a> ($0.99, one scan a month) is the consumer check; Amnesty's <a href="https://github.com/mvt-project/mvt">MVT</a> (2026.5.12) is the real one and needs a backup or sysdiagnose and a volunteer who has run it before.</li>
+		<li><strong>Android: GrapheneOS or nothing.</strong> It is the only Android OS <a href="https://www.privacyguides.org/en/android/distributions/">Privacy Guides</a> recommends and the only one that survived Google's June 2025 decision to publish Android 16 to AOSP without Pixel device trees. Supported today: Pixel 6 through 10, latest release 2026110200 on an Android 17 base; buy a Pixel 8 or later for hardware MTE and seven years of patches. The March 2026 <a href="https://9to5google.com/2026/03/01/motorola-confirms-grapheneos-partnership-for-a-future-smartphone-porting-features/">Motorola partnership</a> means a non-Pixel option no earlier than 2027.</li>
+		<li>On GrapheneOS turn on: auto-reboot (default 18 h), a duress PIN (irreversible wipe including eSIMs), charging-only USB when locked, LTE-only, Storage and Contact Scopes, and run the Auditor app for attestation. CalyxOS paused in Aug 2025, <a href="https://calyxos.org/news/">returned</a> July 1 2026 and began an Android 17 rollout Oct 1; LineageOS and /e/OS lack verified boot on most devices. On a stock Android 16 phone, Google's one-toggle <a href="https://www.androidauthority.com/android-16-advanced-protection-mode-3566064/">Advanced Protection</a> (USB data block, sideload block, 2G block, MTE, intrusion logging) is the floor.</li>
+		<li><strong>SIM swap, carrier side.</strong> Since the FCC's <a href="https://docs.fcc.gov/public/attachments/DOC-397990A1.pdf">order</a> took effect in July 2024 every carrier must offer a free lock: AT&amp;T Wireless Account Lock, Verizon Number Lock plus SIM Protection, T-Mobile Port Out Protection plus SIM Protection. Turn them on tonight, set a carrier PIN, and move every 2FA off SMS.</li>
+		<li><strong>Messaging.</strong> Signal: set a username and "Who can see my number: Nobody". It added opt-in secure backups (Sept 2025), the SPQR post-quantum ratchet (Oct 2025) and automatic key verification (Aug 2026), and its latest <a href="https://signal.org/bigbrother/">subpoena response</a> (D.C. grand jury, Nov 3 2026) still produced only a registration date and a last-connection date. WhatsApp encrypts content with the same protocol but Meta keeps the contact graph, group membership, timestamps and IP. For shutdowns: Meshtastic (LoRa; change the public default channel key; no forward secrecy), Briar (Tor/Bluetooth; in maintenance mode since July 9 2026), and Bitchat (Bluetooth mesh, no audit yet). They are availability tools, not confidentiality tools.</li>
+		<li><strong>Stalkerware.</strong> Citizen Lab <a href="https://citizenlab.ca/italian-prosecutors-confirm-journalist-was-hacked-with-paragon-spyware/">confirmed</a> Paragon's Graphite on European journalists' iPhones in June 2025 and Italy ended its contract; Intellexa's Predator rebuilt its infrastructure after US sanctions, and Treasury quietly <a href="https://amp.insurancejournal.com/news/national/2026/01/02/852854.htm">delisted</a> three Intellexa-linked people on Jan 2 2026. The far more common threat is stalkerware installed by someone with your passcode: run iPhone Safety Check, check the Android device-admin and accessibility lists, and use the <a href="https://stopstalkerware.org/">Coalition Against Stalkerware</a> resources, whose Sept 2026 test with EFF found antivirus detection still inconsistent.</li>
+	</ol>
+
+	<h3>Tools</h3>
+	<ul>
+		<li><a href="https://grapheneos.org">GrapheneOS</a>, hardened Android for Pixel 6 to 10</li>
+		<li><a href="https://github.com/mvt-project/mvt">MVT</a> 2026.5.12, Amnesty's spyware forensics toolkit (also at <a href="https://mvt.re">mvt.re</a>)</li>
+		<li><a href="https://iverify.io/blog/iverify-basic-is-now-on-android">iVerify Basic</a>, consumer spyware check</li>
+		<li><a href="https://signal.org">Signal</a></li>
+		<li>Apple <a href="https://support.apple.com/en-us/120340">Stolen Device Protection</a> and <a href="https://support.apple.com/en-us/102648">Safety Check</a></li>
+		<li>Android 16 <a href="https://www.androidauthority.com/android-16-advanced-protection-mode-3566064/">Advanced Protection</a></li>
+		<li><a href="https://meshtastic.org">Meshtastic</a>, <a href="https://briarproject.org">Briar</a>, <a href="https://simplex.chat">SimpleX</a>, <a href="https://delta.chat">Delta Chat</a>, for shutdowns</li>
+	</ul>
+
+	<h3>Read</h3>
+	<ul>
+		<li>EFF SSD, <a href="https://ssd.eff.org/module/how-to-get-to-know-iphone-privacy-and-security-settings">iPhone settings</a>, <a href="https://ssd.eff.org/module/how-to-get-to-know-android-privacy-and-security-settings">Android settings</a>, <a href="https://ssd.eff.org/module/how-to-use-signal">how to use Signal</a> and <a href="https://ssd.eff.org/module/attending-protest">attending a protest</a></li>
+		<li>Apple, <a href="https://security.apple.com/blog/memory-integrity-enforcement/">Memory Integrity Enforcement</a> and <a href="https://support.apple.com/en-us/102174">threat notifications</a></li>
+		<li>404 Media, the <a href="https://www.404media.co/someone-snuck-into-a-cellebrite-microsoft-teams-call-and-leaked-phone-unlocking-details/">Cellebrite briefing leak</a> (Oct 30 2025)</li>
+		<li>Privacy Guides, <a href="https://www.privacyguides.org/en/android/distributions/">Android distributions</a></li>
+		<li>FCC, <a href="https://docs.fcc.gov/public/attachments/DOC-397990A1.pdf">SIM-swap and port-out order</a></li>
+		<li>Signal, <a href="https://signal.org/bigbrother/">government requests</a></li>
+		<li>Citizen Lab, <a href="https://citizenlab.ca/italian-prosecutors-confirm-journalist-was-hacked-with-paragon-spyware/">Paragon Graphite confirmation</a></li>
+		<li><a href="https://stopstalkerware.org/">Coalition Against Stalkerware</a></li>
+	</ul>
+
+	<h3>Get involved</h3>
+	<p>The <a href="https://www.accessnow.org/help/">Access Now Digital Security Helpline</a> is 24/7 and free for journalists, activists and civil society; learn its referral path before someone in the room needs it. Amnesty's <a href="https://securitylab.amnesty.org/get-help/">Security Lab</a> takes MVT contributions and runs a Digital Forensics Fellowship (fourth cohort May 2026, watch for the next call). The <a href="https://discuss.grapheneos.org">GrapheneOS forum</a> is where device support gets built. A "flash a Pixel" station at Frontier Tower is a ninety-minute clinic with a web installer and no soldering.</p>
+
+	<h2 id="router">3. Harden your Wi-Fi router</h2>
+	<p>The stable OpenWrt series is <a href="https://forum.openwrt.org/t/openwrt-25-12-0-stable-release/247228">25.12</a> (March 5 2026, Linux 6.12, over 2,200 devices). Two things changed for anyone who last flashed a router in 2024: opkg is gone, replaced by Alpine's apk (<a href="https://openwrt.org/docs/guide-user/additional-software/opkg-to-apk-cheatsheet">cheatsheet</a>), and attended sysupgrade is installed by default, with the owut command-line updater on larger-flash devices. The current service release is <a href="https://lists.openwrt.org/pipermail/openwrt-devel/2026-October/045153.html">25.12.6</a> (Oct 18 2026), which fixed five unauthenticated uhttpd bugs, a CVSS 9.9 ser2net root-command bug and an rpcd symlink bug that let delegated users read /etc/shadow. Treat 24.10 as end-of-life. No 26.x branch has been announced.</p>
+
+	<h3>Do tonight</h3>
+	<p>The ten-minute checklist, with the real option names (wiki paths from the <a href="https://openwrt.org/docs/guide-user/security/security-features">security overview</a>):</p>
+	<ol>
+		<li>Root password at first login; then bind admin to LAN only: <code>dropbear.@dropbear[0].Interface='lan'</code>, uhttpd listening on the LAN address, WAN zone input REJECT (<a href="https://openwrt.org/docs/guide-user/security/secure.access">secure access</a>).</li>
+		<li>Wi-Fi <code>encryption 'sae'</code> (WPA3) or <code>'sae-mixed'</code>, with <code>ieee80211w '2'</code> for required management-frame protection (<a href="https://openwrt.org/docs/guide-user/network/wifi/basic">wifi basics</a>); 25.12.1 has a known 802.11r-plus-WPA3 issue on some clients.</li>
+		<li>A guest SSID with <code>isolate '1'</code> and an IoT VLAN, each its own interface and firewall zone forwarding to WAN only (<a href="https://openwrt.org/docs/guide-user/network/wifi/guestwifi/guest-wlan">guest WLAN</a>, <a href="https://openwrt.org/docs/guide-user/network/dsa/dsa-mini-tutorial">DSA VLANs</a>).</li>
+		<li>Encrypted upstream DNS with <code>https-dns-proxy</code> (DoH), <code>stubby</code> (DoT) or a recursive <a href="https://openwrt.org/docs/guide-user/services/dns/dot_unbound"><code>unbound</code></a>; then <a href="https://openwrt.org/docs/guide-user/services/dns/intercept">DNS hijack</a>: redirect port 53 and drop outbound 853 so TVs and speakers cannot bypass the resolver.</li>
+		<li><code>adblock</code> or the lighter <a href="https://github.com/lynxthecat/adblock-lean">adblock-lean</a> at the resolver.</li>
+		<li>A <a href="https://openwrt.org/docs/guide-user/services/vpn/wireguard/server">WireGuard server</a> so you can reach home from a caf&eacute; instead of trusting its network.</li>
+		<li>Never install miniupnpd; leave WPS off (OpenWrt ships neither).</li>
+		<li>Updates through attended sysupgrade or <code>owut</code>; remote syslog via <code>log_ip</code> in /etc/config/system.</li>
+		<li><strong>The ISP's box.</strong> Put the Xfinity gateway in <a href="https://www.xfinity.com/support/articles/wireless-gateway-enable-disable-bridge-mode">bridge mode</a> (10.0.0.1, Gateway, At a Glance), which also switches off "CyberSecure", the CUJO AI service that analyses your Wi-Fi traffic under a company promise not to look at encrypted content; TR-069 remote management of the gateway firmware stays.</li>
+		<li><strong>If you own an ASUS:</strong> GreyNoise's <a href="https://www.greynoise.io/blog/stealthy-backdoor-campaign-affecting-asus-routers">AyySSHush</a> (May 2025) planted a persistent SSH key on 9,000 ASUS routers via CVE-2023-39780 and survives firmware updates; check authorized_keys and factory reset.</li>
+	</ol>
+
+	<p><strong>The state's box.</strong> <a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a">Salt Typhoon</a> (joint advisory Aug 27 2025) got into at least nine US carriers through known edge-device bugs and CISA cannot confirm eviction, which is why the only honest assumption is that carrier-side metadata and lawful-intercept systems are readable and everything that matters goes end-to-end encrypted. On March 23 2026 the FCC put every foreign-made consumer router on its Covered List: ASUS, Netgear and eero have conditional approval, TP-Link does not, and already-sold routers may receive firmware updates only <a href="https://www.bakermckenzie.com/en/insight/publications/2026/04/united-states-fcc-adds-foreign-made-routers-to-covered-list">through March 1 2027</a> with the rest undecided. Owning a TP-Link is legal; patching it may get harder. The FBI's <a href="https://www.aha.org/news/headline/2025-05-20-fbi-warns-cyber-actors-exploiting-end-life-routers">May 7 2025 flash</a> named thirteen end-of-life Linksys and Cisco models being sold as residential proxies. Flashing OpenWrt onto a supported old router is the fix for exactly that.</p>
+
+	<h3>Hardware</h3>
+	<p>The OpenWrt One is the clinic unit. The <a href="https://www.theregister.com/2024/12/02/openwrt_one_foss_wifi_router/">OpenWrt One</a>, built with Banana Pi on a MediaTek MT7981B (Wi-Fi 6, 2.5 GbE with PoE-in and 1 GbE, NVMe slot, a NOR recovery flash that makes it very hard to brick), launched Dec 2024 at $89.99 with case, antennas and power supply, $10 of which goes to Software Freedom Conservancy; in Nov 2026 it lists at $89 to $111 on Banana Pi's AliExpress store and $125 as a kit at Ameridroid. The <a href="https://forum.openwrt.org/t/whats-going-on-with-the-openwrt-two-will-there-be-pre-orders/239674">OpenWrt Two</a>, proposed Feb 2025 with GL.iNet on the MediaTek MT7988 (Wi-Fi 7, 10G SFP+, four 2.5G ports, "$250 region", "late 2025"), has not shipped: as of April 2026 the maintainers say only that there will be an announcement when there is something to announce, and the forum guesses at 2027 and about $300.</p>
+	<p>Above it: CZ.NIC's Turris Omnia publishes <a href="https://docs.turris.cz/hw/omnia/omnia/">board schematics</a> per revision, and the new Omnia NG Wired (IPQ9574, 10G SFP+, no Wi-Fi) was shown in March 2026 at <a href="https://www.cnx-software.com/2026/03/12/turris-omnia-ng-wired-dual-10gbe-quad-2-5gbe-router-drops-wi-fi-for-cost-savings/">about &euro;350</a>; the Banana Pi BPI-R4 (Filogic 880, roughly $100 plus a $74 Wi-Fi 7 card) is the tinkerer's board. A warning on GL.iNet: the Flint 2 (MT6000) runs upstream OpenWrt, but the <a href="https://openwrt.org/toh/gl.inet/gl-be9300">Flint 3</a> (Qualcomm, $230) ships a fork of 23.05 on a 5.4 kernel and is "not yet supported" upstream, and GL.iNet's <a href="https://www.gl-inet.com/blogs/security-updates/security-advisories-vulnerabilities-and-cves-apr-24-2025">April 2025 advisory</a> covered four CVEs across twenty models. For a wired firewall in front of a dumb access point, <a href="https://www.privacyguides.org/en/router/">Privacy Guides</a> recommends only OpenWrt and OPNsense; OPNsense 26.7 (July 2026) and pfSense CE 2.9 (Aug 2026) both run on a Protectli (coreboot option, about $340) or a ZimaBoard 2 ($339). Ubiquiti is closed.</p>
+	<p><strong>OHSNAP, the tier above.</strong> Noisebridge's <a href="https://www.noisebridge.net/wiki/OHSNAP">OHSNAP</a> (Open Hardware for Secure Networks and Privacy) aimed one level higher: an open-source platform for secure networks with an auditable hardware root of trust and supplier-diversified components, starting with the OHSNAP Firewall, a single-board computer running open firmware and an open OS as the edge node of a home network. It ran as an all-volunteer <a href="https://www.meetup.com/noisebridge/events/dkfpdtyfcjbcb/">weekly Thursday workgroup</a> at Noisebridge through 2022 and 2023. We found no repository, board design or shipped hardware after that, so treat it as dormant until someone at Noisebridge confirms. Ask at 2169 Mission whether the workgroup still meets.</p>
+
+	<h3>Clinic: flash your router</h3>
+	<p>Month 4, or first if hardware is on the table. 90 minutes, same shape as the Tails USB station: a verified image, one irreversible step, then a checklist. Participants leave with OpenWrt running on a supported router and the ten-minute hardening done.</p>
+	<ul>
+		<li>Hardware decides the clinic. The inventory of old Netgear and Google WiFi units needs a model-by-model check against the OpenWrt table of hardware; original Google WiFi pucks (AC-1304) and Netgear R7800, R6220, R6350, WAX202 and WAX206 are supported, Broadcom-based Nighthawks like the R7000 are not. Anything with 8 MB of flash or less is deprecated.</li>
+		<li>One supported unit on the table that everyone flashes together; participants' own routers as a side track after a hardware-list check.</li>
+		<li>The checklist is the content: root password, WPA3, no WAN-side admin, a guest or IoT VLAN, DNS over TLS, attended sysupgrade for updates. People photograph this slide and take it home.</li>
+		<li>It stacks: the flashed router becomes the host for the Snowflake proxy, the DNS resolver from the Pi-hole clinic, and the Kiwix mirror.</li>
+		<li>Why it is more secure, said honestly: OpenWrt is maintained and minimal where vendor firmware is abandoned and bloated. The WiFi radio driver is the same closed blob either way, and a misconfigured OpenWrt is worse than stock.</li>
+	</ul>
+
+	<h3>Tools</h3>
+	<ul>
+		<li><a href="https://openwrt.org">OpenWrt</a> 25.12 and the <a href="https://openwrt.org/toh/start">table of hardware</a></li>
+		<li><a href="https://github.com/lynxthecat/adblock-lean">adblock-lean</a></li>
+		<li><a href="https://openwrt.org/docs/guide-user/services/dns/dot_unbound">unbound over DoT on OpenWrt</a> and the <a href="https://openwrt.org/docs/guide-user/services/vpn/wireguard/server">WireGuard server guide</a></li>
+		<li><a href="https://pi-hole.net">Pi-hole</a> and <a href="https://adguard.com/adguard-home">AdGuard Home</a>, network-wide DNS blocking</li>
+		<li><a href="https://docs.turris.cz/hw/omnia/omnia/">Turris Omnia schematics</a></li>
+		<li><a href="https://www.privacyguides.org/en/router/">Privacy Guides router page</a></li>
+	</ul>
+
+	<h3>Read</h3>
+	<ul>
+		<li>OpenWrt, <a href="https://forum.openwrt.org/t/openwrt-25-12-0-stable-release/247228">25.12.0 release</a>, <a href="https://lists.openwrt.org/pipermail/openwrt-devel/2026-October/045153.html">25.12.6 announcement</a> and the <a href="https://openwrt.org/docs/guide-user/additional-software/opkg-to-apk-cheatsheet">opkg-to-apk cheatsheet</a></li>
+		<li>OpenWrt wiki, <a href="https://openwrt.org/docs/guide-user/security/security-features">security features</a>, <a href="https://openwrt.org/docs/guide-user/security/secure.access">secure access</a>, <a href="https://openwrt.org/docs/guide-user/network/wifi/basic">wifi basics</a>, <a href="https://openwrt.org/docs/guide-user/network/wifi/guestwifi/guest-wlan">guest WLAN</a>, <a href="https://openwrt.org/docs/guide-user/network/dsa/dsa-mini-tutorial">DSA VLANs</a>, <a href="https://openwrt.org/docs/guide-user/services/dns/intercept">DNS hijacking</a></li>
+		<li>Xfinity, <a href="https://www.xfinity.com/support/articles/wireless-gateway-enable-disable-bridge-mode">bridge mode</a></li>
+		<li>CISA, <a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a">Salt Typhoon advisory</a> (Aug 27 2025); Baker McKenzie on the <a href="https://www.bakermckenzie.com/en/insight/publications/2026/04/united-states-fcc-adds-foreign-made-routers-to-covered-list">FCC Covered List</a>; the FBI's <a href="https://www.aha.org/news/headline/2025-05-20-fbi-warns-cyber-actors-exploiting-end-life-routers">end-of-life router flash</a></li>
+		<li>GreyNoise, <a href="https://www.greynoise.io/blog/stealthy-backdoor-campaign-affecting-asus-routers">AyySSHush</a>; GL.iNet, <a href="https://www.gl-inet.com/blogs/security-updates/security-advisories-vulnerabilities-and-cves-apr-24-2025">April 2025 advisory</a>; OpenWrt ToH, <a href="https://openwrt.org/toh/gl.inet/gl-be9300">Flint 3</a></li>
+		<li>The Register on the <a href="https://www.theregister.com/2024/12/02/openwrt_one_foss_wifi_router/">OpenWrt One</a>; CNX Software on the <a href="https://www.cnx-software.com/2026/03/12/turris-omnia-ng-wired-dual-10gbe-quad-2-5gbe-router-drops-wi-fi-for-cost-savings/">Omnia NG Wired</a>; the <a href="https://forum.openwrt.org/t/whats-going-on-with-the-openwrt-two-will-there-be-pre-orders/239674">OpenWrt Two thread</a></li>
+		<li>Noisebridge wiki, <a href="https://www.noisebridge.net/wiki/OHSNAP">OHSNAP</a></li>
+	</ul>
+
+	<h3>Get involved</h3>
+	<p>OpenWrt's <a href="https://openwrt.org/toh/start">table of hardware</a> takes wiki edits, its <a href="https://github.com/openwrt/openwrt/issues">issues</a> and forum take bug reports, and $10 of every OpenWrt One goes to Software Freedom Conservancy. Noisebridge's own network is an EdgeRouter and open Wi-Fi coordinated in its Slack #rack channel, so a Society offer to help rebuild it on OpenWrt after the Nov 2025 <a href="https://missionlocal.org/2025/11/noisebridge-financial-crisis/">funding crisis</a> would be welcome. Oakland's <a href="https://peoplesopen.net">People's Open Network</a> (sudo mesh, BATMAN-adv on OpenWrt) and the <a href="https://sfwem.readthedocs.io/">SF Wireless Emergency Mesh</a> are the two live Bay Area mesh projects to plug a flashed router into. A live OHSNAP is a natural co-host for the router clinic.</p>
+
+	<h2 id="network">4. Harden against network surveillance</h2>
+	<p>With plain DNS your ISP sees every hostname; with DNS over HTTPS or TLS only the resolver sees that, but the TLS handshake still announces the hostname in the clear unless Encrypted Client Hello is on. None of this stops the ISP selling the rest: Congress repealed the FCC's broadband-privacy rules in April 2017, the FTC's <a href="https://www.ftc.gov/reports/look-what-isps-know-about-you-examining-privacy-practices-six-major-internet-service-providers">2021 report</a> on six ISPs documented what Comcast, AT&amp;T and Verizon collect, and only Maine's 2020 opt-in law and Minnesota's 2025 privacy act constrain it.</p>
+
+	<h3>Do tonight</h3>
+	<ol>
+		<li>Turn on encrypted DNS and check Encrypted Client Hello at Cloudflare's <a href="https://www.cloudflare.com/ssl/encrypted-sni/">ESNI test</a>. ECH became <a href="https://www.rfc-editor.org/rfc/rfc9849.html">RFC 9849</a> in March 2026; Firefox and Chrome send it when DoH is active, Safari does not, and a 2026 measurement found <a href="https://dl.ifip.org/db/conf/networking/networking2026/1571261276.pdf">99.99%</a> of deployments are Cloudflare (on by default for free zones) with Meta the only other large one.</li>
+		<li>Pick a resolver: Quad9 (Zurich; won the Sony case on appeal in Dec 2023), Cloudflare 1.1.1.1 (truncated IPs, logs gone in 25 hours, audited), NextDNS for per-device policy, or your own Unbound. Mullvad <a href="https://mullvad.net/en/blog/shutting-down-our-public-encrypted-dns-servers-and-sponsoring-quad9-instead">shut its public DNS</a> on Nov 2 2026 and now funds Quad9, so delete that profile.</li>
+		<li><strong>VPN, chosen honestly.</strong> A VPN moves trust from the ISP to the VPN; it is not anonymity, and both <a href="https://www.privacyguides.org/en/vpn/">Privacy Guides</a> and CISA say so. Its criteria (WireGuard, multi-hop, kill switch, cash or Monero, audits, RAM-only servers, public leadership) leave Mullvad, Proton VPN and IVPN. Mullvad is &euro;5 flat, takes cash in an envelope, had nothing to hand over when Swedish police <a href="https://mullvad.net/en/blog/2023/4/20/mullvad-vpn-was-subject-to-a-search-warrant-customer-data-not-compromised">raided</a> it in April 2023, and ships DAITA traffic-shaping against fingerprinting; the July 2026 <a href="https://mullvad.net/en/blog/donation-controversy">donation controversy</a> over a co-founder's political gift led the Tor Project to pause co-branding on <a href="https://blog.torproject.org/on-tor-relationship-with-mullvad/">Oct 9 2026</a> while keeping the engineering relationship, which you should know before recommending it in the room. The US VPN-ban bills failed for now: Wisconsin's was stripped and vetoed (veto sustained May 13 2026), Michigan's HB 4938 has not moved. For a VPN you control: Algo, Headscale or NetBird on a VPS plus the WireGuard server on your router.</li>
+		<li><strong>Tor.</strong> Tor Browser <a href="https://blog.torproject.org/new-release-tor-browser-160/">16.0</a> (Oct 29 2026) and the Rust implementation Arti 2.8 are current; bridges on offer are obfs4, WebTunnel and Snowflake. At home, run a bridge (low risk, one megabit) and never an exit.</li>
+		<li><strong>The caf&eacute;.</strong> On someone else's Wi-Fi the threats are the evil twin, the captive portal and the probe request: use WPA3 networks where you can, keep MAC randomisation on (iOS 18 added a "rotating" mode that changes every two weeks and defaults on for open networks; Android randomises per-SSID but only re-randomises on open networks if the OEM allowed it), and tunnel out.</li>
+		<li><strong>Cellular.</strong> 5G hides the IMSI with SUCI but a catcher simply downgrades you to 4G or 2G, so turn 2G off (Lockdown Mode and GrapheneOS both do) and build EFF's <a href="https://github.com/EFForg/rayhunter/releases">Rayhunter</a> (v0.13.0, Sept 2026, on a $20 Orbic hotspot) to see when it happens. CISA's <a href="https://www.bleepingcomputer.com/news/security/cisa-urges-switch-to-signal-like-encrypted-messaging-apps-after-telecom-hacks/">Dec 18 2024 guidance</a> after Salt Typhoon says it plainly: Signal, FIDO keys, no SMS codes, a carrier PIN.</li>
+		<li><strong>Metadata.</strong> Signal's <a href="https://signal.org/bigbrother/">subpoena record</a> still shows registration and last-connection dates only; Apple holds iMessage capability-query logs for 25 days and your iCloud backup keys unless Advanced Data Protection is on; WhatsApp can produce near-real-time contact and timing data under a pen register; iOS 26.5 (May 2026) finally shipped <a href="https://www.eff.org/deeplinks/2026/05/victory-end-end-encrypted-rcs-comes-apple-and-android-chats">end-to-end encrypted RCS</a> with Google Messages, metadata still collected. Email encrypts bodies, not headers: alias it.</li>
+		<li>Measure yourself with OONI Probe, dnsleaktest, Cover Your Tracks, and tcpdump on your own OpenWrt box.</li>
+	</ol>
+
+	<p><strong>The legal layer moved this year.</strong> Section 702 of FISA <a href="https://www.eff.org/deeplinks/2026/06/victory-702-has-expired">expired</a> at midnight on June 12 2026 after the House rejected reauthorisation 198 to 218, though collection continues under FISC certifications approved in March that run to March 2027, the opinion is still classified past its deadline, and a December NDAA rider is the expected next attempt. The Fourth Amendment Is Not For Sale Act died in the Senate in Jan 2025 and has not been reintroduced, so ICE's purchases go on: Palantir's $30M ImmigrationOS, a <a href="https://www.404media.co/tag/ice/">$125M Thomson Reuters</a> deal, LexisNexis feeding Palantir, phone-location data on a leaked tool list, a facial-recognition app for a thousand agencies. Flock's cameras are the local front: Evanston found ICE searches of its data despite Illinois law, Oakland rejected a $2M contract in Nov 2025 and <a href="https://oaklandside.org/2026/09/22/oakland-flock-safety-contract-delay-data-safeguards/">stalled</a> a $2.25M one in Sept 2026 pending audits, SF faces a class action over 1.6 million out-of-state and federal queries, Flock's CEO conceded indirect ICE access in July 2026, and the Institute for Justice counts 273 jurisdictions cancelling since Jan 2025. San Francisco's own 2019 facial-recognition ban was hollowed out by Prop E (March 2024); an SFPD audit found about 300 improper plate-reader queries in May 2026 and Secure Justice is suing.</p>
+
+	<h3>Tools</h3>
+	<ul>
+		<li><a href="https://www.torproject.org/download/">Tor Browser 16</a>, with Snowflake, WebTunnel and obfs4 built in</li>
+		<li><a href="https://www.eff.org/rayhunter">Rayhunter</a> (<a href="https://github.com/EFForg/rayhunter/releases">releases</a>), EFF's cell-site-simulator detector</li>
+		<li><a href="https://ooni.org/install">OONI Probe</a>, measure censorship from wherever you are</li>
+		<li><a href="https://snowflake.torproject.org">Snowflake</a>, be a Tor proxy from your browser</li>
+		<li><a href="https://mullvad.net">Mullvad VPN</a> and <a href="https://proton.me">Proton VPN</a></li>
+		<li><a href="https://coveryourtracks.eff.org">Cover Your Tracks</a> and Cloudflare's <a href="https://www.cloudflare.com/ssl/encrypted-sni/">ESNI/ECH test</a></li>
+		<li><a href="https://deflock.org">DeFlock</a> and EFF's <a href="https://atlasofsurveillance.org/">Atlas of Surveillance</a></li>
+	</ul>
+
+	<h3>Read</h3>
+	<ul>
+		<li><a href="https://www.rfc-editor.org/rfc/rfc9849.html">RFC 9849</a> (Encrypted Client Hello) and the <a href="https://dl.ifip.org/db/conf/networking/networking2026/1571261276.pdf">2026 ECH deployment measurement</a></li>
+		<li>FTC, <a href="https://www.ftc.gov/reports/look-what-isps-know-about-you-examining-privacy-practices-six-major-internet-service-providers">A Look at What ISPs Know About You</a> (2021)</li>
+		<li>Privacy Guides, <a href="https://www.privacyguides.org/en/vpn/">VPN criteria</a>; Mullvad on the <a href="https://mullvad.net/en/blog/2023/4/20/mullvad-vpn-was-subject-to-a-search-warrant-customer-data-not-compromised">April 2023 raid</a>, the <a href="https://mullvad.net/en/blog/donation-controversy">donation controversy</a> and <a href="https://mullvad.net/en/blog/shutting-down-our-public-encrypted-dns-servers-and-sponsoring-quad9-instead">shutting down its public DNS</a>; the Tor Project <a href="https://blog.torproject.org/on-tor-relationship-with-mullvad/">on its relationship with Mullvad</a></li>
+		<li>Tor Project, <a href="https://blog.torproject.org/new-release-tor-browser-160/">Tor Browser 16.0</a></li>
+		<li>CISA's <a href="https://www.bleepingcomputer.com/news/security/cisa-urges-switch-to-signal-like-encrypted-messaging-apps-after-telecom-hacks/">Dec 18 2024 mobile guidance</a></li>
+		<li>EFF, <a href="https://www.eff.org/deeplinks/2026/05/victory-end-end-encrypted-rcs-comes-apple-and-android-chats">end-to-end encrypted RCS</a> and <a href="https://www.eff.org/deeplinks/2026/06/victory-702-has-expired">702 has expired</a></li>
+		<li>404 Media's <a href="https://www.404media.co/tag/ice/">ICE coverage</a>; Oaklandside on the <a href="https://oaklandside.org/2026/09/22/oakland-flock-safety-contract-delay-data-safeguards/">Flock contract delay</a></li>
+	</ul>
+
+	<h3>Get involved</h3>
+	<p><a href="https://oaklandprivacy.org/next-meeting/">Oakland Privacy</a> meets Wednesday Nov 11 2026 at 6:30 pm on Zoom and its Privacy Advisory Commission has vacancies. Tag plate readers on <a href="https://deflock.org">DeFlock</a> (an OpenStreetMap project) and add entries to EFF's <a href="https://atlasofsurveillance.org/">Atlas of Surveillance</a>. Host a Rayhunter build night through the Electronic Frontier Alliance, since EFF has run them at DEF CON and spoken at BSidesSF but has no SF build session scheduled. Revive <a href="https://www.noisebridge.net/wiki/Tor">NoiseTor</a>, which shipped a default obfs4 bridge in Tor Browser in 2019 and has been dark since Nov 2022. Read the Nov 6 Wyden-Schiff deadline on the 702 opinion as the moment to call Pelosi's and Padilla's offices.</p>
+
+	<h2 id="devices">5. Cripple consumer-device monitoring</h2>
+	<p>A device that cannot reach the vendor cannot report to it, so the IoT VLAN with WAN blocked (see the <a href="#router">router workshop</a>) is the universal fix, and local-only replacements exist for almost everything. This workshop adds the menu paths and the other devices in the house.</p>
+
+	<h3>Do tonight</h3>
+	<ol>
+		<li><strong>TV menus</strong> (Malwarebytes' <a href="https://www.malwarebytes.com/blog/news/2026/03/samsung-tvs-stop-spying-on-viewers-in-texas-heres-how-to-disable-acr-anywhere">March 2026 list</a>; labels drift by model year). Samsung: General &amp; Privacy, Terms &amp; Privacy, Privacy Choices, uncheck Viewing Information Services. LG: General, System, Additional Settings, Live Plus off. Vizio: System, Reset &amp; Admin, Viewing Data off. Roku and Roku TVs: Privacy, Smart TV Experience, "Use info from TV inputs" off. Sony and Google TV: Privacy, Samba Interactive TV off. Fire TV: Privacy Settings, Collect App Usage Data off. Apple TV has no ACR; turn off analytics sharing. Texas sued Samsung, LG, Sony, Hisense and TCL on Dec 15 2025; Samsung <a href="https://www.sammobile.com/news/samsung-promises-to-not-take-screenshots-of-texans-tv-screens-without-permission/">settled</a> Feb 26 2026 with ACR off for Texans unless they opt in, Hisense is under a restraining order, and the LG settlement claim is single-source.</li>
+		<li><strong>Cars.</strong> Run your VIN through Privacy4Cars' free <a href="https://vehicleprivacyreport.com">Vehicle Privacy Report</a>, which tells you whether the car has its own modem and files the opt-out and deletion requests as your agent; then turn off connected services in the maker's app. The FTC <a href="https://ftc.gov/news-events/news/press-releases/2026/01/ftc-finalizes-order-settling-allegations-gm-onstar-collected-sold-geolocation-data-without-consumers">finalised</a> its GM order on Jan 14 2026: twenty years, a five-year ban on selling location or driving data to credit bureaus, affirmative consent per feature, and a right for any US driver to get a copy and demand deletion. Pulling the telematics fuse works on some models and kills automatic crash notification and sometimes unrelated functions; treat it as a hobbyist option, not advice. California's SB 1394 (2024) lets abuse survivors cut an abuser's connected-car access.</li>
+		<li><strong>Speakers.</strong> Amazon removed the "Do Not Send Voice Recordings" option on <a href="https://techcrunch.com/2025/03/15/amazons-echo-will-send-all-voice-recordings-to-the-cloud-starting-march-28">March 28 2025</a> to make room for Alexa+, so every Echo now streams audio to the cloud; set Alexa Privacy to "Don't save recordings" and auto-delete, and accept that the device is a microphone you cannot audit. Google's Gemini for Home reached every Nest speaker since 2016 in Oct 2025; its 2026 speaker at least has a switch that cuts microphone power. Apple paid $95M in Jan 2025 to settle Siri eavesdropping claims. The auditable alternative is Home Assistant's <a href="https://www.home-assistant.io/voice-pe/">Voice Preview Edition</a> ($69, local wake word and speech-to-phrase, Whisper on an N100 if you want full dictation).</li>
+		<li><strong>Doorbells and cameras.</strong> Ring dropped warrantless police "Request for Assistance" in Jan 2024, then signed with Axon (April 2025), shipped facial recognition as Familiar Faces (Dec 2025), announced a Flock Safety integration (Oct 2025), ran the Search Party ad at Super Bowl LX on Feb 8 2026, and <a href="https://gizmodo.com/ring-cancels-flock-safety-partnership-amid-backlash-over-creepy-super-bowl-ad-2000721914">cancelled the Flock deal</a> five days later under bipartisan fire. Wyze showed 13,000 users strangers' camera thumbnails in Feb 2024; Eufy's "local-only" cameras were caught uploading faces in 2022. The local stack is RTSP cameras (Reolink, Amcrest) on the IoT VLAN feeding <a href="https://github.com/blakeblackshear/frigate/releases">Frigate</a> 0.18.2 (Oct 2026) for on-box object detection, or UniFi Protect with cloud access left off, both inside Home Assistant.</li>
+		<li><strong>Wearables, glasses, DNA.</strong> Oura's consumer cloud is separate from its Department of Defense tenant but not end-to-end encrypted; Whoop is being sued for sharing heart-rate data with Segment; Fitbit accounts not migrated to Google by May 19 2026 were deleted from July 15. For period tracking use Euki or Drip, which store nothing off the phone. Meta's Ray-Ban Display went on sale Sept 30 2025 at $799; the Harvard I-XRAY demo had already shown a stranger's glasses identifying you from a face search, and Meta <a href="https://petapixel.com/2026/06/09/meta-removes-facial-recognition-code-from-ray-ban-smart-glasses-app/">pulled</a> "Name Tag" facial-recognition code from the companion app on June 9 2026 only after it was found. 23andMe's data went to Anne Wojcicki's nonprofit TTAM for $305M in June 2025 after 1.9 million people asked for deletion, and California settled the 2023 breach for $6M on Oct 19 2026; the delete path is Settings, 23andMe Data, Delete Data, then revoke sample storage and research consent separately.</li>
+		<li><strong>Robots, trackers, printers.</strong> iRobot went through Chapter 11 in Dec 2025 and now belongs to its Shenzhen contract manufacturer Picea, with no public statement on what happens to the home maps. Matter devices talk locally but their vendor apps still phone home, so pair them to Home Assistant instead of a Google or Amazon bridge. The Apple-Google unwanted-tracker alert standard has shipped since May 2024. Colour lasers print tracking dots; HP+ requires an account, constant internet and HP ink for life; a Brother monochrome laser with firmware updates declined remains the answer.</li>
+		<li><strong>Tools that died in 2026.</strong> Mozilla sunset <em>Privacy Not Included</em> on Aug 11 2026, so the volunteer-tester path is gone and the archive is on the Wayback Machine. Consumer Reports handed Permission Slip to DeleteMe in May 2026. The FCC's Cyber Trust Mark has no labelled products yet after its administrator quit in Dec 2025. NYU's <a href="https://inspector.engineering.nyu.edu/">IoT Inspector</a> is still the open tool for watching what a device sends.</li>
+	</ol>
+
+	<h3>Tools</h3>
+	<ul>
+		<li><a href="https://www.home-assistant.io">Home Assistant</a> and its <a href="https://www.home-assistant.io/voice-pe/">Voice Preview Edition</a></li>
+		<li><a href="https://github.com/blakeblackshear/frigate/releases">Frigate</a> 0.18.2, local camera object detection</li>
+		<li>NYU <a href="https://inspector.engineering.nyu.edu/">IoT Inspector</a></li>
+		<li>Privacy4Cars <a href="https://vehicleprivacyreport.com">Vehicle Privacy Report</a></li>
+		<li><a href="https://pi-hole.net">Pi-hole</a> and <a href="https://adguard.com/adguard-home">AdGuard Home</a>, network-wide DNS blocking</li>
+	</ul>
+
+	<h3>Read</h3>
+	<ul>
+		<li>Malwarebytes, <a href="https://www.malwarebytes.com/blog/news/2026/03/samsung-tvs-stop-spying-on-viewers-in-texas-heres-how-to-disable-acr-anywhere">how to disable ACR on any TV</a> (March 2026); SamMobile on the <a href="https://www.sammobile.com/news/samsung-promises-to-not-take-screenshots-of-texans-tv-screens-without-permission/">Samsung Texas settlement</a></li>
+		<li>FTC, <a href="https://ftc.gov/news-events/news/press-releases/2026/01/ftc-finalizes-order-settling-allegations-gm-onstar-collected-sold-geolocation-data-without-consumers">GM OnStar order</a> (Jan 14 2026)</li>
+		<li>TechCrunch on <a href="https://techcrunch.com/2025/03/15/amazons-echo-will-send-all-voice-recordings-to-the-cloud-starting-march-28">Echo voice recordings</a></li>
+		<li>Gizmodo on <a href="https://gizmodo.com/ring-cancels-flock-safety-partnership-amid-backlash-over-creepy-super-bowl-ad-2000721914">Ring cancelling the Flock deal</a></li>
+		<li>PetaPixel on Meta <a href="https://petapixel.com/2026/06/09/meta-removes-facial-recognition-code-from-ray-ban-smart-glasses-app/">removing Name Tag</a></li>
+	</ul>
+
+	<h3>Get involved</h3>
+	<p>The Open Home Foundation's <a href="https://www.openhomefoundation.org/community-day/">Community Day</a> is Saturday Nov 7 2026 and the Bay Area Home Assistant meetup runs at Port Labs. Noisebridge's Circuit Hacking Monday is the place to build a Voice Preview Edition or a Frigate box. The Copyright Office's tenth DMCA section 1201 <a href="https://www.copyright.gov/1201/2027/">triennial</a> takes first-round comments until Dec 7 2026, and a Society comment asking for a repair-and-privacy exemption for connected devices is a concrete, dated task. Repair.org and iFixit track the federal REPAIR Act (through House subcommittee Feb 2026) and the Fair Repair Act.</p>
+
+	<h2 id="profile">6. Protect your online profile and social media</h2>
+	<p>Lock the accounts that can reset the others first, then dox yourself before someone else does. The data-broker opt-outs are their own clinic ("Delete yourself", below in the <a href="#calendar">calendar</a>).</p>
+
+	<h3>Do tonight</h3>
+	<ol>
+		<li>Two hardware keys or two passkeys on every account that can reset the others (email, Apple or Google, the password manager, the carrier). Google's <a href="https://9to5google.com/2024/07/10/google-advanced-protection-program-passkey/">Advanced Protection Program</a> and Apple's <a href="https://support.apple.com/en-us/102637">Security Keys</a> (two to six keys; lose them all and you are locked out for good) are the strongest consumer settings that exist. Passkey portability is half-shipped: the FIDO Credential Exchange Format reached proposed-standard status in 2025 and iOS 26 added export, so you are no longer locked into one manager.</li>
+		<li>Take email off the critical path: a different alias per service through SimpleLogin ($36 a year), addy.io, Apple's Hide My Email or DuckDuckGo's free masks; Firefox Relay still works at five free masks but its paid tiers are waitlisted.</li>
+		<li><strong>Dox yourself.</strong> Run NYT Open's <a href="https://open.nytimes.com/how-to-dox-yourself-on-the-internet-d2892b4c5954">How to Dox Yourself</a> against EFF's <a href="https://ssd.eff.org/module/how-to-manage-your-digital-footprint">Manage Your Digital Footprint</a> module (reviewed May 2025): search your name, handles, phone, address and old usernames across Google, people-search sites and face search, then file removals. California's DROP opened Jan 1 2026, brokers have had to honour it since Aug 1, half a million Californians had signed up by Aug 25, and CalPrivacy brought its first Delete Act enforcement actions on Aug 11 and 13 and launched "Delete Week" on Oct 12 2026. PEN America's <a href="https://onlineharassmentfieldmanual.pen.org/">Online Harassment Field Manual</a> is the playbook when it goes wrong; Block Party was bought by DeleteMe in March 2026, and Crash Override and Tall Poppy both look dormant.</li>
+		<li><strong>Your face.</strong> PimEyes' <a href="https://pimeyes.com/en/opt-out-request-form">opt-out form</a> wants a face photo and a redacted ID and suppresses only its own results (Cook County's advice: black out the name on the ID). Clearview's equity settlement for scraping 3 billion faces was <a href="https://cryptobriefing.com/appeals-court-overturns-clearview-ai-settlement/">vacated</a> by the Seventh Circuit on July 13 2026 after 22 states objected, the UK tribunal confirmed the ICO's jurisdiction in Oct 2025, and ICE signed a $9.2M sole-source Clearview contract on Sept 5 2025. Image cloaking (Fawkes, LowKey) has not been updated since 2022 and should be assumed defeated; Glaze and Nightshade are for artists, not faces.</li>
+		<li>Opt out of model training where a switch exists: Meta's objection form (EU and UK), LinkedIn's Data for Generative AI Improvement toggle, X's Grok setting (check in-app, reports conflict). Strip EXIF before posting (<code>exiftool -all= photo.jpg</code>, or the iOS share sheet's Location off), and know that C2PA content credentials, now in the Pixel 10 camera, can carry GPS and device serials even though the spec does not require identity.</li>
+		<li><strong>Platforms are deanonymising by default.</strong> X's "About this account" panel has shown every account's inferred country since Nov 21 2025, which outs anyone pseudonymous without a VPN; switch it to region in Privacy and safety or stop posting from a home IP. The age-verification wave is the bigger shift: UK age checks since July 25 2025, Australia's under-16 ban since Dec 10 2025, Texas's app-store law enjoined on Dec 23 2025, California's AB 1043 (operative Jan 1 2027) sending an age bracket from the OS rather than an ID upload. The Discord breach disclosed Oct 3 2025, in which a support vendor exposed about <a href="https://discord.com/press-releases/update-on-security-incident-involving-third-party-customer-service">70,000 government-ID photos</a>, is the standing argument against ID-upload age checks.</li>
+		<li>Migrate and compartmentalise: Mastodon moves followers but not posts; AT Protocol <a href="https://atproto.com/guides/account-migration">account migration</a> with goat moves everything, including off a hostile server. A pseudonymous account is made over Tor with an alias email, never opened from the phone that holds the real one.</li>
+		<li><strong>Browser and the opt-out signal.</strong> uBlock Origin on Firefox (Chrome is done), Privacy Badger, and Global Privacy Control turned on, because California now fines companies that ignore it: Honda $632,500 (March 2025), Todd Snyder $345,178 (May), <a href="https://cppa.ca.gov/announcements/2025/20250930.html">Tractor Supply $1.35M</a> (Sept 30 2025). AB 566, signed Oct 8 2025, forces every browser sold in California to ship the signal from Jan 1 2027.</li>
+	</ol>
+
+	<h3>Tools</h3>
+	<ul>
+		<li>Google <a href="https://9to5google.com/2024/07/10/google-advanced-protection-program-passkey/">Advanced Protection Program</a> and Apple <a href="https://support.apple.com/en-us/102637">Security Keys</a></li>
+		<li><a href="https://bitwarden.com">Bitwarden</a> or <a href="https://keepassxc.org">KeePassXC</a>; <a href="https://proton.me">Proton</a> (SimpleLogin aliases); <a href="https://relay.firefox.com">Firefox Relay</a></li>
+		<li><a href="https://ublockorigin.com">uBlock Origin</a> and <a href="https://privacybadger.org">Privacy Badger</a></li>
+		<li><a href="https://exiftool.org">ExifTool</a>, strip metadata before you share</li>
+		<li><a href="https://haveibeenpwned.com">Have I Been Pwned</a>, breach lookup</li>
+		<li><a href="https://pimeyes.com/en/opt-out-request-form">PimEyes opt-out form</a></li>
+		<li><a href="https://www.permissionslipcr.com">Permission Slip</a> (now at DeleteMe) and <a href="https://privacyrights.org/data-brokers">the Privacy Rights Clearinghouse broker registry</a></li>
+		<li>AT Protocol <a href="https://atproto.com/guides/account-migration">account migration</a> guide</li>
+	</ul>
+
+	<h3>Read</h3>
+	<ul>
+		<li>NYT Open, <a href="https://open.nytimes.com/how-to-dox-yourself-on-the-internet-d2892b4c5954">How to Dox Yourself on the Internet</a></li>
+		<li>EFF SSD, <a href="https://ssd.eff.org/module/how-to-manage-your-digital-footprint">How to Manage Your Digital Footprint</a></li>
+		<li>PEN America, <a href="https://onlineharassmentfieldmanual.pen.org/">Online Harassment Field Manual</a></li>
+		<li>Crypto Briefing on the <a href="https://cryptobriefing.com/appeals-court-overturns-clearview-ai-settlement/">Clearview settlement being vacated</a></li>
+		<li>Discord, <a href="https://discord.com/press-releases/update-on-security-incident-involving-third-party-customer-service">update on the third-party security incident</a></li>
+		<li>CPPA, <a href="https://cppa.ca.gov/announcements/2025/20250930.html">Tractor Supply enforcement</a> (Sept 30 2025)</li>
+	</ul>
+
+	<h3>Get involved</h3>
+	<p>Run the "Dox Yourself" clinic as a station night with a DROP sign-up table, PimEyes opt-outs with an ID-redaction tool, and the hardware-key enrolment people never get round to. <a href="https://righttobe.org/">Right To Be</a> and PEN America train bystanders and targets of harassment. The <a href="https://privacyrights.org/data-brokers">Privacy Rights Clearinghouse</a> registry of 750+ brokers takes corrections. With the Clearview settlement vacated, drafting BIPA and CCPA access-and-deletion requests is useful volunteer work. The Bluesky side of the room should host a PDS-migration workshop with goat.</p>
+
+	<h2 id="travel">7. Your risk when travelling abroad</h2>
+	<p>The US border is the one to plan for. CBP searched 55,318 devices in FY2025 and 52,080 in the first three quarters of FY2026 (47,517 basic, 4,564 forensic), a third more than the same period a year earlier, and it <a href="https://www.cbc.ca/news/politics/cbp-searches-electronic-devices-9.7392252">refuses to break out</a> citizens from non-citizens or airports from land borders (<a href="https://freedom.press/digisec/blog/us-border-device-searches-near-record-high/">Freedom of the Press Foundation</a>, Nov 4 2026). Directive 3340-049B, in force since Jan 1 2026, lets officers do a basic search with no suspicion at all and a forensic copy on "reasonable suspicion" or a "national security concern"; what they copy goes into the Automated Targeting System for up to 15 years.</p>
+
+	<h3>Do tonight</h3>
+	<p>The travel-device checklist (EFF and FPF's <a href="https://www.eff.org/deeplinks/2025/06/journalist-security-checklist-preparing-devices-travel-through-us-border">journalist checklist</a>, June 2025, plus the cases below):</p>
+	<ol>
+		<li>Carry the minimum, ideally a travel phone with nothing you cannot show.</li>
+		<li>Log out of cloud accounts and delete the apps, since CBP policy puts cloud data out of scope only if the device cannot reach it; empty the trash.</li>
+		<li>Full-disk encryption, long alphanumeric passcode, biometrics off, Lockdown Mode on (it blocks accessory connections while locked and has stopped at least one extraction), and power fully off before the line.</li>
+		<li>Decide in advance whether you will unlock, and if you do, type it yourself. Never lie, never obstruct.</li>
+		<li>Wipe before you fly, never during the search: in <a href="https://reason.com/2026/07/29/border-agents-can-lie-to-search-your-phone-but-wiping-your-own-data-could-land-you-in-prison/"><em>US v. Tunick</em></a> an activist who typed a GrapheneOS duress password during a January 2025 secondary inspection was charged with destroying property to prevent seizure.</li>
+		<li>If the device is seized, take the CBP Form 6051D receipt, write down names, badge numbers and times at once, and email borders@eff.org. A Faraday bag stops radios, not a hand search.</li>
+		<li>Travel eSIMs (<a href="https://www.airalo.com/">Airalo's</a> policy logs IP and usage) plus a VPN beat KYC-registered local SIMs in Turkey, India, the UAE and China.</li>
+		<li>If Apple ever sends you a threat notification abroad, treat the device as compromised and go to the Access Now helpline.</li>
+		<li><strong>Know what refusal costs for your status.</strong> A citizen cannot be denied entry for refusing a passcode, but the device can be held (five days by default, extendable) and you will be flagged for future secondaries; lying to CBP is a federal crime. A green-card holder cannot be refused entry for silence alone but can be held and referred onward. A visa or ESTA holder can be turned around for refusing or for an "empty phone": Alistair Kitchen (LAX, June 2025, laptop seized and passcode demanded over his Columbia-protest writing) and Rasha Alawieh (Logan, March 2025, removed over photos in a deleted folder) are the templates. Non-citizens must also now show F, M and J visa social media set to public (State Dept, June 18 2025); CBP's <a href="https://www.engadget.com/social-media/us-could-demand-five-year-social-media-history-from-tourists-before-allowing-entry-102751243.html">Dec 10 2025 notice</a> proposing five years of social-media handles and ten years of email addresses for every ESTA applicant was not final as of January 2026. Facial comparison at every port became mandatory for all non-citizens on Dec 26 2025; citizens may still opt out and ask for a manual document check.</li>
+	</ol>
+
+	<p><strong>The courts are not coming.</strong> The Second Circuit joined six others in <a href="https://www.clearygottlieb.com/news-and-insights/publication-listing/the-second-circuit-rules-that-the-government-may-conduct-warrantless-searches-of-electronic-devices"><em>US v. Alisigwe</em></a> (Sept 17 2026) holding that manual searches need no suspicion; the warrant ruling in <em>US v. Smith</em> (S.D.N.Y. 2023) is an outlier on appeal; EFF's next shot is <a href="https://www.eff.org/deeplinks/2026/03/eff-third-circuit-electronic-device-searches-border-require-warrant"><em>US v. Roggio</em></a> in the Third Circuit.</p>
+
+	<p><strong>Elsewhere.</strong> The UK's Schedule 7 has no right to silence and refusing a password is itself an offence (Fahad Ansari, Holyhead, Aug 2025). Canada's <a href="https://www.cbsa-asfc.gc.ca/travel-voyage/edd-ean-eng.html">CBSA</a> requires the password once it decides to examine, with seizure for refusal. Hong Kong's National Security Law rules since March 23 2026 let police compel unlocking, including for transit passengers (US consulate alert March 26). Mainland China's state-security police may inspect devices on the spot under rules in force since July 1 2024; VPN use is a grey zone with no public case against a tourist. Russia restricted WhatsApp and Telegram calls in Aug 2025, made the state messenger MAX mandatory on new phones from Sept 1 2025, and logged 2,129 mobile-internet shutdowns in August 2025 alone. The UAE criminalises VPN "misuse" and unlicensed VoIP; Indian districts in Jammu and Kashmir ban VPNs by two-month order with random phone stops. The EU's Entry/Exit System took fingerprints and face at every external border from April 10 2026, with ETIAS pre-authorisation due in the fourth quarter. For the big picture, <a href="https://freedomhouse.org/report/freedom-net/2026/seismic-shifts-global-internet">Freedom on the Net 2026</a> records a sixteenth straight year of decline with the US flat at 73/100, RSF ranks the US 64th of 180, and CPJ counted 330 jailed journalists on Dec 1 2025.</p>
+
+	<h3>Tools</h3>
+	<ul>
+		<li>A travel phone running <a href="https://grapheneos.org">GrapheneOS</a> or an iPhone with Lockdown Mode on</li>
+		<li><a href="https://www.airalo.com/">Airalo</a> travel eSIMs, plus <a href="https://mullvad.net">Mullvad</a> or <a href="https://proton.me">Proton VPN</a></li>
+		<li><a href="https://signal.org">Signal</a></li>
+		<li>CBP Form 6051D receipt and borders@eff.org</li>
+	</ul>
+
+	<h3>Read</h3>
+	<ul>
+		<li>EFF and FPF, <a href="https://www.eff.org/deeplinks/2025/06/journalist-security-checklist-preparing-devices-travel-through-us-border">journalist security checklist for the US border</a> (June 2025)</li>
+		<li>Freedom of the Press Foundation, <a href="https://freedom.press/digisec/blog/us-border-device-searches-near-record-high/">US border device searches near record high</a> (Nov 4 2026); CBC on CBP <a href="https://www.cbc.ca/news/politics/cbp-searches-electronic-devices-9.7392252">search statistics</a></li>
+		<li>Cleary Gottlieb on <a href="https://www.clearygottlieb.com/news-and-insights/publication-listing/the-second-circuit-rules-that-the-government-may-conduct-warrantless-searches-of-electronic-devices"><em>US v. Alisigwe</em></a>; EFF on <a href="https://www.eff.org/deeplinks/2026/03/eff-third-circuit-electronic-device-searches-border-require-warrant"><em>US v. Roggio</em></a>; Reason on <a href="https://reason.com/2026/07/29/border-agents-can-lie-to-search-your-phone-but-wiping-your-own-data-could-land-you-in-prison/"><em>US v. Tunick</em></a></li>
+		<li>Engadget on the <a href="https://www.engadget.com/social-media/us-could-demand-five-year-social-media-history-from-tourists-before-allowing-entry-102751243.html">CBP ESTA social-media notice</a> (Dec 2025)</li>
+		<li>CBSA, <a href="https://www.cbsa-asfc.gc.ca/travel-voyage/edd-ean-eng.html">examination of digital devices</a></li>
+		<li>Freedom House, <a href="https://freedomhouse.org/report/freedom-net/2026/seismic-shifts-global-internet">Freedom on the Net 2026</a></li>
+	</ul>
+
+	<h3>Get involved</h3>
+	<p>The <a href="https://www.asianlawcaucus.org/get-help">Asian Law Caucus</a> at 55 Columbus Ave takes free airport and re-entry intakes on (415) 896-1701, weekday mornings and early afternoons, and is the first number a member should save. <a href="https://www.aclunc.org">ACLU of Northern California</a> publishes the Traveler's Bill of Rights. EFF wants every border incident reported to borders@eff.org and is recruiting amicus cases. <a href="https://freedom.press/training">Freedom of the Press Foundation</a> trains journalists and will train a room of us. A Society "prepare your travel phone" station before the holidays is a one-evening clinic with an obvious date.</p>
+
+	<h2 id="helping">8. Helping people under repressive governments</h2>
+	<p>Access Now's <a href="https://www.accessnow.org/internet-shutdowns-2025/">#KeepItOn</a> count for 2025 was 313 shutdowns in 52 countries, a record, with 75 still running into 2026. Iran went dark on Jan 8 2026, partially relaxed on Jan 28, and went near-total again from Feb 28 after the US and Israeli strikes, in what Al Jazeera called the longest nationwide blackout on record; the US covertly delivered about 6,000 Starlink terminals and Iran declared the dishes legitimate targets. Afghanistan had a 48-hour nationwide blackout on Sept 29 2025. Russia's mobile-internet shutdowns are now routine. This is the demand side; the Society is supply.</p>
+
+	<h3>Do tonight</h3>
+	<ol>
+		<li><strong>Tonight: install <a href="https://snowflake.torproject.org">Snowflake</a></strong>, a browser extension or a one-line Docker container and Tor's most-used path out of Iran; the Tor Project's <a href="https://forum.torproject.org/t/snowflake-daily-operations-february-2026-update/21306">February 2026 operations update</a> shows the January surge and the Feb 28 cliff.</li>
+		<li><strong>This month:</strong> an obfs4 or WebTunnel <a href="https://community.torproject.org/relay/setup/bridge/">bridge</a> on a $5 VPS or at home: no exit traffic, so no abuse mail. WebTunnel was vital in Russia until the bridges were enumerated in mid-2025, which is why Tor now hands them out through its Telegram bot and always needs more.</li>
+		<li><strong>Next:</strong> a guard or middle <a href="https://community.torproject.org/relay/">relay</a>. An exit is a different animal: run it at a Tor-friendly host on its own IP, never at home, never log, and read EFF's <a href="https://community.torproject.org/relay/community-resources/eff-tor-legal-faq/">legal FAQ</a> first.</li>
+		<li>For China the working consensus on <a href="https://github.com/net4people/bbs">Net4People</a> and <a href="https://gfw.report">GFW Report</a> in 2026 is VLESS plus REALITY to plausible SNIs, with QUIC-based protocols needing fragmented client hellos and port-hopping.</li>
+		<li>Cheaper builds that still matter: a Telegram MTProto proxy, a Kiwix or <a href="https://internet-in-a-box.org">Internet-in-a-Box</a> kit with offline Wikipedia for a diaspora contact, a Delta Chat chatmail relay or SimpleX server.</li>
+		<li><strong>Measure.</strong> Run <a href="https://ooni.org/install">OONI Probe</a> on a phone or a Raspberry Pi and let it publish; use OONI Run links to ask contacts abroad to test specific sites. Cross-check with <a href="https://ioda.inetintel.cc.gatech.edu">IODA</a>, <a href="https://radar.cloudflare.com/outages">Cloudflare Radar</a>, <a href="https://censoredplanet.org">Censored Planet</a> and NetBlocks. OONI is fundraising through Open Collective and a 2026 quadratic-funding round for ten internet-freedom projects.</li>
+		<li><strong>Donate</strong> to <a href="https://donate.torproject.org">Tor</a>, <a href="https://ooni.org">OONI</a>, <a href="https://signal.org/donate">Signal</a> and Psiphon; that is the lowest-effort, highest-leverage thing on this page. Psiphon reached 9.5 million daily users after the February shutdown; Lantern and Amnezia (Russia) are the other circumvention apps worth donating to.</li>
+		<li><strong>Support people, not just packets.</strong> The <a href="https://www.accessnow.org/help/">Access Now helpline</a> (help@accessnow.org, PGP key on the page, nine languages, keep the first email non-sensitive) is the front door for anyone at risk; <a href="https://www.frontlinedefenders.org">Front Line Defenders</a> has a 24-hour emergency line; the <a href="https://digitaldefenders.org">Digital Defenders Partnership</a> makes emergency grants; CPJ takes emergencies@cpj.org; Amnesty's Security Lab and Citizen Lab do the forensics. <a href="https://www.localizationlab.org">Localization Lab</a> needs translators for Orbot, OONI and Tella on Transifex.</li>
+		<li>Do not join an "IT army": DDoS and intrusion from a US keyboard is Computer Fraud and Abuse Act exposure with no exemption and it endangers the people you are trying to help. Stay on defence, infrastructure and documentation.</li>
+	</ol>
+
+	<p><strong>The money, and what nearly broke.</strong> Kari Lake terminated the Open Technology Fund's grant on March 15 2025; OTF sued five days later, won a preliminary injunction on June 20 2025 and summary judgment on March 26 2026, and confirmed on July 24 2026 that its full $43.5M for FY2025 had arrived (<a href="https://clearinghouse.net/case/46258/">docket</a>). The FY2027 budget would fold the money into a State Department account with no guarantees for grantees, which include Tor, OONI, Psiphon, Lantern, nthLink, F-Droid and Let's Encrypt. Signal is not a current grantee. The Tor Project's budget is roughly $7M, about a third of it US government, and its Oct 13 2026 appeal noted four million users and fewer than 7,000 donors a year.</p>
+
+	<h3>Tools</h3>
+	<ul>
+		<li><a href="https://snowflake.torproject.org">Snowflake</a></li>
+		<li>Tor Project guides: <a href="https://community.torproject.org/relay/setup/bridge/">bridge</a>, <a href="https://community.torproject.org/relay/">relay</a>, <a href="https://community.torproject.org/relay/community-resources/eff-tor-legal-faq/">EFF legal FAQ</a></li>
+		<li><a href="https://ooni.org/install">OONI Probe</a>; <a href="https://ioda.inetintel.cc.gatech.edu">IODA</a>, <a href="https://radar.cloudflare.com/outages">Cloudflare Radar</a>, <a href="https://censoredplanet.org">Censored Planet</a></li>
+		<li><a href="https://kiwix.org">Kiwix</a> and <a href="https://internet-in-a-box.org">Internet-in-a-Box</a></li>
+		<li><a href="https://delta.chat">Delta Chat</a> and <a href="https://simplex.chat">SimpleX</a></li>
+		<li><a href="https://github.com/net4people/bbs">Net4People</a> and <a href="https://gfw.report">GFW Report</a></li>
+	</ul>
+
+	<h3>Read</h3>
+	<ul>
+		<li>Access Now, <a href="https://www.accessnow.org/internet-shutdowns-2025/">#KeepItOn 2025</a></li>
+		<li>Tor Project, <a href="https://forum.torproject.org/t/snowflake-daily-operations-february-2026-update/21306">Snowflake daily operations, February 2026</a></li>
+		<li>EFF, <a href="https://community.torproject.org/relay/community-resources/eff-tor-legal-faq/">Tor legal FAQ</a></li>
+		<li>Civil Rights Litigation Clearinghouse, <a href="https://clearinghouse.net/case/46258/">OTF v. Lake docket</a></li>
+		<li><a href="https://www.accessnow.org/help/">Access Now helpline</a>, <a href="https://www.frontlinedefenders.org">Front Line Defenders</a>, <a href="https://digitaldefenders.org">Digital Defenders Partnership</a>, <a href="https://www.localizationlab.org">Localization Lab</a></li>
+	</ul>
+
+	<h3>Get involved</h3>
+	<p>The Tor Project's <a href="https://community.torproject.org/relay/community-resources/relay-associations/">relay-association list</a> has five US entries, none in the Bay Area now that Noisebridge's NoiseTor exits went dark around 2022; founding a Bay Area relay association, with Frontier Tower or <a href="https://sudoroom.org">Sudo Room</a> as the host, is the Society's most distinctive possible contribution. Tonight: install Snowflake. This month: a bridge on a VPS and OONI on a Pi. This quarter: the association's first exit at a friendly host.</p>
+
+	<h2 id="links">9. Links</h2>
+	<p>Three lists we keep on the site and re-verify quarterly. Status is as of Nov 4 2026.</p>
+
+	<h3>Links we use</h3>
+	<p>The things a member installs.</p>
+	<table>
+		<thead>
+			<tr>
+				<th>Tool</th>
+				<th>What it is</th>
+				<th>Link</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr><td>Tor Browser 16</td><td>Anonymity browser; Snowflake, WebTunnel and obfs4 built in</td><td><a href="https://www.torproject.org/download/">torproject.org/download</a></td></tr>
+			<tr><td>Signal</td><td>The messenger; usernames, sealed sender, post-quantum ratchet</td><td><a href="https://signal.org">signal.org</a></td></tr>
+			<tr><td>Mullvad VPN</td><td>No accounts, cash or Monero, Tor partnership kept in Oct 2026</td><td><a href="https://mullvad.net">mullvad.net</a></td></tr>
+			<tr><td>Proton Mail, VPN, Pass</td><td>Geneva-based suite; SimpleLogin aliases</td><td><a href="https://proton.me">proton.me</a></td></tr>
+			<tr><td>Bitwarden / KeePassXC</td><td>Cloud and local password managers</td><td><a href="https://bitwarden.com">bitwarden.com</a> &middot; <a href="https://keepassxc.org">keepassxc.org</a></td></tr>
+			<tr><td>GrapheneOS</td><td>Hardened Android for Pixel 6 to 10; duress PIN, auto-reboot</td><td><a href="https://grapheneos.org">grapheneos.org</a></td></tr>
+			<tr><td>OpenWrt</td><td>The router OS; OpenWrt One hardware</td><td><a href="https://openwrt.org">openwrt.org</a></td></tr>
+			<tr><td>Pi-hole / AdGuard Home</td><td>Network-wide DNS blocking</td><td><a href="https://pi-hole.net">pi-hole.net</a> &middot; <a href="https://adguard.com/adguard-home">adguard.com/adguard-home</a></td></tr>
+			<tr><td>Home Assistant</td><td>Local-first home automation, voice included</td><td><a href="https://www.home-assistant.io">home-assistant.io</a></td></tr>
+			<tr><td>Tails 7.16 / Qubes OS 4.3.2</td><td>Amnesic live OS; compartmentalised desktop</td><td><a href="https://tails.net">tails.net</a> &middot; <a href="https://www.qubes-os.org">qubes-os.org</a></td></tr>
+			<tr><td>Snowflake</td><td>Be a Tor proxy from your browser</td><td><a href="https://snowflake.torproject.org">snowflake.torproject.org</a></td></tr>
+			<tr><td>OONI Probe</td><td>Measure censorship from wherever you are</td><td><a href="https://ooni.org/install">ooni.org/install</a></td></tr>
+			<tr><td>MVT</td><td>Amnesty's spyware forensics toolkit</td><td><a href="https://mvt.re">mvt.re</a></td></tr>
+			<tr><td>Rayhunter</td><td>EFF's cell-site-simulator detector on a $20 hotspot</td><td><a href="https://www.eff.org/rayhunter">eff.org/rayhunter</a></td></tr>
+			<tr><td>Little Snitch / LuLu</td><td>macOS outbound firewalls</td><td><a href="https://obdev.at/littlesnitch">obdev.at/littlesnitch</a> &middot; <a href="https://objective-see.org/products/lulu.html">objective-see.org/products/lulu.html</a></td></tr>
+			<tr><td>uBlock Origin, Privacy Badger</td><td>Blockers; use Firefox or Brave, Chrome killed uBO</td><td><a href="https://ublockorigin.com">ublockorigin.com</a> &middot; <a href="https://privacybadger.org">privacybadger.org</a></td></tr>
+			<tr><td>Cover Your Tracks, Have I Been Pwned</td><td>Fingerprint test; breach lookup</td><td><a href="https://coveryourtracks.eff.org">coveryourtracks.eff.org</a> &middot; <a href="https://haveibeenpwned.com">haveibeenpwned.com</a></td></tr>
+			<tr><td>ExifTool</td><td>Strip metadata before you share</td><td><a href="https://exiftool.org">exiftool.org</a></td></tr>
+			<tr><td>Cryptomator / VeraCrypt / age / Magic Wormhole</td><td>Vaults, volumes, modern file encryption, PAKE transfer</td><td><a href="https://cryptomator.org">cryptomator.org</a> &middot; <a href="https://veracrypt.fr">veracrypt.fr</a> &middot; <a href="https://age-encryption.org">age-encryption.org</a> &middot; <a href="https://magic-wormhole.readthedocs.io">magic-wormhole.readthedocs.io</a></td></tr>
+			<tr><td>Syncthing / Kiwix</td><td>Cloudless sync; offline Wikipedia</td><td><a href="https://syncthing.net">syncthing.net</a> &middot; <a href="https://kiwix.org">kiwix.org</a></td></tr>
+			<tr><td>Meshtastic / SimpleX / Delta Chat / Briar</td><td>Off-grid and no-identifier messaging (Briar in maintenance mode since July 2026)</td><td><a href="https://meshtastic.org">meshtastic.org</a> &middot; <a href="https://simplex.chat">simplex.chat</a> &middot; <a href="https://delta.chat">delta.chat</a> &middot; <a href="https://briarproject.org">briarproject.org</a></td></tr>
+			<tr><td>DeFlock</td><td>Crowd-sourced map of Flock ALPR cameras</td><td><a href="https://deflock.org">deflock.org</a></td></tr>
+			<tr><td>Permission Slip / Firefox Relay</td><td>Opt-out app (moved from Consumer Reports to DeleteMe, May 2026); email masks</td><td><a href="https://www.permissionslipcr.com">permissionslipcr.com</a> &middot; <a href="https://relay.firefox.com">relay.firefox.com</a></td></tr>
+		</tbody>
+	</table>
+
+	<h3>Resources for us</h3>
+	<p>Organisations and helplines.</p>
+	<table>
+		<thead>
+			<tr>
+				<th>Organisation</th>
+				<th>What they do for us</th>
+				<th>Link</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr><td>EFF (San Francisco)</td><td>Surveillance Self-Defense, Security Education Companion, Atlas of Surveillance, Threat Lab, borders@eff.org</td><td><a href="https://www.eff.org">eff.org</a> &middot; <a href="https://ssd.eff.org">ssd.eff.org</a> &middot; <a href="https://sec.eff.org">sec.eff.org</a> &middot; <a href="https://atlasofsurveillance.org">atlasofsurveillance.org</a></td></tr>
+			<tr><td>Access Now helpline</td><td>24/7 digital-security help for civil society, nine languages</td><td><a href="https://www.accessnow.org/help/">accessnow.org/help</a></td></tr>
+			<tr><td>Front Line Defenders</td><td>Emergency support for human-rights defenders; Security in a Box</td><td><a href="https://www.frontlinedefenders.org">frontlinedefenders.org</a> &middot; <a href="https://securityinabox.org">securityinabox.org</a></td></tr>
+			<tr><td>Freedom of the Press Foundation</td><td>Journalist security training and border guidance</td><td><a href="https://freedom.press/training">freedom.press/training</a></td></tr>
+			<tr><td>Citizen Lab / Amnesty Security Lab</td><td>Spyware forensics and reports</td><td><a href="https://citizenlab.ca">citizenlab.ca</a> &middot; <a href="https://securitylab.amnesty.org">securitylab.amnesty.org</a></td></tr>
+			<tr><td>Privacy Guides</td><td>Community-vetted tool recommendations</td><td><a href="https://www.privacyguides.org">privacyguides.org</a></td></tr>
+			<tr><td>Consumer Reports Security Planner</td><td>Citizen Lab's planner, now at CR</td><td><a href="https://securityplanner.consumerreports.org">securityplanner.consumerreports.org</a></td></tr>
+			<tr><td>Tactical Tech</td><td>Data Detox Kit, Holistic Security</td><td><a href="https://datadetoxkit.org">datadetoxkit.org</a> &middot; <a href="https://holistic-security.tacticaltech.org">holistic-security.tacticaltech.org</a></td></tr>
+			<tr><td>Digital First Aid Kit</td><td>CiviCERT triage guide for incidents</td><td><a href="https://digitalfirstaid.org">digitalfirstaid.org</a></td></tr>
+			<tr><td>Totem Project / Level Up / SAFETAG</td><td>Courses, trainer curriculum, audit framework</td><td><a href="https://totem-project.org">totem-project.org</a> &middot; <a href="https://www.level-up.cc">level-up.cc</a> &middot; <a href="https://safetag.org">safetag.org</a></td></tr>
+			<tr><td>PEN America</td><td>Online Harassment Field Manual</td><td><a href="https://onlineharassmentfieldmanual.pen.org">onlineharassmentfieldmanual.pen.org</a></td></tr>
+			<tr><td>Oakland Privacy</td><td>East Bay surveillance watchdog; Flock lookup tool (Sept 2026)</td><td><a href="https://oaklandprivacy.org">oaklandprivacy.org</a></td></tr>
+			<tr><td>ACLU of Northern California / Asian Law Caucus</td><td>Traveler's Bill of Rights; airport intakes (415) 896-1701</td><td><a href="https://www.aclunc.org">aclunc.org</a> &middot; <a href="https://www.asianlawcaucus.org/get-help">asianlawcaucus.org/get-help</a></td></tr>
+			<tr><td>Lucy Parsons Labs / Privacy Rights Clearinghouse</td><td>Police-tech FOIA litigation; broker registry</td><td><a href="https://lucyparsonslabs.com">lucyparsonslabs.com</a> &middot; <a href="https://privacyrights.org">privacyrights.org</a></td></tr>
+			<tr><td>Coalition Against Stalkerware</td><td>Survivor resources, detection testing</td><td><a href="https://stopstalkerware.org">stopstalkerware.org</a></td></tr>
+			<tr><td>Tor community portal / OONI</td><td>Relay and bridge guides; measurement</td><td><a href="https://community.torproject.org">community.torproject.org</a> &middot; <a href="https://ooni.org">ooni.org</a></td></tr>
+			<tr><td>Noisebridge / Sudo Room / Internet Archive</td><td>SF and Oakland hackerspaces; DWeb and Wayback</td><td><a href="https://www.noisebridge.net">noisebridge.net</a> &middot; <a href="https://sudoroom.org">sudoroom.org</a> &middot; <a href="https://archive.org">archive.org</a></td></tr>
+			<tr><td>UC Berkeley Human Rights Center</td><td>Investigations Lab OSINT training</td><td><a href="https://humanrights.berkeley.edu">humanrights.berkeley.edu</a></td></tr>
+			<tr><td>Calyx Institute / Library Freedom Project</td><td>NYC relay association and CalyxOS; librarian privacy training</td><td><a href="https://calyxinstitute.org">calyxinstitute.org</a> &middot; <a href="https://libraryfreedom.org">libraryfreedom.org</a></td></tr>
+		</tbody>
+	</table>
+	<p>CryptoParty's site failed TLS on every fetch, so treat the movement as dormant.</p>
+
+	<h3>Links that educate us</h3>
+	<table>
+		<thead>
+			<tr>
+				<th>Source</th>
+				<th>Why</th>
+				<th>Link</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr><td>EFF Surveillance Self-Defense</td><td>The canonical guides, module by module</td><td><a href="https://ssd.eff.org">ssd.eff.org</a></td></tr>
+			<tr><td>Privacy Guides knowledge base</td><td>Threat modelling and basics</td><td><a href="https://www.privacyguides.org/en/basics/">privacyguides.org/en/basics</a></td></tr>
+			<tr><td>The New Oil, Techlore, Surveillance Report</td><td>Beginner privacy; the weekly podcast</td><td><a href="https://thenewoil.org">thenewoil.org</a> &middot; <a href="https://techlore.tech">techlore.tech</a> &middot; <a href="https://surveillancereport.tech">surveillancereport.tech</a></td></tr>
+			<tr><td>Bazzell, <em>Extreme Privacy</em> 5th ed. (2024)</td><td>The operational manual</td><td><a href="https://inteltechniques.com/book1.html">inteltechniques.com/book1.html</a></td></tr>
+			<tr><td><em>A Cypherpunk's Manifesto</em> (1993), <em>Cyphernomicon</em> (1994)</td><td>The founding texts</td><td><a href="https://www.activism.net/cypherpunk/manifesto.html">activism.net/cypherpunk/manifesto.html</a> &middot; <a href="https://nakamotoinstitute.org/library/cyphernomicon/">nakamotoinstitute.org/library/cyphernomicon</a></td></tr>
+			<tr><td>Doctorow, <em>Little Brother</em> and Pluralistic</td><td>The San Francisco novel and the daily column</td><td><a href="https://craphound.com/littlebrother/">craphound.com/littlebrother</a> &middot; <a href="https://pluralistic.net">pluralistic.net</a></td></tr>
+			<tr><td>Schneier, Crypto-Gram</td><td>Thirty years of monthly sanity</td><td><a href="https://www.schneier.com/crypto-gram/">schneier.com/crypto-gram</a></td></tr>
+			<tr><td>Citizen Lab research</td><td>Primary spyware reporting</td><td><a href="https://citizenlab.ca/category/research/">citizenlab.ca/category/research</a></td></tr>
+			<tr><td>Freedom on the Net 2026, #KeepItOn 2025, RSF Index, CPJ census</td><td>The annual numbers</td><td><a href="https://freedomhouse.org/report/freedom-net/2026/seismic-shifts-global-internet">freedomhouse.org (Freedom on the Net 2026)</a> &middot; <a href="https://www.accessnow.org/internet-shutdowns-2025/">accessnow.org/internet-shutdowns-2025</a></td></tr>
+			<tr><td>Exposing the Invisible, Bellingcat toolkit</td><td>Investigation method</td><td><a href="https://exposingtheinvisible.org">exposingtheinvisible.org</a> &middot; <a href="https://bellingcat.gitbook.io/toolkit">bellingcat.gitbook.io/toolkit</a></td></tr>
+			<tr><td>404 Media, Krebs, The Markup at CalMatters, Risky Business, Darknet Diaries, Lawfare, How to Fix the Internet</td><td>The beat</td><td><a href="https://www.404media.co">404media.co</a> &middot; <a href="https://krebsonsecurity.com">krebsonsecurity.com</a> &middot; <a href="https://themarkup.org">themarkup.org</a> &middot; <a href="https://risky.biz">risky.biz</a> &middot; <a href="https://darknetdiaries.com">darknetdiaries.com</a> &middot; <a href="https://www.lawfaremedia.org">lawfaremedia.org</a> &middot; <a href="https://www.eff.org/how-to-fix-the-internet-podcast">eff.org/how-to-fix-the-internet-podcast</a></td></tr>
+			<tr><td>awesome-privacy, awesome-selfhosted, Lopp's security guide</td><td>The lists</td><td><a href="https://github.com/pluja/awesome-privacy">github.com/pluja/awesome-privacy</a> &middot; <a href="https://github.com/awesome-selfhosted/awesome-selfhosted">github.com/awesome-selfhosted/awesome-selfhosted</a> &middot; <a href="https://www.lopp.net/bitcoin-information/security.html">lopp.net/bitcoin-information/security.html</a></td></tr>
+			<tr><td>Berkman Klein Center</td><td>Internet policy scholarship</td><td><a href="https://cyber.harvard.edu">cyber.harvard.edu</a></td></tr>
+			<tr><td>Gatherings</td><td>40C3 Hamburg Dec 27 to 30 2026 (voucher presale closes Nov 10); BSidesSF Apr 3 to 4 2027; DEF CON Crypto &amp; Privacy Village Aug 2027; Noisebridge Tuesday meeting; DWeb Camp (2027 date not yet set); HOPE's future undecided after Aug 2026</td><td><a href="https://events.ccc.de">events.ccc.de</a> &middot; <a href="https://bsidessf.org">bsidessf.org</a> &middot; <a href="https://cryptovillage.org">cryptovillage.org</a> &middot; <a href="https://dwebcamp.org">dwebcamp.org</a> &middot; <a href="https://hope.net">hope.net</a></td></tr>
+		</tbody>
+	</table>
+
+	<h2 id="calendar">10. Clinic calendar</h2>
+	<p>Each of the eight topics above is one evening at Frontier Tower: hardware or an account on the table, one scary step done together, a checklist people photograph. Three clinics are already written up (dark web for defenders, delete yourself, flash your router); the next five are in the order that stacks best.</p>
+	<table>
+		<thead>
+			<tr>
+				<th>When</th>
+				<th>Clinic</th>
+				<th>Workshop</th>
+				<th>What you leave with</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr><td>Month 2</td><td>Dark web for defenders</td><td><a href="#helping">8</a></td><td>A Tor Browser you understand, a Snowflake proxy running, and your own breach exposure checked without handing anyone new data. 90 minutes.</td></tr>
+			<tr><td>Month 3</td><td>Delete yourself</td><td><a href="#profile">6</a></td><td>DROP (Californians), Permission Slip and the top ten people-search opt-outs from the Big Ass list filed, and credit frozen at six bureaus. 90 minutes, bring a laptop.</td></tr>
+			<tr><td>Month 4 (or first, if hardware is on the table)</td><td>Flash your router</td><td><a href="#router">3</a></td><td>OpenWrt running on a supported router and the ten-minute hardening done. 90 minutes.</td></tr>
+			<tr><td>Next</td><td>Phone night</td><td><a href="#phone">2</a></td><td>GrapheneOS web installer, Lockdown Mode, carrier locks, MVT with a volunteer who has run it.</td></tr>
+			<tr><td>Before the December holidays</td><td>Travel-phone station</td><td><a href="#travel">7</a></td><td>A prepared travel phone.</td></tr>
+			<tr><td>Next</td><td>Voice Preview Edition and Frigate build night, with Noisebridge</td><td><a href="#devices">5</a></td><td>A local voice assistant or camera box inside Home Assistant.</td></tr>
+			<tr><td>Next</td><td>Laptop and firmware night, with Sudo Room</td><td><a href="#laptop">1</a></td><td>FileVault, LUKS, sbctl, Heads on a ThinkPad.</td></tr>
+			<tr><td>Next</td><td>Rayhunter and Snowflake night</td><td><a href="#network">4</a> and <a href="#helping">8</a></td><td>Ends with the first bridge of a Bay Area relay association.</td></tr>
+		</tbody>
+	</table>
+
+	<h3>Clinic: Dark web for defenders (month 2)</h3>
+	<p>90 minutes. Participants leave with a Tor Browser they understand, a Snowflake proxy running, and their own breach exposure checked without handing anyone new data.</p>
+	<ul>
+		<li>Threat model first, per EFF's security plan: who wants your data, what can they already buy.</li>
+		<li>History in 15 minutes: the Glen Park library, two corrupt agents, the pardon; the point that cryptography did not break, opsec did.</li>
+		<li>Hands-on: HIBP and Apple Password Monitoring as the k-anonymity model; why Google's report died; what ransomware.live shows about your employer.</li>
+		<li>Demo, not install: VoidAccess as an example of self-hosted threat intel, with the crawling-liability caveat from its HN thread.</li>
+		<li>Run a Snowflake proxy; show Tor Metrics usage from Iran during the Feb to May 2026 shutdown.</li>
+	</ul>
+
+	<h3>Clinic: Delete yourself (month 3)</h3>
+	<p>90 minutes, bring a laptop. Participants file DROP (Californians), Permission Slip, and the top ten people-search opt-outs from the Big Ass list, and freeze credit at six bureaus.</p>
+	<ul>
+		<li>Open by showing one volunteer's Radaris and Spokeo pages, then the Locate X abortion-clinic demonstration.</li>
+		<li>Rule: no government ID uploads to intermediaries; read retention terms aloud for one service.</li>
+		<li>Set a calendar reminder for the 3-month recheck before leaving.</li>
+	</ul>
+
+	<h3>Links for these two clinics</h3>
+	<p>The "Dark Web OSINT and Data Broker Defense" entries headed for <a href="https://github.com/CypherpunkSociety/awesome-cypherpunk">awesome-cypherpunk</a>.</p>
+	<table>
+		<thead>
+			<tr>
+				<th>Entry</th>
+				<th>Link</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr><td>ransomware.live, RansomLook</td><td><a href="https://ransomware.live">ransomware.live</a> &middot; <a href="https://ransomlook.io">ransomlook.io</a></td></tr>
+			<tr><td>Ahmia, OnionScan, VoidAccess (flagged: evaluate, crawling liability)</td><td><a href="https://ahmia.fi">ahmia.fi</a> &middot; <a href="https://github.com/s-rah/onionscan">github.com/s-rah/onionscan</a> &middot; <a href="https://github.com/KatrielMoses/voidaccess">github.com/KatrielMoses/voidaccess</a></td></tr>
+			<tr><td>Have I Been Pwned (stealer-log search)</td><td><a href="https://haveibeenpwned.com">haveibeenpwned.com</a></td></tr>
+			<tr><td>Tippe, PoPETs 2024: how onion-service cases are really solved</td><td><a href="https://www.petsymposium.org/popets/2024/popets-2024-0117.php">petsymposium.org/popets/2024/popets-2024-0117.php</a></td></tr>
+			<tr><td>Big Ass Data Broker Opt-Out List</td><td><a href="https://github.com/yaelwrites/Big-Ass-Data-Broker-Opt-Out-List">github.com/yaelwrites/Big-Ass-Data-Broker-Opt-Out-List</a></td></tr>
+			<tr><td>IntelTechniques Data Removal Workbook</td><td><a href="https://inteltechniques.com/workbook.html">inteltechniques.com/workbook.html</a></td></tr>
+			<tr><td>CalPrivacy DROP</td><td><a href="https://privacy.ca.gov/drop/about-drop-and-the-delete-act/">privacy.ca.gov/drop</a></td></tr>
+			<tr><td>Consumer Reports Permission Slip and Data Defense study</td><td><a href="https://www.consumerreports.org/permission-slip/">consumerreports.org/permission-slip</a></td></tr>
+			<tr><td>Privacy Rights Clearinghouse broker registry table</td><td><a href="https://privacyrights.org/data-brokers">privacyrights.org/data-brokers</a></td></tr>
+			<tr><td>Krebs on Onerep, Radaris, NPD</td><td><a href="https://krebsonsecurity.com">krebsonsecurity.com</a></td></tr>
+		</tbody>
+	</table>
+
+	<h2 id="checking">Facts we are still checking</h2>
+	<p>Single-source or unverified as of Nov 4 2026. Tell us if you know better.</p>
+	<ul>
+		<li>Whether the UK has regained Advanced Data Protection</li>
+		<li>Microsoft's "hardware-accelerated BitLocker" details</li>
+		<li>The GrayKey Nov 2024 leak specifics</li>
+		<li>GrapheneOS Pixel 6 extended-support status</li>
+		<li>Mouser stocking the OpenWrt One</li>
+		<li>Whether Commerce's TP-Link sales ban was shelved in Feb 2026</li>
+		<li>Mullvad Leta's status</li>
+		<li>The LG ACR settlement in Texas</li>
+		<li>The outcome of Texas v. GM</li>
+		<li>Alexa+ retention terms</li>
+		<li>HP All-In Plan pricing</li>
+		<li>Tall Poppy's and Crash Override's status</li>
+		<li>The X Grok training toggle</li>
+		<li>The Utah app-store law's effective date</li>
+		<li>ESTA social-media rule finalisation after Jan 2026</li>
+		<li>The Saudi and Turkish device and VPN enforcement picture</li>
+		<li>The statute in <em>US v. Tunick</em></li>
+		<li>Tor Metrics bridge-user shares (secondary)</li>
+		<li>OTF's FY2026 figure</li>
+		<li>RightsCon 2026's replacement format</li>
+		<li>The Tor relay-operator meetup cadence</li>
+		<li>CryptoParty's status</li>
+	</ul>
+	<p>Primary pages at openwrt.org, cbp.gov and cisa.gov sat behind bot-checks or 403s and were read through mirrors or secondary coverage.</p>
+
+	<p>Corrections: <a href="mailto:contact@cypherpunksociety.org">contact@cypherpunksociety.org</a> (PGP at <a href="/pgp.txt">/pgp.txt</a>) &middot; source on <a href="https://github.com/CypherpunkSociety">github.com/CypherpunkSociety</a></p>
+</div>
+</body>
+</html>

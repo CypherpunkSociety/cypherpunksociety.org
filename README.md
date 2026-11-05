@@ -5,6 +5,7 @@ Open-source digital self-defense, privacy tools, and freedom bandwidth — start
 - **Live Website:** [https://cypherpunksociety.org](https://cypherpunksociety.org)
 - **Awesome Cypherpunk Resource List:** [https://github.com/CypherpunkSociety/awesome-cypherpunk](https://github.com/CypherpunkSociety/awesome-cypherpunk)
 - **Docs & Curriculum:** [https://cypherpunksociety.org/docs.html](https://cypherpunksociety.org/docs.html)
+- **Workshop Materials (clinic checklists, tools, readings):** [https://cypherpunksociety.org/workshops.html](https://cypherpunksociety.org/workshops.html)
 - **How to Clone Us:** [https://cypherpunksociety.org/start.html](https://cypherpunksociety.org/start.html)
 - **Contact:** `contact@cypherpunksociety.org`
 

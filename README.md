@@ -32,3 +32,7 @@ npm install
 npm run dev      # Start local dev server (cf dev)
 npm run deploy   # Deploy to Cloudflare Workers (cf deploy)
 ```
+
+## License
+
+[MIT](LICENSE)

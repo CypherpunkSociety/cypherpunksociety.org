@@ -1857,7 +1857,7 @@
       </section>
 
       <!-- SLIDE 32: FREEDOM BANDWIDTH & USB FLASHING STATION -->
-      <section class="slide" data-notes="Second: we are setting up a permanent USB Flashing Station and Freedom Bandwidth initiative right here at Frontier Tower. Slide detail: Snowflake is a WebRTC browser proxy.">
+      <section class="slide" data-notes="Second: we are setting up a permanent USB Flashing Station and Freedom Bandwidth initiative right here at Frontier Tower. Slide detail: Snowflake is a WebRTC browser proxy. On Tails: be careful with the no-trace claim. Tails runs from RAM and does not touch the internal drive by default, and it wipes RAM at shutdown, but it is not invisible: firmware and boot logs can show a USB boot, the stick itself is evidence, Persistent Storage is written to the stick, a cold-boot attack on a machine that was not shut down cleanly can recover RAM, and Tails does nothing about hardware identifiers or a compromised BIOS. Say amnesic by default, not zero trace.">
         <div class="section-tag">52 / Permanent Infrastructure at 995 Market St</div>
         <h2>The USB Flashing Station & Freedom Bandwidth</h2>
         <div class="split">
@@ -1865,7 +1865,7 @@
             <ul>
               <li><strong>Permanent USB station:</strong> bring any blank stick (32–128 GB) and leave with:
                 <ul>
-                  <li><strong>Tails OS</strong>: amnesic, everything through Tor, no trace on the host</li>
+                  <li><strong>Tails OS</strong>: amnesic by default, everything through Tor, nothing written to the host disk unless you enable Persistent Storage</li>
                   <li><strong>Kiwix</strong> offline Wikipedia + a survival and medical reference library</li>
                 </ul>
               </li>

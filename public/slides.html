@@ -541,16 +541,21 @@
       </section>
 
                   <!-- SLIDE 7: 1977–1984 — UC BERKELEY BSD AT EVANS HALL -->
-      <section class="slide" data-notes="While hobbyists were trading Altair schematics in Menlo Park, look at what was happening across the Bay at Evans Hall on the UC Berkeley campus—pictured here in 1978. Starting in 1977 with Bill Joy and the Computer Systems Research Group (CSRG)—Marshall Kirk McKusick, Keith Bostic, and Sam Leffler—Berkeley hackers built the Berkeley Software Distribution (BSD). When DARPA funded CSRG to put TCP/IP and Berkeley Sockets into 4.2BSD in 1983 under the permissive BSD license, they ensured that the foundational protocols of the Internet belonged to the public commons instead of proprietary telecom monopolies. Slide detail: the CSRG was Marshall Kirk McKusick, Keith Bostic, Michael Karels and Sam Leffler. The sockets API is socket(), bind(), connect(). The permissive license plus the defeat of the USL lawsuit birthed 386BSD and then FreeBSD, NetBSD and OpenBSD, home of OpenSSH.">
+      <section class="slide" data-notes="While hobbyists were trading Altair schematics in Menlo Park, look at what was happening across the Bay at Evans Hall on the UC Berkeley campus—pictured here in 1978. Starting in 1977 with Bill Joy and the Computer Systems Research Group (CSRG)—Marshall Kirk McKusick, Keith Bostic, and Sam Leffler—Berkeley hackers built the Berkeley Software Distribution (BSD). When DARPA funded CSRG to put TCP/IP and Berkeley Sockets into 4.2BSD in 1983 under the permissive BSD license, they ensured that the foundational protocols of the Internet belonged to the public commons instead of proprietary telecom monopolies. Slide detail: the CSRG was Marshall Kirk McKusick, Keith Bostic, Michael Karels and Sam Leffler. The sockets API is socket(), bind(), connect(). The permissive license plus the defeat of the USL lawsuit birthed 386BSD and then FreeBSD, NetBSD and OpenBSD, home of OpenSSH. The vi story (Bryan Lunduke, The True History of vi, Feb 2023, from Joy's own interviews): Ken Thompson wrote ed at Bell Labs in 1969, came to Berkeley in 1975 to build a Pascal compiler, and Joy took a summer job fixing it and got frustrated with ed. He got em, the Editor for Mortals, from George Coulouris at University College London, merged its features with Chuck Haley into en, which became ex, and vi is just the visual mode of ex. He wrote it at home, all night for months, over a 300-baud modem on a Lear Siegler ADM-3A; the slow link is why the commands are single letters, h j k l were the arrow keys printed on the ADM-3A, and Escape sat where Tab is on a modern keyboard. He was adding multiple windows when the VAX arrived in December 1978, the tape drive broke, the source was lost and the windows never shipped. First public release in 2BSD, May 1979, to about 75 people; later POSIX and forty years on every Unix. Joy: vi was written for a world that does not exist anymore. Emacs people at MIT had fast links to a PDP-10, which is the whole difference.">
         <div class="section-tag">08 / 1977–1984 · Evans Hall, UC Berkeley</div>
         <h2>UC Berkeley's <em>BSD</em>: Putting TCP/IP & Sockets in the Commons</h2>
         <div class="split">
           <div class="text-col">
             <ul>
               <li><strong>1977, Evans &amp; Cory Hall:</strong> Bill Joy and the CSRG turn Unix into an open academic powerhouse.</li>
+              <li><strong><code>vi</code> (1976–79):</strong> Joy wrote it at home over a 300-baud modem on an ADM-3A terminal.
+                <ul>
+                  <li>Slow link → one-letter commands; <code>hjkl</code> were the ADM-3A's arrow keys; Esc sat where Tab is now</li>
+                </ul>
+              </li>
               <li><strong>4.2BSD (1983), DARPA-funded:</strong> the reference TCP/IP stack and the Berkeley Sockets API.
                 <ul>
-                  <li>Also <code>vi</code>, <code>csh</code> and the Fast File System</li>
+                  <li>Also <code>csh</code> and the Fast File System</li>
                 </ul>
               </li>
               <li><strong>The BSD license:</strong> source included, no royalties; AT&amp;T's USL lawsuit defeated.</li>

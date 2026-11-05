@@ -154,6 +154,9 @@
     .photo-card.short img {
       height: 235px;
     }
+    .compact-photos .photo-card.short img {
+      height: 180px;
+    }
     .photo-caption {
       padding: 0.55rem 0.85rem;
       font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
@@ -177,6 +180,15 @@
     }
     .text-col li strong {
       color: #ffffff;
+    }
+    .text-col ul ul {
+      margin-top: 0.28rem;
+      font-size: 0.93em;
+      line-height: 1.5;
+      color: #d8dee9;
+    }
+    .text-col ul ul li {
+      margin-bottom: 0.22rem;
     }
     blockquote {
       margin: 0.7rem 0;
@@ -356,15 +368,15 @@
       </section>
 
       <!-- SLIDE 2: NOVEMBER 5TH — V FOR VENDETTA & LONDON BONFIRE NIGHT -->
-      <section class="slide" data-notes="There is a reason we chose November 5th for our inaugural gathering. Growing up in London, November 5th meant standing out in the cold dark around huge roaring bonfires and watching fireworks light up the parks for Guy Fawkes Night. And through Alan Moore and David Lloyd's V for Vendetta—and the 2005 film—November 5th became an unmistakable modern symbol of questioning unaccountable surveillance power.">
+      <section class="slide" data-notes="There is a reason we chose November 5th for our inaugural gathering. Growing up in London, November 5th meant standing out in the cold dark around huge roaring bonfires and watching fireworks light up the parks for Guy Fawkes Night. And through Alan Moore and David Lloyd's V for Vendetta—and the 2005 film—November 5th became an unmistakable modern symbol of questioning unaccountable surveillance power. Slide detail: community bonfires across London parks; Moore and Lloyd's story, and the 2005 film, reimagined November 5th for the digital era as a warning against total surveillance and state control of information; cypherpunks build cryptographic tools and community clinics that make mass surveillance mathematically unworkable.">
         <div class="section-tag">02 / Why November 5th?</div>
         <h2>"Remember, Remember, the Fifth of November"</h2>
-        <div class="split">
+        <div class="split compact-photos">
           <div class="text-col">
             <ul>
-              <li><strong>London Bonfire Night Roots:</strong> Growing up in London, every November 5th meant community bonfires, sparklers, and fireworks lighting up the autumn sky across London parks.</li>
-              <li><strong><em>V for Vendetta</em>:</strong> Alan Moore & David Lloyd's story (and the 2005 film) reimagined November 5th for the digital era — a warning against total panopticon surveillance and state control of information.</li>
-              <li><strong>From Symbol to Practice:</strong> Cypherpunks don't wait for permission — we build the cryptographic tools and community clinics that make mass surveillance mathematically unworkable.</li>
+              <li><strong>London Bonfire Night:</strong> growing up in London, every November 5th meant bonfires, sparklers and fireworks.</li>
+              <li><strong><em>V for Vendetta</em>:</strong> Alan Moore and David Lloyd (film, 2005) remade the date as a warning against the panopticon state.</li>
+              <li><strong>From symbol to practice:</strong> we don't wait for permission; we build the tools and clinics that make mass surveillance unworkable.</li>
             </ul>
           </div>
           <div class="photo-grid-2">
@@ -407,15 +419,21 @@
       </section>
 
       <!-- SLIDE 4: STEVE BLANK — THE SECRET HISTORY OF SILICON VALLEY (1946–1964) -->
-      <section class="slide" data-notes="Before we get to the 1968 Whole Earth Catalog and the hippies in Menlo Park, we have to ask: why were all those semiconductors, microwave engineers, and mainframes sitting in the Santa Clara Valley in the first place? As entrepreneur and historian Steve Blank documented in 'The Secret History of Silicon Valley,' Silicon Valley was originally built not for consumer gadgets, but as the classified electronic warfare and signals-intelligence capital of the Cold War. During World War II, Stanford Professor Fred Terman ran the top-secret Radio Research Laboratory at Harvard, building radar-jamming and electronic reconnaissance gear. In 1946, Terman brought his top radar engineers back to Stanford and urged the CIA, NSA, Navy, and Air Force to fund Sylvania's Electronic Defense Lab in Mountain View, Bill Perry's ESL in Sunnyvale, Lockheed's CORONA spy satellite division, and Fairchild Semiconductor. And here is the great dialectical twist of Bay Area history: in the late 1960s and 1970s, the anti-war counterculture and the Cypherpunks took the exact silicon and packet-switching networks built for the intelligence state and flipped them inside out to empower the individual.">
+      <section class="slide" data-notes="Before we get to the 1968 Whole Earth Catalog and the hippies in Menlo Park, we have to ask: why were all those semiconductors, microwave engineers, and mainframes sitting in the Santa Clara Valley in the first place? As entrepreneur and historian Steve Blank documented in 'The Secret History of Silicon Valley,' Silicon Valley was originally built not for consumer gadgets, but as the classified electronic warfare and signals-intelligence capital of the Cold War. During World War II, Stanford Professor Fred Terman ran the top-secret Radio Research Laboratory at Harvard, building radar-jamming and electronic reconnaissance gear. In 1946, Terman brought his top radar engineers back to Stanford and urged the CIA, NSA, Navy, and Air Force to fund Sylvania's Electronic Defense Lab in Mountain View, Bill Perry's ESL in Sunnyvale, Lockheed's CORONA spy satellite division, and Fairchild Semiconductor. And here is the great dialectical twist of Bay Area history: in the late 1960s and 1970s, the anti-war counterculture and the Cypherpunks took the exact silicon and packet-switching networks built for the intelligence state and flipped them inside out to empower the individual. Slide detail: Terman directed roughly 800 engineers at the RRL. Steve Blank's lecture is the source for the 1953 to 1964 list: Sylvania's Electronic Defense Lab in Mountain View, Bill Perry's ESL Inc. (Electronic Reconnaissance), Watkins-Johnson, Fairchild Semiconductor and Lockheed Sunnyvale, which built the CIA/NRO CORONA satellite. The reversal: personal computers and public-key cryptography, built on the military-industrial complex's own silicon and ARPANET packet switching, to defend the citizen from the state.">
         <div class="section-tag">04 / 1946–1964 · Steve Blank's "Secret History of Silicon Valley"</div>
         <h2>Before the Counterculture: Cold War ELINT, Spy Satellites &amp; Stanford</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>Fred Terman &amp; WWII Electronic Warfare (RRL → Stanford):</strong> During WWII, Stanford's <strong>Frederick Terman</strong> directed 800 engineers at Harvard's classified <strong>Radio Research Laboratory (RRL)</strong> building radar-jamming and signals-intelligence (ELINT) gear — then brought that team to Stanford in 1946 to launch the <strong>Stanford Industrial Park</strong>.</li>
-              <li><strong>The CIA, NSA &amp; Reconnaissance Valley (1953–1964):</strong> As <strong>Steve Blank</strong> documented in <em>The Secret History of Silicon Valley</em>, early Valley microwave &amp; silicon firms — <strong>Sylvania's Electronic Defense Lab (EDL)</strong> in Mountain View, Bill Perry's <strong>ESL Inc.</strong> ("Electronic Reconnaissance"), <strong>Watkins-Johnson</strong>, <strong>Fairchild Semiconductor</strong>, and <strong>Lockheed Sunnyvale</strong> (builders of the CIA/NRO <strong>CORONA</strong> spy satellite) — were funded by the intelligence community.</li>
-              <li><strong>The Great Bay Area Reversal:</strong> The counterculture and Cypherpunks of the 1970s–1990s took the military-industrial complex's own silicon and ARPANET packet-switching and inverted them into <strong>personal computers and public-key cryptography to defend the citizen from the state</strong>.</li>
+              <li><strong>Fred Terman, WWII:</strong> ran Harvard's Radio Research Lab, 800 engineers, radar jamming and ELINT.</li>
+              <li><strong>1946:</strong> brought the team to Stanford; founded the Stanford Industrial Park.</li>
+              <li><strong>1953–1964, "Reconnaissance Valley":</strong> CIA, NSA, Navy and Air Force money built
+                <ul>
+                  <li>Sylvania EDL (Mountain View) · ESL (Bill Perry) · Watkins-Johnson</li>
+                  <li>Fairchild Semiconductor · Lockheed Sunnyvale, builder of CORONA</li>
+                </ul>
+              </li>
+              <li><strong>The reversal:</strong> counterculture and cypherpunks turned that silicon and ARPANET against the state.</li>
             </ul>
           </div>
           <div class="photo-grid-2">
@@ -523,15 +541,20 @@
       </section>
 
                   <!-- SLIDE 7: 1977–1984 — UC BERKELEY BSD AT EVANS HALL -->
-      <section class="slide" data-notes="While hobbyists were trading Altair schematics in Menlo Park, look at what was happening across the Bay at Evans Hall on the UC Berkeley campus—pictured here in 1978. Starting in 1977 with Bill Joy and the Computer Systems Research Group (CSRG)—Marshall Kirk McKusick, Keith Bostic, and Sam Leffler—Berkeley hackers built the Berkeley Software Distribution (BSD). When DARPA funded CSRG to put TCP/IP and Berkeley Sockets into 4.2BSD in 1983 under the permissive BSD license, they ensured that the foundational protocols of the Internet belonged to the public commons instead of proprietary telecom monopolies.">
+      <section class="slide" data-notes="While hobbyists were trading Altair schematics in Menlo Park, look at what was happening across the Bay at Evans Hall on the UC Berkeley campus—pictured here in 1978. Starting in 1977 with Bill Joy and the Computer Systems Research Group (CSRG)—Marshall Kirk McKusick, Keith Bostic, and Sam Leffler—Berkeley hackers built the Berkeley Software Distribution (BSD). When DARPA funded CSRG to put TCP/IP and Berkeley Sockets into 4.2BSD in 1983 under the permissive BSD license, they ensured that the foundational protocols of the Internet belonged to the public commons instead of proprietary telecom monopolies. Slide detail: the CSRG was Marshall Kirk McKusick, Keith Bostic, Michael Karels and Sam Leffler. The sockets API is socket(), bind(), connect(). The permissive license plus the defeat of the USL lawsuit birthed 386BSD and then FreeBSD, NetBSD and OpenBSD, home of OpenSSH.">
         <div class="section-tag">08 / 1977–1984 · Evans Hall, UC Berkeley</div>
         <h2>UC Berkeley's <em>BSD</em>: Putting TCP/IP & Sockets in the Commons</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>Evans Hall & Cory Hall, UC Berkeley (1977):</strong> Graduate student <strong>Bill Joy</strong> and the <strong>Computer Systems Research Group (CSRG)</strong> — <strong>Marshall Kirk McKusick</strong>, Keith Bostic, Michael Karels, and Sam Leffler — turned Unix into an open academic powerhouse.</li>
-              <li><strong><code>4.2BSD</code> (1983) — The Internet's DNA:</strong> Funded by DARPA, Berkeley engineers wrote the reference implementation of <strong>TCP/IP networking</strong> and the <strong>Berkeley Sockets API</strong> (<code>socket()</code>, <code>bind()</code>, <code>connect()</code>), along with <code>vi</code>, <code>csh</code>, and the Fast File System.</li>
-              <li><strong>The Permissive BSD License & <code>386BSD</code>:</strong> By releasing networking code with source and without royalties — and defeating AT&T's USL lawsuit — Berkeley birthed <strong>FreeBSD, NetBSD, and OpenBSD</strong> (<code>OpenSSH</code>).</li>
+              <li><strong>1977, Evans &amp; Cory Hall:</strong> Bill Joy and the CSRG turn Unix into an open academic powerhouse.</li>
+              <li><strong>4.2BSD (1983), DARPA-funded:</strong> the reference TCP/IP stack and the Berkeley Sockets API.
+                <ul>
+                  <li>Also <code>vi</code>, <code>csh</code> and the Fast File System</li>
+                </ul>
+              </li>
+              <li><strong>The BSD license:</strong> source included, no royalties; AT&amp;T's USL lawsuit defeated.</li>
+              <li><strong>Descendants:</strong> 386BSD, then FreeBSD, NetBSD and OpenBSD (<code>OpenSSH</code>).</li>
             </ul>
           </div>
           <div class="split-three">
@@ -552,15 +575,20 @@
       </section>
 
       <!-- SLIDE 8: 1983–1998 — GNU, LINUX & OPEN SOURCE -->
-      <section class="slide" data-notes="And on the East Coast in 1983, Richard Stallman at the MIT AI Lab launched the GNU Project and the Free Software Foundation, inventing copyleft and the GNU General Public License (GPL). Notice the direct personal bridge to the Bay Area Cypherpunks: John Gilmore co-founded Cygnus Support in 1989—the first commercial GNU software company—right before co-founding EFF and the Cypherpunks! When Linus Torvalds combined the Linux kernel with GNU and BSD networking in 1991, and when a 1998 strategy session in Palo Alto coined the term 'Open Source,' they established a core cypherpunk truth: you cannot trust cryptography if you cannot inspect and compile the source code yourself.">
+      <section class="slide" data-notes="And on the East Coast in 1983, Richard Stallman at the MIT AI Lab launched the GNU Project and the Free Software Foundation, inventing copyleft and the GNU General Public License (GPL). Notice the direct personal bridge to the Bay Area Cypherpunks: John Gilmore co-founded Cygnus Support in 1989—the first commercial GNU software company—right before co-founding EFF and the Cypherpunks! When Linus Torvalds combined the Linux kernel with GNU and BSD networking in 1991, and when a 1998 strategy session in Palo Alto coined the term 'Open Source,' they established a core cypherpunk truth: you cannot trust cryptography if you cannot inspect and compile the source code yourself. Slide detail: Cygnus built gcc and gdb, and Gilmore contributed to both GNU and BSD before co-founding EFF and the Cypherpunks. Christine Peterson coined Open Source at the 1998 Palo Alto session after Netscape open-sourced Mozilla.">
         <div class="section-tag">09 / 1983–1998 · Free Software & Open Source</div>
         <h2>The <em>GNU Project</em>, Linux & Open Source: Why Privacy Needs Free Code</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>1983–1989 — Richard Stallman, <em>GNU</em> & Copyleft (<code>GPL</code>):</strong> Launching the <strong>GNU Project</strong> and <strong>Free Software Foundation</strong>, Stallman used copyright law jujitsu (<em>copyleft</em>) to guarantee the Four Essential Freedoms: to run, study, modify, and redistribute code.</li>
-              <li><strong>The Cypherpunk Bridge — John Gilmore & Cygnus Support (1989):</strong> Before co-founding EFF and the Cypherpunks, <strong>John Gilmore</strong> co-founded <strong>Cygnus Support</strong> in Sunnyvale (building <code>gcc</code> and <code>gdb</code>) and contributed directly to both GNU and BSD.</li>
-              <li><strong>1991 Linux & The 1998 Palo Alto "Open Source" Summit:</strong> When <strong>Linus Torvalds</strong> released the Linux kernel (1991) and Netscape open-sourced Mozilla in 1998 (where Christine Peterson coined <strong>"Open Source"</strong> in Palo Alto), it cemented the cypherpunk theorem: <strong>proprietary encryption is a trap; only verifiable open source can be trusted.</strong></li>
+              <li><strong>1983, Stallman:</strong> the GNU Project, the Free Software Foundation, copyleft and the GPL.
+                <ul>
+                  <li>Four freedoms: run, study, modify, redistribute</li>
+                </ul>
+              </li>
+              <li><strong>1989, the cypherpunk bridge:</strong> John Gilmore co-founds Cygnus Support in Sunnyvale.</li>
+              <li><strong>1991, Linux. 1998, Palo Alto:</strong> Netscape opens Mozilla; "Open Source" is coined.</li>
+              <li><strong>The theorem:</strong> proprietary encryption is a trap; only verifiable source can be trusted.</li>
             </ul>
           </div>
           <div class="photo-grid-2">
@@ -577,15 +605,23 @@
       </section>
 
       <!-- SLIDE 7: 1978–1984 — EARLY HISTORY OF DIAL-UP BBS & FIDONET -->
-      <section class="slide" data-notes="Before the commercial Internet existed, how did regular people connect their home computers? Through dial-up Bulletin Board Systems—BBSs. In February 1978, during a massive Chicago blizzard, Ward Christensen and Randy Suess hooked an S-100 microcomputer to a 300-baud modem and launched CBBS. And six years later, right here in San Francisco in 1984, queer anarchist hacker Tom Jennings created Fido and FidoNet—a store-and-forward mesh network where thousands of home BBSs automatically dialed each other late at night when phone rates were cheap to exchange email and forums across the planet.">
+      <section class="slide" data-notes="Before the commercial Internet existed, how did regular people connect their home computers? Through dial-up Bulletin Board Systems—BBSs. In February 1978, during a massive Chicago blizzard, Ward Christensen and Randy Suess hooked an S-100 microcomputer to a 300-baud modem and launched CBBS. And six years later, right here in San Francisco in 1984, queer anarchist hacker Tom Jennings created Fido and FidoNet—a store-and-forward mesh network where thousands of home BBSs automatically dialed each other late at night when phone rates were cheap to exchange email and forums across the planet. Slide detail: Jennings was a queer anarchist hacker; FidoNet linked more than 35,000 independent boards worldwide. The SysOp and zine culture, from phone-phreak hubs and Phrack magazine in 1985 to Steve Jackson's Illuminati BBS and the Bay Area boards where PGP 1.0 first spread, was the grassroots precursor of the open web.">
         <div class="section-tag">10 / 1978–1984 · Grassroots Dial-Up Networks</div>
         <h2>The Rise of the Dial-Up BBS & San Francisco's <em>FidoNet</em></h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>1978 — CBBS (Ward Christensen & Randy Suess):</strong> Built during the Great Blizzard of 1978 using a 300-baud modem and Christensen's <code>XMODEM</code> file-transfer protocol — turning any ordinary telephone line into a sovereign, basement-hosted publishing node.</li>
-              <li><strong>1984 — Tom Jennings Creates <em>FidoNet</em> in San Francisco:</strong> Right here in San Francisco, anarchist hacker <strong>Tom Jennings</strong> built a store-and-forward dial-up mesh that linked <strong>35,000+ independent home BBSs</strong> worldwide during late-night off-peak telephone hours.</li>
-              <li><strong>The SysOp & Underground Zine Culture:</strong> Tens of thousands of local boards — from phone-phreak hubs and <em>Phrack</em> magazine (1985) to RPG boards like Steve Jackson's <em>Illuminati BBS</em> and the Bay Area boards where PGP 1.0 first spread — formed the true grassroots precursor to the open web.</li>
+              <li><strong>1978, CBBS:</strong> Ward Christensen and Randy Suess, a 300-baud modem, a Chicago blizzard.
+                <ul>
+                  <li>Christensen's <code>XMODEM</code>: any phone line becomes a publishing node</li>
+                </ul>
+              </li>
+              <li><strong>1984, FidoNet, San Francisco:</strong> Tom Jennings's store-and-forward dial-up mesh.
+                <ul>
+                  <li>35,000+ home BBSs trading mail at off-peak hours</li>
+                </ul>
+              </li>
+              <li><strong>SysOp culture:</strong> phreak hubs · <em>Phrack</em> (1985) · <em>Illuminati BBS</em> · the boards where PGP 1.0 spread.</li>
             </ul>
           </div>
           <div class="photo-grid-2">
@@ -602,7 +638,7 @@
       </section>
 
       <!-- SLIDE 8: 1983 — WARGAMES, ACOUSTIC COUPLERS & THE CFAA -->
-      <section class="slide" data-notes="And what introduced the entire public—and Washington D.C.—to dial-up modems and BBS culture? The 1983 movie WarGames. Everyone remembers Matthew Broderick placing a telephone handset into the rubber cups of an acoustic coupler hooked up to an IMSAI 8080 and war-dialing every phone number in Sunnyvale looking for a game company's computer. WarGames inspired an entire generation of teenagers to buy modems and log onto local BBSs—but when Ronald Reagan watched WarGames at Camp David, it also triggered a panic in Washington that produced the Computer Fraud and Abuse Act of 1984/1986: the exact law later used in the 1990 BBS raids and against Aaron Swartz.">
+      <section class="slide" data-notes="And what introduced the entire public—and Washington D.C.—to dial-up modems and BBS culture? The 1983 movie WarGames. Everyone remembers Matthew Broderick placing a telephone handset into the rubber cups of an acoustic coupler hooked up to an IMSAI 8080 and war-dialing every phone number in Sunnyvale looking for a game company's computer. WarGames inspired an entire generation of teenagers to buy modems and log onto local BBSs—but when Ronald Reagan watched WarGames at Camp David, it also triggered a panic in Washington that produced the Computer Fraud and Abuse Act of 1984/1986: the exact law later used in the 1990 BBS raids and against Aaron Swartz. Slide detail: Reagan asked the Joint Chiefs whether the scenario was real; the answer led to National Security Decision Directive 145 and then to Congress passing the CFAA.">
         <div class="section-tag">11 / June 1983 · Hollywood Meets the Modem</div>
         <h2>1983: <em>WarGames</em>, Acoustic Couplers & the Birth of the CFAA</h2>
         <div class="split">
@@ -612,9 +648,14 @@
               <cite>— WOPR / Joshua in WarGames (1983)</cite>
             </blockquote>
             <ul>
-              <li><strong>The Most Iconic Modem & BBS Film in History:</strong> Directed by John Badham, <em>WarGames</em> showed teenager David Lightman using an <strong>IMSAI 8080</strong> and a <strong>300-baud acoustic coupler</strong> to "war-dial" phone exchanges in search of unreleased computer games.</li>
-              <li><strong>Recruiting a Generation of Hackers:</strong> Modem sales surged across America as teenagers plugged family phone handsets into rubber acoustic cups and dialed into local underground BBSs.</li>
-              <li><strong>The Camp David Screening & The CFAA (1984/1986):</strong> Five days after <em>WarGames</em> opened, President Reagan screened it at Camp David and asked the Joint Chiefs if it was real — directly leading to <strong>NSDD-145</strong> and Congress passing the <strong>Computer Fraud and Abuse Act (CFAA)</strong>, the exact statute later weaponized in the 1990 BBS crackdowns and against <strong>Aaron Swartz</strong>.</li>
+              <li><strong>The film:</strong> John Badham, 1983. David Lightman, an IMSAI 8080, a 300-baud acoustic coupler, war-dialing.</li>
+              <li><strong>The effect:</strong> modem sales surge; a generation dials into local BBSs.</li>
+              <li><strong>The backlash:</strong> Reagan screens it at Camp David five days after release.
+                <ul>
+                  <li>NSDD-145, then the Computer Fraud and Abuse Act (1984/1986)</li>
+                  <li>The statute used in the 1990 BBS raids and against Aaron Swartz</li>
+                </ul>
+              </li>
             </ul>
           </div>
           <div class="photo-grid-2">
@@ -659,15 +700,28 @@
       </section>
 
                   <!-- SLIDE 8: FROM D&D (1974) TO GURPS (1986) -->
-      <section class="slide" data-notes="Before we talk about the 1990 Secret Service raid on Steve Jackson Games, it's worth pausing to ask: what is GURPS, and how does it relate to Dungeons & Dragons and hacker culture? When Gary Gygax and Dave Arneson published Dungeons & Dragons in 1974, it swept through Stanford SAIL, MIT, and UC Berkeley computer labs right alongside Unix and the ARPANET—inspiring Colossal Cave, Zork, and Berkeley's own Rogue. But D&D was hardcoded for medieval fantasy with rigid character classes and weird polyhedral dice. In 1986, Steve Jackson created GURPS—the Generic Universal RolePlaying System—using a clean 3d6 Gaussian bell curve and point-buy engineering so players could simulate ANY world: fantasy, hard sci-fi, or near-future cyberpunk hacking. Tabletop RPGs taught hackers to think in formal rulesets and adversarial threat models—and just as the 1980s moral panic targeted D&D, law enforcement in 1990 couldn't tell a GURPS roleplaying book apart from a real-world computer crime conspiracy.">
+      <section class="slide" data-notes="Before we talk about the 1990 Secret Service raid on Steve Jackson Games, it's worth pausing to ask: what is GURPS, and how does it relate to Dungeons & Dragons and hacker culture? When Gary Gygax and Dave Arneson published Dungeons & Dragons in 1974, it swept through Stanford SAIL, MIT, and UC Berkeley computer labs right alongside Unix and the ARPANET—inspiring Colossal Cave, Zork, and Berkeley's own Rogue. But D&D was hardcoded for medieval fantasy with rigid character classes and weird polyhedral dice. In 1986, Steve Jackson created GURPS—the Generic Universal RolePlaying System—using a clean 3d6 Gaussian bell curve and point-buy engineering so players could simulate ANY world: fantasy, hard sci-fi, or near-future cyberpunk hacking. Tabletop RPGs taught hackers to think in formal rulesets and adversarial threat models—and just as the 1980s moral panic targeted D&D, law enforcement in 1990 couldn't tell a GURPS roleplaying book apart from a real-world computer crime conspiracy. Slide detail: D&amp;D locked players into medieval classes, Fighter, Cleric, Magic-User, and d4 to d20 dice; GURPS, the Generic Universal RolePlaying System, used three six-sided dice for bell-curve probability and point-buy characters that could model history, space opera or near-future netrunning.">
         <div class="section-tag">13 / 1974–1986 · Tabletop World-Building & Hacker Culture</div>
         <h2>From <em>Dungeons & Dragons</em> to <em>GURPS</em>: Protocol Thinking on Paper</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>1974 — <em>Dungeons & Dragons</em> & University Mainframes:</strong> Created by <strong>Gary Gygax</strong> and Dave Arneson, D&D spread through Stanford SAIL, MIT, and UC Berkeley computer labs alongside Unix and ARPANET — directly inspiring <em>Colossal Cave Adventure</em>, <em>Zork</em>, MUDs, and Berkeley's <em>Rogue</em>.</li>
-              <li><strong>1986 — Steve Jackson's <em>GURPS</em> (<em>Generic Universal RolePlaying System</em>):</strong> While D&D was locked into medieval fantasy classes (Fighter, Cleric, Magic-User) and polyhedral dice (<code>d4</code>–<code>d20</code>), <em>GURPS</em> introduced a universal, point-buy simulation engine using three six-sided dice (<strong><code>3d6</code> Gaussian bell-curve probability</strong>) that could model <em>any</em> genre — historical, space opera, or near-future netrunning.</li>
-              <li><strong>Why Cypherpunks Loved Tabletop RPGs:</strong> Roleplaying games trained hackers to think in formal state machines, adversarial game masters, and mathematical rulesets — which is why the founding Cypherpunks literally role-played cryptographic protocols with paper slips around a table, and why the 1980s "D&D moral panic" spilled directly into the 1990s hacker crackdowns.</li>
+              <li><strong>1974, D&amp;D:</strong> Gygax and Arneson; it spreads through SAIL, MIT and Berkeley labs with Unix and ARPANET.
+                <ul>
+                  <li>Begets <em>Colossal Cave</em>, <em>Zork</em>, MUDs and Berkeley's <em>Rogue</em></li>
+                </ul>
+              </li>
+              <li><strong>1986, GURPS:</strong> Steve Jackson's universal point-buy engine on <code>3d6</code>, any genre.
+                <ul>
+                  <li>D&amp;D: fixed classes and polyhedral dice. GURPS: a Gaussian bell curve</li>
+                </ul>
+              </li>
+              <li><strong>Why it matters:</strong> RPGs taught formal rulesets and adversarial thinking.
+                <ul>
+                  <li>The founding cypherpunks role-played protocols with paper slips</li>
+                  <li>The 1980s D&amp;D panic fed the 1990 hacker crackdown</li>
+                </ul>
+              </li>
             </ul>
           </div>
           <div class="split-three">
@@ -688,7 +742,7 @@
       </section>
 
       <!-- SLIDE 8: MARCH 1, 1990 — STEVE JACKSON GAMES RAID -->
-      <section class="slide" data-notes="On the morning of March 1, 1990, armed US Secret Service agents raided the Austin, Texas offices of tabletop role-playing publisher Steve Jackson Games. Why? Because their managing editor Loyd Blankenship ('The Mentor') was writing GURPS Cyberpunk—a pen-and-paper sci-fi gamebook—which Secret Service agents literally called 'a handbook for computer crime.' They seized the manuscripts, all the company computers, and the Illuminati BBS along with the private emails of over 300 innocent users. Steve Jackson posted the story on The WELL in Sausalito, Bruce Sterling chronicled it in The Hacker Crackdown, and that raid directly triggered the founding of the Electronic Frontier Foundation.">
+      <section class="slide" data-notes="On the morning of March 1, 1990, armed US Secret Service agents raided the Austin, Texas offices of tabletop role-playing publisher Steve Jackson Games. Why? Because their managing editor Loyd Blankenship ('The Mentor') was writing GURPS Cyberpunk—a pen-and-paper sci-fi gamebook—which Secret Service agents literally called 'a handbook for computer crime.' They seized the manuscripts, all the company computers, and the Illuminati BBS along with the private emails of over 300 innocent users. Steve Jackson posted the story on The WELL in Sausalito, Bruce Sterling chronicled it in The Hacker Crackdown, and that raid directly triggered the founding of the Electronic Frontier Foundation. Slide detail: agents also took the laser printers, and read and deleted the private electronic mail of more than 300 innocent users without probable cause.">
         <div class="section-tag">14 / March 1, 1990 · Austin, TX & The WELL</div>
         <h2>The Secret Service Raid on Steve Jackson Games</h2>
         <div class="split">
@@ -698,9 +752,14 @@
               <cite>— US Secret Service Agent during the March 1, 1990 Raid on Steve Jackson Games</cite>
             </blockquote>
             <ul>
-              <li><strong>Seizing a Tabletop Sci-Fi Game:</strong> Armed Secret Service agents raided <strong>Steve Jackson Games</strong> in Austin, TX to seize the draft manuscript of <strong><em>GURPS Cyberpunk</em></strong> (written by Loyd Blankenship / "The Mentor").</li>
-              <li><strong>Confiscating the <em>Illuminati BBS</em>:</strong> Agents seized 3 computers, 300+ floppy disks, laser printers, and the company's dial-up bulletin board system — reading and deleting the private electronic mail of 300+ innocent users without probable cause.</li>
-              <li><strong>The Spark on <em>The WELL</em> & Landmark Victory:</strong> When Steve Jackson posted about the raid on <em>The WELL</em>, it galvanized Barlow, Kapor, and Gilmore to found the <strong>EFF</strong> — leading to victory in <em>Steve Jackson Games, Inc. v. US Secret Service</em> (1993) and Bruce Sterling's classic book <em>The Hacker Crackdown</em>.</li>
+              <li><strong>March 1, 1990, Austin:</strong> armed Secret Service agents raid Steve Jackson Games.</li>
+              <li><strong>The target:</strong> the manuscript of <em>GURPS Cyberpunk</em> by Loyd Blankenship, "The Mentor".</li>
+              <li><strong>Seized:</strong> 3 computers, 300+ floppies, the <em>Illuminati BBS</em> and 300+ users' private mail.</li>
+              <li><strong>The spark:</strong> Jackson posts on The WELL; Barlow, Kapor and Gilmore found the EFF.
+                <ul>
+                  <li><em>SJG v. US Secret Service</em>, won 1993 · Sterling's <em>The Hacker Crackdown</em></li>
+                </ul>
+              </li>
             </ul>
           </div>
           <div class="split-three">
@@ -746,7 +805,7 @@
       </section>
 
       <!-- SLIDE 10: 1991 PHIL ZIMMERMANN & PGP -->
-      <section class="slide" data-notes="In June 1991, anti-nuclear activist and software engineer Phil Zimmermann released Pretty Good Privacy (PGP) 1.0 after Congress introduced Senate Bill 266 demanding backdoors in all secure communications. His colleague Kelly Goen uploaded it to Bay Area dial-up BBS systems, and the US government opened a three-year criminal investigation into Zimmermann for 'munitions export without a license.'">
+      <section class="slide" data-notes="In June 1991, anti-nuclear activist and software engineer Phil Zimmermann released Pretty Good Privacy (PGP) 1.0 after Congress introduced Senate Bill 266 demanding backdoors in all secure communications. His colleague Kelly Goen uploaded it to Bay Area dial-up BBS systems, and the US government opened a three-year criminal investigation into Zimmermann for 'munitions export without a license.' Slide detail: ITAR, the Arms Export Control Act regime, classified strong encryption alongside tanks and missiles. Volunteers in Europe OCR-scanned the MIT Press hardcover back into C source.">
         <div class="section-tag">16 / June 1991 · Boulder & Bay Area BBSs</div>
         <h2>Phil Zimmermann & Pretty Good Privacy (PGP)</h2>
         <div class="split">
@@ -756,9 +815,13 @@
               <cite>— Phil Zimmermann, Why I Wrote PGP (1991)</cite>
             </blockquote>
             <ul>
-              <li><strong>Defying Senate Bill 266:</strong> Zimmermann put military-grade RSA + IDEA public-key cryptography onto ordinary PCs for human rights activists globally.</li>
-              <li><strong>Cryptography as a Munition:</strong> The US Customs Service investigated Zimmermann for 3 years under the Arms Export Control Act (ITAR), which classified strong encryption alongside tanks and missiles.</li>
-              <li><strong>The MIT Press Book Hack (1995):</strong> Because exporting software was illegal under ITAR, but exporting a printed book was protected by the First Amendment, MIT Press published the entire PGP C source code as a physical hardcover book that volunteers scanned back in via OCR in Europe.</li>
+              <li><strong>Defying Senate Bill 266:</strong> RSA + IDEA public-key crypto on ordinary PCs, for activists everywhere.</li>
+              <li><strong>Crypto as a munition:</strong> a 3-year US Customs investigation under ITAR.</li>
+              <li><strong>The MIT Press hack (1995):</strong> the full PGP source printed as a hardcover book.
+                <ul>
+                  <li>Exporting software was illegal; exporting a book was speech. Europe scanned it back in</li>
+                </ul>
+              </li>
             </ul>
           </div>
           <div class="photo-card tall">
@@ -844,15 +907,24 @@
       </section>
 
       <!-- SLIDE 14: 1993–1999 THE CRYPTO WARS: SINKING CLIPPER & EFF'S "DEEP CRACK" DES CRACKER -->
-      <section class="slide" data-notes="How did the Cypherpunks and the EFF actually win the 1990s Crypto Wars? Not just with court briefs, but by building open-source hardware in San Francisco. First, in April 1993, the White House and the NSA unveiled the MYK-78 Clipper Chip with a mandatory government key-escrow backdoor—which AT&T Bell Labs cryptographer Matt Blaze broke in 1994. Second, throughout the 1990s, the NSA and FBI insisted that 56-bit DES—the US export ceiling that the NSA had intentionally shortened in the 1970s—was completely unbreakable. So in 1998, EFF co-founder John Gilmore and San Francisco cryptographer Paul Kocher spent $250,000 to build 'Deep Crack'—an open-source hardware brute-force machine with 1,536 custom ASIC chips that cracked a 56-bit DES key in 56 hours (and then 22 hours with distributed.net). Even better: EFF published every VHDL chip design and board schematic in the book Cracking DES ('Scan this book!')—with the hidden cover message 'How federal agencies subvert privacy'—to defeat munitions export controls under the First Amendment!">
+      <section class="slide" data-notes="How did the Cypherpunks and the EFF actually win the 1990s Crypto Wars? Not just with court briefs, but by building open-source hardware in San Francisco. First, in April 1993, the White House and the NSA unveiled the MYK-78 Clipper Chip with a mandatory government key-escrow backdoor—which AT&T Bell Labs cryptographer Matt Blaze broke in 1994. Second, throughout the 1990s, the NSA and FBI insisted that 56-bit DES—the US export ceiling that the NSA had intentionally shortened in the 1970s—was completely unbreakable. So in 1998, EFF co-founder John Gilmore and San Francisco cryptographer Paul Kocher spent $250,000 to build 'Deep Crack'—an open-source hardware brute-force machine with 1,536 custom ASIC chips that cracked a 56-bit DES key in 56 hours (and then 22 hours with distributed.net). Even better: EFF published every VHDL chip design and board schematic in the book Cracking DES ('Scan this book!')—with the hidden cover message 'How federal agencies subvert privacy'—to defeat munitions export controls under the First Amendment! Slide detail: the chips were AWT-4500 ASICs testing 90 billion keys a second. The NSA had weakened DES to 56 bits in the 1970s, and the NSA and FBI testified it was unbreakable. The book's hidden cover subtitle read How federal agencies subvert privacy; publishing the VHDL and C on paper bypassed ITAR munitions export bans.">
         <div class="section-tag">20 / 1993–1999 · Winning the Crypto Wars with Open Hardware</div>
         <h2>Sinking the Clipper Chip & EFF's <em>"Deep Crack"</em> DES Cracker (1998)</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>1993–1994 — Sinking the NSA's "Clipper Chip":</strong> Weeks after Hughes's Manifesto, the NSA unveiled the <strong>MYK-78 Clipper Chip</strong> with a built-in Law Enforcement Access Field (<code>LEAF</code>) key-escrow backdoor — broken in 1994 when cryptographer <strong>Matt Blaze</strong> proved the 16-bit <code>LEAF</code> checksum could be forged.</li>
-              <li><strong>1998 — EFF's <em>"Deep Crack"</em> Custom ASIC Machine (San Francisco):</strong> When the NSA and FBI testified that export-capped <strong>56-bit DES</strong> (weakened by the NSA in the 1970s) was "unbreakable," <strong>John Gilmore</strong> and SF cryptographer <strong>Paul Kocher</strong> built a $250,000 machine with <strong>1,536 custom <code>AWT-4500</code> ASIC chips</strong> (testing 90 billion keys/sec) — cracking RSA's DES Challenge in <strong>56 hours</strong> (July 1998) and <strong>22 hours</strong> with <code>distributed.net</code> (Jan 1999), forcing NIST to adopt <strong>128/256-bit AES</strong>.</li>
-              <li><strong><em>Cracking DES</em> ("Scan This Book!"):</strong> Every VHDL chip schematic and C program was published in the public-domain book <strong><em>Cracking DES</em></strong> (with the hidden cover subtitle <em>"How federal agencies subvert privacy"</em>) to bypass ITAR munitions export bans as First Amendment speech.</li>
+              <li><strong>1993, Clipper Chip:</strong> the NSA's MYK-78 with a LEAF key-escrow backdoor.
+                <ul>
+                  <li>1994: Matt Blaze forges the 16-bit LEAF checksum</li>
+                </ul>
+              </li>
+              <li><strong>1998, Deep Crack, San Francisco:</strong> Gilmore and Paul Kocher, $250,000, 1,536 custom ASICs.
+                <ul>
+                  <li>A 56-bit DES key in 56 hours; 22 hours with distributed.net (1999)</li>
+                  <li>NIST moves to 128/256-bit AES</li>
+                </ul>
+              </li>
+              <li><strong><em>Cracking DES</em>, "Scan this book!":</strong> every schematic published as First Amendment speech.</li>
             </ul>
           </div>
           <div class="split-three">
@@ -873,15 +945,20 @@
       </section>
 
       <!-- SLIDE 15: 611 FOLSOM STREET & ROOM 641A (2006) -->
-      <section class="slide" data-notes="When the NSA lost the 1990s Crypto Wars—when they couldn't force Americans to use the Clipper Chip and couldn't stop strong encryption after Deep Crack and Bernstein v. US—what did they do next? Walk four blocks south of Frontier Tower to 611 Folsom Street. Inside that windowless AT&T switching center on the 6th floor was Room 641A, where AT&T technician Mark Klein discovered a Narus STA 6400 fiber-optic splitter copying the entire internet backbone into an NSA room.">
+      <section class="slide" data-notes="When the NSA lost the 1990s Crypto Wars—when they couldn't force Americans to use the Clipper Chip and couldn't stop strong encryption after Deep Crack and Bernstein v. US—what did they do next? Walk four blocks south of Frontier Tower to 611 Folsom Street. Inside that windowless AT&T switching center on the 6th floor was Room 641A, where AT&T technician Mark Klein discovered a Narus STA 6400 fiber-optic splitter copying the entire internet backbone into an NSA room. Slide detail: Klein found fiber trunks split through a Narus STA 6400 into the secret room on the 6th floor. Open-source mathematics on the endpoints is the only defence when the backbone is copied.">
         <div class="section-tag">21 / 2006 · Four Blocks from Frontier Tower · 611 Folsom St, SF</div>
         <h2>611 Folsom Street & NSA Room 641A</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>The Pivot After Losing the Crypto Wars:</strong> Denied mandatory key-escrow backdoors in the 1990s, the NSA turned to tapping the physical fiber-optic backbone four blocks from Frontier Tower at <strong>611 Folsom Street</strong> (between 2nd and 3rd St in SoMa).</li>
-              <li><strong><em>Hepting v. AT&T</em> (2006):</strong> AT&T technician <strong>Mark Klein</strong> discovered fiber trunks being split into secret <strong>Room 641A</strong> and walked his wiring schematics directly to the EFF here in San Francisco — exposing warrantless backbone surveillance seven years before Edward Snowden.</li>
-              <li><strong>Why End-to-End Encryption Matters:</strong> When the physical fiber backbone is tapped at the switching center down the street, only open-source mathematics on the endpoints protects the citizen.</li>
+              <li><strong>After losing the Crypto Wars:</strong> the NSA taps the fiber backbone instead.</li>
+              <li><strong>611 Folsom Street:</strong> four blocks from here, between 2nd and 3rd in SoMa.</li>
+              <li><strong><em>Hepting v. AT&amp;T</em> (2006):</strong> technician Mark Klein finds Room 641A, walks the schematics to EFF.
+                <ul>
+                  <li>Seven years before Snowden</li>
+                </ul>
+              </li>
+              <li><strong>The lesson:</strong> when the wire is tapped, only endpoint cryptography protects you.</li>
             </ul>
           </div>
           <div class="photo-grid-2">
@@ -898,15 +975,21 @@
       </section>
 
       <!-- SLIDE 16: COMPUTER HISTORY MUSEUM (1401 N. SHORELINE BLVD, MOUNTAIN VIEW) -->
-      <section class="slide" data-notes="Where is EFF's 'Deep Crack' DES Cracker today? Right down the Peninsula at 1401 North Shoreline Boulevard in Mountain View, inside the Computer History Museum. Before we tour the activist hackerspaces of San Francisco and Oakland, every member of the Cypherpunk Society should visit the Computer History Museum—housed in the former Silicon Graphics headquarters—where the actual hardware artifacts of our lineage are preserved.">
+      <section class="slide" data-notes="Where is EFF's 'Deep Crack' DES Cracker today? Right down the Peninsula at 1401 North Shoreline Boulevard in Mountain View, inside the Computer History Museum. Before we tour the activist hackerspaces of San Francisco and Oakland, every member of the Cypherpunk Society should visit the Computer History Museum—housed in the former Silicon Graphics headquarters—where the actual hardware artifacts of our lineage are preserved. Slide detail: the Deep Crack exhibit includes Paul Kocher and John Gilmore's boards and the Sun-4/470 chassis. The PDP-1 still runs live demos; it is where MIT hacker culture was born.">
         <div class="section-tag">22 / 1401 N. Shoreline Blvd · Mountain View, CA</div>
         <h2>The Computer History Museum: Hardware Memory of the Valley</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>Where <em>Deep Crack</em> Lives Today (Mountain View):</strong> Housed inside the former Silicon Graphics (SGI) headquarters at 1401 N. Shoreline Blvd, the <strong>Computer History Museum (CHM)</strong> preserves Paul Kocher and John Gilmore's <strong>1998 EFF DES Cracker ("Deep Crack")</strong> boards and Sun-4/470 chassis alongside WWII <strong>Enigma</strong> cipher machines.</li>
-              <li><strong>From Babbage & the PDP-1 to Community Memory:</strong> Features the working <strong>1959 DEC PDP-1</strong> (where MIT hacker culture and <em>Spacewar!</em> were born, still running live demos), <strong>Babbage's Difference Engine No. 2</strong>, the <strong>Xerox Alto</strong>, Lee Felsenstein's <strong>1973 Community Memory</strong> terminal, and original <strong>Homebrew Computer Club</strong> newsletters.</li>
-              <li><strong>CHM Center for Software History:</strong> Actively preserves and releases historic source code into the public — from early Unix and APL to MacPaint and Xerox Alto systems.</li>
+              <li><strong>1401 N. Shoreline, Mountain View:</strong> the former Silicon Graphics headquarters.</li>
+              <li><strong>Deep Crack lives here:</strong> the 1998 EFF DES Cracker boards, beside Enigma machines.</li>
+              <li><strong>Our lineage on display:</strong>
+                <ul>
+                  <li>A working 1959 PDP-1 (<em>Spacewar!</em>) · Babbage's Difference Engine No. 2 · Xerox Alto</li>
+                  <li>Felsenstein's 1973 Community Memory terminal · Homebrew Computer Club newsletters</li>
+                </ul>
+              </li>
+              <li><strong>Center for Software History:</strong> releases historic source, from Unix and APL to MacPaint.</li>
             </ul>
           </div>
           <div class="split-three">
@@ -927,16 +1010,21 @@
       </section>
 
       <!-- SLIDE: OCT 1, 2013 SILK ROAD & THE GLEN PARK LIBRARY ARREST -->
-      <section class="slide" data-notes="Here is the dark-web chapter of our story, and it happened three miles south of this room. In February 2011 a 26-year-old Penn State physics graduate launched Silk Road on a Tor hidden service, running it as Dread Pirate Roberts. Adrian Chen's Gawker article in June 2011 made it famous. On October 1, 2013 FBI agents arrested Ross Ulbricht in the science-fiction section of the Glen Park Branch Library on Diamond Street, with his laptop open and logged in as the admin. The investigation also produced two corrupt federal agents, Carl Force and Shaun Bridges, who stole about 20,000 bitcoin using an arrested admin's credentials, the theft Ulbricht was led to blame on that admin. Two life sentences in May 2015; a full pardon from Trump on January 21, 2025; the closing keynote at Bitcoin 2025 four months later. The lesson for cypherpunks: Tim May's crypto-anarchist prediction of unpoliceable markets came true, and it was undone not by breaking the cryptography but by opsec, financial trails, and ordinary police work.">
+      <section class="slide" data-notes="Here is the dark-web chapter of our story, and it happened three miles south of this room. In February 2011 a 26-year-old Penn State physics graduate launched Silk Road on a Tor hidden service, running it as Dread Pirate Roberts. Adrian Chen's Gawker article in June 2011 made it famous. On October 1, 2013 FBI agents arrested Ross Ulbricht in the science-fiction section of the Glen Park Branch Library on Diamond Street, with his laptop open and logged in as the admin. The investigation also produced two corrupt federal agents, Carl Force and Shaun Bridges, who stole about 20,000 bitcoin using an arrested admin's credentials, the theft Ulbricht was led to blame on that admin. Two life sentences in May 2015; a full pardon from Trump on January 21, 2025; the closing keynote at Bitcoin 2025 four months later. The lesson for cypherpunks: Tim May's crypto-anarchist prediction of unpoliceable markets came true, and it was undone not by breaking the cryptography but by opsec, financial trails, and ordinary police work. Slide detail: Judge Forrest's May 29, 2015 sentence plus a 183 million dollar forfeiture stood through the Second Circuit and the Supreme Court; Trump pardoned him in honor of the Libertarian Movement and he keynoted Bitcoin 2025 in Las Vegas four months later. A 2024 PoPETs review of 22 US onion-service prosecutions found exactly one attack on Tor itself.">
         <div class="section-tag">23 / February 2011 – October 1, 2013 · Glen Park Branch Library, 2825 Diamond St, SF</div>
         <h2>Silk Road & Dread Pirate Roberts: The Market the Manifesto Predicted</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>The Crypto-Anarchist Prediction Comes True (Feb 2011):</strong> Ross Ulbricht launches <strong>Silk Road</strong> as a Tor hidden service with Bitcoin escrow, running it as <em>Dread Pirate Roberts</em>. Adrian Chen's <em>Gawker</em> article (June 1, 2011) makes it the first mass-market darknet.</li>
-              <li><strong>October 1, 2013 · Glen Park Library:</strong> FBI agents arrest Ulbricht in the science-fiction section, <strong>laptop open and logged in as admin</strong>, three miles south of Frontier Tower. Two investigating federal agents, <strong>Carl Force</strong> (DEA) and <strong>Shaun Bridges</strong> (Secret Service), are later jailed for stealing ~20,000 BTC from the case.</li>
-              <li><strong>Two Life Sentences (May 29, 2015) → Full Pardon (Jan 21, 2025):</strong> Judge Forrest's sentence plus a $183M forfeiture stood through the Second Circuit and Supreme Court; Trump pardoned Ulbricht "in honor of the Libertarian Movement," and he keynoted Bitcoin 2025 in Las Vegas four months later.</li>
-              <li><strong>The Cypherpunk Lesson:</strong> The cryptography never broke. Opsec, Bitcoin's public ledger, and ordinary police work did the job. A 2024 PoPETs review of 22 US onion-service prosecutions found exactly <strong>one</strong> attack on Tor itself.</li>
+              <li><strong>Feb 2011:</strong> Ross Ulbricht launches Silk Road on Tor with Bitcoin escrow, as Dread Pirate Roberts.
+                <ul>
+                  <li>Adrian Chen's <em>Gawker</em> piece (June 2011) makes it the first mass-market darknet</li>
+                </ul>
+              </li>
+              <li><strong>Oct 1, 2013, Glen Park Library:</strong> arrested in the sci-fi section, laptop open, logged in as admin.</li>
+              <li><strong>Two corrupt agents:</strong> Carl Force (DEA) and Shaun Bridges (Secret Service) steal ~20,000 BTC.</li>
+              <li><strong>Two life sentences (2015) → full pardon (Jan 21, 2025);</strong> keynote at Bitcoin 2025.</li>
+              <li><strong>The lesson:</strong> the cryptography never broke. Opsec, the public ledger and police work did.</li>
             </ul>
           </div>
           <div class="split-three">
@@ -957,15 +1045,24 @@
       </section>
 
       <!-- SLIDE: 2013-2026 THE DARKNET MARKET ERA -->
-      <section class="slide" data-notes="Silk Road 2.0 launched five weeks after the seizure, and every market since has died one of two ways. Either police found the server through an opsec slip, as with Operation Onymous in 2014, AlphaBay in 2017 when Alexandre Cazes was arrested in Bangkok logged into an unencrypted laptop with his Hotmail address leaked in welcome emails, Hydra in 2022, and Archetyp in 2025, or the owner ran off with the escrow, as Evolution, Empire, Incognito, and Abacus did. Chainalysis puts 2025 darknet-market inflows near 2.6 billion dollars, mostly Russian-language markets. But the volume has moved to Telegram: Chinese-language guarantee markets moved 27 billion dollars before Telegram banned them in May 2025, and ransomware leak sites posted a record 7,458 victims in 2025. The FBI's artifact of the month in November 2020 was Ulbricht's laptop, the same failure mode as Cazes four years later. Every community defense, escrow, multisig, PGP-signed mirror lists, fails against the market owner's own exit.">
+      <section class="slide" data-notes="Silk Road 2.0 launched five weeks after the seizure, and every market since has died one of two ways. Either police found the server through an opsec slip, as with Operation Onymous in 2014, AlphaBay in 2017 when Alexandre Cazes was arrested in Bangkok logged into an unencrypted laptop with his Hotmail address leaked in welcome emails, Hydra in 2022, and Archetyp in 2025, or the owner ran off with the escrow, as Evolution, Empire, Incognito, and Abacus did. Chainalysis puts 2025 darknet-market inflows near 2.6 billion dollars, mostly Russian-language markets. But the volume has moved to Telegram: Chinese-language guarantee markets moved 27 billion dollars before Telegram banned them in May 2025, and ransomware leak sites posted a record 7,458 victims in 2025. The FBI's artifact of the month in November 2020 was Ulbricht's laptop, the same failure mode as Cazes four years later. Every community defense, escrow, multisig, PGP-signed mirror lists, fails against the market owner's own exit. Slide detail: Cazes was arrested in Bangkok logged into an unencrypted laptop, his Hotmail address leaked in welcome emails; Dutch police ran Hansa covertly for a month. Hydra held 17 million accounts, Genesis Market sold 1.5 million stolen browser fingerprints, Archetyp had 600,000 users. Incognito extorted its own users and its owner got 30 years in February 2026; Abacus held about 70 percent of Western Bitcoin-market share when it vanished in July 2025. Mirror lists live on dark.fail and Dread. Chainalysis: Kraken and BlackSprut dominate and half of new markets are Monero-only; Huione Guarantee moved 27 billion dollars before Telegram's May 2025 ban; 7,458 ransomware victims were posted in 2025.">
         <div class="section-tag">24 / 2013–2026 · From Silk Road 2.0 to Archetyp, Abacus & Telegram</div>
         <h2>The Darknet Market Era: Every Market Dies One of Two Ways</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>Takedowns (the server was found):</strong> Operation Onymous seizes Silk Road 2.0 (Nov 2014) · <strong>AlphaBay & Hansa</strong>, Operation Bayonet (July 2017: Cazes arrested in Bangkok logged into an unencrypted laptop; Dutch police ran Hansa covertly for a month) · <strong>Hydra</strong>, 17M accounts (Apr 2022) · Genesis Market, 1.5M stolen browser fingerprints (Apr 2023) · <strong>Operation RapTor</strong>, 270 arrests (May 2025) · Archetyp, 600K users (June 2025).</li>
-              <li><strong>Exit scams (the owner took the escrow):</strong> Evolution (2015) · Empire (2020) · <strong>Incognito</strong> extorts its own users (2024; owner sentenced to 30 years, Feb 2026) · <strong>Abacus</strong>, ~70% of Western Bitcoin-market share, vanishes (July 2025). Escrow, multisig, and PGP-signed mirror lists on <code>dark.fail</code> and <em>Dread</em> all fail against the house.</li>
-              <li><strong>Where It Stands (2025–26):</strong> Chainalysis counts ~$2.6B in darknet-market inflows for 2025, mostly Russian-language Kraken and BlackSprut; half of new markets are Monero-only. The real volume moved to <strong>Telegram</strong> ($27B through Huione Guarantee before the May 2025 ban) and to <strong>ransomware leak sites</strong>: a record 7,458 victims posted in 2025.</li>
+              <li><strong>Death 1, the server was found:</strong>
+                <ul>
+                  <li>Silk Road 2.0, Operation Onymous (2014) · AlphaBay and Hansa, Operation Bayonet (2017)</li>
+                  <li>Hydra (2022) · Genesis Market (2023) · Operation RapTor, 270 arrests · Archetyp (2025)</li>
+                </ul>
+              </li>
+              <li><strong>Death 2, the owner took the escrow:</strong> Evolution (2015) · Empire (2020) · Incognito (2024) · Abacus (2025).
+                <ul>
+                  <li>Escrow, multisig and signed mirror lists all fail against the house</li>
+                </ul>
+              </li>
+              <li><strong>2025–26:</strong> ~$2.6B darknet inflows, mostly Russian-language; the volume moved to Telegram and ransomware leak sites.</li>
             </ul>
           </div>
           <div class="photo-card tall contain">
@@ -1005,15 +1102,19 @@
       </section>
 
       <!-- SLIDE 16: 2008 NOISEBRIDGE (2169 MISSION ST, SF) & HACKERS (1995) -->
-      <section class="slide" data-notes="Down in the Mission District at 2169 Mission Street is Noisebridge, co-founded in 2008 by Mitch Altman and Jacob Appelbaum after visiting the Chaos Computer Club spaces in Germany. If the 1995 movie Hackers—with 'Hack the Planet!', 2600 payphone meetups, and the dream of an underground physical hacker hangout—captured the 1990s imagination, Noisebridge made that physical third space real in San Francisco.">
+      <section class="slide" data-notes="Down in the Mission District at 2169 Mission Street is Noisebridge, co-founded in 2008 by Mitch Altman and Jacob Appelbaum after visiting the Chaos Computer Club spaces in Germany. If the 1995 movie Hackers—with 'Hack the Planet!', 2600 payphone meetups, and the dream of an underground physical hacker hangout—captured the 1990s imagination, Noisebridge made that physical third space real in San Francisco. Slide detail: Emmanuel Goldstein founded 2600: The Hacker Quarterly. Noisebridge is open to anyone.">
         <div class="section-tag">26 / 1995–2008 · From "Hack the Planet!" to 2169 Mission St, SF</div>
         <h2><em>Hackers</em> (1995) & Noisebridge: San Francisco's Anarchist Hackerspace</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong><em>Hackers</em> (1995) — "Hack the Planet!":</strong> Advised by <em>2600: The Hacker Quarterly</em> founder Emmanuel Goldstein and quoting The Mentor's 1986 <em>Hacker Manifesto</em>, the 1995 cult classic popularized the dream of a physical, neon-lit underground hangout where phreaks and coders gathered in person.</li>
-              <li><strong>Noisebridge Makes It Real in SF (2008):</strong> Co-founded at 2169 Mission St by <strong>Mitch Altman</strong> (inventor of <em>TV-B-Gone</em>) and Jacob Appelbaum after touring Berlin's <em>c-base</em> and the Chaos Computer Club.</li>
-              <li><strong>"Be Excellent to Each Other" & CryptoParties:</strong> Open to anyone to learn soldering, Linux kernel hacking, lockpicking, Tor relay ops, and Tails OS installfests.</li>
+              <li><strong><em>Hackers</em> (1995), "Hack the Planet!":</strong> advised by 2600's Emmanuel Goldstein; quotes The Mentor's 1986 <em>Hacker Manifesto</em>.
+                <ul>
+                  <li>The dream: a neon underground hangout where phreaks and coders meet in person</li>
+                </ul>
+              </li>
+              <li><strong>Noisebridge, 2169 Mission St (2008):</strong> Mitch Altman (<em>TV-B-Gone</em>) and Jacob Appelbaum, after touring c-base and the CCC.</li>
+              <li><strong>"Be excellent to each other":</strong> soldering · kernel hacking · lockpicking · Tor relays · Tails installfests · CryptoParties.</li>
             </ul>
           </div>
           <div class="split-three">
@@ -1112,18 +1213,18 @@
       </section>
 
       <!-- DIVIDER SLIDE: ACADEMIC LABS, LEGAL CLINICS & RESEARCH PARTNERS -->
-      <section class="slide" data-notes="Now we shift from grassroots hackerspaces and activist collectives to our third pillar: Academic Research Labs and University Clinics. One of the greatest strengths of the Bay Area—and our global network—is that universities right around Frontier Tower are running public-interest legal clinics, spyware forensics labs, censorship observatories, and open Trust & Safety curricula that we can directly plug into.">
+      <section class="slide" data-notes="Now we shift from grassroots hackerspaces and activist collectives to our third pillar: Academic Research Labs and University Clinics. One of the greatest strengths of the Bay Area—and our global network—is that universities right around Frontier Tower are running public-interest legal clinics, spyware forensics labs, censorship observatories, and open Trust & Safety curricula that we can directly plug into. Slide detail: UC Law SF also runs the Startup Legal Garage; the Citizen Clinic is backed by Craig Newmark's Cyber Civil Defense Initiative and the Human Rights Center wrote the UN Berkeley Protocol; Stanford's groups sit at Freeman Spogli and Hoover.">
         <div class="section-tag">30 / Part III · Academic Research & University Clinics</div>
         <h1>Academic Labs, Legal Clinics & Empirical Threat Research</h1>
         <div class="subtitle">Bridging Frontier Tower with university clinics and empirical research observatories across San Francisco, Berkeley, Stanford, Toronto, and Michigan.</div>
-        <div class="split-equal" style="margin-top: 0.4rem;">
+        <div class="split-equal compact-photos" style="margin-top: 0.4rem;">
           <div class="text-col">
             <ul>
-              <li><strong>1. UC Law San Francisco (2 Blocks Away · 200 McAllister St):</strong> Center for Law, Tech & Social Good, <em>LexLab</em>, and <em>Startup Legal Garage</em>.</li>
-              <li><strong>2. UC Berkeley (1873 South Hall):</strong> CLTC's <em>Citizen Clinic</em> (backed by <strong>Craig Newmark's Cyber Civil Defense Initiative</strong>) & the Human Rights Center (<em>UN Berkeley Protocol</em>).</li>
-              <li><strong>3. The Citizen Lab (University of Toronto, Munk School):</strong> Spyware forensics (<code>MVT</code>) & <code>citizenlab/test-lists</code>.</li>
-              <li><strong>4. Censored Planet (Univ. of Michigan) & OONI:</strong> Global real-time internet blackout & firewall telemetry.</li>
-              <li><strong>5. Stanford University (Freeman Spogli & Hoover):</strong> Cognitive Security Task Force & the open <em>Trust & Safety</em> textbook (<code>tsbook.org</code>).</li>
+              <li><strong>1. UC Law San Francisco</strong> (200 McAllister, 2 blocks): Center for Law, Tech &amp; Social Good · <em>LexLab</em></li>
+              <li><strong>2. UC Berkeley</strong> (South Hall): CLTC <em>Citizen Clinic</em> · Human Rights Center</li>
+              <li><strong>3. The Citizen Lab</strong> (Toronto): spyware forensics, <code>MVT</code>, <code>test-lists</code></li>
+              <li><strong>4. Censored Planet</strong> (Michigan) <strong>&amp; OONI:</strong> global blackout telemetry</li>
+              <li><strong>5. Stanford:</strong> Cognitive Security Task Force · <code>tsbook.org</code></li>
             </ul>
           </div>
           <div class="photo-grid-2">
@@ -1167,15 +1268,16 @@
       </section>
 
       <!-- ACADEMIC 2: CRAIG NEWMARK & UC BERKELEY CITIZEN CLINIC -->
-      <section class="slide" data-notes="Second in our academic group: across the Bay on the UC Berkeley campus stands South Hall—built in 1873, the oldest building on campus—home to the UC Berkeley School of Information and the Citizen Clinic, backed by San Francisco's own Craig Newmark.">
+      <section class="slide" data-notes="Second in our academic group: across the Bay on the UC Berkeley campus stands South Hall—built in 1873, the oldest building on campus—home to the UC Berkeley School of Information and the Citizen Clinic, backed by San Francisco's own Craig Newmark. Slide detail: the Center for Long-Term Cybersecurity runs the clinic; graduate and undergraduate students provide operational digital-security defence. The Protocol was written with the UN Office of the High Commissioner for Human Rights. Newmark created craigslist in San Francisco.">
         <div class="section-tag">32 / Academic Partner · 1873 South Hall, UC Berkeley</div>
         <h2>Craig Newmark & UC Berkeley's <em>Citizen Clinic</em></h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>South Hall, UC Berkeley (Built 1873):</strong> Inside the oldest surviving building on the Berkeley campus, the <strong>Center for Long-Term Cybersecurity (CLTC)</strong> runs the <strong>Citizen Clinic</strong> — where graduate and undergraduate students provide operational digital security defense to politically targeted NGOs, investigative journalists, and Indigenous land defenders.</li>
-              <li><strong>UC Berkeley Human Rights Center:</strong> Co-authored the <strong>UN Berkeley Protocol on Digital Open Source Investigations</strong> with the UN Office of the High Commissioner for Human Rights.</li>
-              <li><strong>Craig Newmark's Cyber Civil Defense Initiative:</strong> Founded by San Francisco's craigslist creator <strong>Craig Newmark</strong>, committing $100M+ to UC Berkeley's Citizen Clinic, ProPublica, The Markup, and Wikipedia.</li>
+              <li><strong>South Hall (1873):</strong> the oldest building on campus; home of the School of Information.</li>
+              <li><strong>CLTC Citizen Clinic:</strong> students defend targeted NGOs, investigative journalists and Indigenous land defenders.</li>
+              <li><strong>Human Rights Center:</strong> co-authored the UN Berkeley Protocol on digital open-source investigations.</li>
+              <li><strong>Craig Newmark's Cyber Civil Defense:</strong> $100M+ to the Citizen Clinic, ProPublica, The Markup and Wikipedia.</li>
             </ul>
           </div>
           <div class="photo-grid-2">
@@ -1217,20 +1319,20 @@
       </section>
 
       <!-- ACADEMIC 3B: CITIZEN LAB SAFETY CHECK, LOCKDOWN MODE & MVT -->
-      <section class="slide" data-notes="How do we translate The Citizen Lab's research into a concrete 'Safety Check' that any member can run at Frontier Tower? It works in three stages: first, Citizen Lab's Security Planner (securityplanner.org) and iOS/Android built-in Safety Check to revoke stalkerware and unauthorized device/location access; second, Apple Lockdown Mode and Android 2G baseband disabling—validated directly with Citizen Lab researchers to stop zero-click exploits; and third, local forensic verification using Amnesty and Citizen Lab's Mobile Verification Toolkit (MVT).">
+      <section class="slide" data-notes="How do we translate The Citizen Lab's research into a concrete 'Safety Check' that any member can run at Frontier Tower? It works in three stages: first, Citizen Lab's Security Planner (securityplanner.org) and iOS/Android built-in Safety Check to revoke stalkerware and unauthorized device/location access; second, Apple Lockdown Mode and Android 2G baseband disabling—validated directly with Citizen Lab researchers to stop zero-click exploits; and third, local forensic verification using Amnesty and Citizen Lab's Mobile Verification Toolkit (MVT). Slide detail: Emergency Reset revokes the Find My sharing used by intimate-partner stalkerware, resets app permissions and audits signed-in iCloud devices. Lockdown Mode, validated with Citizen Lab against Pegasus, blocks the iMessage BlastDoor attachment parsers, disables Safari's JIT and blocks USB data while locked; disabling 2G defeats Stingray downgrade. MVT, co-developed by Amnesty Security Lab and Citizen Lab, scans encrypted local backups (Shutdown.log, DataUsage.sqlite, InteractionC.db) against STIX2 indicators of compromise.">
         <div class="section-tag">34 / Citizen Lab Safety Check &amp; Forensic Audit Pipeline</div>
         <h2>Citizen Lab <em>Security Planner</em>, OS Safety Check &amp; <code>MVT</code></h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>Stage 1 — Citizen Lab's <em>Security Planner</em> (<code>securityplanner.org</code>) &amp; OS <em>Safety Check</em>:</strong>
+              <li><strong>Stage 1, Safety Check:</strong>
                 <ul>
-                  <li><strong><code>securityplanner.org</code>:</strong> Interactive, peer-reviewed safety check originally built at U of Toronto's Citizen Lab (now stewarded with Consumer Reports) that generates a tailored action plan in 3 minutes.</li>
-                  <li><strong>iOS <em>Safety Check</em></strong> (<code>Settings → Privacy &amp; Security → Safety Check</code>): 1-tap <em>Emergency Reset</em> immediately revokes intimate-partner/stalkerware <em>Find My</em> location sharing, resets app permissions, and audits signed-in iCloud devices.</li>
+                  <li><code>securityplanner.org</code>: a tailored plan in 3 minutes (Citizen Lab, now Consumer Reports)</li>
+                  <li>iOS <code>Settings → Privacy &amp; Security → Safety Check</code>: Emergency Reset</li>
                 </ul>
               </li>
-              <li><strong>Stage 2 — Zero-Click Hardening (<em>Lockdown Mode</em> &amp; 2G Baseband Defense):</strong> Validated with Citizen Lab against <em>Pegasus</em> — <strong>Apple <em>Lockdown Mode</em></strong> blocks zero-click iMessage BlastDoor attachment parsers, disables Safari WebKit JIT compilation, and blocks locked USB data connections; Android disables insecure <strong>2G baseband</strong> (Stingray defense).</li>
-              <li><strong>Stage 3 — Forensic Scan with <code>MVT</code> (<em>Mobile Verification Toolkit</em>):</strong> Co-developed by Amnesty Security Lab &amp; Citizen Lab (<code>mvt-ios</code> / <code>mvt-android</code>) to scan local encrypted iOS backups (<code>Shutdown.log</code>, <code>DataUsage.sqlite</code>, <code>InteractionC.db</code>) against public STIX2 Indicators of Compromise (<code>IoCs</code>).</li>
+              <li><strong>Stage 2, zero-click hardening:</strong> Lockdown Mode on iOS; 2G off on Android.</li>
+              <li><strong>Stage 3, forensics:</strong> <code>mvt-ios</code> / <code>mvt-android</code> against public STIX2 indicators.</li>
             </ul>
           </div>
           <div class="photo-grid-2">
@@ -1266,16 +1368,24 @@
       </section>
 
       <!-- ACADEMIC 5: STANFORD COGNITIVE SECURITY & TRUST & SAFETY -->
-      <section class="slide" data-notes="Fifth in our academic group, thirty miles south: the Stanford Internet Observatory, and the reason it no longer exists. Alex Stamos, who had been Facebook's chief security officer during the Cambridge Analytica and Russian interference years, founded SIO in June 2019 inside Stanford's Cyber Policy Center to study abuse of the internet in real time. Renée DiResta ran its research. In 2020 it co-led the Election Integrity Partnership with the University of Washington, tracking rumors about the vote and flagging some to platforms; the Long Fuse report in 2021 is the definitive account of how Stop the Steal spread. The Virality Project did the same for COVID vaccine claims. In 2023 SIO's child-safety work found CSAM networks operating openly on Twitter and Instagram. It launched the Journal of Online Trust and Safety, the annual Trust and Safety Research Conference, and an open textbook. Then it became the test case. The flagging of posts to platforms was recast as a censorship industrial complex: the House Judiciary Committee subpoenaed Stanford in April 2023, America First Legal sued Stamos and DiResta personally, Missouri v. Biden named the partnership, and Stanford spent millions on lawyers. Stamos left in November 2023, DiResta's contract was not renewed, and the lab was dismantled in June 2024, five months before the election it had been built to watch. The journal, the conference and the textbook survived under the Cyber Policy Center. DiResta is now at Georgetown and her book Invisible Rulers is the best account of the whole episode. The lesson for us is structural: an institution with a budget, a building and a subpoena address can be shut down. A room full of people reading from their own browsers cannot.">
+      <section class="slide" data-notes="Fifth in our academic group, thirty miles south: the Stanford Internet Observatory, and the reason it no longer exists. Alex Stamos, who had been Facebook's chief security officer during the Cambridge Analytica and Russian interference years, founded SIO in June 2019 inside Stanford's Cyber Policy Center to study abuse of the internet in real time. Renée DiResta ran its research. In 2020 it co-led the Election Integrity Partnership with the University of Washington, tracking rumors about the vote and flagging some to platforms; the Long Fuse report in 2021 is the definitive account of how Stop the Steal spread. The Virality Project did the same for COVID vaccine claims. In 2023 SIO's child-safety work found CSAM networks operating openly on Twitter and Instagram. It launched the Journal of Online Trust and Safety, the annual Trust and Safety Research Conference, and an open textbook. Then it became the test case. The flagging of posts to platforms was recast as a censorship industrial complex: the House Judiciary Committee subpoenaed Stanford in April 2023, America First Legal sued Stamos and DiResta personally, Missouri v. Biden named the partnership, and Stanford spent millions on lawyers. Stamos left in November 2023, DiResta's contract was not renewed, and the lab was dismantled in June 2024, five months before the election it had been built to watch. The journal, the conference and the textbook survived under the Cyber Policy Center. DiResta is now at Georgetown and her book Invisible Rulers is the best account of the whole episode. The lesson for us is structural: an institution with a budget, a building and a subpoena address can be shut down. A room full of people reading from their own browsers cannot. Slide detail: America First Legal sued Stamos and DiResta personally. DiResta is now at Georgetown; Invisible Rulers (2024) documents how engagement loops amplify state-backed operations. The Cognitive Security Task Force at Stanford HAI (Peggy Yin, Julie Heng) published an ICLR 2026 position paper. The open textbook, Trust and Safety: An Open Source Textbook, is by Stamos, Shelby Grossman and Riana Pfefferkorn. skyfall is SIO's open-source Go tool that ingests the Bluesky firehose with no platform permission needed.">
         <div class="section-tag">36 / Academic Partner · Stanford University</div>
         <h2>Stanford University: Cognitive Security &amp; Open <em>Trust &amp; Safety</em></h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>The Stanford Internet Observatory (2019–2024):</strong> Founded by ex-Facebook CSO <strong>Alex Stamos</strong>, research led by <strong>Renée DiResta</strong>; ran the <strong>Election Integrity Partnership</strong> (2020, with UW) and the <strong>Virality Project</strong>. Flagging posts to platforms was recast as a "censorship industrial complex": House Judiciary subpoena (2023), <em>Missouri v. Biden</em>, America First Legal suing Stamos and DiResta personally. <strong>Dismantled June 2024</strong>, five months before the election. (Slide 44.)</li>
-              <li><strong>From SIO to the Cognitive Security Task Force:</strong> DiResta (now Georgetown; <em>Invisible Rulers</em>, 2024) documented how engagement loops amplify state-backed ops. Stanford HAI's <strong>Cognitive Security Task Force</strong> (Peggy Yin, Julie Heng) carries the thread (ICLR 2026 position paper).</li>
-              <li><strong>Open Textbook, <code>tsbook.org</code>:</strong> <em>Trust and Safety: An Open Source Textbook</em> by Stamos, Shelby Grossman and Riana Pfefferkorn; with the <em>Journal of Online Trust and Safety</em> and its annual conference, which outlived SIO under the Cyber Policy Center.</li>
-              <li><strong><code>github.com/stanfordio/skyfall</code>:</strong> SIO's open-source Bluesky firehose ingest tool (Go), no platform permission needed.</li>
+              <li><strong>Stanford Internet Observatory, 2019–2024:</strong> Alex Stamos (ex-Facebook CSO); research led by Renée DiResta.
+                <ul>
+                  <li>Election Integrity Partnership (2020, with UW) · Virality Project</li>
+                </ul>
+              </li>
+              <li><strong>Recast as a "censorship industrial complex":</strong> House subpoena, <em>Missouri v. Biden</em>, personal lawsuits.
+                <ul>
+                  <li>Dismantled June 2024, five months before the election (slide 44)</li>
+                </ul>
+              </li>
+              <li><strong>What survived:</strong> <code>tsbook.org</code> · the <em>Journal of Online Trust and Safety</em> · the conference.</li>
+              <li><strong>The thread continues:</strong> DiResta's <em>Invisible Rulers</em> · HAI's Cognitive Security Task Force · <code>stanfordio/skyfall</code>.</li>
             </ul>
           </div>
           <div class="photo-card tall">
@@ -1286,21 +1396,23 @@
       </section>
 
       <!-- EFF SURVEILLANCE SELF-DEFENSE (SSD.EFF.ORG) & ATLAS OF SURVEILLANCE -->
-      <section class="slide" data-notes="Now let's bridge that academic research directly into our hands-on curriculum at Frontier Tower, starting with the Electronic Frontier Foundation's Surveillance Self-Defense (ssd.eff.org) and Atlas of Surveillance. Before you install a single tool, EFF SSD teaches you how to build a real Threat Model by answering five specific questions—so you don't burn out on paranoia or leave the wrong door unlocked.">
+      <section class="slide" data-notes="Now let's bridge that academic research directly into our hands-on curriculum at Frontier Tower, starting with the Electronic Frontier Foundation's Surveillance Self-Defense (ssd.eff.org) and Atlas of Surveillance. Before you install a single tool, EFF SSD teaches you how to build a real Threat Model by answering five specific questions—so you don't burn out on paranoia or leave the wrong door unlocked. Slide detail: question one covers source identities, medical and reproductive data, location trails, research; question two covers ad-tech RTB brokers, doxxers, police ALPR and geofence warrants, border agents, nation-states; questions three to five match sustainable daily defaults (YubiKey plus Signal plus Mullvad) against high-risk compartmentalisation with Tails. The protest playlist: disable FaceID and TouchID so police cannot compel an unlock without a Fifth Amendment passcode, Signal disappearing messages, EXIF scrubbing. The border playlist: power off FileVault or LUKS devices, sign out of cloud tokens. The Atlas is crowdsourced and covers California and the US.">
         <div class="section-tag">37 / Practical Threat Modeling · EFF San Francisco</div>
         <h2>EFF <em>Surveillance Self-Defense</em> (<code>ssd.eff.org</code>) &amp; <em>Atlas of Surveillance</em></h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>The 5-Question Threat Model (<code>ssd.eff.org</code>):</strong>
+              <li><strong>The 5-question threat model</strong> (<code>ssd.eff.org</code>):
                 <ul>
-                  <li><strong>1. What do I want to protect?</strong> (Source identities, medical/reproductive data, location trails, research)</li>
-                  <li><strong>2. Who do I want to protect it from?</strong> (Ad-tech RTB brokers, doxxers, police ALPR/geofence warrants, border agents, or nation-states)</li>
-                  <li><strong>3–5. Likelihood, Consequences &amp; Friction:</strong> Matching sustainable daily defaults (YubiKey + Signal + Mullvad) vs. high-risk compartmentalization (Tails OS).</li>
+                  <li>What do I protect? From whom? How likely? How bad? How much effort?</li>
                 </ul>
               </li>
-              <li><strong>EFF SSD Role-Based Playlists:</strong> Field guides for <strong>Attending a Protest</strong> (disabling FaceID/TouchID biometrics so police cannot compel unlock without a Fifth Amendment passcode; Signal disappearing messages; EXIF scrubbing), <strong>Crossing the U.S. Border</strong> (powering off FileVault/LUKS devices, signing out of cloud tokens), <strong>Journalists</strong>, <strong>LGBTQ+ Youth</strong>, and <strong>Academic Researchers</strong>.</li>
-              <li><strong>EFF <em>Atlas of Surveillance</em> (<code>atlasofsurveillance.org</code>):</strong> Crowdsourced public database mapping 11,000+ police deployments of <strong>Flock Safety ALPR cameras</strong>, Stingrays, Ring partnerships, and facial recognition across California and the US.</li>
+              <li><strong>Role-based playlists:</strong> protest · the US border · journalists · LGBTQ+ youth · researchers.</li>
+              <li><strong>Atlas of Surveillance</strong> (<code>atlasofsurveillance.org</code>): 11,000+ police deployments mapped.
+                <ul>
+                  <li>Flock ALPR · Stingrays · Ring partnerships · facial recognition</li>
+                </ul>
+              </li>
             </ul>
           </div>
           <div class="photo-grid-2">
@@ -1317,20 +1429,20 @@
       </section>
 
       <!-- AD-TECH RTB & COMPUTATIONAL FINGERPRINTING -->
-      <section class="slide" data-notes="And that academic research on algorithmic manipulation leads directly to how commercial ad-tech works on your devices every day. Real-Time Bidding broadcasts your geolocation and browsing profile to hundreds of ad brokers in milliseconds, while WebGL, Canvas, and AudioContext APIs fingerprint your hardware even without cookies.">
+      <section class="slide" data-notes="And that academic research on algorithmic manipulation leads directly to how commercial ad-tech works on your devices every day. Real-Time Bidding broadcasts your geolocation and browsing profile to hundreds of ad brokers in milliseconds, while WebGL, Canvas, and AudioContext APIs fingerprint your hardware even without cookies. Slide detail: the bidstream shapes political micro-targeting and dynamic pricing. Fingerprinting uses the GPU's WebGL rendering, Canvas and SVG font metrics, AudioContext entropy and modern CSS and hardware side-channels (see nullpt.rs). Cover Your Tracks is at coveryourtracks.eff.org, Blacklight at themarkup.org/blacklight.">
         <div class="section-tag">38 / Commercial Surveillance & Anti-Fingerprinting</div>
         <h2>Ad-Tech Real-Time Bidding (RTB) & Browser Fingerprinting</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>The RTB Bidstream Leak:</strong> Documented by Johnny Ryan at the Irish Council for Civil Liberties (ICCL) and Wolfie Christl at <em>Cracked Labs</em> — the average user's page loads & location are broadcast hundreds of times a day to data brokers, shaping political micro-targeting and dynamic pricing.</li>
-              <li><strong>Computational Fingerprinting:</strong> Even with cookies deleted, your GPU's WebGL rendering, Canvas/SVG font metrics, AudioContext entropy, and modern CSS/hardware side-channels (see research like <code>nullpt.rs</code>) create a unique hardware ID.</li>
-              <li><strong>Live Diagnostic & Defense Stack:</strong>
+              <li><strong>The RTB bidstream leak:</strong> your page loads and location, broadcast hundreds of times a day to brokers.
                 <ul>
-                  <li><strong>EFF <em>Cover Your Tracks</em></strong> (<code>coveryourtracks.eff.org</code>) & <strong>The Markup's <em>Blacklight</em></strong> (<code>themarkup.org/blacklight</code>)</li>
-                  <li><strong>Tor Browser</strong> & <strong>Mullvad Browser</strong> (uniform letterboxed viewports + identical hardware fingerprint buckets)</li>
+                  <li>Documented by Johnny Ryan (ICCL) and Wolfie Christl (Cracked Labs)</li>
                 </ul>
               </li>
+              <li><strong>Fingerprinting without cookies:</strong> WebGL · Canvas and font metrics · AudioContext · CSS side-channels.</li>
+              <li><strong>Diagnose:</strong> EFF <em>Cover Your Tracks</em> · The Markup's <em>Blacklight</em>.</li>
+              <li><strong>Defend:</strong> Tor Browser · Mullvad Browser (letterboxed viewports, shared fingerprint buckets).</li>
             </ul>
           </div>
           <div class="photo-card tall contain">
@@ -1341,16 +1453,25 @@
       </section>
 
       <!-- SLIDE: GOOGLE DELETED ITS OWN DARK WEB MONITOR -->
-      <section class="slide" data-notes="Now the privacy punchline. Google's Dark Web Report asked you to hand over your name, address, phone number, date of birth, and Social Security number so Google could watch for them on the dark web. On December 15, 2025 Google announced it was shutting the product down: scans stopped January 15, 2026 and every monitoring profile was deleted on February 16, because, in Google's words, the alerts did not provide helpful next steps. Mozilla's Monitor Plus ended in December 2025, twenty months after Brian Krebs showed its removal partner Onerep was founded by a people-search operator. Aura, an identity-protection vendor, was itself breached in March 2026. The pattern: to be monitored you give the monitor exactly the identifiers you fear leaking, and it only sees what it already indexes, after the fact. The cypherpunk design has existed for years and costs nothing: Troy Hunt's Have I Been Pwned uses k-anonymity so the server never learns your password, and Apple's Password Monitoring uses private set intersection so Apple learns neither your passwords nor how many you have. And the thing Tor is actually for: during Iran's record shutdowns in early 2026, Snowflake proxy usage nearly doubled when connectivity returned.">
+      <section class="slide" data-notes="Now the privacy punchline. Google's Dark Web Report asked you to hand over your name, address, phone number, date of birth, and Social Security number so Google could watch for them on the dark web. On December 15, 2025 Google announced it was shutting the product down: scans stopped January 15, 2026 and every monitoring profile was deleted on February 16, because, in Google's words, the alerts did not provide helpful next steps. Mozilla's Monitor Plus ended in December 2025, twenty months after Brian Krebs showed its removal partner Onerep was founded by a people-search operator. Aura, an identity-protection vendor, was itself breached in March 2026. The pattern: to be monitored you give the monitor exactly the identifiers you fear leaking, and it only sees what it already indexes, after the fact. The cypherpunk design has existed for years and costs nothing: Troy Hunt's Have I Been Pwned uses k-anonymity so the server never learns your password, and Apple's Password Monitoring uses private set intersection so Apple learns neither your passwords nor how many you have. And the thing Tor is actually for: during Iran's record shutdowns in early 2026, Snowflake proxy usage nearly doubled when connectivity returned. Slide detail: Mozilla's exit followed Brian Krebs showing partner Onerep was founded by a people-search operator. Infostealer numbers for 2025: 13.2 million new infections, 642 million credentials, 8.6 billion session cookies, and about 45 percent of cybercrime chatter now on Telegram rather than onion sites. HIBP checks a hashed five-character prefix; Apple uses elliptic-curve private set intersection; both load the same stealer-log corpora, 1.96 billion emails added in November 2025. Iran's shutdowns ran in January and again February to May 2026. A 2024 review of 22 US onion-service prosecutions found one attack on Tor itself.">
         <div class="section-tag">39 / January 15, 2026 · Consumer "Dark Web Monitoring" vs. Private Set Intersection</div>
         <h2>Google Deleted Its Own Dark Web Monitor. Here Is the Cypherpunk Version.</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>What You Had to Give Google:</strong> Name, address, phone, date of birth, and SSN for a "monitoring profile." Scans stopped <strong>Jan 15, 2026</strong>; all profile data deleted Feb 16. Google's reason: the alerts "didn't provide helpful next steps." Mozilla Monitor Plus ended Dec 2025 after Krebs showed partner <strong>Onerep</strong> was founded by a people-search operator; identity vendor <strong>Aura</strong> was itself breached in March 2026.</li>
-              <li><strong>What the Monitors Can Actually See:</strong> Only sources they already index, after the fact. The real exposure is <strong>infostealer logs</strong>: 13.2M new infections exposing 642M credentials and 8.6B session cookies in 2025, and ~45% of cybercrime chatter now on Telegram, not <code>.onion</code>.</li>
-              <li><strong>The Cypherpunk Design (Free):</strong> <strong>Have I Been Pwned</strong> checks passwords by hashed 5-character prefix (k-anonymity), so the server never sees yours. <strong>Apple Password Monitoring</strong> uses elliptic-curve private set intersection: Apple learns neither your passwords nor how many you have. Both load the same stealer-log corpora (1.96B emails added Nov 2025).</li>
-              <li><strong>Why We Still Run Tor:</strong> During Iran's record shutdowns (Jan & Feb–May 2026), <strong>Snowflake</strong> proxy usage nearly doubled when connectivity returned. A 2024 review of 22 US onion-service prosecutions found one attack on Tor itself.</li>
+              <li><strong>Google's Dark Web Report:</strong> it wanted your name, address, phone, DOB and SSN.
+                <ul>
+                  <li>Scans stopped Jan 15, 2026; profiles deleted Feb 16: "no helpful next steps"</li>
+                  <li>Mozilla Monitor Plus gone (Dec 2025) · Aura itself breached (Mar 2026)</li>
+                </ul>
+              </li>
+              <li><strong>What monitors see:</strong> only what they already index, after the fact.
+                <ul>
+                  <li>The real exposure: infostealer logs, 642M credentials in 2025</li>
+                </ul>
+              </li>
+              <li><strong>The free cypherpunk design:</strong> Have I Been Pwned (k-anonymity) · Apple Password Monitoring (PSI).</li>
+              <li><strong>Why we still run Tor:</strong> Snowflake use nearly doubled after Iran's 2026 shutdowns.</li>
             </ul>
           </div>
           <div class="photo-grid-2">
@@ -1367,16 +1488,24 @@
       </section>
 
       <!-- SLIDE: THE CALIFORNIA DELETE ACT & DROP -->
-      <section class="slide" data-notes="And here is the thing everyone in this room can do this week. About 750 registered data-broker groups hold dossiers on nearly every US adult. Their customers: ICE paid Penlink two million dollars in September 2025 for tools that enumerate every phone in a neighborhood and follow them home; GM sent trip-level driving data to LexisNexis for insurance scores; a trial of Babel Street's Locate X isolated seven hundred phones at a Florida abortion clinic. National Public Data leaked 272 million Social Security numbers in 2024 and went bankrupt. California's Delete Act created DROP, the Data Broker Requests and Opt-out Platform. Accounts opened January 1, 2026, brokers had to start processing on August 1, and by Delete Week in October 560,000 Californians had registered and about 100 million profiles were reported deleted, at 200 dollars per request per day for non-compliance. Before DROP, brokers ignored over a million deletion requests in two years. Paid removal services remove about a third of what is yours; Consumer Reports found a manual afternoon with a free opt-out list does better. And the biggest removal vendor, Onerep, was paying the broker Radaris 25,000 dollars a month. So: manual first, DROP if you live here, Permission Slip for everyone, freeze your credit at all six bureaus, and never upload a government ID to a removal service.">
+      <section class="slide" data-notes="And here is the thing everyone in this room can do this week. About 750 registered data-broker groups hold dossiers on nearly every US adult. Their customers: ICE paid Penlink two million dollars in September 2025 for tools that enumerate every phone in a neighborhood and follow them home; GM sent trip-level driving data to LexisNexis for insurance scores; a trial of Babel Street's Locate X isolated seven hundred phones at a Florida abortion clinic. National Public Data leaked 272 million Social Security numbers in 2024 and went bankrupt. California's Delete Act created DROP, the Data Broker Requests and Opt-out Platform. Accounts opened January 1, 2026, brokers had to start processing on August 1, and by Delete Week in October 560,000 Californians had registered and about 100 million profiles were reported deleted, at 200 dollars per request per day for non-compliance. Before DROP, brokers ignored over a million deletion requests in two years. Paid removal services remove about a third of what is yours; Consumer Reports found a manual afternoon with a free opt-out list does better. And the biggest removal vendor, Onerep, was paying the broker Radaris 25,000 dollars a month. So: manual first, DROP if you live here, Permission Slip for everyone, freeze your credit at all six bureaus, and never upload a government ID to a removal service. Slide detail: ICE paid Penlink about 2 million dollars in September 2025 for tools that enumerate every phone in a geofence and follow it home; a Babel Street Locate X trial isolated about 700 phones at a Florida abortion clinic. DROP accounts opened January 1, 2026, and 660-plus brokers had been instructed by Delete Week on October 12; in the two years before, brokers ignored more than a million requests. Consumer Reports 2024: seven paid services averaged 35 percent, Optery 68, DeleteMe 27. The Radaris litigation showed removal vendor Onerep paying broker Radaris about 25,000 dollars a month. Yael Grauer's Big Ass Data Broker Opt-Out List is the free manual route; Consumer Reports' Permission Slip changed hands in 2026, so check its status before recommending it.">
         <div class="section-tag">40 / August 1, 2026 · California Delete Act (SB 362) &amp; the DROP Platform</div>
         <h2>Data Brokers vs. "Delete Me": One Request to 660 Brokers</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>~750 Broker Groups, and Who Buys:</strong> ICE paid Penlink ~$2M (Sept 2025) for tools that enumerate every phone in a geofence and follow it home; a trial of Babel Street's <em>Locate X</em> isolated ~700 phones at a Florida abortion clinic. <strong>National Public Data</strong> leaked 272M unique SSNs in 2024, then went bankrupt.</li>
-              <li><strong>DROP, the First Hard Constraint:</strong> Accounts opened Jan 1, 2026; brokers must process from Aug 1, 2026 at <strong>$200 per request per day</strong>. By Delete Week (Oct 12, 2026): <strong>560,000+ Californians</strong> registered, <strong>~100M profiles</strong> reported deleted, 660+ brokers instructed. In the two years before DROP, brokers ignored over 1M deletion requests.</li>
-              <li><strong>The Removal Arms Race:</strong> Consumer Reports (2024): manual opt-outs removed ~70% in a week; seven paid services averaged <strong>35%</strong> after four months (Optery 68%, DeleteMe 27%). The Radaris litigation showed removal vendor <strong>Onerep</strong> paying broker <strong>Radaris</strong> ~$25K a month.</li>
-              <li><strong>This Week:</strong> <code>privacy.ca.gov/drop</code> (CA) · CR <em>Permission Slip</em> (free) · Yael Grauer's <em>Big Ass Data Broker Opt-Out List</em> · freeze credit at six bureaus · never upload a government ID to a removal service.</li>
+              <li><strong>~750 broker groups, and who buys:</strong> ICE (Penlink, $2M) · insurers · a Florida abortion-clinic geofence.
+                <ul>
+                  <li>National Public Data leaked 272M SSNs (2024), then went bankrupt</li>
+                </ul>
+              </li>
+              <li><strong>DROP, the first hard constraint:</strong> brokers must process from Aug 1, 2026, at $200 per request per day.
+                <ul>
+                  <li>Delete Week (Oct 2026): 560,000+ Californians, ~100M profiles deleted</li>
+                </ul>
+              </li>
+              <li><strong>Paid removal underperforms:</strong> manual ~70% in a week vs. paid ~35% after four months (Consumer Reports).</li>
+              <li><strong>This week:</strong> <code>privacy.ca.gov/drop</code> · Grauer's free opt-out list · freeze credit at six bureaus · never upload an ID.</li>
             </ul>
           </div>
           <div class="photo-grid-2">
@@ -1393,16 +1522,21 @@
       </section>
 
       <!-- SLIDE: SEPT 2026 GAMERS NEXUS LG TV INVESTIGATION & ACR -->
-      <section class="slide" data-notes="Here is why the home-network clinics matter. On Sunday, September 6, 2026, Gamers Nexus, working with Level1Techs and independent security researchers, published a packet-capture investigation of retail LG OLED televisions. The sets enumerated phones, smartwatches, thermostats and PCs on the local network that had never been paired with the TV, logged nearby Wi-Fi networks and location, generated plaintext transcripts from audio including in standby, and ran automatic content recognition across HDMI inputs, even when the set was used as a laptop monitor, all feeding LG Ad Solutions. LG's response three days later is the useful part: it denied recording audio in standby, but confirmed that its TVs scan the local network and called that standard across the industry. A 2024 academic study from UC Davis, UCL and Carlos III Madrid had already shown both Samsung and LG sets capturing screen-derived fingerprints. The FTC fined Vizio 2.2 million dollars for exactly this in 2017, and nothing changed. The television is an advertising business that happens to have a screen. Every tier of our ladder exposes or stops this: a Pi-hole shows you the ACR domains, an IoT VLAN on OpenWrt stops the network scanning, and the simplest fix is a dumb display with an Apple TV in front of it.">
+      <section class="slide" data-notes="Here is why the home-network clinics matter. On Sunday, September 6, 2026, Gamers Nexus, working with Level1Techs and independent security researchers, published a packet-capture investigation of retail LG OLED televisions. The sets enumerated phones, smartwatches, thermostats and PCs on the local network that had never been paired with the TV, logged nearby Wi-Fi networks and location, generated plaintext transcripts from audio including in standby, and ran automatic content recognition across HDMI inputs, even when the set was used as a laptop monitor, all feeding LG Ad Solutions. LG's response three days later is the useful part: it denied recording audio in standby, but confirmed that its TVs scan the local network and called that standard across the industry. A 2024 academic study from UC Davis, UCL and Carlos III Madrid had already shown both Samsung and LG sets capturing screen-derived fingerprints. The FTC fined Vizio 2.2 million dollars for exactly this in 2017, and nothing changed. The television is an advertising business that happens to have a screen. Every tier of our ladder exposes or stops this: a Pi-hole shows you the ACR domains, an IoT VLAN on OpenWrt stops the network scanning, and the simplest fix is a dumb display with an Apple TV in front of it. Slide detail: everything fed LG Ad Solutions. A 2024 ACM IMC study from UC Davis, UCL and UC3M had already found Samsung and LG sets capturing screen-derived fingerprints; the FTC fined Vizio 2.2 million dollars for covert ACR in 2017. ACR is opt-in via the LG Live Plus setup checkbox; hardcoded DNS and DNS-over-HTTPS bypass your resolver; Firewalla or OPNsense give per-device rules.">
         <div class="section-tag">41 / September 6, 2026 · The Gamers Nexus LG Investigation &amp; Automatic Content Recognition</div>
         <h2>Your TV Is Scanning Your Network: ACR &amp; the Consumer-Electronics Panopticon</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>What the Packet Captures Showed (Gamers Nexus × Level1Techs, Sept 6, 2026):</strong> Retail LG OLEDs <strong>scanning the local network</strong> for phones, watches and thermostats never paired with the TV, logging nearby Wi-Fi networks, caching standby audio transcripts, and running <strong>Automatic Content Recognition (ACR)</strong> across HDMI inputs, all feeding <strong>LG Ad Solutions</strong>.</li>
-              <li><strong>LG's Reply (Sept 9):</strong> Denied standby audio recording; <strong>confirmed the network scanning</strong> and called it "standard across modern smart TVs." That is a denial of uniqueness, not of the behavior. A 2024 ACM IMC study (UC Davis, UCL, UC3M) had already found Samsung and LG sets capturing screen-derived fingerprints; the FTC fined Vizio <strong>$2.2M</strong> for covert ACR in 2017.</li>
-              <li><strong>Why Nothing Protects You:</strong> No US federal privacy law; ACR is "opt-in" via a setup-screen checkbox (LG "Live Plus"); hardcoded DNS and DNS-over-HTTPS bypass your resolver; DMCA §1201 makes modifying the firmware a crime.</li>
-              <li><strong>The Ladder Each Clinic Builds:</strong> <strong>Pi-hole</strong> shows the telemetry domains in your query log → <strong>OpenWrt IoT VLAN</strong> with no route to the LAN defeats the scanning → <strong>Firewalla / OPNsense</strong> per-device rules → or a dumb display behind an <strong>Apple TV</strong>.</li>
+              <li><strong>Sept 6, 2026, Gamers Nexus × Level1Techs:</strong> packet captures of retail LG OLEDs.
+                <ul>
+                  <li>Scanning the LAN for phones, watches and thermostats never paired with the TV</li>
+                  <li>Logging nearby Wi-Fi · standby audio transcripts · ACR across HDMI inputs</li>
+                </ul>
+              </li>
+              <li><strong>LG, Sept 9:</strong> denied the audio, <strong>confirmed the scanning</strong>: "standard across modern smart TVs."</li>
+              <li><strong>Nothing protects you:</strong> no federal privacy law · an "opt-in" checkbox · hardcoded DNS · DMCA §1201.</li>
+              <li><strong>The clinic ladder:</strong> Pi-hole → OpenWrt IoT VLAN → OPNsense rules → dumb display + Apple TV.</li>
             </ul>
           </div>
           <div class="photo-grid-2">
@@ -1419,16 +1553,21 @@
       </section>
 
       <!-- SLIDE: CORY DOCTOROW, ENSHITTIFICATION & ADVERSARIAL INTEROPERABILITY -->
-      <section class="slide" data-notes="The person who has given all of this a name is Cory Doctorow: science-fiction novelist, EFF special advisor, co-owner of Boing Boing, and author of the daily Pluralistic newsletter. In November 2022 he coined enshittification for the three-stage decay of platforms: first they are good to users, then they abuse users to serve business customers, then they abuse business customers to extract everything for themselves. The American Dialect Society made it word of the year for 2023, and the book, Enshittification: Why Everything Suddenly Got Worse and What to Do About It, came out from Farrar, Straus and Giroux in October 2025. His DEF CON 31 talk in August 2023 laid out the plan to halt it. His diagnosis matters for this room because it is legal, not technical: the reason you cannot block your TV's spyware is section 1201 of the DMCA, which makes circumventing a digital lock a felony, so adversarial interoperability, the thing that built the PC and the web, is illegal for the TV in your living room. And he is ours: Little Brother, his 2008 novel, is set in San Francisco, with a teenager named Marcus fighting DHS surveillance after an attack on the Bay Bridge. Every cypherpunk meeting should hand a copy to a teenager.">
+      <section class="slide" data-notes="The person who has given all of this a name is Cory Doctorow: science-fiction novelist, EFF special advisor, co-owner of Boing Boing, and author of the daily Pluralistic newsletter. In November 2022 he coined enshittification for the three-stage decay of platforms: first they are good to users, then they abuse users to serve business customers, then they abuse business customers to extract everything for themselves. The American Dialect Society made it word of the year for 2023, and the book, Enshittification: Why Everything Suddenly Got Worse and What to Do About It, came out from Farrar, Straus and Giroux in October 2025. His DEF CON 31 talk in August 2023 laid out the plan to halt it. His diagnosis matters for this room because it is legal, not technical: the reason you cannot block your TV's spyware is section 1201 of the DMCA, which makes circumventing a digital lock a felony, so adversarial interoperability, the thing that built the PC and the web, is illegal for the TV in your living room. And he is ours: Little Brother, his 2008 novel, is set in San Francisco, with a teenager named Marcus fighting DHS surveillance after an attack on the Bay Bridge. Every cypherpunk meeting should hand a copy to a teenager. Slide detail: the American Dialect Society chose enshittification as Word of the Year for 2023; the book is Enshittification: Why Everything Suddenly Got Worse and What to Do About It (Farrar, Straus and Giroux, October 2025); the DEF CON 31 talk was August 2023. Adversarial interoperability, the ad blocker and the third-party firmware that built the PC and the web, is illegal for your TV, car and printer; Chokepoint Capitalism (2022) and The Internet Con (2023) argue for repeal and right to repair.">
         <div class="section-tag">42 / 2008–2025 · Cory Doctorow: <em>Little Brother</em>, Enshittification &amp; Adversarial Interoperability</div>
         <h2>Cory Doctorow: Naming the Thing &amp; the Legal Reason You Can't Fix It</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>Who:</strong> Novelist, <strong>EFF Special Advisor</strong>, co-owner of <em>Boing Boing</em>, author of the daily <strong><code>pluralistic.net</code></strong>. <em>Little Brother</em> (2008) is set right here: a San Francisco teenager fights DHS surveillance after an attack on the Bay Bridge. Required reading for every member under 20.</li>
-              <li><strong>Enshittification (coined Nov 2022):</strong> Platforms are good to users → abuse users to serve business customers → abuse business customers to extract everything. American Dialect Society <strong>Word of the Year 2023</strong>; the book <em>Enshittification: Why Everything Suddenly Got Worse and What to Do About It</em> (Farrar, Straus &amp; Giroux, Oct 2025). The plan to halt it: <strong>DEF CON 31</strong> (Aug 2023).</li>
-              <li><strong>The Legal Diagnosis:</strong> <strong>DMCA §1201</strong> makes circumventing a digital lock a felony, so <strong>adversarial interoperability</strong> (the ad blocker, the third-party firmware that built the PC and the web) is illegal for your TV, car and printer. <em>Chokepoint Capitalism</em> (2022) and <em>The Internet Con</em> (2023) argue for repeal and right-to-repair.</li>
-              <li><strong>Why He Belongs in This Deck:</strong> The LG investigation is the business model he predicted. The Society's clinics are adversarial interoperability practiced at home.</li>
+              <li><strong>Who:</strong> novelist, EFF Special Advisor, <em>Boing Boing</em>, the daily <code>pluralistic.net</code>.</li>
+              <li><strong><em>Little Brother</em> (2008):</strong> a San Francisco teenager vs. DHS after a Bay Bridge attack. Hand it to a teenager.</li>
+              <li><strong>Enshittification</strong> (Nov 2022): good to users → abuse users → abuse business customers.
+                <ul>
+                  <li>Word of the Year 2023 · the book (FSG, Oct 2025) · the plan, DEF CON 31</li>
+                </ul>
+              </li>
+              <li><strong>The legal diagnosis:</strong> DMCA §1201 makes adversarial interoperability a felony.</li>
+              <li><strong>Why here:</strong> the LG story is his prediction; our clinics are interoperability practiced at home.</li>
             </ul>
           </div>
           <div class="photo-grid-2">
@@ -1445,16 +1584,28 @@
       </section>
 
       <!-- SLIDE: CAMBRIDGE ANALYTICA WAS THE TRAILER -->
-      <section class="slide" data-notes="Cambridge Analytica is the case everyone knows, so use it as the trailer, not the feature. Eighty-seven million profiles harvested through a personality quiz, and the detail that matters came two years later when Channel 4 obtained the 2016 campaign database and found three and a half million Black Americans tagged Deterrence. Emma Briant's evidence to the UK Parliament put it in context: SCL, the parent firm, had trained Britain's 15th Psychological Operations Group, so this was military influence tooling sold into elections. The bill for Meta kept growing: five billion to the FTC in 2019, a 725 million dollar class settlement, and on October 21 2026 a New Mexico judge entered a 25 billion dollar judgment after a jury found 43 million consumer-protection violations. Meta is appealing. Since then there are two lineages. The mercenaries: Archimedes Group, Team Jorge with its claimed 33 elections, and STOIC, a two million dollar Israeli ministry operation aimed at Black Democratic members of Congress. Meta's August 2026 report says every network it now takes down uses generative AI. And the ranking machine itself: the UN said Facebook played a determining role in Myanmar; the Meareg case over Ethiopia is proceeding in Kenya; Romania annulled an election over a TikTok campaign; and Global Witness got genocidal ads approved in Amharic, Swahili and Portuguese. The tell is the EU: when a law required platforms to disclose how political ads are targeted, Google and Meta stopped selling them rather than show us.">
+      <section class="slide" data-notes="Cambridge Analytica is the case everyone knows, so use it as the trailer, not the feature. Eighty-seven million profiles harvested through a personality quiz, and the detail that matters came two years later when Channel 4 obtained the 2016 campaign database and found three and a half million Black Americans tagged Deterrence. Emma Briant's evidence to the UK Parliament put it in context: SCL, the parent firm, had trained Britain's 15th Psychological Operations Group, so this was military influence tooling sold into elections. The bill for Meta kept growing: five billion to the FTC in 2019, a 725 million dollar class settlement, and on October 21 2026 a New Mexico judge entered a 25 billion dollar judgment after a jury found 43 million consumer-protection violations. Meta is appealing. Since then there are two lineages. The mercenaries: Archimedes Group, Team Jorge with its claimed 33 elections, and STOIC, a two million dollar Israeli ministry operation aimed at Black Democratic members of Congress. Meta's August 2026 report says every network it now takes down uses generative AI. And the ranking machine itself: the UN said Facebook played a determining role in Myanmar; the Meareg case over Ethiopia is proceeding in Kenya; Romania annulled an election over a TikTok campaign; and Global Witness got genocidal ads approved in Amharic, Swahili and Portuguese. The tell is the EU: when a law required platforms to disclose how political ads are targeted, Google and Meta stopped selling them rather than show us. Slide detail: Channel 4 obtained the 2016 campaign database in 2020. Emma Briant's evidence to the UK Parliament: SCL trained the 15th Psychological Operations Group. Meta's August 2026 report counted 53 Russian, 41 Iranian and 14 Chinese networks. STOIC in 2024 targeted Black Democratic lawmakers; Team Jorge was exposed in 2023, Archimedes Group in 2019. Meareg v. Meta is proceeding in a Kenyan court; Romania annulled a round in December 2024, the first in the EU; the Sahel coups are the other case. Global Witness's test ads were in Amharic, Swahili and Portuguese. The EU ad-transparency law applied from October 10, 2025. The Meta Ad Library API is open.">
         <div class="section-tag">43 / 2018–2026 · From Cambridge Analytica to the $25B New Mexico Judgment</div>
         <h2>Cambridge Analytica Was the Trailer: Microtargeting, Mercenaries &amp; the Ranking Machine</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>The Trailer (2018):</strong> 87M profiles via a personality quiz. Channel 4 (2020) found <strong>3.5M Black Americans tagged "Deterrence"</strong>. Emma Briant's evidence to Parliament: SCL trained the UK's <strong>15th PSYOPS Group</strong>; military influence tooling sold into elections. Meta's bill: $5B FTC (2019), $725M class action, and a <strong>$25B New Mexico judgment</strong> (Oct 21, 2026, on appeal).</li>
-              <li><strong>Lineage 2, Mercenaries:</strong> Archimedes Group (2019), <strong>Team Jorge</strong> (2023, claimed 33 elections), <strong>STOIC</strong> (2024, a $2M Israeli-ministry op aimed at Black Democratic lawmakers). Meta, Aug 2026: 53 Russian, 41 Iranian, 14 Chinese networks; <strong>every one now uses generative AI</strong>.</li>
-              <li><strong>Lineage 3, the Ranking Machine:</strong> Myanmar (UN: Facebook's "determining role"), Ethiopia (<em>Meareg v. Meta</em>, Kenyan court, 2025), Romania (first EU election annulled, Dec 2024), the Sahel coups. Global Witness got <strong>genocidal ads approved</strong> in Amharic, Swahili and Portuguese.</li>
-              <li><strong>The Tell:</strong> The EU's ad-transparency law (Oct 10, 2025) required disclosing targeting; <strong>Google and Meta quit EU political ads</strong> rather than show it. <em>Get involved:</em> the Meta Ad Library API is open. Build the SF ad monitor.</li>
+              <li><strong>The trailer, 2018:</strong> 87M profiles · 3.5M Black Americans tagged "Deterrence" · SCL had trained UK PSYOPS.
+                <ul>
+                  <li>Meta's bill: $5B FTC · $725M class action · $25B New Mexico (Oct 21, 2026, on appeal)</li>
+                </ul>
+              </li>
+              <li><strong>Lineage 2, mercenaries:</strong> Archimedes Group · Team Jorge (33 elections) · STOIC ($2M Israeli op).
+                <ul>
+                  <li>Meta, Aug 2026: every network taken down now uses generative AI</li>
+                </ul>
+              </li>
+              <li><strong>Lineage 3, the ranking machine:</strong> Myanmar · Ethiopia (<em>Meareg</em>) · Romania's annulled election.
+                <ul>
+                  <li>Global Witness got genocidal ads approved in three languages</li>
+                </ul>
+              </li>
+              <li><strong>The tell:</strong> told to disclose targeting, Google and Meta quit EU political ads. <em>Build the SF ad monitor.</em></li>
             </ul>
           </div>
           <div class="photo-grid-2">
@@ -1471,16 +1622,26 @@
       </section>
 
       <!-- SLIDE: THEY CUT THE API, SO WE READ FROM THE BROWSER -->
-      <section class="slide" data-notes="The platforms' answer to all of this was to cut off the people watching. In August 2021 Meta disabled the NYU Ad Observatory researchers' accounts and blamed its FTC consent order; the FTC wrote back that the excuse was inaccurate. X killed its academic API in 2023 and priced the enterprise tier at 42 thousand dollars a month, then sued the Center for Countering Digital Hate and Media Matters. CrowdTangle was shut on August 14 2024, eleven weeks before the US election. Stanford Internet Observatory was dismantled under congressional subpoenas and lawsuits, the NSF cancelled over four hundred grants, and a visa policy targeted foreign disinformation researchers until a judge stayed it in July 2026. But the lockout failed in one place: discovery. The lawsuits over harm to minors pried loose Project Mercury, Meta's own halted study showing people felt better when they deactivated, and produced a six million dollar Los Angeles verdict in March, a twelve billion dollar consent judgment with 29 states in August, and New Mexico's judgments. The Ninth Circuit ruled that section 230 is a defense, not immunity from suit. Researchers fight back from the browser, which the platform cannot revoke: Ad Observer and Who Targets Me; sock-puppet ad audits; and the Digital Services Act, which fined X 120 million euros in December 2025 partly for refusing researchers public data. For this room: install the two extensions tonight, run an export party, mirror the data that is fragile, index the unsealed exhibits, and join the Coalition for Independent Technology Research.">
+      <section class="slide" data-notes="The platforms' answer to all of this was to cut off the people watching. In August 2021 Meta disabled the NYU Ad Observatory researchers' accounts and blamed its FTC consent order; the FTC wrote back that the excuse was inaccurate. X killed its academic API in 2023 and priced the enterprise tier at 42 thousand dollars a month, then sued the Center for Countering Digital Hate and Media Matters. CrowdTangle was shut on August 14 2024, eleven weeks before the US election. Stanford Internet Observatory was dismantled under congressional subpoenas and lawsuits, the NSF cancelled over four hundred grants, and a visa policy targeted foreign disinformation researchers until a judge stayed it in July 2026. But the lockout failed in one place: discovery. The lawsuits over harm to minors pried loose Project Mercury, Meta's own halted study showing people felt better when they deactivated, and produced a six million dollar Los Angeles verdict in March, a twelve billion dollar consent judgment with 29 states in August, and New Mexico's judgments. The Ninth Circuit ruled that section 230 is a defense, not immunity from suit. Researchers fight back from the browser, which the platform cannot revoke: Ad Observer and Who Targets Me; sock-puppet ad audits; and the Digital Services Act, which fined X 120 million euros in December 2025 partly for refusing researchers public data. For this room: install the two extensions tonight, run an export party, mirror the data that is fragile, index the unsealed exhibits, and join the Coalition for Independent Technology Research. Slide detail: the visa ban on foreign disinformation researchers was stayed in July 2026 in CITR v. Rubio. Project Mercury was Meta's halted study showing people felt better after deactivating; the Los Angeles verdict was March 2026, the 29-state consent judgment with teen defaults August 2026, plus New Mexico's 567 million dollar fund and the 25 billion. Ekō's Brazil audit in September 2026 got 13 of 15 violent ads approved. The DSA fine on X was December 5, 2025, partly for denying researchers data; vetted-researcher access is live with 49 applications and none granted yet; PATA, S.3292, is in committee. Also mirror the Community Notes dumps, index the unsealed MDL exhibits, and invite Berkeley HRC Lab, Internet Archive and The Markup.">
         <div class="section-tag">44 / 2021–2026 · Researcher Lockout, the DSA &amp; the Minors Litigation</div>
         <h2>They Cut the API, So We Read From the Browser: Lockout &amp; Fightback</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>The Lockout:</strong> Aug 2021 Meta kills <strong>NYU Ad Observatory</strong> accounts (FTC: the excuse was "inaccurate"). Feb 2023 X ends the Academic API ($42K/mo), sues CCDH and Media Matters. <strong>CrowdTangle shut Aug 14, 2024</strong>, 11 weeks before the election. Stanford Internet Observatory dismantled (2024); NSF cancels 400+ grants (2025); visa ban on disinfo researchers stayed July 2026 (<em>CITR v. Rubio</em>).</li>
-              <li><strong>Discovery Beats APIs:</strong> The minors suits pried loose <strong>Project Mercury</strong> (Meta's halted deactivation study), a $6M LA verdict (Mar 2026), a <strong>29-state $12.2B consent judgment</strong> with teen defaults (Aug 2026), New Mexico's $567M fund and $25B. Ninth Circuit: §230 is a defense, not immunity.</li>
-              <li><strong>The Fightback:</strong> Browser observatories (<strong>Ad Observer</strong>, <strong>Who Targets Me</strong>); ad-approval audits (Ekō, Brazil Sept 2026: 13 of 15 violent ads approved); <strong>DSA Art. 40</strong>: €120M fine on X (Dec 5, 2025) partly for denying researchers data; vetted-researcher access live, 49 applications, none granted yet; PATA (S.3292) safe harbor in committee.</li>
-              <li><strong>Tonight:</strong> Install both extensions; CCPA export party; mirror Community Notes dumps; index the unsealed MDL exhibits; join CITR; invite Berkeley HRC Lab, Internet Archive, The Markup.</li>
+              <li><strong>The lockout:</strong>
+                <ul>
+                  <li>2021: Meta kills NYU Ad Observatory (FTC: the excuse was "inaccurate")</li>
+                  <li>2023: X ends the academic API ($42K/mo), sues CCDH and Media Matters</li>
+                  <li>Aug 14, 2024: CrowdTangle shut, 11 weeks before the election · SIO dismantled · NSF cancels 400+ grants</li>
+                </ul>
+              </li>
+              <li><strong>Discovery beats APIs:</strong> Project Mercury · $6M LA verdict · 29-state $12.2B consent judgment · New Mexico.
+                <ul>
+                  <li>Ninth Circuit: §230 is a defense, not immunity</li>
+                </ul>
+              </li>
+              <li><strong>The fightback:</strong> Ad Observer, Who Targets Me · sock-puppet ad audits · DSA Art. 40 (€120M fine on X).</li>
+              <li><strong>Tonight:</strong> install both extensions · export party · mirror fragile data · index the exhibits · join CITR.</li>
             </ul>
           </div>
           <div class="photo-grid-2">
@@ -1497,21 +1658,25 @@
       </section>
 
       <!-- SLIDE 26: BELLINGCAT & OPEN-SOURCE INTELLIGENCE (OSINT) -->
-      <section class="slide" data-notes="When governments lie about war crimes, sanctions evasion, or environmental destruction, open-source intelligence lets ordinary citizens verify the truth. Eliot Higgins founded Bellingcat in 2014 using satellite imagery, street-level videos, and open-source Python tools.">
+      <section class="slide" data-notes="When governments lie about war crimes, sanctions evasion, or environmental destruction, open-source intelligence lets ordinary citizens verify the truth. Eliot Higgins founded Bellingcat in 2014 using satellite imagery, street-level videos, and open-source Python tools. Slide detail: shadow chronolocation and open satellite imagery; osm-search answers queries like find a water tower within 80 metres of railway tracks.">
         <div class="section-tag">45 / Open-Source Intelligence (OSINT)</div>
         <h2>Bellingcat: Citizen Verification & Open Tooling</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>Founded by Eliot Higgins (2014):</strong> Proved that citizen investigators using open satellite imagery, shadow chronolocation, and open databases could verify war crimes to the standard of the International Criminal Court ( codified with UC Berkeley's Human Rights Center in the <strong>UN Berkeley Protocol</strong>).</li>
-              <li><strong>Bellingcat's Open-Source Stack (<code>github.com/bellingcat</code>):</strong>
+              <li><strong>Eliot Higgins, 2014:</strong> citizens verify war crimes to ICC standard with open imagery and databases.
                 <ul>
-                  <li><code>bellingcat/auto-archiver</code> — Tamper-evident video & social media preservation with SHA-256 hashes + Wayback archival</li>
-                  <li><code>bellingcat/ShadowFinder</code> — Finding a photo's geographic coordinates from sun/shadow length</li>
-                  <li><code>bellingcat/osm-search</code> — Querying OpenStreetMap geometry ("find a water tower within 80m of railway tracks")</li>
-                  <li><code>challenge.bellingcat.com</code> — Gamified monthly OSINT geolocation puzzles we'll solve together!</li>
+                  <li>Codified with UC Berkeley's Human Rights Center as the UN Berkeley Protocol</li>
                 </ul>
               </li>
+              <li><strong>The open stack</strong> (<code>github.com/bellingcat</code>):
+                <ul>
+                  <li><code>auto-archiver</code>: tamper-evident preservation, SHA-256 + Wayback</li>
+                  <li><code>ShadowFinder</code>: coordinates from sun and shadow</li>
+                  <li><code>osm-search</code>: query OpenStreetMap geometry</li>
+                </ul>
+              </li>
+              <li><strong><code>challenge.bellingcat.com</code>:</strong> monthly geolocation puzzles we solve together.</li>
             </ul>
           </div>
           <div class="photo-card tall">
@@ -1522,16 +1687,20 @@
       </section>
 
       <!-- SLIDE 27: WHISTLEBLOWING & PUBLIC RECORDS -->
-      <section class="slide" data-notes="Investigative journalism and cypherpunk engineering converge around source protection and public records: SecureDrop—originally designed by Aaron Swartz and Kevin Poulsen—plus ProPublica's Nonprofit Explorer, MuckRock, OCCRP Aleph, and Micah Lee's Hacks, Leaks, and Revelations.">
+      <section class="slide" data-notes="Investigative journalism and cypherpunk engineering converge around source protection and public records: SecureDrop—originally designed by Aaron Swartz and Kevin Poulsen—plus ProPublica's Nonprofit Explorer, MuckRock, OCCRP Aleph, and Micah Lee's Hacks, Leaks, and Revelations. Slide detail: whistleblowers submit to ProPublica, The Intercept or The New York Times through SecureDrop; IRSx is an open Python parser for IRS Form 990 XML filings.">
         <div class="section-tag">46 / Whistleblowing & Investigative Data</div>
         <h2><em>SecureDrop</em>, ProPublica, MuckRock & OCCRP Aleph</h2>
         <div class="split-equal">
           <div class="text-col">
             <ul>
-              <li><strong><em>SecureDrop</em> (Freedom of the Press Foundation):</strong> Co-created here in San Francisco by <strong>Aaron Swartz</strong> and Kevin Poulsen (originally <em>DeadDrop</em>) — uses Tor Onion Services and air-gapped <strong>Tails OS</strong> workstations so whistleblowers can submit documents to ProPublica, The Intercept, or The New York Times without leaving metadata trails.</li>
-              <li><strong>ProPublica <em>Nonprofit Explorer</em> & <code>IRSx</code>:</strong> Open Python parser for millions of IRS Form 990 XML filings to trace dark-money tax-exempt networks.</li>
-              <li><strong>MuckRock & DocumentCloud:</strong> Crowdsourced Freedom of Information Act (FOIA) requests and California Public Records Act (CPRA) police surveillance audits.</li>
-              <li><strong>Micah Lee's <em>Hacks, Leaks, and Revelations</em>:</strong> Free curriculum on investigating leaked datasets with <em>Aleph</em> and <em>DDoSecrets</em>.</li>
+              <li><strong>SecureDrop</strong> (Freedom of the Press Foundation): Aaron Swartz and Kevin Poulsen's <em>DeadDrop</em>, built here.
+                <ul>
+                  <li>Tor onion services + air-gapped Tails workstations; no metadata trail to the newsroom</li>
+                </ul>
+              </li>
+              <li><strong>ProPublica Nonprofit Explorer + <code>IRSx</code>:</strong> parse millions of Form 990s to trace dark money.</li>
+              <li><strong>MuckRock &amp; DocumentCloud:</strong> crowdsourced FOIA and CPRA police-surveillance audits.</li>
+              <li><strong>Micah Lee, <em>Hacks, Leaks, and Revelations</em>:</strong> free curriculum for leaked datasets, Aleph and DDoSecrets.</li>
             </ul>
           </div>
           <div class="photo-card tall">
@@ -1542,16 +1711,20 @@
       </section>
 
       <!-- SLIDE 28: WIKIPEDIA OFFLINE — KIWIX & OPENZIM -->
-      <section class="slide" data-notes="One of our core community initiatives is a fundraiser and technical sprint for Wikipedia and offline open knowledge. When an authoritarian state shuts down the internet, or when communities are off-grid, how do people read Wikipedia? With Kiwix and OpenZIM.">
+      <section class="slide" data-notes="One of our core community initiatives is a fundraiser and technical sprint for Wikipedia and offline open knowledge. When an authoritarian state shuts down the internet, or when communities are off-grid, how do people read Wikipedia? With Kiwix and OpenZIM. Slide detail: Internet-in-a-Box is at internet-in-a-box.org; the archives also fit on a microSD card.">
         <div class="section-tag">47 / Community Fundraiser & Offline Commons</div>
         <h2>Wikipedia Offline: <em>Kiwix</em>, OpenZIM & Internet-in-a-Box</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>Wikimedia Foundation (San Francisco):</strong> Headquartered right down Market Street, Wikipedia is the last planetary knowledge commons not owned by an ad-tech monopoly.</li>
-              <li><strong>All of English Wikipedia in ~100 GB (<code>.zim</code>):</strong> Using <strong>Kiwix</strong> and the open <strong>OpenZIM</strong> format, the entire English Wikipedia (6.8M+ articles with images), StackExchange, Project Gutenberg, and Khan Academy fit on a single $12 USB flash drive or microSD card.</li>
-              <li><strong>Internet-in-a-Box (<code>internet-in-a-box.org</code>):</strong> Turns a $35 Raspberry Pi into an offline Wi-Fi library hotspot for schools, disaster zones, or internet blackouts.</li>
-              <li><strong>Our Community Goal:</strong> Raising funds for Wikimedia / Kiwix and keeping updated <code>.zim</code> archives ready to flash on the spot at Frontier Tower.</li>
+              <li><strong>Wikimedia Foundation, down Market Street:</strong> the last planetary knowledge commons without an ad-tech owner.</li>
+              <li><strong>All of English Wikipedia in ~100 GB:</strong> Kiwix + the open OpenZIM format, on a $12 USB stick.
+                <ul>
+                  <li>6.8M+ articles with images; also StackExchange, Gutenberg, Khan Academy</li>
+                </ul>
+              </li>
+              <li><strong>Internet-in-a-Box:</strong> a $35 Raspberry Pi becomes an offline Wi-Fi library for schools, disasters, blackouts.</li>
+              <li><strong>Our goal:</strong> fund Wikimedia and Kiwix; keep fresh <code>.zim</code> archives ready to flash at Frontier Tower.</li>
             </ul>
           </div>
           <div class="photo-grid-2">
@@ -1568,7 +1741,7 @@
       </section>
 
       <!-- SLIDE 29: AARON SWARTZ (1986–2013) -->
-      <section class="slide" data-notes="And that brings us to Aaron Swartz, born November 8, 1986. Look at what Aaron built in just 26 years of life—and how almost every piece of open infrastructure we use today bears his fingerprints.">
+      <section class="slide" data-notes="And that brings us to Aaron Swartz, born November 8, 1986. Look at what Aaron built in just 26 years of life—and how almost every piece of open infrastructure we use today bears his fingerprints. Slide detail: he co-designed the machine-readable Creative Commons licenses with Lawrence Lessig and worked with John Gruber on Markdown; Demand Progress helped defeat SOPA and PIPA; the PACER project liberated 20 million pages of federal court records.">
         <div class="section-tag">48 / November 8, 1986 – January 11, 2013</div>
         <h2>Aaron Swartz: Architect of the Open Web</h2>
         <div class="split">
@@ -1578,10 +1751,10 @@
               <cite>— Aaron Swartz, Guerilla Open Access Manifesto (Eremo, Italy, July 2008)</cite>
             </blockquote>
             <ul>
-              <li><strong>RSS 1.0 (Age 14):</strong> Co-authored the syndication specification that powers open podcasts and blogs.</li>
-              <li><strong>Creative Commons & Markdown (2001–2004):</strong> Co-designed the machine-readable Creative Commons licenses with Lawrence Lessig and collaborated with John Gruber on Markdown (plus wrote <code>html2text</code>).</li>
-              <li><strong>Open Library (<code>openlibrary.org</code>) & <code>web.py</code>:</strong> Built here in San Francisco with the Internet Archive to create one web page for every book ever published.</li>
-              <li><strong>PACER Liberation, Demand Progress (Stopping SOPA) & <em>SecureDrop</em>:</strong> Liberated 20 million pages of public federal court records and helped defeat SOPA/PIPA.</li>
+              <li><strong>RSS 1.0, age 14:</strong> co-authored the syndication spec behind podcasts and blogs.</li>
+              <li><strong>Creative Commons &amp; Markdown (2001–2004):</strong> with Lessig and Gruber; also <code>html2text</code>.</li>
+              <li><strong>Open Library &amp; <code>web.py</code>:</strong> built with the Internet Archive here in SF. One page for every book.</li>
+              <li><strong>PACER, Demand Progress, SecureDrop:</strong> 20M court pages liberated; SOPA/PIPA defeated.</li>
             </ul>
           </div>
           <div class="photo-card tall">
@@ -1612,26 +1785,25 @@
       </section>
 
       <!-- SLIDE 30B: CONCRETE HACKATHON PROJECTS FOR THIS SUNDAY (NOV 8) -->
-      <section class="slide" data-notes="So what specifically can we build and ship together this Sunday, November 8th for the Aaron Swartz Day Hackathon? We have prepared three concrete, hands-on sprint tracks where both coders and non-coders can make a real impact in a single afternoon.">
+      <section class="slide" data-notes="So what specifically can we build and ship together this Sunday, November 8th for the Aaron Swartz Day Hackathon? We have prepared three concrete, hands-on sprint tracks where both coders and non-coders can make a real impact in a single afternoon. Slide detail: Sprint 1 is in Aaron's spirit of liberating public records: California AB 481 police surveillance-equipment reports and SF Administrative Code Chapter 19B filings; Flock ALPR cameras via OpenStreetMap Overpass with DeFlock and osm-search; MuckRock CPRA requests; verified rows upstream to EFF's Atlas of Surveillance. Sprint 2 combines EFF SSD threat modeling, Citizen Lab's Security Planner and mvt-ios / mvt-android backup scans against offline STIX2 feeds, running from the Frontier Tower USB station. Sprint 3's field pack bundles ssd.eff.org, the UN Berkeley Protocol, tsbook.org and Micah Lee's guide; Open Library is internetarchive/openlibrary.">
         <div class="section-tag">50 / Aaron Swartz Day Hackathon · What We Are Building This Sunday</div>
         <h2>3 Concrete Hackathon Sprints for Sunday, November 8</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>Sprint 1 — <em>SF Bay Area Surveillance Map &amp; AB 481 / CPRA Audit</em>:</strong>
+              <li><strong>Sprint 1, SF surveillance map:</strong> scrape and geocode AB 481 and Chapter 19B filings.
                 <ul>
-                  <li>In Aaron's spirit of liberating public records: scraping &amp; geocoding California <strong>AB 481</strong> (police military/surveillance equipment reports) and SF Administrative Code <strong>Chapter 19B</strong> filings.</li>
-                  <li>Mapping SFPD's <strong>400+ Flock Safety ALPR cameras</strong> via OpenStreetMap Overpass (<code>DeFlock</code> / <code>osm-search</code>), filing <strong>MuckRock CPRA</strong> requests, and submitting verified rows upstream to <strong>EFF's <em>Atlas of Surveillance</em></strong>.</li>
+                  <li>Map SFPD's 400+ Flock cameras (DeFlock, Overpass) · file CPRA requests · push rows to EFF's Atlas</li>
                 </ul>
               </li>
-              <li><strong>Sprint 2 — <em>Offline <code>cypherpunk-check</code> USB Safety-Check &amp; <code>MVT</code> Triage Kiosk</em>:</strong>
+              <li><strong>Sprint 2, offline safety-check kiosk:</strong> the <code>cypherpunk-check</code> USB.
                 <ul>
-                  <li>Building our self-contained, air-gapped clinic script &amp; local browser guide combining <strong>EFF SSD Threat Modeling</strong> + <strong>Citizen Lab <em>Security Planner</em></strong> + one-command <strong><code>mvt-ios</code> / <code>mvt-android</code></strong> backup scans against offline STIX2 IoC feeds — running 100% locally off our Frontier Tower USB station.</li>
+                  <li>EFF SSD + Security Planner + one-command <code>mvt</code> scans, fully offline</li>
                 </ul>
               </li>
-              <li><strong>Sprint 3 — <em><code>Open Library</code>, <code>SecureDrop</code> &amp; Offline Kiwix <code>.zim</code> Field Pack</em>:</strong>
+              <li><strong>Sprint 3, Aaron's projects:</strong> PRs to Open Library and SecureDrop.
                 <ul>
-                  <li>Contributing PRs to Aaron's <strong>Open Library</strong> (<code>internetarchive/openlibrary</code>) &amp; <strong>SecureDrop</strong>, and packaging an offline <strong>Kiwix <code>.zim</code> "Cypherpunk Field Pack"</strong> (bundling <code>ssd.eff.org</code>, the <em>UN Berkeley Protocol</em>, Stanford's <code>tsbook.org</code>, and Micah Lee's guide).</li>
+                  <li>Package a Kiwix <code>.zim</code> "Cypherpunk Field Pack"</li>
                 </ul>
               </li>
             </ul>
@@ -1680,22 +1852,22 @@
       </section>
 
       <!-- SLIDE 32: FREEDOM BANDWIDTH & USB FLASHING STATION -->
-      <section class="slide" data-notes="Second: we are setting up a permanent USB Flashing Station and Freedom Bandwidth initiative right here at Frontier Tower.">
+      <section class="slide" data-notes="Second: we are setting up a permanent USB Flashing Station and Freedom Bandwidth initiative right here at Frontier Tower. Slide detail: Snowflake is a WebRTC browser proxy.">
         <div class="section-tag">52 / Permanent Infrastructure at 995 Market St</div>
         <h2>The USB Flashing Station & Freedom Bandwidth</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>Permanent Frontier Tower USB Station:</strong> Bring any blank USB stick (32 GB–128 GB) to our monthly sessions and flash:
+              <li><strong>Permanent USB station:</strong> bring any blank stick (32–128 GB) and leave with:
                 <ul>
-                  <li><strong>Tails OS</strong> — Amnesic live operating system routing all traffic through Tor and leaving zero trace on the host computer</li>
-                  <li><strong>Kiwix Offline Wikipedia (<code>.zim</code>)</strong> — Full offline Wikipedia + survival/medical reference library</li>
+                  <li><strong>Tails OS</strong>: amnesic, everything through Tor, no trace on the host</li>
+                  <li><strong>Kiwix</strong> offline Wikipedia + a survival and medical reference library</li>
                 </ul>
               </li>
-              <li><strong>Freedom Bandwidth Advocacy:</strong>
+              <li><strong>Freedom bandwidth:</strong>
                 <ul>
-                  <li>One-click <strong>Tor Snowflake</strong> WebRTC browser proxies (turn your spare bandwidth into a lifeline for censored users in Iran, Russia, and Myanmar)</li>
-                  <li>Guides for running Dockerized <strong>Tor <code>obfs4</code> bridges</strong> and <strong>I2P</strong> routers</li>
+                  <li>One-click <strong>Tor Snowflake</strong>: spare bandwidth for users in Iran, Russia, Myanmar</li>
+                  <li>Guides for Dockerized <strong>obfs4 bridges</strong> and I2P routers</li>
                 </ul>
               </li>
             </ul>
@@ -1708,17 +1880,22 @@
       </section>
 
       <!-- SLIDE 53: PLAYBOOK 1 — HARDEN YOUR LAPTOP & PHONE -->
-      <section class="slide" data-notes="This is the first of five playbook slides, the what-you-can-do-tonight part. Three attackers, three controls: a lost laptop is beaten by full-disk encryption; an evil maid by verified boot and firmware; remote compromise by patching, sandboxing and Lockdown Mode. On macOS 27: FileVault, Lockdown Mode, Advanced Data Protection with a recovery key, SIP on, Little Snitch or LuLu, and Santa if you want allow-listing. Linux: Privacy Guides currently recommends Fedora, openSUSE, Arch, Qubes 4.3.2, Tails 7.16, secureblue. Windows 11 24H2 escrows your BitLocker key to your Microsoft account, so back it up yourself. Firmware: Microsoft's 2011 Secure Boot certs expired in June and October 2026; check for the 2023 replacements. YubiKeys below firmware 5.7 are cloneable by a lab (EUCLEAK, Sept 2024). Phones: Before First Unlock is the principle. Power off before a border or a protest. The Oct 2025 Cellebrite leak listed every locked Pixel 9 on GrapheneOS as inaccessible. iOS 27 Lockdown Mode, Stolen Device Protection with the delay always on, and the iPhone 17's Memory Integrity Enforcement. Carrier SIM locks are free since the FCC's July 2024 rule. Signal, with a username and your number hidden.">
+      <section class="slide" data-notes="This is the first of five playbook slides, the what-you-can-do-tonight part. Three attackers, three controls: a lost laptop is beaten by full-disk encryption; an evil maid by verified boot and firmware; remote compromise by patching, sandboxing and Lockdown Mode. On macOS 27: FileVault, Lockdown Mode, Advanced Data Protection with a recovery key, SIP on, Little Snitch or LuLu, and Santa if you want allow-listing. Linux: Privacy Guides currently recommends Fedora, openSUSE, Arch, Qubes 4.3.2, Tails 7.16, secureblue. Windows 11 24H2 escrows your BitLocker key to your Microsoft account, so back it up yourself. Firmware: Microsoft's 2011 Secure Boot certs expired in June and October 2026; check for the 2023 replacements. YubiKeys below firmware 5.7 are cloneable by a lab (EUCLEAK, Sept 2024). Phones: Before First Unlock is the principle. Power off before a border or a protest. The Oct 2025 Cellebrite leak listed every locked Pixel 9 on GrapheneOS as inaccessible. iOS 27 Lockdown Mode, Stolen Device Protection with the delay always on, and the iPhone 17's Memory Integrity Enforcement. Carrier SIM locks are free since the FCC's July 2024 rule. Signal, with a username and your number hidden. Slide detail: firmware means Heads or Dasharo for verified boot; Microsoft's 2011 Secure Boot certificates expired in June and October 2026, so check for the 2023 replacements (PKfail and LogoFAIL are why it matters). Apple said in March 2026 there is no known successful attack on Lockdown Mode. Privacy Guides currently lists Fedora, openSUSE, Arch, Qubes, Tails and secureblue. Windows 11 24H2 escrows BitLocker keys to your Microsoft account; buy Pro and back the key up yourself. US v. Payne (9th Cir. 2024) allowed a compelled thumb unlock, so use a passcode. The October 2025 Cellebrite leak listed every locked Pixel 9 on GrapheneOS as inaccessible; GrapheneOS supports Pixel 6 to 10. SIM locks are free at AT&amp;T, Verizon and T-Mobile since the FCC's July 2024 rule. YubiKeys need firmware 5.7 or later because of EUCLEAK.">
         <div class="section-tag">53 / The Playbook · 1. Your Laptop & Phone</div>
         <h2>Harden Your Laptop & Phone</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>Three attackers, three controls:</strong> lost device → full-disk encryption (<strong>FileVault / LUKS / BitLocker</strong> with your own key backup); evil maid → verified boot &amp; firmware (<strong>Heads, Dasharo</strong>; check the 2023 Secure Boot certs); remote compromise → patching, sandboxing, <strong>Lockdown Mode</strong>.</li>
-              <li><strong>macOS 27:</strong> FileVault · Lockdown Mode (no known successful attack, Apple, Mar 2026) · Advanced Data Protection · SIP on · <strong>Little Snitch / LuLu</strong> outbound · <strong>Santa</strong> allow-listing. <strong>Linux:</strong> Qubes OS 4.3.2, Tails 7.16, Fedora/secureblue (Privacy Guides). <strong>Windows:</strong> buy Pro, back up the BitLocker key.</li>
-              <li><strong>Before First Unlock:</strong> power off before a border, protest or arrest; passcode, not biometrics (<em>US v. Payne</em>, 9th Cir. 2024). Oct 2025 Cellebrite leak: every locked Pixel 9 on <strong>GrapheneOS</strong> inaccessible.</li>
-              <li><strong>iPhone 17 + iOS 27:</strong> Memory Integrity Enforcement, Lockdown Mode, Stolen Device Protection (delay: always), 72-hour inactivity reboot. <strong>Pixel 8+ on GrapheneOS:</strong> auto-reboot, duress PIN, USB charging-only, LTE-only.</li>
-              <li><strong>Tonight:</strong> carrier SIM lock (AT&amp;T, Verizon, T-Mobile; free since July 2024) · Signal username, number hidden · two hardware keys on email (YubiKey firmware ≥ 5.7).</li>
+              <li><strong>Three attackers, three controls:</strong> lost device → disk encryption · evil maid → verified boot · remote → patch, sandbox, Lockdown.</li>
+              <li><strong>macOS 27:</strong> FileVault · Lockdown Mode · Advanced Data Protection · Little Snitch or LuLu · Santa.</li>
+              <li><strong>Linux / Windows:</strong> Qubes 4.3.2, Tails 7.16, secureblue · back up your BitLocker key yourself.</li>
+              <li><strong>Phone, Before First Unlock:</strong> power off at a border, protest or arrest; passcode, not biometrics.
+                <ul>
+                  <li>iPhone 17: Memory Integrity Enforcement · Stolen Device Protection · 72-hour reboot</li>
+                  <li>Pixel 8+ on GrapheneOS: auto-reboot · duress PIN · USB charging-only</li>
+                </ul>
+              </li>
+              <li><strong>Tonight:</strong> carrier SIM lock · Signal username, number hidden · two hardware keys on email.</li>
             </ul>
           </div>
           <div class="photo-grid-2">
@@ -1735,16 +1912,22 @@
       </section>
 
       <!-- SLIDE 54: PLAYBOOK 2 — HARDEN YOUR ROUTER & NETWORK -->
-      <section class="slide" data-notes="Your router first, because everyone owns one and most are abandoned by their vendor. OpenWrt 25.12 is current; opkg is gone, apk replaced it, and attended sysupgrade is on by default. 25.12.6 from October fixed five unauthenticated uhttpd bugs. The ten-minute checklist is on the slide with the real option names; people photograph this. The OpenWrt One is the clinic unit at about 90 dollars; the OpenWrt Two has still not shipped. Put the Xfinity gateway in bridge mode. The FCC put every foreign-made router on its Covered List in March 2026; TP-Link is not approved and firmware updates for already-sold routers are only guaranteed through March 2027. Then the wire: DNS over HTTPS plus Encrypted Client Hello, which became RFC 9849 in March; a VPN moves trust, it does not anonymise; Mullvad still passes every test but the Tor Project paused co-branding in October over the donation controversy, so say that honestly. Section 702 expired on June 12 2026 but collection continues under March FISC certifications. Flock cameras are the local fight: Oakland stalled its contract in September, SF has a class action over 1.6 million federal queries. Rayhunter on a 20 dollar hotspot shows you when a cell-site simulator is working the crowd.">
+      <section class="slide" data-notes="Your router first, because everyone owns one and most are abandoned by their vendor. OpenWrt 25.12 is current; opkg is gone, apk replaced it, and attended sysupgrade is on by default. 25.12.6 from October fixed five unauthenticated uhttpd bugs. The ten-minute checklist is on the slide with the real option names; people photograph this. The OpenWrt One is the clinic unit at about 90 dollars; the OpenWrt Two has still not shipped. Put the Xfinity gateway in bridge mode. The FCC put every foreign-made router on its Covered List in March 2026; TP-Link is not approved and firmware updates for already-sold routers are only guaranteed through March 2027. Then the wire: DNS over HTTPS plus Encrypted Client Hello, which became RFC 9849 in March; a VPN moves trust, it does not anonymise; Mullvad still passes every test but the Tor Project paused co-branding in October over the donation controversy, so say that honestly. Section 702 expired on June 12 2026 but collection continues under March FISC certifications. Flock cameras are the local fight: Oakland stalled its contract in September, SF has a class action over 1.6 million federal queries. Rayhunter on a 20 dollar hotspot shows you when a cell-site simulator is working the crowd. Slide detail: 25.12.6 fixed five unauthenticated uhttpd bugs. Checklist option names: sae or sae-mixed, ieee80211w 2, isolate 1, adblock-lean. The OpenWrt One is built by Banana Pi with 10 dollars to Software Freedom Conservancy; the OpenWrt Two is still unshipped; Turris Omnia NG has published schematics; BPI-R4; OPNsense 26.7 on a Protectli. FCC Covered List, March 23, 2026: TP-Link is unapproved and firmware updates for already-sold units are guaranteed only to March 1, 2027. ECH became RFC 9849 in March 2026 and Cloudflare carries nearly all of it; resolvers: Quad9 or your own Unbound, since Mullvad DNS closed November 2, 2026. VPNs: Mullvad, Proton, IVPN; Tor Browser 16; run a bridge, never an exit, from home. Rayhunter v0.13 on an Orbic hotspot. Section 702 collection continues under FISC certifications to March 2027. Flock: Oakland stalled a 2.25 million dollar contract in September 2026; SF has a class action over 1.6 million federal queries; 273 cities have cancelled.">
         <div class="section-tag">54 / The Playbook · 2. Your Router & the Wire</div>
         <h2>Harden Your Router &amp; Your Network</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>OpenWrt 25.12 (25.12.6, Oct 2026):</strong> <code>opkg</code> → <code>apk</code>; attended sysupgrade on by default. The 10-minute checklist: root password · admin bound to LAN · <code>sae</code>/<code>sae-mixed</code> + <code>ieee80211w 2</code> · guest SSID <code>isolate 1</code> + IoT VLAN · DoH/DoT + DNS hijack of port 53 · <code>adblock-lean</code> · WireGuard · no UPnP/WPS.</li>
-              <li><strong>Hardware:</strong> OpenWrt One (~$89, Banana Pi; $10 to Conservancy) is the clinic unit; OpenWrt Two still unshipped. Turris Omnia NG (schematics published), BPI-R4, OPNsense 26.7 on a Protectli. ISP gateway → <strong>bridge mode</strong>. FCC Covered List (Mar 23 2026): TP-Link unapproved, updates guaranteed only to Mar 1 2027.</li>
-              <li><strong>The wire:</strong> DoH/DoT + <strong>ECH</strong> (RFC 9849, Mar 2026; Cloudflare ≈ all of it). Resolver: Quad9 or your own Unbound (Mullvad DNS closed Nov 2 2026). VPN = moved trust, not anonymity: Mullvad, Proton, IVPN; Tor Browser 16 + a home <strong>bridge</strong>, never an exit.</li>
-              <li><strong>Cellular &amp; cameras:</strong> 2G off; EFF <strong>Rayhunter</strong> v0.13 on a $20 Orbic hotspot. Section 702 <strong>expired June 12 2026</strong> (collection continues to Mar 2027). <strong>Flock</strong>: Oakland stalled $2.25M (Sept 2026); SF class action over 1.6M federal queries; 273 cities cancelled. Map them on <strong>DeFlock</strong>.</li>
+              <li><strong>OpenWrt 25.12</strong> (25.12.6, Oct 2026): <code>apk</code> replaces <code>opkg</code>; attended sysupgrade on by default.</li>
+              <li><strong>The 10-minute checklist:</strong>
+                <ul>
+                  <li>root password · admin on LAN only · WPA3 <code>sae</code> + <code>ieee80211w 2</code></li>
+                  <li>guest SSID <code>isolate 1</code> + IoT VLAN · DoH/DoT, hijack port 53 · WireGuard · no UPnP/WPS</li>
+                </ul>
+              </li>
+              <li><strong>Hardware:</strong> OpenWrt One (~$89) is the clinic unit · ISP gateway in bridge mode · FCC: TP-Link unapproved.</li>
+              <li><strong>The wire:</strong> DoH + ECH (RFC 9849) · a VPN moves trust, it does not anonymise · Tor + a home bridge.</li>
+              <li><strong>Cellular &amp; cameras:</strong> 2G off · Rayhunter on a $20 hotspot · §702 expired June 12 · map Flock on DeFlock.</li>
             </ul>
           </div>
           <div class="photo-grid-2">
@@ -1761,16 +1944,17 @@
       </section>
 
       <!-- SLIDE 55: PLAYBOOK 3 — DEVICES & YOUR PROFILE -->
-      <section class="slide" data-notes="The devices in the house, and the profile of you on the internet. The TV menu paths are on the slide because people will do it in the room. Cars: the FTC finalised its GM order in January 2026, twenty years, no selling driving data to credit bureaus; run your VIN through the Vehicle Privacy Report. Amazon removed the do-not-send-recordings option on March 28 2025, so every Echo streams to the cloud; the auditable alternative is Home Assistant's 69 dollar Voice Preview Edition. Ring cancelled its Flock integration five days after the Super Bowl ad backlash. Meta pulled Name Tag facial recognition code from the glasses app in June only after it was found. Mozilla shut Privacy Not Included in August. Then the profile: two hardware keys on the accounts that reset the others; alias every email; dox yourself with the NYT Open exercise before someone else does; California's DROP has had enforcement since August and half a million sign-ups. Clearview's settlement was vacated in July and ICE signed a 9.2 million dollar contract with them. X shows every account's inferred country since November 2025. The Discord ID breach, 70,000 government ID photos, is the argument against ID-upload age checks. Turn on Global Privacy Control; California fined Tractor Supply 1.35 million for ignoring it.">
+      <section class="slide" data-notes="The devices in the house, and the profile of you on the internet. The TV menu paths are on the slide because people will do it in the room. Cars: the FTC finalised its GM order in January 2026, twenty years, no selling driving data to credit bureaus; run your VIN through the Vehicle Privacy Report. Amazon removed the do-not-send-recordings option on March 28 2025, so every Echo streams to the cloud; the auditable alternative is Home Assistant's 69 dollar Voice Preview Edition. Ring cancelled its Flock integration five days after the Super Bowl ad backlash. Meta pulled Name Tag facial recognition code from the glasses app in June only after it was found. Mozilla shut Privacy Not Included in August. Then the profile: two hardware keys on the accounts that reset the others; alias every email; dox yourself with the NYT Open exercise before someone else does; California's DROP has had enforcement since August and half a million sign-ups. Clearview's settlement was vacated in July and ICE signed a 9.2 million dollar contract with them. X shows every account's inferred country since November 2025. The Discord ID breach, 70,000 government ID photos, is the argument against ID-upload age checks. Turn on Global Privacy Control; California fined Tractor Supply 1.35 million for ignoring it. Slide detail: the FTC's GM order became final January 14, 2026: twenty years, no driving data to credit bureaus. Amazon removed the do-not-send-recordings option March 28, 2025. Ring shipped Familiar Faces and cancelled the Flock integration February 13, 2026. Meta pulled the Name Tag facial-recognition code from the glasses app in June 2026. Aliasing: SimpleLogin, addy.io, Hide My Email. Dox yourself with the NYT Open exercise and EFF's Digital Footprint; DROP has had enforcement since August 2026 and 500,000 Californians signed up; PimEyes opt-out with a redacted ID. Clearview: the 7th Circuit vacated the settlement in July 2026; X shows every account's inferred country since November 2025; Discord's vendor 5CA leaked about 70,000 ID photos, the case against ID-upload age checks. California fined Tractor Supply 1.35 million dollars for ignoring Global Privacy Control; AB 566 mandates it in browsers from 2027.">
         <div class="section-tag">55 / The Playbook · 3. Your Devices & Your Profile</div>
         <h2>Cripple Device Monitoring &amp; Protect Your Profile</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>TV, in the room:</strong> Samsung <em>Viewing Information Services</em> · LG <em>Live Plus</em> · Vizio <em>Viewing Data</em> · Roku <em>Smart TV Experience</em> · Sony/Google TV <em>Samba</em> — all off. Then the IoT VLAN with WAN blocked.</li>
-              <li><strong>Cars &amp; speakers:</strong> FTC's GM order final Jan 14 2026; run your VIN through <strong>vehicleprivacyreport.com</strong>. Echo streams all audio since Mar 28 2025 → <strong>Home Assistant Voice PE</strong> ($69, local). Ring: Familiar Faces shipped, Flock deal cancelled Feb 13 2026 → <strong>Frigate</strong> + RTSP cameras. Meta glasses: Name Tag code pulled June 2026.</li>
-              <li><strong>Accounts:</strong> two hardware keys or passkeys on email, Apple/Google, the vault, the carrier; <strong>alias every email</strong> (SimpleLogin, addy.io, Hide My Email). <strong>Dox yourself</strong> (NYT Open + EFF Digital Footprint), then file: DROP (500K Californians, enforcement since Aug 2026), PimEyes opt-out with a redacted ID.</li>
-              <li><strong>The face &amp; the platforms:</strong> Clearview settlement vacated (7th Cir., July 2026), ICE contract $9.2M; X shows every account's country since Nov 2025; Discord's vendor breach exposed ~70,000 ID photos — the case against ID-upload age checks. <strong>GPC on</strong>: Tractor Supply fined $1.35M; AB 566 mandates it in browsers from 2027.</li>
+              <li><strong>TV, in the room, all off:</strong> Samsung <em>Viewing Information Services</em> · LG <em>Live Plus</em> · Vizio <em>Viewing Data</em> · Roku <em>Smart TV Experience</em> · Sony <em>Samba</em>.</li>
+              <li><strong>Cars &amp; speakers:</strong> run your VIN through <strong>vehicleprivacyreport.com</strong> · every Echo streams to the cloud → Home Assistant Voice ($69).</li>
+              <li><strong>Cameras &amp; glasses:</strong> Ring's Flock deal cancelled → Frigate + RTSP · Meta pulled Name Tag code only once caught.</li>
+              <li><strong>Accounts:</strong> hardware keys on email, Apple/Google, vault, carrier · alias every email · dox yourself, then file DROP.</li>
+              <li><strong>The face &amp; the platforms:</strong> Clearview settlement vacated, ICE $9.2M · Discord leaked 70,000 ID photos · <strong>GPC on</strong>.</li>
             </ul>
           </div>
           <div class="photo-grid-2">
@@ -1787,16 +1971,25 @@
       </section>
 
       <!-- SLIDE 56: PLAYBOOK 4 — THE BORDER & HELPING OTHERS -->
-      <section class="slide" data-notes="Two outward-facing topics. The border: CBP searched 52,080 devices in the first three quarters of fiscal 2026, a third more than the year before, and refuses to break out citizens. The new directive since January lets a basic search happen with no suspicion at all; the Second Circuit agreed in September. A citizen cannot be denied entry for refusing a passcode but the device can be held; a visa holder can be turned around for an empty phone. US v Tunick: an activist who typed a GrapheneOS duress password during secondary inspection was charged with destroying evidence. Wipe before you fly, never during. The checklist: travel phone, cloud apps logged out and deleted, biometrics off, Lockdown Mode, power off before the line, take the 6051D receipt, email borders at eff dot org. The Asian Law Caucus hotline is the number to save. Then helping others: 313 shutdowns in 2025, Iran dark from January 8 and again from February 28. Snowflake tonight; a bridge this month; the Open Technology Fund survived Kari Lake's termination and got its 43.5 million in July, but the FY2027 budget folds it into State. Nobody runs a Tor relay association in the Bay Area since NoiseTor went dark in 2022. That is ours to found.">
+      <section class="slide" data-notes="Two outward-facing topics. The border: CBP searched 52,080 devices in the first three quarters of fiscal 2026, a third more than the year before, and refuses to break out citizens. The new directive since January lets a basic search happen with no suspicion at all; the Second Circuit agreed in September. A citizen cannot be denied entry for refusing a passcode but the device can be held; a visa holder can be turned around for an empty phone. US v Tunick: an activist who typed a GrapheneOS duress password during secondary inspection was charged with destroying evidence. Wipe before you fly, never during. The checklist: travel phone, cloud apps logged out and deleted, biometrics off, Lockdown Mode, power off before the line, take the 6051D receipt, email borders at eff dot org. The Asian Law Caucus hotline is the number to save. Then helping others: 313 shutdowns in 2025, Iran dark from January 8 and again from February 28. Snowflake tonight; a bridge this month; the Open Technology Fund survived Kari Lake's termination and got its 43.5 million in July, but the FY2027 budget folds it into State. Nobody runs a Tor relay association in the Bay Area since NoiseTor went dark in 2022. That is ours to found. Slide detail: 4,564 of the searches were forensic. The authority is Directive 3340-049B, upheld in Alisigwe (2nd Cir., September 2026). Never lie to an officer; take Form 6051D if the device is held. The UK, Canada and Hong Kong, transit included, compel passwords. The bridge: obfs4 or WebTunnel on a 5 dollar VPS; OONI Probe on a Pi; never an exit from home and never an IT army, that is CFAA territory. 313 shutdowns in 52 countries per #KeepItOn. OTF's court win was July 2026 and the FY2027 budget folds it into State; Psiphon also takes donations. Access Now's helpline is 24/7. NoiseTor has been dark since 2022.">
         <div class="section-tag">56 / The Playbook · 4. At the Border & Behind the Shutdowns</div>
         <h2>Your Risk Abroad &amp; Helping People Behind Shutdowns</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>CBP, FY2026 to June:</strong> 52,080 device searches (+32%), 4,564 forensic; a basic search needs <em>no suspicion</em> (Directive 3340-049B; <em>Alisigwe</em>, 2nd Cir. Sept 2026). Citizens can refuse a passcode (device held); visa/ESTA holders can be refused for an empty phone. <em>US v. Tunick</em>: a duress PIN typed <em>during</em> the search → prosecution. Wipe before, never during.</li>
-              <li><strong>Travel-device checklist:</strong> travel phone · cloud apps logged out <em>and deleted</em> · long passcode, biometrics off · Lockdown Mode · <strong>power off before the line</strong> · never lie · take Form 6051D, email <strong>borders@eff.org</strong>. UK, Canada and Hong Kong (transit included) compel passwords. <strong>Asian Law Caucus: (415) 896-1701.</strong></li>
-              <li><strong>Behind the shutdowns:</strong> 313 shutdowns in 52 countries in 2025 (#KeepItOn); Iran dark Jan 8 and again from Feb 28 2026. Tonight: <strong>Snowflake</strong>. This month: an obfs4/WebTunnel <strong>bridge</strong> on a $5 VPS; <strong>OONI Probe</strong> on a Pi. Never an exit from home; never an “IT army” (CFAA).</li>
-              <li><strong>Money &amp; people:</strong> OTF won its $43.5M in court (July 2026), FY2027 at risk → donate to Tor, OONI, Psiphon, Signal. At-risk contacts → <strong>help@accessnow.org</strong> (24/7). No Bay Area Tor relay association since NoiseTor went dark in 2022: <strong>found one.</strong></li>
+              <li><strong>CBP, FY2026 to June:</strong> 52,080 device searches, up 32%; a basic search needs <em>no suspicion</em>.
+                <ul>
+                  <li>Citizens may refuse a passcode (device held); visa holders can be turned away</li>
+                  <li><em>US v. Tunick</em>: a duress PIN typed <em>during</em> the search → prosecution. Wipe before, never during</li>
+                </ul>
+              </li>
+              <li><strong>Travel checklist:</strong> travel phone · cloud apps deleted · biometrics off · Lockdown · power off before the line · <strong>borders@eff.org</strong>.
+                <ul>
+                  <li>Asian Law Caucus: (415) 896-1701</li>
+                </ul>
+              </li>
+              <li><strong>Behind the shutdowns:</strong> 313 in 2025; Iran dark Jan 8 and Feb 28. Tonight Snowflake; this month a bridge.</li>
+              <li><strong>Money &amp; people:</strong> OTF won $43.5M; donate to Tor, OONI, Signal · help@accessnow.org · <strong>found the Bay Area relay association.</strong></li>
             </ul>
           </div>
           <div class="photo-grid-2">
@@ -1813,16 +2006,17 @@
       </section>
 
       <!-- SLIDE 57: PLAYBOOK 5 — THE LINKS -->
-      <section class="slide" data-notes="The three lists the Society will keep on the website and re-verify every quarter: the tools a member actually installs, the organisations and helplines that exist for us, and the sources that keep educating us. Two notes: CryptoParty looks dormant, and Mozilla's Privacy Not Included and Consumer Reports' Permission Slip both changed hands or closed in 2026, so lists rot and someone has to own this one. Gatherings: 40C3 in Hamburg December 27 to 30, voucher presale closes November 10; BSidesSF April 3 to 4 2027; Oakland Privacy meets November 11.">
+      <section class="slide" data-notes="The three lists the Society will keep on the website and re-verify every quarter: the tools a member actually installs, the organisations and helplines that exist for us, and the sources that keep educating us. Two notes: CryptoParty looks dormant, and Mozilla's Privacy Not Included and Consumer Reports' Permission Slip both changed hands or closed in 2026, so lists rot and someone has to own this one. Gatherings: 40C3 in Hamburg December 27 to 30, voucher presale closes November 10; BSidesSF April 3 to 4 2027; Oakland Privacy meets November 11. Slide detail: the full tool list also has AdGuard Home, ExifTool, Syncthing, Kiwix, SimpleX and DeFlock; resources also include EFF's Security Education Companion and Atlas of Surveillance, borders@eff.org, Amnesty Security Lab, CR Security Planner, the Digital First Aid Kit, PEN America and Sudo Room; reading also includes Techlore, Surveillance Report, Pluralistic, the Bellingcat toolkit, The Markup at CalMatters and awesome-privacy. The 40C3 voucher presale closes November 10. The workshop page on the site carries every URL.">
         <div class="section-tag">57 / The Playbook · 5. The Links We Keep</div>
         <h2>The Links: Tools We Use · Resources for Us · What Educates Us</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>Tools we use:</strong> Tor Browser 16 · Signal · Mullvad / Proton · Bitwarden / KeePassXC · GrapheneOS · OpenWrt · Pi-hole / AdGuard Home · Home Assistant · Tails / Qubes · Snowflake · OONI Probe · MVT · Rayhunter · uBlock Origin (Firefox) · ExifTool · Syncthing · Kiwix · SimpleX · DeFlock.</li>
-              <li><strong>Resources for us:</strong> EFF (SSD, Security Education Companion, Atlas of Surveillance, <strong>borders@eff.org</strong>) · Access Now helpline · Front Line Defenders · Freedom of the Press Foundation · Citizen Lab · Amnesty Security Lab · Privacy Guides · CR Security Planner · Digital First Aid Kit · PEN America · <strong>Oakland Privacy · ACLU NorCal · Asian Law Caucus</strong> · Noisebridge · Sudo Room · Internet Archive.</li>
-              <li><strong>What educates us:</strong> EFF SSD · Privacy Guides basics · The New Oil / Techlore / Surveillance Report · Bazzell, <em>Extreme Privacy</em> 5e · <em>A Cypherpunk's Manifesto</em> · <em>Little Brother</em> &amp; Pluralistic · Crypto-Gram · Freedom on the Net 2026 · Bellingcat toolkit · 404 Media · The Markup at CalMatters · awesome-privacy.</li>
-              <li><strong>Dates:</strong> Oakland Privacy Nov 11 · DMCA §1201 comments due Dec 7 · <strong>40C3 Hamburg Dec 27–30</strong> (vouchers close Nov 10) · BSidesSF Apr 3–4 2027. Full tables with URLs: cypherpunksociety.org.</li>
+              <li><strong>Tools we use:</strong> Tor Browser · Signal · Mullvad / Proton · Bitwarden / KeePassXC · GrapheneOS · OpenWrt · Pi-hole · Home Assistant · Tails / Qubes · Snowflake · OONI · MVT · Rayhunter · uBlock Origin.</li>
+              <li><strong>Resources for us:</strong> EFF · Access Now helpline · Front Line Defenders · Freedom of the Press Foundation · Citizen Lab · Privacy Guides · Oakland Privacy · ACLU NorCal · Asian Law Caucus · Noisebridge · Internet Archive.</li>
+              <li><strong>What educates us:</strong> EFF SSD · Privacy Guides · The New Oil · Bazzell's <em>Extreme Privacy</em> · <em>A Cypherpunk's Manifesto</em> · <em>Little Brother</em> · Crypto-Gram · Freedom on the Net · 404 Media · The Markup.</li>
+              <li><strong>Dates:</strong> Oakland Privacy Nov 11 · DMCA §1201 comments Dec 7 · 40C3 Dec 27–30 · BSidesSF Apr 3–4.</li>
+              <li><strong>Everything with URLs:</strong> <code>cypherpunksociety.org/workshops.html</code></li>
             </ul>
           </div>
           <div class="photo-grid-2">
@@ -1839,20 +2033,24 @@
       </section>
 
       <!-- SLIDE 33: CALL FOR VOLUNTEERS & MONTHLY RHYTHM -->
-      <section class="slide" data-notes="Finally: we intentionally keep our in-person Frontier Tower schedule sustainable—once a month on a Thursday evening at 18:30—while tracking weekly online seminars in our Matrix and Telegram channels. And we need volunteers to co-lead these five tracks!">
+      <section class="slide" data-notes="Finally: we intentionally keep our in-person Frontier Tower schedule sustainable—once a month on a Thursday evening at 18:30—while tracking weekly online seminars in our Matrix and Telegram channels. And we need volunteers to co-lead these five tracks! Slide detail: the watch-parties are biweekly; mentors also cover Tailscale; OSINT leads host IRSx sprints; liaisons coordinate with Berkeley's Citizen Clinic; the repo is github.com/CypherpunkSociety/awesome-cypherpunk.">
         <div class="section-tag">58 / Call for Volunteers · Join the Society</div>
         <h2>Monthly 18:30 Rhythm & Call for Volunteers</h2>
         <div class="split">
           <div class="text-col">
             <ul>
-              <li><strong>Monthly In-Person Gathering at Frontier Tower (18:30 PST):</strong> Sustainable once-a-month evening clinic + talk at 995 Market St, paired with biweekly online watch-parties (Bellingcat Thursday Discord Stage Talks, EFF <em>EFFecting Change</em>, Citizen Lab seminars).</li>
-              <li><strong>5 Volunteer Roles Open Tonight:</strong>
+              <li><strong>Monthly, Thursdays 18:30, 995 Market St:</strong> one clinic + talk a month, kept sustainable.
                 <ul>
-                  <li><strong>1. Clinic Mentors:</strong> Help attendees configure YubiKeys, Bitwarden, Mullvad, Tailscale & Tails USBs</li>
-                  <li><strong>2. OSINT & Bellingcat Challenge Leads:</strong> Host monthly geolocation & <code>IRSx</code>/FOIA sprints</li>
-                  <li><strong>3. Self-Hosting & Freedom Bandwidth Maintainers:</strong> Maintain the USB flashing station, Kiwix <code>.zim</code> mirror & Tor bridge workshops</li>
-                  <li><strong>4. Speaker & Academic Liaisons:</strong> Coordinate guests from EFF, Internet Archive, Noisebridge, UC Law SF & Berkeley <em>Citizen Clinic</em></li>
-                  <li><strong>5. Repo Maintainers:</strong> Curate <code>github.com/CypherpunkSociety/awesome-cypherpunk</code></li>
+                  <li>Between meetings: online watch-parties (Bellingcat Discord stage, EFF <em>EFFecting Change</em>, Citizen Lab)</li>
+                </ul>
+              </li>
+              <li><strong>Five volunteer roles open tonight:</strong>
+                <ul>
+                  <li><strong>1. Clinic mentors:</strong> YubiKeys, Bitwarden, Mullvad, Tails USBs</li>
+                  <li><strong>2. OSINT leads:</strong> the monthly Bellingcat challenge and FOIA sprints</li>
+                  <li><strong>3. Infrastructure:</strong> USB station, Kiwix mirror, Tor bridge workshops</li>
+                  <li><strong>4. Speaker liaisons:</strong> EFF, Internet Archive, Noisebridge, UC Law SF, Berkeley</li>
+                  <li><strong>5. Repo maintainers:</strong> <code>awesome-cypherpunk</code></li>
                 </ul>
               </li>
             </ul>

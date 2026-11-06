@@ -26,26 +26,22 @@
 		margin: 15px auto;
 	}
 
-	table {
-		width: 100%;
-		border-collapse: collapse;
-		margin: 16px 0;
-		font-size: 15px;
-	}
-	th, td {
-		border-bottom: 1px solid #ddd;
-		text-align: left;
-		padding: 6px 8px;
-		vertical-align: top;
-	}
-	th {
-		border-bottom: 2px solid #000;
-	}
-
 	code {
 		background: #f4f4f4;
 		padding: 1px 4px;
 		font-size: 14px;
+	}
+
+	input[type="email"] {
+		width: 100%;
+		max-width: 320px;
+		padding: 6px;
+		font-size: 15px;
+	}
+
+	button {
+		padding: 6px 14px;
+		font-size: 15px;
 	}
 </style>
 <title>the cypherpunk society</title>
@@ -57,100 +53,40 @@
 
 	<p>Open-source digital self-defense, privacy tools, and freedom bandwidth.</p>
 
-	<div style="text-align: center; margin: 28px 0;">
-		<p>Read the <a href="/docs.html">Docs &amp; Curriculum</a> &middot; <a href="/workshops.html"><strong>Workshop Materials</strong></a> &middot; <a href="https://github.com/CypherpunkSociety/awesome-cypherpunk">Awesome Cypherpunk List</a></p>
-		<p><a href="#join"><strong>Join the mailing list / volunteer</strong></a></p>
-		<p>Fork &amp; contribute on <a href="https://github.com/CypherpunkSociety">GitHub</a></p>
+	<div style="text-align: center;">
+		<p>Read the <a href="/docs.html">Docs</a> &middot; <a href="/workshops.html">Workshop Materials</a> &middot; <a href="/slides.html">Slides</a></p>
+		<p>Fork on <a href="https://github.com/CypherpunkSociety">GitHub</a> &middot; <a href="https://github.com/CypherpunkSociety/awesome-cypherpunk">Awesome Cypherpunk</a></p>
 		<p>Follow on <a href="https://bsky.app/profile/cypherpunksociety.org">Bluesky</a> &middot; <a href="https://x.com/CypherpunkSoc">X</a> &middot; <a href="https://t.me/CypherpunkSociety">Telegram</a> &middot; <a href="https://infosec.exchange/@CypherpunkSociety">Mastodon</a></p>
-		<p>Join on <a href="https://matrix.to/#/#cypherpunksociety:matrix.org">Matrix</a> &middot; <a href="/docs.html#channels">Discord, Signal &amp; Jitsi</a></p>
-		<p>Contact <a href="mailto:contact@cypherpunksociety.org">contact@cypherpunksociety.org</a> (<a href="/pgp.txt">PGP</a>)</p>
+		<p>Chat on <a href="https://matrix.to/#/#cypherpunksociety:matrix.org">Matrix</a> &middot; <a href="/docs.html#channels">Discord, Signal &amp; Jitsi</a></p>
+		<p>Email <a href="mailto:contact@cypherpunksociety.org">contact@cypherpunksociety.org</a> (<a href="/pgp.txt">PGP</a>)</p>
 	</div>
 
-	<div style="border: 1px solid #000; padding: 14px 16px; margin: 24px 0;">
-		<strong>Upcoming — Inaugural Meeting &amp; Aaron Swartz Day Prep (Thu, Nov 5 &middot; doors 6:00 PM, talk 6:30 PM / 18:30 @ Frontier Tower)</strong>
-		<p style="margin: 8px 0 0 0;">Join our inaugural gathering featuring a talk by <strong>Morgan Hough</strong> on the <em>History of the Cypherpunks &amp; the Bay Area Counterculture</em> (<a href="/slides.html"><strong>View Presentation Slides &rarr;</strong></a>), a walkthrough of our upcoming clinics, workshops, and speaker series, and onboarding for the <strong><a href="https://www.aaronswartzday.org/">Aaron Swartz Day &amp; International Hackathon</a> on Sunday, November 8th</strong> (<a href="https://securedrop.org/">SecureDrop</a>, <a href="https://openlibrary.org/">Open Library</a>, and <a href="https://archive.org/">Internet Archive</a>).</p>
-	</div>
+	<h2>meet</h2>
+	<p>Monthly at <a href="https://frontiertower.io/">Frontier Tower</a>, 995 Market St, San Francisco. Doors 6:00 PM, talk and clinic 6:30 PM.</p>
 
-	<h2>what we do</h2>
-	<p>Privacy and cognitive autonomy require active defense and shared infrastructure. Born in the San Francisco Bay Area in 1992 out of <a href="/docs.html#lineage">The WELL, Community Memory, and toad.com</a>—and inspired by interdisciplinary spaces like Paris's <a href="/docs.html#lineage">La Paillasse and La Quadrature du Net (&pi;)</a>—the Cypherpunk Society equips builders, researchers, and investigative minds through hands-on practice:</p>
-	<ul>
-		<li><strong>Surveillance Self-Defense, Digital Hygiene &amp; Self-Hosting:</strong> Monthly hands-on clinics covering <a href="https://ssd.eff.org/">EFF's Surveillance Self-Defense</a>, <a href="https://karpathy.bearblog.dev/digital-hygiene/">Andrej Karpathy's Digital Hygiene</a> baseline, self-hosted cloud replacements (<a href="https://github.com/dani-garcia/vaultwarden">Vaultwarden</a>, <a href="https://pi-hole.net/">Pi-hole</a>/<a href="https://nextdns.io/">NextDNS</a>, <a href="https://github.com/juanfont/headscale">Headscale</a>, <a href="https://syncthing.net/">Syncthing</a>, <a href="https://cryptpad.org/">CryptPad</a>), <a href="https://tails.net/">Tails OS</a>, <a href="https://www.qubes-os.org/">Qubes OS</a>, and <a href="https://grapheneos.org/">GrapheneOS</a>.</li>
-		<li><strong>Threat Intelligence &amp; Cognitive Security:</strong> Dissecting commercial spyware reports from <a href="https://citizenlab.ca/">The Citizen Lab (UofT)</a> and collaborating with the <a href="https://hai.stanford.edu/">Stanford Cognitive Security Task Force</a> on AI persuasion, information integrity, and neurotech/BCI privacy.</li>
-		<li><strong>Open-Source Intelligence (OSINT) &amp; Investigative Data:</strong> Tracking <a href="https://www.bellingcat.com/">Bellingcat</a> investigative toolkits, cross-border public-interest reporting from <a href="https://www.occrp.org/">OCCRP</a>, and open-source data journalism tools &amp; webinars from <a href="https://www.propublica.org/">ProPublica</a> (<a href="https://projects.propublica.org/nonprofits/">Nonprofit Explorer</a> &amp; <a href="https://github.com/propublica">github.com/propublica</a>).</li>
-		<li><strong>Hacker Pedagogy &amp; Open Web Spirit:</strong> Screening <a href="https://media.ccc.de/">Chaos Computer Club (CCC)</a> lectures and running participatory sessions in the spirit of <a href="https://www.mozillafoundation.org/en/festival/">MozFest</a>, <a href="https://www.aaronswartzday.org/">Aaron Swartz Day</a> (with <a href="https://securedrop.org/">SecureDrop</a> &amp; the <a href="https://archive.org/">Internet Archive</a>), the <a href="https://www.rsaconference.com/">RSA Conference</a> city-wide key-signing party, and the <a href="https://www.defconbiohackingvillage.org/">DEF CON Biohacking Village</a>.</li>
-		<li><strong>Public-Interest Bandwidth:</strong> Advocating for and operating <a href="https://www.torproject.org/">Tor</a> Snowflake proxies, obfs4 bridges, and non-profit relay partnerships (<a href="https://emeraldonion.org/">Emerald Onion</a> &amp; <a href="https://nos-oignons.net/">Nos Oignons</a>).</li>
-	</ul>
+	<h2 id="join">join</h2>
+	<p>One email a month with the next clinic date. Stored in our own Cloudflare account, never shared, deleted on request.</p>
 
-	<h2>how to get involved</h2>
-	<p>We meet <strong>once a month in person at Frontier Tower (6:30 PM / 18:30)</strong> for hands-on clinics and talks, and tune into regular speaker series hosted by Bellingcat, EFF, and The Citizen Lab:</p>
-
-	<table>
-		<thead>
-			<tr>
-				<th>Cadence</th>
-				<th>Event / Series</th>
-				<th>Where &amp; Focus</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td><strong>Monthly — 6:30 PM (18:30)</strong></td>
-				<td>Frontier Tower Cypherpunk Night</td>
-				<td>Hands-on <a href="https://ssd.eff.org/">EFF Surveillance Self-Defense</a> &amp; <a href="https://tails.net/">Tails OS</a> USB flashing clinic, <a href="https://www.torproject.org/">Tor</a> Snowflake/bridge setup, PGP key signing, <a href="https://media.ccc.de/">CCC</a> screenings, and <a href="https://hai.stanford.edu/">Stanford CSTF</a> / spyware briefings at Frontier Tower, SF.</td>
-			</tr>
-			<tr>
-				<td><strong>Biweekly Thursdays</strong></td>
-				<td><a href="https://discord.gg/bellingcat">Bellingcat Discord Stage Talks</a></td>
-				<td>Live OSINT panels, tool walkthroughs, and Q&amp;As hosted on Bellingcat's official Discord (plus <a href="https://www.occrp.org/">OCCRP</a> &amp; <a href="https://www.propublica.org/events">ProPublica</a> investigative webinars).</td>
-			</tr>
-			<tr>
-				<td><strong>Recurring</strong></td>
-				<td><a href="https://www.eff.org/events">EFF Events &amp; <em>EFFecting Change</em></a></td>
-				<td>EFF's livestream speaker series (archived on the <a href="https://archive.org/">Internet Archive</a>), Bay Area EFF meetups, and Electronic Frontier Alliance (EFA) sessions.</td>
-			</tr>
-			<tr>
-				<td><strong>Recurring</strong></td>
-				<td><a href="https://munkschool.utoronto.ca/events">Citizen Lab Lectures &amp; Briefings</a></td>
-				<td>Public webinars, Munk School seminars, and mercenary spyware disclosures from <a href="https://citizenlab.ca/">The Citizen Lab</a> at UofT.</td>
-			</tr>
-		</tbody>
-	</table>
-
-	<h2 id="join">join the mailing list or volunteer</h2>
-	<p>One email a month with the next clinic date, plus the occasional call for hands. Your address goes into our own storage on Cloudflare, is never shared or sold, and is deleted on request to <a href="mailto:contact@cypherpunksociety.org">contact@cypherpunksociety.org</a>.</p>
-
-	<form id="join-form" method="post" action="/api/signup" style="border: 1px solid #000; padding: 14px 16px; margin: 16px 0;">
-		<p style="margin: 0 0 10px 0;">
-			<label for="join-email"><strong>Email</strong> (required)</label><br>
-			<input id="join-email" name="email" type="email" required maxlength="254" autocomplete="email" style="width: 100%; max-width: 360px; padding: 6px; font-size: 15px;">
+	<form id="join-form" method="post" action="/api/signup">
+		<p>
+			<input name="email" type="email" required maxlength="254" autocomplete="email" placeholder="you@example.org" aria-label="Email">
+			<button type="submit">Sign up</button>
+			<span id="join-status" role="status" aria-live="polite"></span>
 		</p>
-		<p style="margin: 0 0 10px 0;">
-			<label for="join-name"><strong>Name or handle</strong> (optional)</label><br>
-			<input id="join-name" name="name" type="text" maxlength="120" autocomplete="nickname" style="width: 100%; max-width: 360px; padding: 6px; font-size: 15px;">
-		</p>
-		<p style="margin: 0 0 6px 0;"><strong>I am interested in</strong></p>
-		<p style="margin: 0 0 10px 0; line-height: 1.8;">
-			<label><input type="checkbox" name="interests" value="list" checked> the monthly mailing list</label><br>
-			<label><input type="checkbox" name="interests" value="clinic"> mentoring at clinics (keys, password managers, Tails, Mullvad)</label><br>
-			<label><input type="checkbox" name="interests" value="osint"> OSINT challenges and FOIA sprints</label><br>
-			<label><input type="checkbox" name="interests" value="infra"> infrastructure: USB station, Kiwix mirror, Tor bridges</label><br>
-			<label><input type="checkbox" name="interests" value="speakers"> speaker liaison (EFF, Internet Archive, Noisebridge, UC Law SF, Berkeley)</label><br>
-			<label><input type="checkbox" name="interests" value="repo"> maintaining <code>awesome-cypherpunk</code></label>
-		</p>
-		<p style="margin: 0 0 10px 0;">
-			<label for="join-note"><strong>Anything else</strong> (optional, 500 characters)</label><br>
-			<textarea id="join-note" name="note" maxlength="500" rows="3" style="width: 100%; max-width: 520px; padding: 6px; font-size: 15px;"></textarea>
+		<p>
+			<label><input type="checkbox" name="interests" value="list" checked> mailing list</label>
+			&nbsp; <label><input type="checkbox" name="interests" value="clinic"> volunteer at clinics</label>
+			&nbsp; <label><input type="checkbox" name="interests" value="infra"> run infrastructure</label>
+			&nbsp; <label><input type="checkbox" name="interests" value="speakers"> speaker liaison</label>
 		</p>
 		<p aria-hidden="true" style="position: absolute; left: -9999px; top: -9999px; height: 0; overflow: hidden;">
 			<label for="join-website">Leave this field empty</label>
 			<input id="join-website" name="website" type="text" tabindex="-1" autocomplete="off">
 		</p>
 		<input type="hidden" name="source" value="web">
-		<p style="margin: 0;">
-			<button type="submit" style="padding: 7px 16px; font-size: 15px;">Sign up</button>
-			<span id="join-status" role="status" aria-live="polite" style="margin-left: 10px;"></span>
-		</p>
 	</form>
+
+	<p>Not in San Francisco? <a href="/start.html">Start your own chapter.</a></p>
 
 	<script>
 	(function () {
@@ -164,7 +100,7 @@
 			ev.preventDefault();
 			var data = new FormData(form);
 			var payload = { interests: data.getAll('interests') };
-			['email', 'name', 'note', 'website', 'source'].forEach(function (k) { payload[k] = data.get(k) || ''; });
+			['email', 'website', 'source'].forEach(function (k) { payload[k] = data.get(k) || ''; });
 			status.textContent = 'Sending…';
 			fetch('/api/signup', {
 				method: 'POST',
@@ -179,16 +115,6 @@
 		});
 	})();
 	</script>
-
-	<h2>find us at frontier tower, san francisco</h2>
-	<p>The Cypherpunk Society was started at <strong>Frontier Tower</strong> (995 Market St, San Francisco, CA 94103 — between 5th &amp; 6th St, two blocks from Powell St BART).</p>
-	<p>You don't need to be in San Francisco to contribute, and we encourage hackerspaces, universities, and vertical villages everywhere to spin up local chapters.</p>
-
-	<ul>
-		<li><strong>San Francisco, CA</strong> — Frontier Tower (995 Market St)</li>
-	</ul>
-
-	<p>Not in San Francisco? <a href="/start.html"><strong>Clone us and start your own chapter!</strong></a></p>
 </div>
 </body>
 </html>

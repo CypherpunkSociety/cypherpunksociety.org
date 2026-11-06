@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="description" content="Cypherpunk Society workshop materials — hands-on checklists, tools and reading for the monthly clinics at Frontier Tower: laptop, phone, router, network, consumer devices, online profile, travel, and helping people under repressive governments.">
+<meta name="description" content="Cypherpunk Society workshop materials — hands-on checklists, tools and reading for the monthly clinics at Frontier Tower: laptop, phone, router, network, consumer devices, online profile, travel, helping people under repressive governments, and following the money through offshore leaks.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="Cypherpunk Society">
 <meta property="og:title" content="workshop materials — cypherpunk society">
@@ -66,8 +66,9 @@
 		<li><a href="#profile">6. Protect your online profile and social media</a></li>
 		<li><a href="#travel">7. Your risk when travelling abroad</a></li>
 		<li><a href="#helping">8. Helping people under repressive governments</a></li>
-		<li><a href="#links">9. Links</a></li>
-		<li><a href="#calendar">10. Clinic calendar</a></li>
+		<li><a href="#money">9. Follow the money</a></li>
+		<li><a href="#links">10. Links</a></li>
+		<li><a href="#calendar">11. Clinic calendar</a></li>
 		<li><a href="#checking">Facts we are still checking</a></li>
 	</ul>
 
@@ -415,7 +416,61 @@
 	<h3>Get involved</h3>
 	<p>The Tor Project's <a href="https://community.torproject.org/relay/community-resources/relay-associations/">relay-association list</a> has five US entries, none in the Bay Area now that Noisebridge's NoiseTor exits went dark around 2022; founding a Bay Area relay association, with Frontier Tower or <a href="https://sudoroom.org">Sudo Room</a> as the host, is the Society's most distinctive possible contribution. Tonight: install Snowflake. This month: a bridge on a VPS and OONI on a Pi. This quarter: the association's first exit at a friendly host.</p>
 
-	<h2 id="links">9. Links</h2>
+	<h2 id="money">9. Follow the money</h2>
+	<p>The Offshore Leaks (2013), Swiss Leaks (2015), Panama Papers (2016), Paradise Papers (2017), FinCEN Files (2020), Pandora Papers (2021) and Suisse Secrets (2022) are the other half of this curriculum. The tools that protect a source (SecureDrop, Signal, air-gapped analysis) are the tools that made the leaks possible, and the methods that cracked the networks (document processing, graph analysis, public registries) are open source with the data downloadable. This section is the investigative counterpart to the defensive ones above.</p>
+
+	<table>
+		<thead>
+			<tr><th>Leak</th><th>Year</th><th>Source</th><th>Size</th></tr>
+		</thead>
+		<tbody>
+			<tr><td>Offshore Leaks</td><td>2013</td><td>Portcullis TrustNet, Commonwealth Trust</td><td>260 GB</td></tr>
+			<tr><td>LuxLeaks</td><td>2014</td><td>PwC tax rulings (Antoine Deltour)</td><td>548 rulings</td></tr>
+			<tr><td>Swiss Leaks</td><td>2015</td><td>HSBC Private Bank (Herv&eacute; Falciani)</td><td>100,000 clients</td></tr>
+			<tr><td>Panama Papers</td><td>2016</td><td>Mossack Fonseca, via &ldquo;John Doe&rdquo; to S&uuml;ddeutsche Zeitung</td><td>11.5M documents, 2.6 TB</td></tr>
+			<tr><td>Paradise Papers</td><td>2017</td><td>Appleby, Asiaciti, 19 corporate registries</td><td>13.4M documents</td></tr>
+			<tr><td>FinCEN Files</td><td>2020</td><td>US Treasury suspicious-activity reports</td><td>2,100 SARs, $2T in flows</td></tr>
+			<tr><td>Pandora Papers</td><td>2021</td><td>14 offshore providers</td><td>11.9M documents, 2.9 TB</td></tr>
+			<tr><td>Suisse Secrets</td><td>2022</td><td>Credit Suisse</td><td>18,000 accounts</td></tr>
+		</tbody>
+	</table>
+
+	<p><strong>What the leaks showed.</strong> The chokepoint is the intermediary, not the owner: Mossack Fonseca sold through about 14,000 banks, law firms and formation agents, and a few dozen providers and a few hundred banks service most of the world&rsquo;s shell companies. Layering is standardised: a BVI or Panama company, nominee directors and shareholders supplied by the provider, bearer shares or a Panamanian private foundation on top, a bank account in Switzerland, Luxembourg or Cyprus, and the money parked in London, New York or Dubai property, yachts and art. Nominees are the tell: a handful of people appeared as director of thousands of companies, and shared registered addresses link entities that are otherwise unconnected on paper. Due diligence was theatre: the firm found sanctioned Syrian and North Korean fronts among its clients only after journalists asked. Secrecy migrates under pressure: once the OECD&rsquo;s automatic exchange of account data began, the Pandora Papers showed trusts moving to South Dakota, Nevada and Delaware, which do not report, and the US has topped the Tax Justice Network&rsquo;s Financial Secrecy Index since 2022. And most of it is legal, which is the finding: Alstads&aelig;ter, Johannesen and Zucman matched Swiss Leaks and Panama Papers names to Scandinavian tax records and found the top 0.01 percent evade about a quarter of their taxes, and Zucman&rsquo;s estimate is that about 8 percent of global household financial wealth sits offshore. ICIJ coordinated roughly 370 journalists in 76 countries on the Panama Papers alone; governments have since recovered over $1.3 billion, Iceland&rsquo;s prime minister resigned, Pakistan&rsquo;s was disqualified, and Mossack Fonseca closed in 2018.</p>
+
+	<h3>Do tonight</h3>
+	<ol>
+		<li><strong>Load the graph.</strong> Download the <a href="https://offshoreleaks.icij.org/pages/database">ICIJ Offshore Leaks Database</a> (810,000+ entities from every leak, CSV and a Neo4j dump via <a href="https://github.com/ICIJ/offshoreleaks-data-packages">offshoreleaks-data-packages</a>), open it in <a href="https://neo4j.com/">Neo4j</a> Desktop, and run three queries: the officers with the highest degree (the professional nominees), the addresses shared by the most entities, and every entity within two hops of a San Francisco address.</li>
+		<li><strong>Resolve a name.</strong> Take one person from the graph and check them against <a href="https://www.opensanctions.org/">OpenSanctions</a>, <a href="https://opencorporates.com/">OpenCorporates</a> and <a href="https://aleph.occrp.org/">OCCRP Aleph</a>. Note how often the same registered agent or address recurs.</li>
+		<li><strong>Find the property.</strong> Pick a Manhattan address and pull the deed from <a href="https://a836-acris.nyc.gov/">ACRIS</a>; pick a London one and look up the owning company at <a href="https://find-and-update.company-information.service.gov.uk/">Companies House</a> and the <a href="https://www.gov.uk/guidance/register-an-overseas-entity">Register of Overseas Entities</a>. Ships are in <a href="https://www.equasis.org/">Equasis</a>, aircraft in the <a href="https://registry.faa.gov/aircraftinquiry/">FAA registry</a>.</li>
+		<li><strong>Process documents.</strong> Install <a href="https://datashare.icij.org/">Datashare</a> on a laptop and index a public document set from <a href="https://ddosecrets.com/">DDoSecrets</a>; it does the OCR, entity extraction and search ICIJ used, and Micah Lee&rsquo;s <a href="https://hacksleaks.com/"><em>Hacks, Leaks, and Revelations</em></a> walks through the same workflow with Aleph.</li>
+		<li><strong>Learn the structure.</strong> Read Garcia-Bernardo and colleagues on <a href="https://doi.org/10.1038/s41598-017-06322-9">conduits and sinks</a>: the Netherlands, UK, Switzerland, Singapore and Ireland route the money, and BVI, Cayman, Jersey and Bermuda hold it. That map explains which registry to check next.</li>
+		<li><strong>Protect the source.</strong> The Panama Papers source contacted S&uuml;ddeutsche Zeitung over encrypted chat and insisted on it. Know which newsrooms run <a href="https://securedrop.org/directory">SecureDrop</a> and how to reach one over Tor before you ever need to.</li>
+	</ol>
+
+	<h3>Tools</h3>
+	<ul>
+		<li><a href="https://offshoreleaks.icij.org/">ICIJ Offshore Leaks Database</a> and <a href="https://datashare.icij.org/">Datashare</a></li>
+		<li><a href="https://neo4j.com/">Neo4j</a> and <a href="https://linkurious.com/">Linkurious</a> (the Panama Papers stack)</li>
+		<li><a href="https://aleph.occrp.org/">OCCRP Aleph</a> and the <a href="https://followthemoney.tech/">FollowTheMoney</a> schema</li>
+		<li><a href="https://www.opensanctions.org/">OpenSanctions</a>, <a href="https://opencorporates.com/">OpenCorporates</a>, <a href="https://www.openownership.org/">Open Ownership</a> and the <a href="https://standard.openownership.org/">Beneficial Ownership Data Standard</a></li>
+		<li>Registries: <a href="https://find-and-update.company-information.service.gov.uk/">Companies House</a>, <a href="https://www.gov.uk/guidance/register-an-overseas-entity">Register of Overseas Entities</a>, <a href="https://a836-acris.nyc.gov/">NYC ACRIS</a>, <a href="https://www.equasis.org/">Equasis</a>, <a href="https://registry.faa.gov/aircraftinquiry/">FAA aircraft registry</a>; the US <a href="https://www.fincen.gov/boi">FinCEN beneficial-ownership register</a> exempted domestic companies in March 2025</li>
+		<li><a href="https://github.com/bellingcat/EDGAR">Bellingcat EDGAR toolkit</a> and <a href="https://projects.propublica.org/nonprofits/">ProPublica Nonprofit Explorer</a></li>
+	</ul>
+
+	<h3>Read</h3>
+	<ul>
+		<li>ICIJ, <a href="https://www.icij.org/investigations/panama-papers/">Panama Papers</a>, <a href="https://www.icij.org/investigations/paradise-papers/">Paradise Papers</a>, <a href="https://www.icij.org/investigations/fincen-files/">FinCEN Files</a>, <a href="https://www.icij.org/investigations/pandora-papers/">Pandora Papers</a></li>
+		<li>Garcia-Bernardo, Fichtner, Takes and Heemskerk, <a href="https://doi.org/10.1038/s41598-017-06322-9">Uncovering Offshore Financial Centers: Conduits and Sinks in the Global Corporate Ownership Network</a> (Scientific Reports, 2017)</li>
+		<li>Alstads&aelig;ter, Johannesen and Zucman, <a href="https://doi.org/10.1257/aer.20172043">Tax Evasion and Inequality</a> (American Economic Review, 2019)</li>
+		<li>EU Tax Observatory, <a href="https://atlas-offshore-world.org/">Atlas of the Offshore World</a>; Tax Justice Network, <a href="https://fsi.taxjustice.net/">Financial Secrecy Index</a></li>
+		<li>OCCRP and Le Monde, <a href="https://www.occrp.org/en/project/openlux">OpenLux</a> (2021), the investigation done from a public register with no leak at all</li>
+		<li>Micah Lee, <a href="https://hacksleaks.com/">Hacks, Leaks, and Revelations</a></li>
+	</ul>
+
+	<h3>Get involved</h3>
+	<p>Run the Neo4j exercise above as a clinic night; everything needed is free and fits on a laptop. The <a href="https://freedom.press/">Freedom of the Press Foundation</a>, which maintains SecureDrop, is in San Francisco and takes volunteers and code. <a href="https://aleph.occrp.org/">OCCRP Aleph</a> grants researcher accounts, and <a href="https://github.com/opensanctions/opensanctions">OpenSanctions</a> and OpenCorporates accept data pull requests. The <a href="https://acdatacollective.org/">Anti-Corruption Data Collective</a> and <a href="https://us.transparency.org/">Transparency International US</a> both run public-records projects on US real estate and trusts that a volunteer can join, and the <a href="https://thefactcoalition.org/">FACT Coalition</a> is the policy fight over the FinCEN register. The Bellingcat OSINT nights in the <a href="/docs.html">docs</a> calendar are where a finished trace gets written up.</p>
+
+	<h2 id="links">10. Links</h2>
 	<p>Three lists we keep on the site and re-verify quarterly. Status is as of Nov 4 2026.</p>
 
 	<h3>Links we use</h3>
@@ -516,7 +571,7 @@
 		</tbody>
 	</table>
 
-	<h2 id="calendar">10. Clinic calendar</h2>
+	<h2 id="calendar">11. Clinic calendar</h2>
 	<p>Each of the eight topics above is one evening at Frontier Tower: hardware or an account on the table, one scary step done together, a checklist people photograph. Three clinics are already written up (dark web for defenders, delete yourself, flash your router); the next five are in the order that stacks best.</p>
 	<table>
 		<thead>

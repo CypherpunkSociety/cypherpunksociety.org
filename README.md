@@ -33,6 +33,20 @@ npm run dev      # Start local dev server (cf dev)
 npm run deploy   # Deploy to Cloudflare Workers (cf deploy)
 ```
 
+## Mailing-list signups
+
+The form at [cypherpunksociety.org/#join](https://cypherpunksociety.org/#join) (short link `/join`) POSTs to `/api/signup`, handled by `src/index.ts`. Records live in the Cloudflare KV namespace `cypherpunksociety-signups` (bound as `SIGNUPS` in `cloudflare.config.ts`). Each record stores email, optional handle, ticked interests, an optional note and timestamps. No IP addresses are kept; a hashed IP backs a one-hour rate limit only.
+
+Export the list:
+
+```sh
+NS=8163ea2f0d414de991035b6dbf390392
+npx cf kv keys list --namespace-id $NS --prefix signup:          # one key per signup
+npx cf kv keys get  --namespace-id $NS --text "signup:<ts>:<id>"
+```
+
+Delete someone on request with `npx cf kv keys delete --namespace-id $NS "signup:<ts>:<id>"` and the matching `email:<sha256>` key.
+
 ## License
 
 [MIT](LICENSE)

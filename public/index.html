@@ -59,6 +59,7 @@
 
 	<div style="text-align: center; margin: 28px 0;">
 		<p>Read the <a href="/docs.html">Docs &amp; Curriculum</a> &middot; <a href="/workshops.html"><strong>Workshop Materials</strong></a> &middot; <a href="https://github.com/CypherpunkSociety/awesome-cypherpunk">Awesome Cypherpunk List</a></p>
+		<p><a href="#join"><strong>Join the mailing list / volunteer</strong></a></p>
 		<p>Fork &amp; contribute on <a href="https://github.com/CypherpunkSociety">GitHub</a></p>
 		<p>Follow on <a href="https://bsky.app/profile/cypherpunksociety.org">Bluesky</a> &middot; <a href="https://x.com/CypherpunkSoc">X</a> &middot; <a href="https://t.me/CypherpunkSociety">Telegram</a> &middot; <a href="https://infosec.exchange/@CypherpunkSociety">Mastodon</a></p>
 		<p>Join on <a href="https://matrix.to/#/#cypherpunksociety:matrix.org">Matrix</a> &middot; <a href="/docs.html#channels">Discord, Signal &amp; Jitsi</a></p>
@@ -114,6 +115,70 @@
 			</tr>
 		</tbody>
 	</table>
+
+	<h2 id="join">join the mailing list or volunteer</h2>
+	<p>One email a month with the next clinic date, plus the occasional call for hands. Your address goes into our own storage on Cloudflare, is never shared or sold, and is deleted on request to <a href="mailto:contact@cypherpunksociety.org">contact@cypherpunksociety.org</a>.</p>
+
+	<form id="join-form" method="post" action="/api/signup" style="border: 1px solid #000; padding: 14px 16px; margin: 16px 0;">
+		<p style="margin: 0 0 10px 0;">
+			<label for="join-email"><strong>Email</strong> (required)</label><br>
+			<input id="join-email" name="email" type="email" required maxlength="254" autocomplete="email" style="width: 100%; max-width: 360px; padding: 6px; font-size: 15px;">
+		</p>
+		<p style="margin: 0 0 10px 0;">
+			<label for="join-name"><strong>Name or handle</strong> (optional)</label><br>
+			<input id="join-name" name="name" type="text" maxlength="120" autocomplete="nickname" style="width: 100%; max-width: 360px; padding: 6px; font-size: 15px;">
+		</p>
+		<p style="margin: 0 0 6px 0;"><strong>I am interested in</strong></p>
+		<p style="margin: 0 0 10px 0; line-height: 1.8;">
+			<label><input type="checkbox" name="interests" value="list" checked> the monthly mailing list</label><br>
+			<label><input type="checkbox" name="interests" value="clinic"> mentoring at clinics (keys, password managers, Tails, Mullvad)</label><br>
+			<label><input type="checkbox" name="interests" value="osint"> OSINT challenges and FOIA sprints</label><br>
+			<label><input type="checkbox" name="interests" value="infra"> infrastructure: USB station, Kiwix mirror, Tor bridges</label><br>
+			<label><input type="checkbox" name="interests" value="speakers"> speaker liaison (EFF, Internet Archive, Noisebridge, UC Law SF, Berkeley)</label><br>
+			<label><input type="checkbox" name="interests" value="repo"> maintaining <code>awesome-cypherpunk</code></label>
+		</p>
+		<p style="margin: 0 0 10px 0;">
+			<label for="join-note"><strong>Anything else</strong> (optional, 500 characters)</label><br>
+			<textarea id="join-note" name="note" maxlength="500" rows="3" style="width: 100%; max-width: 520px; padding: 6px; font-size: 15px;"></textarea>
+		</p>
+		<p aria-hidden="true" style="position: absolute; left: -9999px; top: -9999px; height: 0; overflow: hidden;">
+			<label for="join-website">Leave this field empty</label>
+			<input id="join-website" name="website" type="text" tabindex="-1" autocomplete="off">
+		</p>
+		<input type="hidden" name="source" value="web">
+		<p style="margin: 0;">
+			<button type="submit" style="padding: 7px 16px; font-size: 15px;">Sign up</button>
+			<span id="join-status" role="status" aria-live="polite" style="margin-left: 10px;"></span>
+		</p>
+	</form>
+
+	<script>
+	(function () {
+		var form = document.getElementById('join-form');
+		var status = document.getElementById('join-status');
+		var params = new URLSearchParams(window.location.search);
+		if (params.get('joined')) status.textContent = 'Thanks, you are on the list.';
+		if (params.get('join_error')) status.textContent = params.get('join_error');
+		form.addEventListener('submit', function (ev) {
+			if (!window.fetch) return;
+			ev.preventDefault();
+			var data = new FormData(form);
+			var payload = { interests: data.getAll('interests') };
+			['email', 'name', 'note', 'website', 'source'].forEach(function (k) { payload[k] = data.get(k) || ''; });
+			status.textContent = 'Sending…';
+			fetch('/api/signup', {
+				method: 'POST',
+				headers: { 'content-type': 'application/json', 'accept': 'application/json' },
+				body: JSON.stringify(payload)
+			}).then(function (r) { return r.json(); }).then(function (j) {
+				status.textContent = j.message || (j.ok ? 'Thanks.' : 'Something went wrong.');
+				if (j.ok) form.reset();
+			}).catch(function () {
+				status.textContent = 'Network error. Email contact@cypherpunksociety.org instead.';
+			});
+		});
+	})();
+	</script>
 
 	<h2>find us at frontier tower, san francisco</h2>
 	<p>The Cypherpunk Society was started at <strong>Frontier Tower</strong> (995 Market St, San Francisco, CA 94103 — between 5th &amp; 6th St, two blocks from Powell St BART).</p>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head><title>cypherpunk society blogroll</title><dateCreated>Fri, 06 Nov 2026 00:00:00 GMT</dateCreated><ownerName>Cypherpunk Society</ownerName></head>
+	<body>
+		<outline text="events and congresses">
+			<outline type="rss" text="Chaos Computer Club events" title="Chaos Computer Club events" xmlUrl="https://events.ccc.de/feed/" htmlUrl="https://events.ccc.de/"/>
+			<outline type="rss" text="media.ccc.de" title="media.ccc.de" xmlUrl="https://media.ccc.de/news.atom" htmlUrl="https://media.ccc.de/"/>
+			<outline type="rss" text="CCC (ccc.de)" title="CCC (ccc.de)" xmlUrl="https://www.ccc.de/rss/updates.xml" htmlUrl="https://www.ccc.de/"/>
+		</outline>
+		<outline text="digital rights">
+			<outline type="rss" text="EFF Deeplinks" title="EFF Deeplinks" xmlUrl="https://www.eff.org/rss.xml" htmlUrl="https://www.eff.org/deeplinks"/>
+			<outline type="rss" text="La Quadrature du Net" title="La Quadrature du Net" xmlUrl="https://www.laquadrature.net/en/feed/" htmlUrl="https://www.laquadrature.net/en/"/>
+			<outline type="rss" text="netzpolitik.org" title="netzpolitik.org" xmlUrl="https://netzpolitik.org/feed/" htmlUrl="https://netzpolitik.org/"/>
+			<outline type="rss" text="Access Now" title="Access Now" xmlUrl="https://www.accessnow.org/feed/" htmlUrl="https://www.accessnow.org/"/>
+			<outline type="rss" text="Freedom of the Press Foundation" title="Freedom of the Press Foundation" xmlUrl="https://freedom.press/rss.xml" htmlUrl="https://freedom.press/"/>
+			<outline type="rss" text="Internet Archive blog" title="Internet Archive blog" xmlUrl="https://blog.archive.org/feed/" htmlUrl="https://blog.archive.org/"/>
+		</outline>
+		<outline text="tools and releases">
+			<outline type="rss" text="Tor Project blog" title="Tor Project blog" xmlUrl="https://blog.torproject.org/feed.xml" htmlUrl="https://blog.torproject.org/"/>
+			<outline type="rss" text="Signal blog" title="Signal blog" xmlUrl="https://signal.org/blog/rss.xml" htmlUrl="https://signal.org/blog/"/>
+			<outline type="rss" text="GrapheneOS" title="GrapheneOS" xmlUrl="https://grapheneos.org/releases.atom" htmlUrl="https://grapheneos.org/releases"/>
+			<outline type="rss" text="Tails" title="Tails" xmlUrl="https://tails.net/news/index.en.rss" htmlUrl="https://tails.net/news/"/>
+			<outline type="rss" text="Qubes OS" title="Qubes OS" xmlUrl="https://www.qubes-os.org/feed.xml" htmlUrl="https://www.qubes-os.org/news/"/>
+			<outline type="rss" text="Privacy Guides" title="Privacy Guides" xmlUrl="https://www.privacyguides.org/articles/feed_rss_created.xml" htmlUrl="https://www.privacyguides.org/articles/"/>
+			<outline type="rss" text="Mullvad blog" title="Mullvad blog" xmlUrl="https://mullvad.net/blog/feed/atom/" htmlUrl="https://mullvad.net/en/blog"/>
+		</outline>
+		<outline text="research and forensics">
+			<outline type="rss" text="Citizen Lab" title="Citizen Lab" xmlUrl="https://citizenlab.ca/feed/" htmlUrl="https://citizenlab.ca/"/>
+			<outline type="rss" text="Amnesty Security Lab" title="Amnesty Security Lab" xmlUrl="https://securitylab.amnesty.org/feed/" htmlUrl="https://securitylab.amnesty.org/"/>
+			<outline type="rss" text="OONI" title="OONI" xmlUrl="https://ooni.org/blog/index.xml" htmlUrl="https://ooni.org/blog/"/>
+			<outline type="rss" text="GFW Report" title="GFW Report" xmlUrl="https://gfw.report/index.xml" htmlUrl="https://gfw.report/"/>
+		</outline>
+		<outline text="investigations">
+			<outline type="rss" text="Bellingcat" title="Bellingcat" xmlUrl="https://www.bellingcat.com/feed/" htmlUrl="https://www.bellingcat.com/"/>
+			<outline type="rss" text="ICIJ" title="ICIJ" xmlUrl="https://www.icij.org/feed/" htmlUrl="https://www.icij.org/"/>
+			<outline type="rss" text="OCCRP" title="OCCRP" xmlUrl="https://www.occrp.org/en/feed" htmlUrl="https://www.occrp.org/"/>
+			<outline type="rss" text="404 Media" title="404 Media" xmlUrl="https://www.404media.co/rss/" htmlUrl="https://www.404media.co/"/>
+			<outline type="rss" text="The Markup" title="The Markup" xmlUrl="https://themarkup.org/feeds/rss.xml" htmlUrl="https://themarkup.org/"/>
+			<outline type="rss" text="Micah Lee" title="Micah Lee" xmlUrl="https://micahflee.com/rss/" htmlUrl="https://micahflee.com/"/>
+			<outline type="rss" text="Krebs on Security" title="Krebs on Security" xmlUrl="https://krebsonsecurity.com/feed/" htmlUrl="https://krebsonsecurity.com/"/>
+		</outline>
+		<outline text="commentary">
+			<outline type="rss" text="Schneier on Security" title="Schneier on Security" xmlUrl="https://www.schneier.com/feed/" htmlUrl="https://www.schneier.com/"/>
+			<outline type="rss" text="A Few Thoughts on Cryptographic Engineering" title="A Few Thoughts on Cryptographic Engineering" xmlUrl="https://blog.cryptographyengineering.com/feed/" htmlUrl="https://blog.cryptographyengineering.com/"/>
+			<outline type="rss" text="Pluralistic" title="Pluralistic" xmlUrl="https://pluralistic.net/feed/" htmlUrl="https://pluralistic.net/"/>
+		</outline>
+		<outline text="bay area">
+			<outline type="rss" text="Sudo Room" title="Sudo Room" xmlUrl="https://sudoroom.org/index.php/feed/" htmlUrl="https://sudoroom.org/"/>
+		</outline>
+	</body>
+</opml>
